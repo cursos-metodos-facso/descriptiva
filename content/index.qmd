@@ -2,6 +2,7 @@
 title: "Laboratorio de Análisis de Datos"
 ---
 
+HOLA HOLA 
 En esta sección se encuentran las **guías prácticas** a desarrollar durante las sesiones del Laboratorio de Análisis de Datos.
 
 Todo el material es accesible desde el menú de la izquierda <--
