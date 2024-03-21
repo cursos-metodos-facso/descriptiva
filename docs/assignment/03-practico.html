@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -498,7 +498,7 @@ Nota
  8 Mujer        57       0
  9 Mujer        47  600000
 10 Hombre       79      NA
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>Otra cosa que podemos hacer es <strong>renombrar las variables al momento de seleccionarlas</strong>, para que tengan un sentido más sustantivo para nosotros.</p>
@@ -518,7 +518,7 @@ Nota
  8 Mujer     57       0
  9 Mujer     47  600000
 10 Hombre    79      NA
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>Por último, podemos usar select() para <strong>reordenar</strong> nuestras variables, lo cual es importante por si por ejemplo utilizamos variables de identificación.</p>
@@ -538,7 +538,7 @@ Nota
  8      57 Mujer       1       0
  9      47 Mujer       1  600000
 10      79 Hombre      2      NA
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>Ahora, <strong>¡apliquemos conocimientos!</strong> <em>seleccionando y renombrando</em> las variables de interés en un nueva base llamada <code>proc_elsoc</code>.</p>
@@ -573,7 +573,7 @@ Nota
  8    57 Mujer        0           1               4
  9    47 Mujer   600000           1               3
 10    79 Hombre      NA           2               1
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>Esta nueva base de datos sigue manteniendo los 1.000 casos/filas, pero ahora solo tiene 5 variables/columnas. ¿Qué pasa si solo quiero trabajar con un subconjunto de estos datos, por ejemplo, las mujeres mayores a 25 años? La respuesta es <strong><em>filtrar</em>.</strong></p>
@@ -598,7 +598,7 @@ Nota
  8    25 Hombre      NA           1               2
  9    42 Hombre 1100000           1               4
 10    51 Hombre  800000           1               1
-# … with 542 more rows</code></pre>
+# ℹ 542 more rows</code></pre>
 </div>
 </div>
 <p>Para indicarle a R que nos filtre aquellos casos que cumplen con la condición de ser iguales a 1 (autor_democ == 1), usamos el operador <code>==</code>. ¿Y esto de dónde salió? recuerda que los operadores en R los vimos en la <a href="https://descriptiva-facso.netlify.app/content/02-content.html">segunda sesión</a></p>
@@ -619,7 +619,7 @@ Nota
  8    25 Hombre      NA           1               2
  9    42 Hombre 1100000           1               4
 10    51 Hombre  800000           1               1
-# … with 534 more rows</code></pre>
+# ℹ 534 more rows</code></pre>
 </div>
 </div>
 <p>Pero, ¿y si tengo variables tipo <code>character</code> o <code>factor</code>? Tanto en R base como con <code>dplyr</code> podemos especificar condiciones y filtrar este tipo de datos usando las comillas <code>" "</code>.</p>
@@ -639,7 +639,7 @@ Nota
  8    78 Mujer      NA           4               1
  9    65 Mujer      NA           1               1
 10    69 Mujer      NA           2               1
-# … with 646 more rows</code></pre>
+# ℹ 646 more rows</code></pre>
 </div>
 </div>
 <p><strong>¡Apliquémos conocimientos!</strong> Filtremos nuestros datos quedándonos solo con aquellos casos o personas que tengan o sean mayores a 25 años de edad.</p>
@@ -661,7 +661,7 @@ Nota
  8    57 Mujer        0           1               4
  9    47 Mujer   600000           1               3
 10    79 Hombre      NA           2               1
-# … with 970 more rows</code></pre>
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -711,7 +711,7 @@ Tip
  8    57 Femenino        0           1               4
  9    47 Femenino   600000           1               3
 10    79 Masculino      NA           2               1
-# … with 970 more rows</code></pre>
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 <p>Ahora recodifiquemos las demás variables. Además de recodificar valores propiamente tal, con <code>recode()</code> podemos indicarle, en la misma función, que convierta la variable a <code>factor</code> y/o que le asigne niveles (ej. para variables ordinales).</p>
@@ -745,19 +745,19 @@ Tip
 <span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 980 × 5
-    edad sexo      ingreso autor_democ                                   jv_de…¹
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                         &lt;fct&gt;  
- 1    38 Masculino 4000000 La democracia es preferible a cualquier otra… &lt;NA&gt;   
- 2    45 Femenino  2700000 La democracia es preferible a cualquier otra… Alguna…
- 3    42 Masculino  600000 A la gente como uno, nos da lo mismo un regi… &lt;NA&gt;   
- 4    29 Masculino 1250000 La democracia es preferible a cualquier otra… Nunca  
- 5    53 Femenino   500000 En algunas circunstancias, un gobierno autor… Alguna…
- 6    52 Femenino       NA A la gente como uno, nos da lo mismo un regi… Pocas …
- 7    50 Femenino       NA En algunas circunstancias, un gobierno autor… Siempre
- 8    57 Femenino        0 La democracia es preferible a cualquier otra… Muchas…
- 9    47 Femenino   600000 La democracia es preferible a cualquier otra… Alguna…
-10    79 Masculino      NA En algunas circunstancias, un gobierno autor… Nunca  
-# … with 970 more rows, and abbreviated variable name ¹​jv_delincuentes</code></pre>
+    edad sexo      ingreso autor_democ                           jv_delincuentes
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
+ 1    38 Masculino 4000000 La democracia es preferible a cualqu… &lt;NA&gt;           
+ 2    45 Femenino  2700000 La democracia es preferible a cualqu… Algunas veces  
+ 3    42 Masculino  600000 A la gente como uno, nos da lo mismo… &lt;NA&gt;           
+ 4    29 Masculino 1250000 La democracia es preferible a cualqu… Nunca          
+ 5    53 Femenino   500000 En algunas circunstancias, un gobier… Algunas veces  
+ 6    52 Femenino       NA A la gente como uno, nos da lo mismo… Pocas veces    
+ 7    50 Femenino       NA En algunas circunstancias, un gobier… Siempre        
+ 8    57 Femenino        0 La democracia es preferible a cualqu… Muchas veces   
+ 9    47 Femenino   600000 La democracia es preferible a cualqu… Algunas veces  
+10    79 Masculino      NA En algunas circunstancias, un gobier… Nunca          
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 <div class="callout-note callout callout-style-default callout-captioned">
@@ -806,19 +806,19 @@ Nota
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 496 × 5
-    edad sexo      ingreso autor_democ                                   jv_de…¹
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                         &lt;fct&gt;  
- 1    45 Femenino  2700000 La democracia es preferible a cualquier otra… Alguna…
- 2    29 Masculino 1250000 La democracia es preferible a cualquier otra… Nunca  
- 3    53 Femenino   500000 En algunas circunstancias, un gobierno autor… Alguna…
- 4    57 Femenino        0 La democracia es preferible a cualquier otra… Muchas…
- 5    47 Femenino   600000 La democracia es preferible a cualquier otra… Alguna…
- 6    39 Masculino 1350000 La democracia es preferible a cualquier otra… Muchas…
- 7    42 Masculino 1100000 La democracia es preferible a cualquier otra… Muchas…
- 8    51 Masculino  800000 La democracia es preferible a cualquier otra… Nunca  
- 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo un regi… Alguna…
-10    45 Femenino   500000 La democracia es preferible a cualquier otra… Nunca  
-# … with 486 more rows, and abbreviated variable name ¹​jv_delincuentes</code></pre>
+    edad sexo      ingreso autor_democ                           jv_delincuentes
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
+ 1    45 Femenino  2700000 La democracia es preferible a cualqu… Algunas veces  
+ 2    29 Masculino 1250000 La democracia es preferible a cualqu… Nunca          
+ 3    53 Femenino   500000 En algunas circunstancias, un gobier… Algunas veces  
+ 4    57 Femenino        0 La democracia es preferible a cualqu… Muchas veces   
+ 5    47 Femenino   600000 La democracia es preferible a cualqu… Algunas veces  
+ 6    39 Masculino 1350000 La democracia es preferible a cualqu… Muchas veces   
+ 7    42 Masculino 1100000 La democracia es preferible a cualqu… Muchas veces   
+ 8    51 Masculino  800000 La democracia es preferible a cualqu… Nunca          
+ 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo… Algunas veces  
+10    45 Femenino   500000 La democracia es preferible a cualqu… Nunca          
+# ℹ 486 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -836,19 +836,19 @@ Nota
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 496 × 6
-    edad sexo      ingreso autor_democ                             jv_de…¹   ano
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                   &lt;fct&gt;   &lt;dbl&gt;
- 1    45 Femenino  2700000 La democracia es preferible a cualquie… Alguna…  2022
- 2    29 Masculino 1250000 La democracia es preferible a cualquie… Nunca    2022
- 3    53 Femenino   500000 En algunas circunstancias, un gobierno… Alguna…  2022
- 4    57 Femenino        0 La democracia es preferible a cualquie… Muchas…  2022
- 5    47 Femenino   600000 La democracia es preferible a cualquie… Alguna…  2022
- 6    39 Masculino 1350000 La democracia es preferible a cualquie… Muchas…  2022
- 7    42 Masculino 1100000 La democracia es preferible a cualquie… Muchas…  2022
- 8    51 Masculino  800000 La democracia es preferible a cualquie… Nunca    2022
- 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo u… Alguna…  2022
-10    45 Femenino   500000 La democracia es preferible a cualquie… Nunca    2022
-# … with 486 more rows, and abbreviated variable name ¹​jv_delincuentes</code></pre>
+    edad sexo      ingreso autor_democ                     jv_delincuentes   ano
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                           &lt;fct&gt;           &lt;dbl&gt;
+ 1    45 Femenino  2700000 La democracia es preferible a … Algunas veces    2022
+ 2    29 Masculino 1250000 La democracia es preferible a … Nunca            2022
+ 3    53 Femenino   500000 En algunas circunstancias, un … Algunas veces    2022
+ 4    57 Femenino        0 La democracia es preferible a … Muchas veces     2022
+ 5    47 Femenino   600000 La democracia es preferible a … Algunas veces    2022
+ 6    39 Masculino 1350000 La democracia es preferible a … Muchas veces     2022
+ 7    42 Masculino 1100000 La democracia es preferible a … Muchas veces     2022
+ 8    51 Masculino  800000 La democracia es preferible a … Nunca            2022
+ 9    38 Masculino 1600000 A la gente como uno, nos da lo… Algunas veces    2022
+10    45 Femenino   500000 La democracia es preferible a … Nunca            2022
+# ℹ 486 more rows</code></pre>
 </div>
 </div>
 <section id="transformar-variables-con-case_when-e-if_else" class="level4">
@@ -871,20 +871,20 @@ Nota
 <span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 496 × 8
-    edad sexo      ingreso autor_democ             jv_de…¹   ano tramo…² tramo…³
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                   &lt;fct&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
- 1    45 Femenino  2700000 La democracia es prefe… Alguna…  2022 Adultos Tramo 5
- 2    29 Masculino 1250000 La democracia es prefe… Nunca    2022 Jovenes Tramo 5
- 3    53 Femenino   500000 En algunas circunstanc… Alguna…  2022 Adultos Tramo 2
- 4    57 Femenino        0 La democracia es prefe… Muchas…  2022 Adultos Tramo 1
- 5    47 Femenino   600000 La democracia es prefe… Alguna…  2022 Adultos Tramo 3
- 6    39 Masculino 1350000 La democracia es prefe… Muchas…  2022 Adultos Tramo 5
- 7    42 Masculino 1100000 La democracia es prefe… Muchas…  2022 Adultos Tramo 5
- 8    51 Masculino  800000 La democracia es prefe… Nunca    2022 Adultos Tramo 4
- 9    38 Masculino 1600000 A la gente como uno, n… Alguna…  2022 Adultos Tramo 5
-10    45 Femenino   500000 La democracia es prefe… Nunca    2022 Adultos Tramo 2
-# … with 486 more rows, and abbreviated variable names ¹​jv_delincuentes,
-#   ²​tramo_edad, ³​tramo_ingreso</code></pre>
+    edad sexo      ingreso autor_democ          jv_delincuentes   ano tramo_edad
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                &lt;fct&gt;           &lt;dbl&gt; &lt;chr&gt;     
+ 1    45 Femenino  2700000 La democracia es pr… Algunas veces    2022 Adultos   
+ 2    29 Masculino 1250000 La democracia es pr… Nunca            2022 Jovenes   
+ 3    53 Femenino   500000 En algunas circunst… Algunas veces    2022 Adultos   
+ 4    57 Femenino        0 La democracia es pr… Muchas veces     2022 Adultos   
+ 5    47 Femenino   600000 La democracia es pr… Algunas veces    2022 Adultos   
+ 6    39 Masculino 1350000 La democracia es pr… Muchas veces     2022 Adultos   
+ 7    42 Masculino 1100000 La democracia es pr… Muchas veces     2022 Adultos   
+ 8    51 Masculino  800000 La democracia es pr… Nunca            2022 Adultos   
+ 9    38 Masculino 1600000 A la gente como uno… Algunas veces    2022 Adultos   
+10    45 Femenino   500000 La democracia es pr… Nunca            2022 Adultos   
+# ℹ 486 more rows
+# ℹ 1 more variable: tramo_ingreso &lt;chr&gt;</code></pre>
 </div>
 </div>
 <p>Ahora, generemos una nueva variable llamada <code>ingreso_minimo</code> con la función <code>if_else()</code>.</p>
@@ -907,7 +907,7 @@ Nota
  8  800000 sobre minimo  
  9 1600000 sobre minimo  
 10  500000 sobre minimo  
-# … with 486 more rows</code></pre>
+# ℹ 486 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -945,7 +945,7 @@ Nota
  8    57 Mujer        0           1               4
  9    47 Mujer   600000           1               3
 10    79 Hombre      NA           2               1
-# … with 970 more rows</code></pre>
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -984,19 +984,19 @@ Nota
 <span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 496 × 5
-    edad sexo      ingreso autor_democ                                   jv_de…¹
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                         &lt;fct&gt;  
- 1    45 Femenino  2700000 La democracia es preferible a cualquier otra… Alguna…
- 2    29 Masculino 1250000 La democracia es preferible a cualquier otra… Nunca  
- 3    53 Femenino   500000 En algunas circunstancias, un gobierno autor… Alguna…
- 4    57 Femenino        0 La democracia es preferible a cualquier otra… Muchas…
- 5    47 Femenino   600000 La democracia es preferible a cualquier otra… Alguna…
- 6    39 Masculino 1350000 La democracia es preferible a cualquier otra… Muchas…
- 7    42 Masculino 1100000 La democracia es preferible a cualquier otra… Muchas…
- 8    51 Masculino  800000 La democracia es preferible a cualquier otra… Nunca  
- 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo un regi… Alguna…
-10    45 Femenino   500000 La democracia es preferible a cualquier otra… Nunca  
-# … with 486 more rows, and abbreviated variable name ¹​jv_delincuentes</code></pre>
+    edad sexo      ingreso autor_democ                           jv_delincuentes
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
+ 1    45 Femenino  2700000 La democracia es preferible a cualqu… Algunas veces  
+ 2    29 Masculino 1250000 La democracia es preferible a cualqu… Nunca          
+ 3    53 Femenino   500000 En algunas circunstancias, un gobier… Algunas veces  
+ 4    57 Femenino        0 La democracia es preferible a cualqu… Muchas veces   
+ 5    47 Femenino   600000 La democracia es preferible a cualqu… Algunas veces  
+ 6    39 Masculino 1350000 La democracia es preferible a cualqu… Muchas veces   
+ 7    42 Masculino 1100000 La democracia es preferible a cualqu… Muchas veces   
+ 8    51 Masculino  800000 La democracia es preferible a cualqu… Nunca          
+ 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo… Algunas veces  
+10    45 Femenino   500000 La democracia es preferible a cualqu… Nunca          
+# ℹ 486 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -1018,20 +1018,20 @@ Nota
 <span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 496 × 9
-    edad sexo      ingreso autor_democ     jv_de…¹   ano tramo…² tramo…³ ingre…⁴
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;           &lt;fct&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
- 1    45 Femenino  2700000 La democracia … Alguna…  2022 Adultos Tramo 5 sobre …
- 2    29 Masculino 1250000 La democracia … Nunca    2022 Jovenes Tramo 5 sobre …
- 3    53 Femenino   500000 En algunas cir… Alguna…  2022 Adultos Tramo 2 sobre …
- 4    57 Femenino        0 La democracia … Muchas…  2022 Adultos Tramo 1 debajo…
- 5    47 Femenino   600000 La democracia … Alguna…  2022 Adultos Tramo 3 sobre …
- 6    39 Masculino 1350000 La democracia … Muchas…  2022 Adultos Tramo 5 sobre …
- 7    42 Masculino 1100000 La democracia … Muchas…  2022 Adultos Tramo 5 sobre …
- 8    51 Masculino  800000 La democracia … Nunca    2022 Adultos Tramo 4 sobre …
- 9    38 Masculino 1600000 A la gente com… Alguna…  2022 Adultos Tramo 5 sobre …
-10    45 Femenino   500000 La democracia … Nunca    2022 Adultos Tramo 2 sobre …
-# … with 486 more rows, and abbreviated variable names ¹​jv_delincuentes,
-#   ²​tramo_edad, ³​tramo_ingreso, ⁴​ingreso_minimo</code></pre>
+    edad sexo      ingreso autor_democ          jv_delincuentes   ano tramo_edad
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                &lt;fct&gt;           &lt;dbl&gt; &lt;chr&gt;     
+ 1    45 Femenino  2700000 La democracia es pr… Algunas veces    2022 Adultos   
+ 2    29 Masculino 1250000 La democracia es pr… Nunca            2022 Jovenes   
+ 3    53 Femenino   500000 En algunas circunst… Algunas veces    2022 Adultos   
+ 4    57 Femenino        0 La democracia es pr… Muchas veces     2022 Adultos   
+ 5    47 Femenino   600000 La democracia es pr… Algunas veces    2022 Adultos   
+ 6    39 Masculino 1350000 La democracia es pr… Muchas veces     2022 Adultos   
+ 7    42 Masculino 1100000 La democracia es pr… Muchas veces     2022 Adultos   
+ 8    51 Masculino  800000 La democracia es pr… Nunca            2022 Adultos   
+ 9    38 Masculino 1600000 A la gente como uno… Algunas veces    2022 Adultos   
+10    45 Femenino   500000 La democracia es pr… Nunca            2022 Adultos   
+# ℹ 486 more rows
+# ℹ 2 more variables: tramo_ingreso &lt;chr&gt;, ingreso_minimo &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>

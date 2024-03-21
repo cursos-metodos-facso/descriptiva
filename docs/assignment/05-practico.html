@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.2.335">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -434,7 +434,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  8    24 Mujer   530000         2               3
  9    32 Mujer   790000         2               3
 10    60 Mujer   400000         2               4
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -459,7 +459,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  8    60 Mujer   400000         2               4
  9    43 Hombre 1000000         2               4
 10    77 Mujer       NA         2               5
-# … with 970 more rows</code></pre>
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -488,7 +488,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  8    60 Femenino   400000         2               4
  9    43 Masculino 1000000         2               4
 10    77 Femenino       NA         2               5
-# … with 970 more rows</code></pre>
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 <p>Ahora, las variables <code>altruismo</code> y <code>confianza_carab</code> conviertiéndolas a factor y, si es pertinente, asigarles niveles.</p>
@@ -523,19 +523,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb12-28"><a href="#cb12-28" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 980 × 5
-    edad sexo      ingreso altruismo                                     confi…¹
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                         &lt;fct&gt;  
- 1    66 Masculino 1200000 La mayoria de las veces se preocupan solo de… Algo   
- 2    38 Masculino  500000 La mayoria de las veces se preocupan solo de… Algo   
- 3    70 Femenino       NA La mayoria de las veces tratan de ayudar a l… Algo   
- 4    56 Femenino   500000 La mayoria de las veces se preocupan solo de… Algo   
- 5    52 Femenino       NA La mayoria de las veces se preocupan solo de… Nada   
- 6    64 Femenino       NA La mayoria de las veces se preocupan solo de… Mucha  
- 7    32 Femenino   790000 La mayoria de las veces se preocupan solo de… Algo   
- 8    60 Femenino   400000 La mayoria de las veces se preocupan solo de… Bastan…
- 9    43 Masculino 1000000 La mayoria de las veces se preocupan solo de… Bastan…
-10    77 Femenino       NA La mayoria de las veces se preocupan solo de… Mucha  
-# … with 970 more rows, and abbreviated variable name ¹​confianza_carab</code></pre>
+    edad sexo      ingreso altruismo                             confianza_carab
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
+ 1    66 Masculino 1200000 La mayoria de las veces se preocupan… Algo           
+ 2    38 Masculino  500000 La mayoria de las veces se preocupan… Algo           
+ 3    70 Femenino       NA La mayoria de las veces tratan de ay… Algo           
+ 4    56 Femenino   500000 La mayoria de las veces se preocupan… Algo           
+ 5    52 Femenino       NA La mayoria de las veces se preocupan… Nada           
+ 6    64 Femenino       NA La mayoria de las veces se preocupan… Mucha          
+ 7    32 Femenino   790000 La mayoria de las veces se preocupan… Algo           
+ 8    60 Femenino   400000 La mayoria de las veces se preocupan… Bastante       
+ 9    43 Masculino 1000000 La mayoria de las veces se preocupan… Bastante       
+10    77 Femenino       NA La mayoria de las veces se preocupan… Mucha          
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -568,19 +568,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 528 × 5
-    edad sexo      ingreso altruismo                                     confi…¹
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                         &lt;fct&gt;  
- 1    66 Masculino 1200000 La mayoria de las veces se preocupan solo de… Algo   
- 2    38 Masculino  500000 La mayoria de las veces se preocupan solo de… Algo   
- 3    56 Femenino   500000 La mayoria de las veces se preocupan solo de… Algo   
- 4    32 Femenino   790000 La mayoria de las veces se preocupan solo de… Algo   
- 5    60 Femenino   400000 La mayoria de las veces se preocupan solo de… Bastan…
- 6    43 Masculino 1000000 La mayoria de las veces se preocupan solo de… Bastan…
- 7    59 Masculino 1200000 La mayoria de las veces se preocupan solo de… Poca   
- 8    44 Femenino   150000 La mayoria de las veces se preocupan solo de… Bastan…
- 9    51 Femenino   350000 La mayoria de las veces tratan de ayudar a l… Poca   
-10    45 Femenino   200000 La mayoria de las veces se preocupan solo de… Bastan…
-# … with 518 more rows, and abbreviated variable name ¹​confianza_carab</code></pre>
+    edad sexo      ingreso altruismo                             confianza_carab
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
+ 1    66 Masculino 1200000 La mayoria de las veces se preocupan… Algo           
+ 2    38 Masculino  500000 La mayoria de las veces se preocupan… Algo           
+ 3    56 Femenino   500000 La mayoria de las veces se preocupan… Algo           
+ 4    32 Femenino   790000 La mayoria de las veces se preocupan… Algo           
+ 5    60 Femenino   400000 La mayoria de las veces se preocupan… Bastante       
+ 6    43 Masculino 1000000 La mayoria de las veces se preocupan… Bastante       
+ 7    59 Masculino 1200000 La mayoria de las veces se preocupan… Poca           
+ 8    44 Femenino   150000 La mayoria de las veces se preocupan… Bastante       
+ 9    51 Femenino   350000 La mayoria de las veces tratan de ay… Poca           
+10    45 Femenino   200000 La mayoria de las veces se preocupan… Bastante       
+# ℹ 518 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -596,19 +596,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 528 × 6
-    edad sexo      ingreso altruismo                               confi…¹   ano
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                   &lt;fct&gt;   &lt;dbl&gt;
- 1    66 Masculino 1200000 La mayoria de las veces se preocupan s… Algo     2022
- 2    38 Masculino  500000 La mayoria de las veces se preocupan s… Algo     2022
- 3    56 Femenino   500000 La mayoria de las veces se preocupan s… Algo     2022
- 4    32 Femenino   790000 La mayoria de las veces se preocupan s… Algo     2022
- 5    60 Femenino   400000 La mayoria de las veces se preocupan s… Bastan…  2022
- 6    43 Masculino 1000000 La mayoria de las veces se preocupan s… Bastan…  2022
- 7    59 Masculino 1200000 La mayoria de las veces se preocupan s… Poca     2022
- 8    44 Femenino   150000 La mayoria de las veces se preocupan s… Bastan…  2022
- 9    51 Femenino   350000 La mayoria de las veces tratan de ayud… Poca     2022
-10    45 Femenino   200000 La mayoria de las veces se preocupan s… Bastan…  2022
-# … with 518 more rows, and abbreviated variable name ¹​confianza_carab</code></pre>
+    edad sexo      ingreso altruismo                       confianza_carab   ano
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                           &lt;fct&gt;           &lt;dbl&gt;
+ 1    66 Masculino 1200000 La mayoria de las veces se pre… Algo             2022
+ 2    38 Masculino  500000 La mayoria de las veces se pre… Algo             2022
+ 3    56 Femenino   500000 La mayoria de las veces se pre… Algo             2022
+ 4    32 Femenino   790000 La mayoria de las veces se pre… Algo             2022
+ 5    60 Femenino   400000 La mayoria de las veces se pre… Bastante         2022
+ 6    43 Masculino 1000000 La mayoria de las veces se pre… Bastante         2022
+ 7    59 Masculino 1200000 La mayoria de las veces se pre… Poca             2022
+ 8    44 Femenino   150000 La mayoria de las veces se pre… Bastante         2022
+ 9    51 Femenino   350000 La mayoria de las veces tratan… Poca             2022
+10    45 Femenino   200000 La mayoria de las veces se pre… Bastante         2022
+# ℹ 518 more rows</code></pre>
 </div>
 </div>
 <section id="transformar-variables-con-case_when-e-if_else" class="level4">
@@ -628,20 +628,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 528 × 8
-    edad sexo      ingreso altruismo               confi…¹   ano tramo…² tramo…³
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                   &lt;fct&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  
- 1    66 Masculino 1200000 La mayoria de las vece… Algo     2022 Adutos… Tramo 5
- 2    38 Masculino  500000 La mayoria de las vece… Algo     2022 Adultos Tramo 2
- 3    56 Femenino   500000 La mayoria de las vece… Algo     2022 Adultos Tramo 2
- 4    32 Femenino   790000 La mayoria de las vece… Algo     2022 Adultos Tramo 4
- 5    60 Femenino   400000 La mayoria de las vece… Bastan…  2022 Adutos… Tramo 2
- 6    43 Masculino 1000000 La mayoria de las vece… Bastan…  2022 Adultos Tramo 4
- 7    59 Masculino 1200000 La mayoria de las vece… Poca     2022 Adultos Tramo 5
- 8    44 Femenino   150000 La mayoria de las vece… Bastan…  2022 Adultos Tramo 1
- 9    51 Femenino   350000 La mayoria de las vece… Poca     2022 Adultos Tramo 2
-10    45 Femenino   200000 La mayoria de las vece… Bastan…  2022 Adultos Tramo 1
-# … with 518 more rows, and abbreviated variable names ¹​confianza_carab,
-#   ²​tramo_edad, ³​tramo_ingreso</code></pre>
+    edad sexo   ingreso altruismo confianza_carab   ano tramo_edad tramo_ingreso
+   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        
+ 1    66 Mascu… 1200000 La mayor… Algo             2022 Adutos ma… Tramo 5      
+ 2    38 Mascu…  500000 La mayor… Algo             2022 Adultos    Tramo 2      
+ 3    56 Femen…  500000 La mayor… Algo             2022 Adultos    Tramo 2      
+ 4    32 Femen…  790000 La mayor… Algo             2022 Adultos    Tramo 4      
+ 5    60 Femen…  400000 La mayor… Bastante         2022 Adutos ma… Tramo 2      
+ 6    43 Mascu… 1000000 La mayor… Bastante         2022 Adultos    Tramo 4      
+ 7    59 Mascu… 1200000 La mayor… Poca             2022 Adultos    Tramo 5      
+ 8    44 Femen…  150000 La mayor… Bastante         2022 Adultos    Tramo 1      
+ 9    51 Femen…  350000 La mayor… Poca             2022 Adultos    Tramo 2      
+10    45 Femen…  200000 La mayor… Bastante         2022 Adultos    Tramo 1      
+# ℹ 518 more rows</code></pre>
 </div>
 </div>
 <p>Ahora, generemos una nueva variable llamada <code>ingreso_minimo</code> con la función <code>if_else()</code>.</p>
@@ -652,20 +651,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 528 × 9
-    edad sexo      ingreso altruismo       confi…¹   ano tramo…² tramo…³ ingre…⁴
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;           &lt;fct&gt;   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;  
- 1    66 Masculino 1200000 La mayoria de … Algo     2022 Adutos… Tramo 5 sobre …
- 2    38 Masculino  500000 La mayoria de … Algo     2022 Adultos Tramo 2 sobre …
- 3    56 Femenino   500000 La mayoria de … Algo     2022 Adultos Tramo 2 sobre …
- 4    32 Femenino   790000 La mayoria de … Algo     2022 Adultos Tramo 4 sobre …
- 5    60 Femenino   400000 La mayoria de … Bastan…  2022 Adutos… Tramo 2 debajo…
- 6    43 Masculino 1000000 La mayoria de … Bastan…  2022 Adultos Tramo 4 sobre …
- 7    59 Masculino 1200000 La mayoria de … Poca     2022 Adultos Tramo 5 sobre …
- 8    44 Femenino   150000 La mayoria de … Bastan…  2022 Adultos Tramo 1 debajo…
- 9    51 Femenino   350000 La mayoria de … Poca     2022 Adultos Tramo 2 debajo…
-10    45 Femenino   200000 La mayoria de … Bastan…  2022 Adultos Tramo 1 debajo…
-# … with 518 more rows, and abbreviated variable names ¹​confianza_carab,
-#   ²​tramo_edad, ³​tramo_ingreso, ⁴​ingreso_minimo</code></pre>
+    edad sexo   ingreso altruismo confianza_carab   ano tramo_edad tramo_ingreso
+   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt; &lt;fct&gt;     &lt;fct&gt;           &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        
+ 1    66 Mascu… 1200000 La mayor… Algo             2022 Adutos ma… Tramo 5      
+ 2    38 Mascu…  500000 La mayor… Algo             2022 Adultos    Tramo 2      
+ 3    56 Femen…  500000 La mayor… Algo             2022 Adultos    Tramo 2      
+ 4    32 Femen…  790000 La mayor… Algo             2022 Adultos    Tramo 4      
+ 5    60 Femen…  400000 La mayor… Bastante         2022 Adutos ma… Tramo 2      
+ 6    43 Mascu… 1000000 La mayor… Bastante         2022 Adultos    Tramo 4      
+ 7    59 Mascu… 1200000 La mayor… Poca             2022 Adultos    Tramo 5      
+ 8    44 Femen…  150000 La mayor… Bastante         2022 Adultos    Tramo 1      
+ 9    51 Femen…  350000 La mayor… Poca             2022 Adultos    Tramo 2      
+10    45 Femen…  200000 La mayor… Bastante         2022 Adultos    Tramo 1      
+# ℹ 518 more rows
+# ℹ 1 more variable: ingreso_minimo &lt;chr&gt;</code></pre>
 </div>
 </div>
 </section>

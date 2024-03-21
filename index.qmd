@@ -88,7 +88,7 @@ Andreas Laffert
 
 ### Versiones anteriores del curso
 
-- [2023](https://version2023--descriptiva-facso.netlify.app/)
+- [2023](https://version-2023--descriptiva-2024.netlify.app/)
 
 :::
 
