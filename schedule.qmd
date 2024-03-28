@@ -17,44 +17,48 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones d
 | |<i class="fas fa-chalkboard-teacher"></i>  Clases  |  <i class="fas fa-user-edit"></i>   Prácticas | <i class="fas fa-book-reader"></i> Evaluaciones
 -----|------------|----------------------------------|-----------
 <font color="orange"> **Marzo** </font> |   |   |
-Jueves 16 | **1. Presentación e introducción**  |   | - Leer detalladamente [programa del curso](syllabus.html)
-
 ### UNIDAD 1: Sociología y estadística
 |||
 -----|------------|-------------------|-----------
-Jueves 23 | **2. Caracterización de la investigación cuantitativa** | | 
-Jueves 30 | **3. La medición en ciencias sociales** | | 
+Lunes 11 | **1. La estadística como herramienta de investigación sociológica**  |   | - Leer detalladamente [programa del curso](syllabus.html)
+Lunes 18 | **2. Epistemología, límites y potencialidades de la investigación cuantitativa.** | | 
+Lunes 25 | **3. La medición en ciencias sociales: algunos conceptos fundamentales.** | | 
 <font color="orange"> **Abril** </font> |   |   |
-Jueves 6 | **4. La medición en ciencias sociales** | | 
-Jueves 13 |  |  [**Sesión 1. Introducción al lenguaje R**](/content/01-content.html) <br> [**Sesión 2. Conocimientos básicos de programación en R**](/content/02-content.html) |                                                                
-### UNIDAD 2: Medidas de tendencia central, dispersión y posición
+Lunes 01 | **4. Datos y bases de datos. Ética de la investigación con datos sociales.** | | 
+Miércoles 03 |  | Práctico 1 |                                                                
+### UNIDAD 2: La descripción de los datos.
 |||
 -----|------------|-------------------|-----------
-Jueves 20 | **5. Datos y bases de datos** <br> **6. Medidas de tendencia central**  |   |
-Jueves 27 | **7. Medidas de dispersión** <br> **8. Medidas de posición** | | 
+Lunes 08 | **5. Medidas de tendencia central.**  |   |
+Miércoles 10 |  | Práctico 2 | 
+Lunes 15 | **6. Medidas de dispersión.** |   |
+Miércoles 17 | | Práctico 3 | 
+Lunes 22 | **7. Medidas de posición.** |  |
+Miércoles 24| | Práctico 4 | 
+Lunes 29 | **Receso** | |
 <font color="orange"> **Mayo** </font> |   |   |
-Jueves 4 | RECESO  |   |
-Lunes 8 | | | **Entrega Tarea Individual 1**
-Jueves 11 |  |  [**Sesión 3. Procesamiento, limpieza y manipulación de datos en R **](/content/03-content.html)  <br> [**Sesión 4. Medidas de tendencia central, dispersión y posición**](/content/04-content.html)|
-Jueves 18 | | [**Sesión 5. Repaso Procesamiento y análisis descriptivo de datos en R**](/content/05-content.html) | 
-
+Miércoles 01 | | **Receso** |
+Lunes 06 | **8.Visualización de datos y distribuciones de datos.** | |
+Miércoles 08 | | Práctico 5 |
 ### UNIDAD 3: La forma de una distribución
 |||
 -----|------------|-------------------|-----------
-Jueves 25 | **9. Visualización y distribución de datos** <br> **10. Noción de función y distribución** | | **Entrega Tarea Individual 2**
-Lunes 29 | | | **Entrega Informe 1 Taller Colectivo**
+Lunes 13 | **9. Noción de función y distribución.**  | | 
+Miércoles 15 |  | Práctico 6 | 
+Lunes 20 | **10. Asimetría y Curtosis.** | | 
+Miércoles 22 | | Práctico 7 |
+Lunes 27 | **11. Distribución normal y puntuación Z.** | |
+Miércoles 29 | | Práctico 8 |
 <font color="orange"> **Junio** </font> |   |   |
-Jueves 1 | | [**Sesión 6. Visualización de datos**](/content/06-content.html)  <br> [**Sesión 7. Forma de una distribución**](/content/07-content.html) |
-Jueves 8 | RECESO  |   |
-Jueves 15 | **11. Asimetría y curtosis** <br> **12. Distribución normal y puntuación Z**||
-Jueves 22 | **13. Probabilidades en la distribución normal y otras distribuciones** <br> **14. Fundamentos de la significación estadística, universo y muestra ** <br> **15. Inferencia estadística univarada**| | 
-
-### UNIDAD 4: Inferencia estadística univariada
+Lunes 03 |**12. Probabilidades en la distribución normal y otras distribuciones** |  |
+Miércoles 05 | | Práctico 9 |
+### UNIDAD 4: Introducción a la inferencia estadística
 |||
 -----|------------|-------------------|-----------
-Jueves 29 |  | [**Sesión 8. Inferencia univariada**](/content/08-content.html) | 
+Lunes 10 | **13. Fundamentos de la significación estadística, universo y muestra.** | 
+Miércoles 12 | | Práctico 10 |
+Lunes 17 | **14. Noción de distribución de muestreo, parámetros y estadísticos.**
+Lunes 24 | **15. Hipótesis y pruebas de hipótesis.** | |
 <font color="orange"> **Julio** </font> |   |   |
-Jueves 6 | | | **Entrega Tarea Individual 3**
-Domingo 9 | | | **Entrega Informe 2 Taller Colectivo**
-
+Lunes 01 | **16. Inferencia estadística univariada, ponderadores y factores de expansión.** | |
 

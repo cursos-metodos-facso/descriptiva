@@ -53,22 +53,39 @@ withr::with_dir(here::here(), {
 Daniela Olivares
 
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
-- {{< fa calendar-check >}} &nbsp; [Agendar reunión]({{< var other2.appointment_url >}})
 
 <div class="image-cropper">
-  <img src="https://ucampus.uchile.cl/d/r/usuario/5b/5b662afdc07fea74ce535d3c5e29712e/perfil/8150fe7de4d9418b59adf4d32aba4bec.jpg">
+  <img src="https://ca.slack-edge.com/T011KJPE10W-U01RB6BA7NK-10ffb897b8d4-512" alt="avatar" class="profile-pic" width="80" height="80" />
 </div>
 
 
-Andreas Laffert
+Kevin Carrasco
 
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other.email >}}">{{< var other.email >}}</a>
-- {{< fa calendar-check >}} &nbsp; [Agendar reunión]({{< var other.appointment_url >}})
 
 **Ayudantes**
 
-- 
--
+- Victoria Arias
+
+- Leonardo Capobianco
+
+- Catalina Díaz
+
+- Martina Gallardo
+
+- Antonia Jimenez
+
+- Sophia Karoussis
+
+- Cristobal Mejías
+
+- Yerkho Nuñez
+
+- Juan Prado
+
+- Luis Ríos
+
+- Benjamín Zavala
 
 :::
 

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,7 +17,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -57,23 +57,24 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
 
 <meta property="og:title" content="Estadística Descriptiva - Programa">
-<meta property="og:description" content="Al finalizar el curso los estudiantes conocerán los fundamentos del análisis estadístico diferenciando entre tipos de variables, niveles de medición y formas de distribución.">
-<meta property="og:image" content="https://descriptiva-facso.netlify.app/files/logo.png">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://descriptiva-2024.netlify.app/files/logo.png">
 <meta property="og:site-name" content="Estadística Descriptiva">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="500">
 <meta property="og:image:width" content="500">
 <meta name="twitter:title" content="Estadística Descriptiva - Programa">
-<meta name="twitter:description" content="Al finalizar el curso los estudiantes conocerán los fundamentos del análisis estadístico diferenciando entre tipos de variables, niveles de medición y formas de distribución.">
-<meta name="twitter:image" content="https://descriptiva-facso.netlify.app/files/logo.png">
-<meta name="twitter:creator" content="@andreaslaffert">
-<meta name="twitter:site" content="@andreaslaffert">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://descriptiva-2024.netlify.app/files/logo.png">
+<meta name="twitter:creator" content="@kevincarrascoq1">
+<meta name="twitter:site" content="@kevincarrascoq1">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image-height" content="500">
 <meta name="twitter:image-width" content="500">
@@ -90,42 +91,44 @@ ul.task-list li input[type="checkbox"] {
     <span class="navbar-title">Estadística Descriptiva</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./syllabus.html" aria-current="page">
+    <a class="nav-link active" href="./syllabus.html" rel="" target="" aria-current="page">
  <span class="menu-text">Programa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./schedule.html">
+    <a class="nav-link" href="./schedule.html" rel="" target="">
  <span class="menu-text">Planificación</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./class/index.html">
+    <a class="nav-link" href="./class/index.html" rel="" target="">
  <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./assignment/index.html">
+    <a class="nav-link" href="./assignment/index.html" rel="" target="">
  <span class="menu-text">Prácticos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./trabajos.html">
+    <a class="nav-link" href="./trabajos.html" rel="" target="">
  <span class="menu-text">Trabajos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resource/index.html">
+    <a class="nav-link" href="./resource/index.html" rel="" target="">
  <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://rstudio.cloud"><i class="bi bi-cloud-fill" role="img" aria-label="RStudio.cloud">
+    <a class="nav-link" href="https://rstudio.cloud" rel="" target=""><i class="bi bi-cloud-fill" role="img" aria-label="RStudio.cloud">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -154,12 +157,10 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#metodología" id="toc-metodología" class="nav-link" data-scroll-target="#metodología">Metodología</a></li>
   <li><a href="#evaluación" id="toc-evaluación" class="nav-link" data-scroll-target="#evaluación">Evaluación</a></li>
-  <li><a href="#requisitos-de-aprobación" id="toc-requisitos-de-aprobación" class="nav-link" data-scroll-target="#requisitos-de-aprobación">Requisitos de aprobación</a></li>
   <li><a href="#palabras-clave" id="toc-palabras-clave" class="nav-link" data-scroll-target="#palabras-clave">Palabras Clave</a></li>
-  <li><a href="#bibliografía-obligatoria" id="toc-bibliografía-obligatoria" class="nav-link" data-scroll-target="#bibliografía-obligatoria">Bibliografía Obligatoria</a>
-  <ul class="collapse">
+  <li><a href="#bibliografía-obligatoria" id="toc-bibliografía-obligatoria" class="nav-link" data-scroll-target="#bibliografía-obligatoria">Bibliografía Obligatoria</a></li>
   <li><a href="#bibliografía-complementaria" id="toc-bibliografía-complementaria" class="nav-link" data-scroll-target="#bibliografía-complementaria">Bibliografía Complementaria</a></li>
-  </ul></li>
+  <li><a href="#recursos-web" id="toc-recursos-web" class="nav-link" data-scroll-target="#recursos-web">Recursos web</a></li>
   </ul>
 </nav>
     </div>
@@ -245,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
 <p>1.3.- Datos y bases de datos:</p>
 <p>● Las fuentes de información: tratamiento, producción y análisis de datos primarios y secundarios.</p>
 <p>● Manejo y depuración de datos y bases de datos.</p>
-<p>● Aspectos éticos</p>
+<p>● Aspectos éticos y posibilidades de investigación en la era de los datos no estructurados.</p>
 </section>
 <section id="unidad-ii.-la-descripción-de-los-datos-medidas-de-tendencia-central-dispersión-y-posición." class="level3">
 <h3 class="anchored" data-anchor-id="unidad-ii.-la-descripción-de-los-datos-medidas-de-tendencia-central-dispersión-y-posición.">UNIDAD II. La descripción de los datos: Medidas de tendencia central, dispersión y posición.</h3>
@@ -283,24 +284,18 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Clases lectivas o exposiciones a cargo del profesor, en las que se presentarán las principales temáticas de la asignatura, y en las que los y las estudiantes tendrán la posibilidad de resolver dudas relacionadas con los aspectos teóricos/conceptuales.</p></li>
 <li><p>Un Laboratorio de Análisis de Datos (LAB) a cargo del profesor y Equipo Docente. Se realizarán ejercicios prácticos de procesamiento, análisis e interpretación de resultados mediante diversos softwares de análisis estadístico (Excel, Spss y R, fundamentalmente). En ellos los y las estudiantes aprenderán a interpretar sociológicamente datos provenientes de múltiples fuentes, visualizar datos en forma gráfica, así como elaborar reportes de resultados.</p></li>
-<li><p>Finalmente, se realizarán sesiones de ayudantía específicas para reforzamiento de contenidos y del trabajo del Laboratorio de Análisis de Datos.</p></li>
+<li><p>Finalmente, se realizarán sesiones de ayudantía específicas por grupo de trabajo para reforzamiento de contenidos y del trabajo del Laboratorio de Análisis de Datos.</p></li>
 <li><p>Se reforzarán los contenidos con la entrega de material audiovisual y tutoriales</p></li>
 </ul>
 </section>
 <section id="evaluación" class="level2">
 <h2 class="anchored" data-anchor-id="evaluación">Evaluación</h2>
-<p>Durante el transcurso de la asignatura (y en el marco del Laboratorio de Análisis de Datos) se realizará un Trabajo de Taller Colectivo (con 2 entregas a lo largo del semestre) y 3 Tareas Individuales.</p>
-<p>● Los grupos de Taller Colectivo (de cuatro estudiantes) tendrán asignado un/a ayudante que acompañará el proceso durante todo el semestre. Las dos entregas del taller valdrán un 30% de la nota final (60% por los talleres colectivos).</p>
-<p>● Se realizarán 3 Tareas Individuales. Cada tarea individual valdrá un 13,3% de la nota final (40% en total por las tareas individuales).</p>
-<p>Para cautelar que se logren los resultados de aprendizaje, en los Talleres Colectivos los estudiantes deberán incluir reflexiones respecto de la utilidad de la estadística para la comprensión de los temas sociológicamente relevantes que estarán analizando. Por otro parte, tanto en los Talleres Colectivos como en las Tareas Individuales los estudiantes deberán demostrar su manejo de las herramientas estadísticas e informáticas enseñadas durante el curso y producir una conclusión sustantiva sobre los datos que estén procesando, con lo que se evaluarán los resultados de aprendizaje 2 y 3.</p>
-</section>
-<section id="requisitos-de-aprobación" class="level2">
-<h2 class="anchored" data-anchor-id="requisitos-de-aprobación">Requisitos de aprobación</h2>
-<p>ASISTENCIA: Se establece una asistencia de al menos el 50% de las clases. La asistencia habilita al estudiante a presentarse al examen de primera oportunidad.</p>
-<p>NOTA DE APROBACIÓN MÍNIMA (Escala de 1.0 a 7.0): 4.0</p>
-<p>NOTA DE EXIMICIÓN MÍNIMA: 5.0</p>
-<p>REQUISITOS PARA PRESENTACIÓN A EXAMEN:</p>
-<p>Para presentarse al examen de primera oportunidad debe cumplir con: - Nota de presentación igual o superior a 3.5 - Al menos un 50% de asistencia. El estudiante se presentará al examen de segunda oportunidad en los siguientes casos: - Nota final inferior a 3.5 - Haber reprobado el curso luego de rendir el examen de primera oportunidad - No cumplimiento del mínimo de asistencia establecido en el programa (50%).</p>
+<p>• Podrán eximirse del examen aquellos estudiantes con promedio final igual o superior a 5.0.</p>
+<p>• Examen de Primera Oportunidad: lo podrán rendir quienes tengan nota igual o superior a 3.5 habiendo rendido todas las evaluaciones parciales.</p>
+<p>• Examen de Segunda oportunidad: lo podrán rendir quienes tengan nota inferior a 3.5, no hayan rendido alguna evaluación parcial o hayan reprobado el curso luego de rendir el examen de primera oportunidad.</p>
+<p>• Aprobarán el curso quiénes obtengan un promedio final igual o superior a 4.0.</p>
+<p>Las situaciones no cubiertas por este programa se resolverán por las disposiciones existentes en el Reglamento General de Estudios de Pregrado de la Facultad de Ciencias Sociales (Decreto Exento Nº0045106 del 24 de noviembre de 2017).</p>
+<p>Por último, se advierte que todo acto que falte a la ética e integridad académica, será sancionado a partir de las medidas establecidas en los reglamentos existentes en la Universidad de Chile, y que velan por asegurar la calidad en la formación académica.</p>
 </section>
 <section id="palabras-clave" class="level2">
 <h2 class="anchored" data-anchor-id="palabras-clave">Palabras Clave</h2>
@@ -315,8 +310,9 @@ ul.task-list li input[type="checkbox"] {
 <p>● Pardo Merino, A., &amp; San Martín Castellanos, R. (2010). Análisis de datos en ciencias sociales y de la salud II. Síntesis, Madrid.</p>
 <p>● Cea, D’Ancona, M. (2001). Metodología Cuantitativa. Estrategias y técnicas de investigación social. Síntesis.</p>
 <p>● Asún, R. (2006). Medir la Realidad Social: el sentido de la investigación cuantitativa. En: M. Canales (Ed.). Metodologías de Investigación Social (pp.&nbsp;29-60). Santiago de Chile: LOM. 21.</p>
-<section id="bibliografía-complementaria" class="level3">
-<h3 class="anchored" data-anchor-id="bibliografía-complementaria">Bibliografía Complementaria</h3>
+</section>
+<section id="bibliografía-complementaria" class="level2">
+<h2 class="anchored" data-anchor-id="bibliografía-complementaria">Bibliografía Complementaria</h2>
 <p>● Field, A. (2009). Discovering Statistics Using IBM SPSS. California: SAGE Publications. Disponible online en: http://www.soc.univ.kiev.ua/sites/default/files/library/elopen/andyfield-discovering-statistics-using-spss-third-edition-20091.pdf</p>
 <p>● Field, A., Miles, J. y Field, Z. (2012) Discovering Statistics Using R. California: SAGE Publications.</p>
 <p>● Boccardo, G. &amp; Ruiz, F. (2019). RStudio para Estadística Descriptiva en Ciencias Sociales. Segunda edición. En línea en: https://bookdown.org/. Departamento de Sociología, Facultad de Ciencias Sociales, Universidad de Chile.</p>
@@ -330,9 +326,31 @@ ul.task-list li input[type="checkbox"] {
 <p>● Paradis, E. (2003). R para Principiantes. Francia: Institut des Sciences de l’Évolution. Disponible oline en: https://cran.r-project.org/doc/contrib/rdebuts_es.pdf</p>
 <p>● Urdines, F. &amp; Cruz, A. (2019). Analiza R Datos Políticos. Instituto de Ciencia Política de la Universidad Católica de Chile. Disponible en línea: https://arcruz0.github.io/</p>
 <p>● Wickham, H. (2015). ggplot2: Elegant Graphics for Data Analysis. Disponible en línea en: https://ggplot2-book.org/. Springer.</p>
-
-
 </section>
+<section id="recursos-web" class="level2">
+<h2 class="anchored" data-anchor-id="recursos-web">Recursos web</h2>
+<p>Tutoriales online para uso de software R (en español)</p>
+<p>• https://www.youtube.com/playlist?list=PLccec9enm1CwAZXr9bv92QQ-f_-lVx0ts</p>
+<p>• https://www.youtube.com/watch?v=ox8Q6YGqC3I</p>
+<p>• https://www.youtube.com/watch?v=Sl82PDYjXK0</p>
+<p>Cursos en línea para uso de software R (ambos en inglés y con modalidad gratuita y pagada)</p>
+<p>• https://www.coursera.org/specializations/jhu-data-science</p>
+<p>• https://www.datacamp.com/courses</p>
+<p>Bases de datos de interés</p>
+<p>• http://www.bcentral.cl/index.asp</p>
+<p>• http://www.cepchile.cl/dms/lang_1/home.html</p>
+<p>• http://www.cepal.org/es</p>
+<p>• https://coes.cl/encuesta-panel/</p>
+<p>• http://www.cl.undp.org/</p>
+<p>• http://datos.bancomundial.org/</p>
+<p>• http://www.ilo.org/stat/lang–es/index.htm</p>
+<p>• http://www.ine.cl/</p>
+<p>• http://www.nudesoc.cl/</p>
+<p>• http://stats.oecd.org/</p>
+<p>• http://observatorio.ministeriodesarrollosocial.gob.cl/casen_obj.php</p>
+<p>• https://ourworldindata.org/</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -363,9 +381,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -430,6 +462,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -472,7 +590,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by Andreas Laffert <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
+    <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by Kevin Carrasco &amp; Daniela Olivares <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
     <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/cursos-metodos-facso/descriptiva">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>

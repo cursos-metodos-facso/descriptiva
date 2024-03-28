@@ -23,15 +23,15 @@ csl: files/bib/chicago-author-date.csl
 
 website:
   title: "Estadística Descriptiva"
-  site-url: "https://descriptiva-facso.netlify.app"
+  site-url: "https://descriptiva-2024.netlify.app"
   #description: "Diseño, análisis, reporte y visualización de encuestas sociales"
   favicon: "/files/logo-removebg-preview.png"
 
   twitter-card:
     image: "/files/logo.png"
     card-style: summary_large_image
-    creator: "@andreaslaffert"
-    site: "@andreaslaffert"
+    creator: "@kevincarrascoq1"
+    site: "@kevincarrascoq1"
 
   open-graph:
     image: "/files/logo.png"
@@ -66,22 +66,20 @@ website:
             - class/index.qmd
         - section: "Sesiones"
           contents:
-            - text: "1: Presentación al curso"
-              file: class/01-class.qmd
-            - text: "2: Caracterización de la investigación cuantitativa"
-              file: class/02-class.qmd
-            - text: "3: Medición y operacionalización"
-              file: class/03-class.qmd
-            - text: "4: Manejo de bases de datos"
-              file: class/04-class.qmd
-            - text: "5: Descripción de los datos"
-              file: class/05-class.qmd
-            - text: "6: Función y distribución de variables"
-              file: class/06-class.qmd
-            - text: "7: Introducción a la inferencia estadística"
-              file: class/07-class.qmd
-
-
+#            - text: "1: Presentación al curso"
+#              file: class/01-class.qmd
+#            - text: "2: Caracterización de la investigación cuantitativa"
+#              file: class/02-class.qmd
+#           - text: "3: Medición y operacionalización"
+#              file: class/03-class.qmd
+#            - text: "4: Manejo de bases de datos"
+#              file: class/04-class.qmd
+#            - text: "5: Descripción de los datos"
+#              file: class/05-class.qmd
+#            - text: "6: Función y distribución de variables"
+#              file: class/06-class.qmd
+#            - text: "7: Introducción a la inferencia estadística"
+#             file: class/07-class.qmd
 
     - title: "Practicos"
       style: "docked"
@@ -95,20 +93,20 @@ website:
           contents:
             - text: "1: Introducción al lenguaje R"
               file: assignment/01-practico.qmd
-            - text: "2: Conocimientos básicos de programación en R"
-              file: assignment/02-practico.qmd
-            - text: "3: Procesamiento, limpieza y manipulación de datos en R"
-              file: assignment/03-practico.qmd
-            - text: "4: Análisis descriptivo de datos en R"
-              file: assignment/04-practico.qmd
-            - text: "5: Procesamiento y análisis de datos en R"
-              file: assignment/05-practico.qmd
-            - text: "6: Visualización de datos con R"
-              file: assignment/06-practico.qmd
-            - text: "7: Forma de una distribución"
-              file: assignment/07-practico.qmd
-            - text: "8: Inferencia estadística univariada"
-              file: assignment/08-practico.qmd
+#            - text: "2: Conocimientos básicos de programación en R"
+#              file: assignment/02-practico.qmd
+#            - text: "3: Procesamiento, limpieza y manipulación de datos en R"
+#              file: assignment/03-practico.qmd
+#            - text: "4: Análisis descriptivo de datos en R"
+#              file: assignment/04-practico.qmd
+#            - text: "5: Procesamiento y análisis de datos en R"
+#              file: assignment/05-practico.qmd
+#            - text: "6: Visualización de datos con R"
+#              file: assignment/06-practico.qmd
+#            - text: "7: Forma de una distribución"
+#              file: assignment/07-practico.qmd
+#            - text: "8: Inferencia estadística univariada"
+#              file: assignment/08-practico.qmd
 
     - title: "Recursos"
       style: "docked"
@@ -127,12 +125,9 @@ website:
           file: resource/04-resource.qmd
 
 
-
-
-
   page-footer:
     left: |
-      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by Andreas Laffert <br>
+      Content {{< fa brands creative-commons >}} {{< var course.copyright_year >}} by Kevin Carrasco & Daniela Olivares <br>
       All content licensed under a {{< fa brands creative-commons >}}
       {{< fa brands creative-commons-by >}} {{< fa brands creative-commons-nc >}}
       [Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)

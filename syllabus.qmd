@@ -87,7 +87,7 @@ Al finalizar el curso, los estudiantes serán capaces de:
 
 ● Manejo y depuración de datos y bases de datos.
 
-● Aspectos éticos
+● Aspectos éticos y posibilidades de investigación en la era de los datos no estructurados.
 
 ### UNIDAD II. La descripción de los datos: Medidas de tendencia central, dispersión y posición.
 
@@ -143,37 +143,24 @@ La asignatura se desarrollará a través de:
 
 - Un Laboratorio de Análisis de Datos (LAB) a cargo del profesor y Equipo Docente. Se realizarán ejercicios prácticos de procesamiento, análisis e interpretación de resultados mediante diversos softwares de análisis estadístico (Excel, Spss y R, fundamentalmente). En ellos los y las estudiantes aprenderán a interpretar sociológicamente datos provenientes de múltiples fuentes, visualizar datos en forma gráfica, así como elaborar reportes de resultados.
 
-- Finalmente, se realizarán sesiones de ayudantía específicas para reforzamiento de contenidos y del trabajo del Laboratorio de Análisis de Datos.
+- Finalmente, se realizarán sesiones de ayudantía específicas por grupo de trabajo para reforzamiento de contenidos y del trabajo del Laboratorio de Análisis de Datos.
 
 - Se reforzarán los contenidos con la entrega de material audiovisual y tutoriales
 
 ## Evaluación
 
-Durante el transcurso de la asignatura (y en el marco del Laboratorio de Análisis de Datos) se realizará un Trabajo de Taller Colectivo (con 2 entregas a lo largo del semestre) y 3 Tareas Individuales.
+•	Podrán eximirse del examen aquellos estudiantes con promedio final igual o superior a 5.0.
 
-● Los grupos de Taller Colectivo (de cuatro estudiantes) tendrán asignado un/a ayudante que acompañará el proceso durante todo el semestre. Las dos entregas del taller valdrán un 30% de la nota final (60% por los talleres colectivos).
+•	Examen de Primera Oportunidad: lo podrán rendir quienes tengan nota igual o superior a 3.5 habiendo rendido todas las evaluaciones parciales.
 
-● Se realizarán 3 Tareas Individuales. Cada tarea individual valdrá un 13,3% de la nota final (40% en total por las tareas individuales).
+•	Examen de Segunda oportunidad: lo podrán rendir quienes tengan nota inferior a 3.5, no hayan rendido alguna evaluación parcial o hayan reprobado el curso luego de rendir el examen de primera oportunidad.
 
-Para cautelar que se logren los resultados de aprendizaje, en los Talleres Colectivos los estudiantes deberán incluir reflexiones respecto de la utilidad de la estadística para la comprensión de los temas sociológicamente relevantes que estarán analizando. Por otro parte, tanto en los Talleres Colectivos como en las Tareas Individuales los estudiantes deberán demostrar su manejo de las herramientas estadísticas e informáticas enseñadas durante el curso y producir una conclusión sustantiva sobre los datos que estén procesando, con lo que se evaluarán los resultados de aprendizaje 2 y 3.
+•	Aprobarán el curso quiénes obtengan un promedio final igual o superior a 4.0.
 
-## Requisitos de aprobación
+Las situaciones no cubiertas por este programa se resolverán por las disposiciones existentes en el Reglamento General de Estudios de Pregrado de la Facultad de Ciencias Sociales (Decreto Exento Nº0045106 del 24 de noviembre de 2017).
 
-ASISTENCIA: Se establece una asistencia de al menos el 50% de las clases. La asistencia habilita al estudiante a presentarse al examen de primera oportunidad.
+Por último, se advierte que todo acto que falte a la ética e integridad académica, será sancionado a partir de las medidas establecidas en los reglamentos existentes en la Universidad de Chile, y que velan por asegurar la calidad en la formación académica.
 
-NOTA DE APROBACIÓN MÍNIMA (Escala de 1.0 a 7.0): 4.0
-
-NOTA DE EXIMICIÓN MÍNIMA: 5.0
-
-REQUISITOS PARA PRESENTACIÓN A EXAMEN:
-
-Para presentarse al examen de primera oportunidad debe cumplir con:
-- Nota de presentación igual o superior a 3.5
-- Al menos un 50% de asistencia.
-El estudiante se presentará al examen de segunda oportunidad en los siguientes casos:
-- Nota final inferior a 3.5
-- Haber reprobado el curso luego de rendir el examen de primera oportunidad
-- No cumplimiento del mínimo de asistencia establecido en el programa (50%).
 
 ## Palabras Clave 
 
@@ -193,7 +180,8 @@ El estudiante se presentará al examen de segunda oportunidad en los siguientes 
 ● Asún, R. (2006). Medir la Realidad Social: el sentido de la investigación cuantitativa. En: M. Canales (Ed.). Metodologías de Investigación Social (pp. 29-60). Santiago de Chile: LOM.
 21. 
 
-### Bibliografía Complementaria
+## Bibliografía Complementaria
+
 ● Field, A. (2009). Discovering Statistics Using IBM SPSS. California: SAGE Publications. Disponible online en: http://www.soc.univ.kiev.ua/sites/default/files/library/elopen/andyfield-discovering-statistics-using-spss-third-edition-20091.pdf
 
 ● Field, A., Miles, J. y Field, Z. (2012) Discovering Statistics Using R. California: SAGE Publications.
@@ -219,4 +207,48 @@ El estudiante se presentará al examen de segunda oportunidad en los siguientes 
 ● Urdines, F. & Cruz, A. (2019). Analiza R Datos Políticos. Instituto de Ciencia Política de la Universidad Católica de Chile. Disponible en línea: https://arcruz0.github.io/
 
 ● Wickham, H. (2015). ggplot2: Elegant Graphics for Data Analysis. Disponible en línea en: https://ggplot2-book.org/. Springer.
+
+## Recursos web
+
+Tutoriales online para uso de software R (en español)
+
+•	https://www.youtube.com/playlist?list=PLccec9enm1CwAZXr9bv92QQ-f_-lVx0ts
+
+•	https://www.youtube.com/watch?v=ox8Q6YGqC3I
+
+•	https://www.youtube.com/watch?v=Sl82PDYjXK0
+
+Cursos en línea para uso de software R (ambos en inglés y con modalidad gratuita y 
+pagada)
+
+•	https://www.coursera.org/specializations/jhu-data-science
+
+•	https://www.datacamp.com/courses
+
+Bases de datos de interés
+
+•	http://www.bcentral.cl/index.asp
+
+•	http://www.cepchile.cl/dms/lang_1/home.html
+
+•	http://www.cepal.org/es
+
+•	https://coes.cl/encuesta-panel/
+
+•	http://www.cl.undp.org/
+
+•	http://datos.bancomundial.org/
+
+•	http://www.ilo.org/stat/lang--es/index.htm
+
+•	http://www.ine.cl/
+
+•	http://www.nudesoc.cl/
+
+•	http://stats.oecd.org/
+
+•	http://observatorio.ministeriodesarrollosocial.gob.cl/casen_obj.php
+
+•	https://ourworldindata.org/
+
 
