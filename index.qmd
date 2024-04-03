@@ -94,7 +94,7 @@ Kevin Carrasco
 
 - {{< fa university >}} &nbsp; **Lunes 8:30-10:00** - Aulario B/1
 
-- {{< fa computer >}} &nbsp; **Miércoles 8:30-10:00** Online 
+- {{< fa computer >}} &nbsp; **Miércoles 8:30-10:00** - Aulario B/1 y Sala 45 facso
 
 :::
 

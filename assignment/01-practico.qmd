@@ -1,6 +1,6 @@
 ---
 title: "Práctica 1. Introducción al lenguaje R"
-date: "2023-04-13"
+date: "2024-04-03"
 lang: es
 output:
   number_sections: true
@@ -40,11 +40,6 @@ knitr::include_graphics("../images/erre.gif", error = FALSE)
 ```
 
 Al momento de abrir RStudio por primera vez puede que nos asustemos, pues es un entorno nuevo lleno de posibilidades en donde todavía no conocemos mucho. 
-
-```{r echo=FALSE, warning=FALSE, out.width="50%", fig.align='center'}
-
-knitr::include_graphics("../images/the-office.gif", error = FALSE)
-```
 
 **¡Pero que no cunda el pánico!** ya que estas posibilidades son nuevas oportunidades de aprendizaje en un software libre, gratuito y cada vez más utilizado en las ciencias sociales. ¿Nos vamos a equivocar? Claro que sí, y esperemos que así sea pues más aprenderemos. 
 
@@ -230,4 +225,4 @@ Hoy aprendimos a procesar datos en R. En detalle, vimos:
 
 ## Presentación de la clase
 
-- [{{< fa file-archive >}} Presentación Sesión 1.pdf](/projects/ppt.pdf)
+- [{{< fa file-archive >}} Presentación Sesión 1.pdf](/projects/ED_2024.pdf)
