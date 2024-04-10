@@ -93,8 +93,8 @@ website:
           contents:
             - text: "1: Introducción al lenguaje R"
               file: assignment/01-practico.qmd
-#            - text: "2: Conocimientos básicos de programación en R"
-#              file: assignment/02-practico.qmd
+            - text: "2: Conocimientos básicos de programación en R"
+              file: assignment/02-practico.qmd
 #            - text: "3: Procesamiento, limpieza y manipulación de datos en R"
 #              file: assignment/03-practico.qmd
 #            - text: "4: Análisis descriptivo de datos en R"

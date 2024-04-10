@@ -196,7 +196,6 @@ Para responder esta pregunta, ¡metamos nuestras manos en los datos!. En esta op
 load(url("https://github.com/Andreas-Lafferte/descriptiva/blob/main/data/db-proc.RData?raw=true"))
 
 head(rand_df) # ver primeros casos de la base
-
 ```
 
 
@@ -208,7 +207,6 @@ Para conocer cuál es el tipo de variable en R, utilizamos el comando `class()`,
 
 ```{r, collapse=FALSE}
 class(rand_df$pais) # siempre es la misma estructura = base$variable
-
 ```
 
 Sin embargo, estas variables no tienden a ser las mejores a la hora de presentar nuestros resultados. Como solución, tenemos las variables de tipo Factor.
@@ -234,6 +232,54 @@ class(rand_df$edad)
 
 ```
 
+## 4. Cargar librerías
+
+En R se trabaja a partir de paquetes (packages). ¿Qué son? De forma resumida, los paquetes son un conjunto de funciones o herramientas que pueden ser usadas en R. Los directorios de R donde se almacenan los paquetes se denominan librerías. La lógica es instalar paquetes y luego cargar (o llamar) las librerías cada vez que es necesario usarlas.
+
+Usualmente para cargar paquetes lo hacemos de la siguiente manera:
+
+```{r eval=FALSE, include=TRUE}
+install.packages("paquete")
+library(paquete)
+```
+
+Pero en esta ocasión utilizaremos un paquete llamado **pacman**, que facilita y agiliza la lectura (instalación y carga) de los paquetes a utilizar en R. De esta forma lo instalamos 1 única vez así:
+
+```{r eval=FALSE, include=TRUE}
+install.packages("pacman")
+library(pacman)
+```
+
+Luego instalaremos y cargaremos los paquetes de R de la siguiente manera, volviendo más eficiente el procedimiento de carga de paquetes.
+
+En este práctico utilizaremos seis paquetes
+
+1.  `pacman`: este facilita y agiliza la lectura de los paquetes a utilizar en R
+
+2.  `tidyverse`: colección de paquetes, de la cual utilizaremos dplyr y haven
+
+3.  `dplyr`: nos permite seleccionar variables de un set de datos
+
+4.  `haven`: cargar y exportar bases de datos en formatos .sav y .dta
+
+5.  `car`: para recodificar/agrupar valores de variables
+
+
+```{r echo=TRUE}
+pacman::p_load(tidyverse, # colección de paquetes para manipulación de datos
+               dplyr, # para manipular datos
+               haven, # para importar datos
+               car # para recodificar datos
+               )
+
+options(scipen = 999) # para desactivar notacion cientifica
+rm(list = ls()) # para limpiar el entorno de trabajo
+```
+
+
+Como se puede ver, antes de la función p_load hay un `::`, esto se refiere a que se “fuerza” que esa función provenga de ese paquete (en este caso del paquete `pacman`). 
+
+
 # Resumen
 
 Hoy aprendimos distintas herramientas básicas para utilizar el lenguaje y ambiente R. Como resumen:
@@ -244,10 +290,4 @@ Hoy aprendimos distintas herramientas básicas para utilizar el lenguaje y ambie
 
 - Tipos de datos en R como variables cualitativas (character o factor) y cuantitativas (numeric)
 
-## Video de clase
 
-<div style="width: 100%; height: 600px; overflow: hidden;">
-<video  style="width: 100%;" controls>
-<source src="https://www.dropbox.com/s/ruqc21ldnfua6rc/video-sesion01-LAB.mp4?raw=1" type="video/mp4">
-</video>
-</div>
