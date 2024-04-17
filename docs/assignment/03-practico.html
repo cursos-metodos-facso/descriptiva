@@ -112,7 +112,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="twitter:image-width" content="500">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -142,7 +142,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignment/index.html" rel="" target="">
+    <a class="nav-link active" href="../assignment/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Prácticos</span></a>
   </li>  
   <li class="nav-item">
@@ -164,10 +164,73 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignment/01-practico.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../assignment/03-practico.html">3: Procesamiento, limpieza y manipulación de datos en R</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Información general</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Laboratorio de Análisis de Datos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Sesiones</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/01-practico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1: Introducción al lenguaje R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/02-practico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2: Conocimientos básicos de programación en R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/03-practico.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">3: Procesamiento, limpieza y manipulación de datos en R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -178,7 +241,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#objetivo-de-la-práctica" id="toc-objetivo-de-la-práctica" class="nav-link" data-scroll-target="#objetivo-de-la-práctica">Objetivo de la práctica</a></li>
   <li><a href="#recursos-de-la-práctica" id="toc-recursos-de-la-práctica" class="nav-link" data-scroll-target="#recursos-de-la-práctica">Recursos de la práctica</a></li>
-  <li><a href="#flujo-de-trabajo-reproducible" id="toc-flujo-de-trabajo-reproducible" class="nav-link" data-scroll-target="#flujo-de-trabajo-reproducible">Flujo de trabajo reproducible</a></li>
   </ul></li>
   <li><a href="#procesamiento-de-datos" id="toc-procesamiento-de-datos" class="nav-link" data-scroll-target="#procesamiento-de-datos">Procesamiento de datos</a>
   <ul class="collapse">
@@ -196,15 +258,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#tratamiento-casos-pérdidos" id="toc-tratamiento-casos-pérdidos" class="nav-link" data-scroll-target="#tratamiento-casos-pérdidos">4.4 Tratamiento casos pérdidos</a></li>
   </ul></li>
   <li><a href="#transformar-variables" id="toc-transformar-variables" class="nav-link" data-scroll-target="#transformar-variables">5 Transformar variables</a></li>
-  <li><a href="#colocando-todo-en-práctica" id="toc-colocando-todo-en-práctica" class="nav-link" data-scroll-target="#colocando-todo-en-práctica">6 Colocando todo en práctica</a>
-  <ul class="collapse">
-  <li><a href="#a-seleccionemos-y-filtremos-datos-con" id="toc-a-seleccionemos-y-filtremos-datos-con" class="nav-link" data-scroll-target="#a-seleccionemos-y-filtremos-datos-con">a) Seleccionemos y filtremos datos con <code>%&gt;%</code></a></li>
-  <li><a href="#b-recodifiquemos-datos-y-eliminemos-nas-con" id="toc-b-recodifiquemos-datos-y-eliminemos-nas-con" class="nav-link" data-scroll-target="#b-recodifiquemos-datos-y-eliminemos-nas-con">b) Recodifiquemos datos y eliminemos <code>NAs</code> con <code>%&gt;%</code></a></li>
-  <li><a href="#c-transformemos-variables-con" id="toc-c-transformemos-variables-con" class="nav-link" data-scroll-target="#c-transformemos-variables-con">c) Transformemos variables con <code>%&gt;%</code></a></li>
-  </ul></li>
-  <li><a href="#guardar-y-exportar-datos-procesados" id="toc-guardar-y-exportar-datos-procesados" class="nav-link" data-scroll-target="#guardar-y-exportar-datos-procesados">7 Guardar y exportar datos procesados</a></li>
+  <li><a href="#guardar-y-exportar-datos-procesados" id="toc-guardar-y-exportar-datos-procesados" class="nav-link" data-scroll-target="#guardar-y-exportar-datos-procesados">6 Guardar y exportar datos procesados</a></li>
   <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
-  <li><a href="#video-de-clase" id="toc-video-de-clase" class="nav-link" data-scroll-target="#video-de-clase">Video de clase</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -238,27 +293,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>En esta práctica trabajaremos con un subset de los datos del Estudio Longitudinal Social de Chile (ELSOC) realizado por <a href="https://coes.cl/encuesta-panel/">COES</a>. Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace <a href="https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/input/data/ELSOC_W06_v1.0_SPSS.sav"><i class="fa-solid fa-table" aria-hidden="true"></i> <code>ELSOC 2022</code></a> podrán descargar el archivo que contiene la base ELSOC 2022.</p>
 <p>Recuerden que siempre es importante trabajar con el manual/libro de códigos de las bases de datos. El manual de la ELSOC 2022 lo pueden encontrar <a href="https://coes.cl/wp-content/uploads/Listado-de-Variables-ELSOC-2.xlsx">aquí</a>.</p>
 </section>
-<section id="flujo-de-trabajo-reproducible" class="level2">
-<h2 class="anchored" data-anchor-id="flujo-de-trabajo-reproducible">Flujo de trabajo reproducible</h2>
-<p>Por temas de orden y reproducibilidad, en este curso vamos a separar en dos momentos el trabajo con datos, y dos archivos de código correspondientes:</p>
-<ul>
-<li><p><strong>Preparación</strong>: corresponde a lo que se conoce generalmente como “limpieza”, es decir, realizar las modificaciones necesarias a los datos para poder efectuar los análisis. Estas modificaciones previas al análisis son necesarias ya que los datos originales con los que se va a trabajar en general no vienen perfectamente adaptados a los análisis que se quieren hacer. Por lo tanto, en cuanto a datos también hacemos la distinción entre datos originales y datos preparados (o procesados).</p></li>
-<li><p><strong>Análisis</strong>: se relaciona con análisis estadísticos, en este caso descriptivos, asociados a las preguntas e hipótesis de investigación.</p></li>
-</ul>
-<p><strong>Los procesos de preparación y análisis vinculados tanto a datos y resultados se presentan en el siguiente esquema:</strong></p>
-<p><img src="../images/image.png" class="img-fluid"></p>
-<p>Tanto la preparación como el análisis (que son parte del concepto más general de procesamiento) quedan registrados cada uno en un archivo de código respectivo.</p>
-<p>En esta guía nos centraremos en la <strong>preparación de datos</strong> con R. El documento de <strong>código de preparación</strong> tiene, por lo menos, 4 partes más una sección de identificación inicial:</p>
-<ol start="0" type="1">
-<li>Identificación y descripción general: Título, autor(es), fecha, información breve sobre el contenido del documento</li>
-<li>Librerías: instalar/cargar librerías a utilizar</li>
-<li>Datos: carga de datos</li>
-<li>Procesamiento: limpiar y transformar datos</li>
-<li>Guardar y exportar: generación de base de datos preparada para el análisis</li>
-</ol>
-<p>En la práctica, tu script debería (ojalá siempre) verse así:</p>
-<p><img src="../images/image (1).png" class="img-fluid"></p>
-</section>
 </section>
 <section id="procesamiento-de-datos" class="level1">
 <h1>Procesamiento de datos</h1>
@@ -283,34 +317,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>dplyr</code>: nos permite seleccionar variables de un set de datos</p></li>
 <li><p><code>haven</code>: cargar y exportar bases de datos en formatos .sav y .dta</p></li>
 <li><p><code>car</code>: para recodificar/agrupar valores de variables</p></li>
-<li><p><code>magrittr</code>: para manipular datos con <code>%&gt;%</code></p></li>
 </ol>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># colección de paquetes para manipulación de datos</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>               dplyr, <span class="co"># para manipular datos</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               haven, <span class="co"># para importar datos</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               car, <span class="co"># para recodificar datos</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>               magrittr)<span class="co"># para manipular datos</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               car) <span class="co"># para recodificar datos</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>               </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Como se puede ver, antes de la función p_load hay un <code>::</code>, esto se refiere a que se “fuerza” que esa función provenga de ese paquete (en este caso del paquete <code>pacman</code>).</p>
 </section>
 <section id="importar-datos" class="level2">
 <h2 class="anchored" data-anchor-id="importar-datos">2 Importar datos</h2>
 <p>En R es es posible importar y exportar datos que se encuentren en <em>cualquier formato</em>: ya sea .csv, .dta, .sav, .xlsx y, por supuesto, .rds y .RData. Sin embargo, para poder hacerlo lo primero es instalar y cargar las librerías que contienen las funciones necesarias para la importación de distintos tipos de archivos.</p>
-<p>Pero, ¿dónde están mis datos? Como hemos mencionado, nuestros datos los dejaremos en la carpeta <code>input/data</code> de nuestro proyecto. La base con la que trabajaremos en este práctico pueden encontrarla en el material docente en U-Cursos, o bien, en el siguiente <a href="https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/input/data/ELSOC_W06_v1.0_SPSS.sav">enlace</a>.</p>
+<p>Pero, ¿dónde están mis datos? Como hemos mencionado, nuestros datos los dejaremos en la carpeta <code>input/data</code> de nuestro proyecto. La base con la que trabajaremos en este práctico pueden encontrarla en el material docente en U-Cursos, o bien, en el siguiente <a href="https://github.com/cursos-metodos-facso/descriptiva/raw/main/assignment/Input/data/ELSOC_W06_v1.0_SPSS.sav">enlace</a>.</p>
 <p>Luego de descargar la base de datos, asegurate de dejar el archivo .sav en la carpeta <code>input/data</code> de tu proyecto. <strong>Nota</strong>: Los datos tendrán distinto nombre según su formato (.sav, .csv, .dta, etc.).</p>
 <p>Una vez descargados los datos y cargado el paquete <code>haven</code>, procedemos a importar nuestra base de datos. Para ello, en nuestro script, dejamos indicado que a partir de la lectura de los datos con <code>read_sav()</code>, crearemos un objeto llamado <code>elsoc_2022</code>. Fijate en el <em>Enviroment</em>, ya que si lo anterior se logra, el objeto aparecerá allí.</p>
 <p>La estructura general para importar datos es la siguiente:</p>
 <p><code>read_*("ruta_hacia_archivo/nombre_archivo.*")</code></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>elsoc_2022 <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"ELSOC W06 v1.0 SPSS.sav"</span>)  <span class="co"># No funciona</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>elsoc_2022 <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"input/data/ELSOC W06 v1.0 SPSS.sav"</span>) <span class="co"># No funciona</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>elsoc_2022 <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"input/data/ELSOC_W06_v1.0_SPSS.sav"</span>) <span class="co"># Si funciona!</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>elsoc_2022 <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"input/data/ELSOC_W06_v1.0_SPSS.sav"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -807,136 +835,12 @@ Nota
 </div>
 </section>
 </section>
-<section id="colocando-todo-en-práctica" class="level2">
-<h2 class="anchored" data-anchor-id="colocando-todo-en-práctica">6 Colocando todo en práctica</h2>
-<p>Otra de las venjatas de <code>dplyr()</code> es que nos permite <strong>concatenar</strong> funciones siguiendo la misma lógica de programación de izquiera a derecha. Esto lo hacemos a través de los <strong>pipes</strong> <code>%&gt;%</code>, que es un operador proveniente del paquete <code>magrittr</code>.</p>
-<p>Una función normal es igual a <code>f(x,y)</code>, en donde al elemento <code>y</code> del objeto <code>x</code> le aplicamos determinada función <code>f()</code>. Los <code>%&gt;%</code> simplifican funciones y concatenan códigos de la siguiente manera:</p>
-<p><code>x %&gt;% f(y)</code> es lo mismo que <code>f(x,y)</code>.</p>
-<p>Esto significa que el <code>%&gt;%</code> literalmente le dice a R que coloque al objeto <code>x</code> dentro de la función <code>f()</code>, para aplicarle dicha función a <code>y</code>. :::</p>
-<p><strong>Veamos cómo se ocupa y porqué simplifica la vida</strong></p>
-<section id="a-seleccionemos-y-filtremos-datos-con" class="level3">
-<h3 class="anchored" data-anchor-id="a-seleccionemos-y-filtremos-datos-con">a) Seleccionemos y filtremos datos con <code>%&gt;%</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> elsoc_2022 <span class="sc">%&gt;%</span> </span>
-<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(<span class="at">edad =</span> m0_edad,</span>
-<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">sexo =</span> m0_sexo,</span>
-<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a>                <span class="at">ingreso =</span> m13,</span>
-<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a>                <span class="at">autor_democ =</span> c25,</span>
-<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>                <span class="at">jv_delincuentes =</span> f05_01) <span class="sc">%&gt;%</span> </span>
-<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(edad <span class="sc">&gt;=</span> <span class="dv">25</span>)</span>
-<span id="cb40-8"><a href="#cb40-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb40-9"><a href="#cb40-9" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 980 × 5
-    edad sexo   ingreso autor_democ jv_delincuentes
-   &lt;dbl&gt; &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;           &lt;dbl&gt;
- 1    38 Hombre 4000000           1              NA
- 2    45 Mujer  2700000           1               3
- 3    42 Hombre  600000           3              NA
- 4    29 Hombre 1250000           1               1
- 5    53 Mujer   500000           2               3
- 6    52 Mujer       NA           3               2
- 7    50 Mujer       NA           2               5
- 8    57 Mujer        0           1               4
- 9    47 Mujer   600000           1               3
-10    79 Hombre      NA           2               1
-# ℹ 970 more rows</code></pre>
-</div>
-</div>
-</section>
-<section id="b-recodifiquemos-datos-y-eliminemos-nas-con" class="level3">
-<h3 class="anchored" data-anchor-id="b-recodifiquemos-datos-y-eliminemos-nas-con">b) Recodifiquemos datos y eliminemos <code>NAs</code> con <code>%&gt;%</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> proc_elsoc <span class="sc">%&gt;%</span> </span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">sexo =</span> car<span class="sc">::</span><span class="fu">recode</span>(sexo,</span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>                            <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"'Hombre' = 'Masculino'; 'Mujer' = 'Femenino'"</span>)),</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">ingreso =</span> car<span class="sc">::</span><span class="fu">recode</span>(ingreso, </span>
-<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>                               <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"-888 = NA; -999 = NA"</span>)),</span>
-<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">autor_democ =</span> car<span class="sc">::</span><span class="fu">recode</span>(autor_democ,</span>
-<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"1 = 'La democracia es preferible a cualquier otra forma de gobierno'; </span></span>
-<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a><span class="st">                            2 = 'En algunas circunstancias, un gobierno autoritario puede ser preferible a uno democratico'; </span></span>
-<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a><span class="st">                            3 = 'A la gente como uno, nos da lo mismo un regimen democratico que uno autoritario'; </span></span>
-<span id="cb42-10"><a href="#cb42-10" aria-hidden="true" tabindex="-1"></a><span class="st">                            4 = 'Ninguna'; </span></span>
-<span id="cb42-11"><a href="#cb42-11" aria-hidden="true" tabindex="-1"></a><span class="st">                            -888 = NA; </span></span>
-<span id="cb42-12"><a href="#cb42-12" aria-hidden="true" tabindex="-1"></a><span class="st">                            -999 = NA"</span>),</span>
-<span id="cb42-13"><a href="#cb42-13" aria-hidden="true" tabindex="-1"></a>                            <span class="at">as.factor =</span> <span class="cn">TRUE</span>), <span class="co"># convertir a factor</span></span>
-<span id="cb42-14"><a href="#cb42-14" aria-hidden="true" tabindex="-1"></a>         <span class="at">jv_delincuentes =</span> car<span class="sc">::</span><span class="fu">recode</span>(jv_delincuentes, </span>
-<span id="cb42-15"><a href="#cb42-15" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"1 = 'Nunca';</span></span>
-<span id="cb42-16"><a href="#cb42-16" aria-hidden="true" tabindex="-1"></a><span class="st">                                                    2 = 'Pocas veces';</span></span>
-<span id="cb42-17"><a href="#cb42-17" aria-hidden="true" tabindex="-1"></a><span class="st">                                                    3 = 'Algunas veces';</span></span>
-<span id="cb42-18"><a href="#cb42-18" aria-hidden="true" tabindex="-1"></a><span class="st">                                                    4 = 'Muchas veces';</span></span>
-<span id="cb42-19"><a href="#cb42-19" aria-hidden="true" tabindex="-1"></a><span class="st">                                                    5 = 'Siempre';</span></span>
-<span id="cb42-20"><a href="#cb42-20" aria-hidden="true" tabindex="-1"></a><span class="st">                                                    -888 = NA; </span></span>
-<span id="cb42-21"><a href="#cb42-21" aria-hidden="true" tabindex="-1"></a><span class="st">                                                   -999 = NA"</span>),</span>
-<span id="cb42-22"><a href="#cb42-22" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">as.factor =</span> <span class="cn">TRUE</span>, <span class="co"># convertir a factor</span></span>
-<span id="cb42-23"><a href="#cb42-23" aria-hidden="true" tabindex="-1"></a>                                       <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Nunca"</span>,</span>
-<span id="cb42-24"><a href="#cb42-24" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Pocas veces"</span>,</span>
-<span id="cb42-25"><a href="#cb42-25" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Algunas veces"</span>,</span>
-<span id="cb42-26"><a href="#cb42-26" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Muchas veces"</span>,</span>
-<span id="cb42-27"><a href="#cb42-27" aria-hidden="true" tabindex="-1"></a>                                                  <span class="st">"Siempre"</span>))) <span class="sc">%&gt;%</span> </span>
-<span id="cb42-28"><a href="#cb42-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>()</span>
-<span id="cb42-29"><a href="#cb42-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-30"><a href="#cb42-30" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 496 × 5
-    edad sexo      ingreso autor_democ                           jv_delincuentes
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
- 1    45 Femenino  2700000 La democracia es preferible a cualqu… Algunas veces  
- 2    29 Masculino 1250000 La democracia es preferible a cualqu… Nunca          
- 3    53 Femenino   500000 En algunas circunstancias, un gobier… Algunas veces  
- 4    57 Femenino        0 La democracia es preferible a cualqu… Muchas veces   
- 5    47 Femenino   600000 La democracia es preferible a cualqu… Algunas veces  
- 6    39 Masculino 1350000 La democracia es preferible a cualqu… Muchas veces   
- 7    42 Masculino 1100000 La democracia es preferible a cualqu… Muchas veces   
- 8    51 Masculino  800000 La democracia es preferible a cualqu… Nunca          
- 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo… Algunas veces  
-10    45 Femenino   500000 La democracia es preferible a cualqu… Nunca          
-# ℹ 486 more rows</code></pre>
-</div>
-</div>
-</section>
-<section id="c-transformemos-variables-con" class="level3">
-<h3 class="anchored" data-anchor-id="c-transformemos-variables-con">c) Transformemos variables con <code>%&gt;%</code></h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> proc_elsoc <span class="sc">%&gt;%</span> </span>
-<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">ano =</span> <span class="dv">2022</span>,</span>
-<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">tramo_edad =</span> <span class="fu">case_when</span>(edad <span class="sc">&lt;=</span> <span class="dv">29</span> <span class="sc">~</span> <span class="st">"Jovenes"</span>,</span>
-<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>                                edad <span class="sc">&gt;=</span> <span class="dv">30</span> <span class="sc">&amp;</span> edad <span class="sc">&lt;=</span> <span class="dv">59</span> <span class="sc">~</span> <span class="st">"Adultos"</span>,</span>
-<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a>                                edad <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">~</span> <span class="st">"Adutos mayores"</span>),</span>
-<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>         <span class="at">tramo_ingreso =</span> <span class="fu">case_when</span>(ingreso <span class="sc">&lt;=</span> <span class="dv">250000</span> <span class="sc">~</span> <span class="st">"Tramo 1"</span>,</span>
-<span id="cb44-7"><a href="#cb44-7" aria-hidden="true" tabindex="-1"></a>                                   ingreso <span class="sc">&gt;</span> <span class="dv">250000</span> <span class="sc">&amp;</span> ingreso <span class="sc">&lt;=</span> <span class="dv">500000</span> <span class="sc">~</span> <span class="st">"Tramo 2"</span>,</span>
-<span id="cb44-8"><a href="#cb44-8" aria-hidden="true" tabindex="-1"></a>                                   ingreso <span class="sc">&gt;</span> <span class="dv">500000</span> <span class="sc">&amp;</span> ingreso <span class="sc">&lt;=</span> <span class="dv">750000</span> <span class="sc">~</span> <span class="st">"Tramo 3"</span>,</span>
-<span id="cb44-9"><a href="#cb44-9" aria-hidden="true" tabindex="-1"></a>                                   ingreso <span class="sc">&gt;</span> <span class="dv">750000</span> <span class="sc">&amp;</span> ingreso <span class="sc">&lt;=</span> <span class="dv">1000000</span> <span class="sc">~</span> <span class="st">"Tramo 4"</span>,</span>
-<span id="cb44-10"><a href="#cb44-10" aria-hidden="true" tabindex="-1"></a>                                   ingreso <span class="sc">&gt;</span> <span class="dv">1000000</span> <span class="sc">~</span> <span class="st">"Tramo 5"</span>),</span>
-<span id="cb44-11"><a href="#cb44-11" aria-hidden="true" tabindex="-1"></a>         <span class="at">ingreso_minimo =</span> <span class="fu">if_else</span>(ingreso <span class="sc">&lt;</span> <span class="dv">410000</span>, <span class="st">"debajo minimo"</span>, <span class="st">"sobre minimo"</span>))</span>
-<span id="cb44-12"><a href="#cb44-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb44-13"><a href="#cb44-13" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 496 × 9
-    edad sexo      ingreso autor_democ          jv_delincuentes   ano tramo_edad
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                &lt;fct&gt;           &lt;dbl&gt; &lt;chr&gt;     
- 1    45 Femenino  2700000 La democracia es pr… Algunas veces    2022 Adultos   
- 2    29 Masculino 1250000 La democracia es pr… Nunca            2022 Jovenes   
- 3    53 Femenino   500000 En algunas circunst… Algunas veces    2022 Adultos   
- 4    57 Femenino        0 La democracia es pr… Muchas veces     2022 Adultos   
- 5    47 Femenino   600000 La democracia es pr… Algunas veces    2022 Adultos   
- 6    39 Masculino 1350000 La democracia es pr… Muchas veces     2022 Adultos   
- 7    42 Masculino 1100000 La democracia es pr… Muchas veces     2022 Adultos   
- 8    51 Masculino  800000 La democracia es pr… Nunca            2022 Adultos   
- 9    38 Masculino 1600000 A la gente como uno… Algunas veces    2022 Adultos   
-10    45 Femenino   500000 La democracia es pr… Nunca            2022 Adultos   
-# ℹ 486 more rows
-# ℹ 2 more variables: tramo_ingreso &lt;chr&gt;, ingreso_minimo &lt;chr&gt;</code></pre>
-</div>
-</div>
-</section>
-</section>
 <section id="guardar-y-exportar-datos-procesados" class="level2">
-<h2 class="anchored" data-anchor-id="guardar-y-exportar-datos-procesados">7 Guardar y exportar datos procesados</h2>
+<h2 class="anchored" data-anchor-id="guardar-y-exportar-datos-procesados">6 Guardar y exportar datos procesados</h2>
 <p><strong>¡Legamos al final!</strong> El último paso que nos queda es guardar y exportar nuestra base de datos procesada. Siguiendo el flujo de trabajo propuesto, guardaremos la base procesada en formato .Rdata y la alojaremos en la carpeta <code>output</code> de nuestro proyecto.</p>
 <p>Este último paso es bastante sencillo, solo debemos especificar la base que queremos guadar y su ruta:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(proc_elsoc, <span class="at">file =</span> <span class="st">"output/datos_proc.Rdata"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">saveRDS</span>(proc_elsoc, <span class="at">file =</span> <span class="st">"output/datos_proc.Rdata"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="resumen" class="level2">
@@ -947,19 +851,8 @@ Nota
 <li><p>Instalar y cargar paquetes y librerías, así como también leer bases de datos en R.</p></li>
 <li><p>Limpiar, transformar y exportar bases de datos en R.</p></li>
 </ol>
-</section>
-<section id="video-de-clase" class="level2">
-<h2 class="anchored" data-anchor-id="video-de-clase">Video de clase</h2>
-<section id="primer-bloque" class="level4">
-<h4 class="anchored" data-anchor-id="primer-bloque">Primer bloque</h4>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/fESt6tGNH0U" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-</section>
-<section id="segundo-bloque" class="level4">
-<h4 class="anchored" data-anchor-id="segundo-bloque">Segundo bloque</h4>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/2Z2KYScppPA" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 
 
-</section>
 </section>
 </section>
 

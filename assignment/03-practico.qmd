@@ -30,33 +30,6 @@ En esta práctica trabajaremos con un subset de los datos del Estudio Longitudin
 
 Recuerden que siempre es importante trabajar con el manual/libro de códigos de las bases de datos. El manual de la ELSOC 2022 lo pueden encontrar [aquí](https://coes.cl/wp-content/uploads/Listado-de-Variables-ELSOC-2.xlsx).
 
-## Flujo de trabajo reproducible
-
-Por temas de orden y reproducibilidad, en este curso vamos a separar en dos momentos el trabajo con datos, y dos archivos de código correspondientes:
-
--   **Preparación**: corresponde a lo que se conoce generalmente como "limpieza", es decir, realizar las modificaciones necesarias a los datos para poder efectuar los análisis. Estas modificaciones previas al análisis son necesarias ya que los datos originales con los que se va a trabajar en general no vienen perfectamente adaptados a los análisis que se quieren hacer. Por lo tanto, en cuanto a datos también hacemos la distinción entre datos originales y datos preparados (o procesados).
-
--   **Análisis**: se relaciona con análisis estadísticos, en este caso descriptivos, asociados a las preguntas e hipótesis de investigación.
-
-**Los procesos de preparación y análisis vinculados tanto a datos y resultados se presentan en el siguiente esquema:**
-
-![](../images/image.png)
-
-Tanto la preparación como el análisis (que son parte del concepto más general de procesamiento) quedan registrados cada uno en un archivo de código respectivo.
-
-En esta guía nos centraremos en la **preparación de datos** con R. El documento de **código de preparación** tiene, por lo menos, 4 partes más una sección de identificación inicial:
-
-0.  Identificación y descripción general: Título, autor(es), fecha, información breve sobre el contenido del documento
-1.  Librerías: instalar/cargar librerías a utilizar
-2.  Datos: carga de datos
-3.  Procesamiento: limpiar y transformar datos
-4.  Guardar y exportar: generación de base de datos preparada para el análisis
-
-En la práctica, tu script debería (ojalá siempre) verse así:
-
-![](../images/image%20(1).png)
-
-
 # Procesamiento de datos
 
 ## 1 Cargar librerías
@@ -91,17 +64,13 @@ En este práctico utilizaremos seis paquetes
 
 5.  `car`: para recodificar/agrupar valores de variables
 
-6.  `magrittr`: para manipular datos con `%>%` 
-
-
 
 ```{r echo=TRUE}
 pacman::p_load(tidyverse, # colección de paquetes para manipulación de datos
                dplyr, # para manipular datos
                haven, # para importar datos
-               car, # para recodificar datos
-               magrittr)# para manipular datos
-
+               car) # para recodificar datos
+               
 options(scipen = 999) # para desactivar notacion cientifica
 rm(list = ls()) # para limpiar el entorno de trabajo
 ```
@@ -114,7 +83,7 @@ Como se puede ver, antes de la función p_load hay un `::`, esto se refiere a qu
 
 En R es es posible importar y exportar datos que se encuentren en *cualquier formato*: ya sea .csv, .dta, .sav, .xlsx y, por supuesto, .rds y .RData. Sin embargo, para poder hacerlo lo primero es instalar y cargar las librerías que contienen las funciones necesarias para la importación de distintos tipos de archivos.
 
-Pero, ¿dónde están mis datos? Como hemos mencionado, nuestros datos los dejaremos en la carpeta `input/data` de nuestro proyecto. La base con la que trabajaremos en este práctico pueden encontrarla en el material docente en U-Cursos, o bien, en el siguiente [enlace](https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/input/data/ELSOC_W06_v1.0_SPSS.sav). 
+Pero, ¿dónde están mis datos? Como hemos mencionado, nuestros datos los dejaremos en la carpeta `input/data` de nuestro proyecto. La base con la que trabajaremos en este práctico pueden encontrarla en el material docente en U-Cursos, o bien, en el siguiente [enlace](https://github.com/cursos-metodos-facso/descriptiva/raw/main/assignment/Input/data/ELSOC_W06_v1.0_SPSS.sav). 
 
 Luego de descargar la base de datos, asegurate de dejar el archivo .sav en la carpeta `input/data` de tu proyecto. **Nota**: Los datos tendrán distinto nombre según su formato (.sav, .csv, .dta, etc.).
 
@@ -132,11 +101,7 @@ elsoc_2022 <- haven::read_sav("input/data/ELSOC_W06_v1.0_SPSS.sav")
 
 
 ```{r eval=FALSE, include=TRUE}
-elsoc_2022 <- read_sav("ELSOC W06 v1.0 SPSS.sav")  # No funciona
-
-elsoc_2022 <- read_sav("input/data/ELSOC W06 v1.0 SPSS.sav") # No funciona
-
-elsoc_2022 <- read_sav("input/data/ELSOC_W06_v1.0_SPSS.sav") # Si funciona!
+elsoc_2022 <- read_sav("input/data/ELSOC_W06_v1.0_SPSS.sav")
 
 ```
 
@@ -441,93 +406,8 @@ proc_elsoc <- mutate(proc_elsoc,
 select(proc_elsoc, ingreso, ingreso_minimo) #veamosla!
 ```
 
-## 6 Colocando todo en práctica
 
-
-Otra de las venjatas de `dplyr()` es que nos permite **concatenar** funciones siguiendo la misma lógica de programación de izquiera a derecha. Esto lo hacemos a través de los **pipes** ` %>% `, que es un operador proveniente del paquete `magrittr`. 
-
-Una función normal es igual a `f(x,y)`, en donde al elemento `y` del objeto `x` le aplicamos determinada función `f()`. Los ` %>% ` simplifican funciones y concatenan códigos de la siguiente manera:
-
-`x %>% f(y)` es lo mismo que `f(x,y)`.
-
-Esto significa que el ` %>% ` literalmente le dice a R que coloque al objeto `x` dentro de la función `f()`, para aplicarle dicha función a `y`.
-:::
-
-**Veamos cómo se ocupa y porqué simplifica la vida**
-
-
-### a) Seleccionemos y filtremos datos con ` %>% `
-
-```{r eval=TRUE, include=TRUE}
-proc_elsoc <- elsoc_2022 %>% 
-  dplyr::select(edad = m0_edad,
-                sexo = m0_sexo,
-                ingreso = m13,
-                autor_democ = c25,
-                jv_delincuentes = f05_01) %>% 
-  dplyr::filter(edad >= 25)
-
-proc_elsoc
-```
-
-
-### b) Recodifiquemos datos y eliminemos `NAs` con ` %>% `
-
-```{r eval=TRUE, include=TRUE, warning=FALSE}
-
-proc_elsoc <- proc_elsoc %>% 
-  mutate(sexo = car::recode(sexo,
-                            recodes = c("'Hombre' = 'Masculino'; 'Mujer' = 'Femenino'")),
-         ingreso = car::recode(ingreso, 
-                               recodes = c("-888 = NA; -999 = NA")),
-         autor_democ = car::recode(autor_democ,
-                                   recodes = c("1 = 'La democracia es preferible a cualquier otra forma de gobierno'; 
-                            2 = 'En algunas circunstancias, un gobierno autoritario puede ser preferible a uno democratico'; 
-                            3 = 'A la gente como uno, nos da lo mismo un regimen democratico que uno autoritario'; 
-                            4 = 'Ninguna'; 
-                            -888 = NA; 
-                            -999 = NA"),
-                            as.factor = TRUE), # convertir a factor
-         jv_delincuentes = car::recode(jv_delincuentes, 
-                                       recodes = c("1 = 'Nunca';
-                                                    2 = 'Pocas veces';
-                                                    3 = 'Algunas veces';
-                                                    4 = 'Muchas veces';
-                                                    5 = 'Siempre';
-                                                    -888 = NA; 
-                                                   -999 = NA"),
-                                       as.factor = TRUE, # convertir a factor
-                                       levels = c("Nunca",
-                                                  "Pocas veces",
-                                                  "Algunas veces",
-                                                  "Muchas veces",
-                                                  "Siempre"))) %>% 
-  na.omit()
-
-proc_elsoc
-```
-
-### c)  Transformemos variables con ` %>% `
-
-```{r eval=TRUE, include=TRUE}
-
-proc_elsoc <- proc_elsoc %>% 
-  mutate(ano = 2022,
-         tramo_edad = case_when(edad <= 29 ~ "Jovenes",
-                                edad >= 30 & edad <= 59 ~ "Adultos",
-                                edad >= 60 ~ "Adutos mayores"),
-         tramo_ingreso = case_when(ingreso <= 250000 ~ "Tramo 1",
-                                   ingreso > 250000 & ingreso <= 500000 ~ "Tramo 2",
-                                   ingreso > 500000 & ingreso <= 750000 ~ "Tramo 3",
-                                   ingreso > 750000 & ingreso <= 1000000 ~ "Tramo 4",
-                                   ingreso > 1000000 ~ "Tramo 5"),
-         ingreso_minimo = if_else(ingreso < 410000, "debajo minimo", "sobre minimo"))
-
-proc_elsoc
-
-```
-
-## 7 Guardar y exportar datos procesados
+## 6 Guardar y exportar datos procesados
 
 **¡Legamos al final!** El último paso que nos queda es guardar y exportar nuestra base de datos procesada. Siguiendo el flujo de trabajo propuesto, guardaremos la base procesada en formato .Rdata y la alojaremos en la carpeta `output` de nuestro proyecto.
 
@@ -548,12 +428,3 @@ Hoy aprendimos a procesar datos en R. En detalle, vimos:
 
 3.  Limpiar, transformar y exportar bases de datos en R.
 
-## Video de clase
-
-#### Primer bloque
-
-{{< video https://youtu.be/fESt6tGNH0U >}}
-
-#### Segundo bloque
-
-{{< video https://youtu.be/2Z2KYScppPA >}}
