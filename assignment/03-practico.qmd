@@ -259,12 +259,6 @@ El comando `recode()` generalmente sigue esta estructura:
 `car::recode(datos$variable, recodes = c('valor_orig1=nuevo_valor1;valor_org2=nuevo_valor2'))`
 :::
 
-A diferencia de R base, con la función `mutate()` de `dplyr` podemos recodificar todas nuestras variables en un solo código si así lo queremos. Además, nos ahorramos especificar en todo momento la base de datos, ya que esa es la lógica de programación con `dplyr()`. 
-
-La estructura de `mutate()` es generalmente esta:
-
-`dplyr::mutate(datos, nueva_variable = funcion())`
-
 Recodifiquemos las variables sexo e ingresos:
 
 ```{r collapse=FALSE, warning=FALSE}
@@ -352,7 +346,13 @@ proc_elsoc
 
 Un último paso en el procesamiento de datos es la **creación** o derivación de nuevas variables a partir de los datos que ya tenemos. Esto es relevante no solo para procesar datos, sino porque permite generar variables que se alineen mucho mejor con nuestros objetivos de análisis. 
 
-La función `mutate()` de `dplyr` no solo nos permite recodificar variables, sino que también _crear_ otras nuevas manteniendo las originales. Para este ejemplo usaremos dos funciones adicionales de `dplyr` que, al combinarlas con `mutate()`, podremos transformar variables de manera muy sencilla. 
+A diferencia de R base, con la función `mutate()` de `dplyr` podemos recodificar todas nuestras variables en un solo código si así lo queremos. Además, nos ahorramos especificar en todo momento la base de datos, ya que esa es la lógica de programación con `dplyr()`. 
+
+La estructura de `mutate()` es generalmente esta:
+
+`dplyr::mutate(datos, nueva_variable = funcion())`
+
+Además, la función `mutate()` de `dplyr` no solo nos permite recodificar variables, sino que también _crear_ otras nuevas manteniendo las originales. Para este ejemplo usaremos dos funciones adicionales de `dplyr` que, al combinarlas con `mutate()`, podremos transformar variables de manera muy sencilla. 
 
 En este ejemplo, transformaremos las variables `edad` e `ingresos`, y crearemos una nueva variable llamada `año` de la encuesta y otra llamada `ingreso_minimo`. 
 

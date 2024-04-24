@@ -607,9 +607,6 @@ Tip
 <p><code>car::recode(datos$variable, recodes = c('valor_orig1=nuevo_valor1;valor_org2=nuevo_valor2'))</code></p>
 </div>
 </div>
-<p>A diferencia de R base, con la función <code>mutate()</code> de <code>dplyr</code> podemos recodificar todas nuestras variables en un solo código si así lo queremos. Además, nos ahorramos especificar en todo momento la base de datos, ya que esa es la lógica de programación con <code>dplyr()</code>.</p>
-<p>La estructura de <code>mutate()</code> es generalmente esta:</p>
-<p><code>dplyr::mutate(datos, nueva_variable = funcion())</code></p>
 <p>Recodifiquemos las variables sexo e ingresos:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc<span class="sc">$</span>sexo <span class="ot">&lt;-</span> car<span class="sc">::</span><span class="fu">recode</span>(proc_elsoc<span class="sc">$</span>sexo, <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"'Hombre' = 'Masculino'; 'Mujer' = 'Femenino'"</span>))</span>
@@ -744,7 +741,10 @@ Nota
 <section id="transformar-variables" class="level2">
 <h2 class="anchored" data-anchor-id="transformar-variables">5 Transformar variables</h2>
 <p>Un último paso en el procesamiento de datos es la <strong>creación</strong> o derivación de nuevas variables a partir de los datos que ya tenemos. Esto es relevante no solo para procesar datos, sino porque permite generar variables que se alineen mucho mejor con nuestros objetivos de análisis.</p>
-<p>La función <code>mutate()</code> de <code>dplyr</code> no solo nos permite recodificar variables, sino que también <em>crear</em> otras nuevas manteniendo las originales. Para este ejemplo usaremos dos funciones adicionales de <code>dplyr</code> que, al combinarlas con <code>mutate()</code>, podremos transformar variables de manera muy sencilla.</p>
+<p>A diferencia de R base, con la función <code>mutate()</code> de <code>dplyr</code> podemos recodificar todas nuestras variables en un solo código si así lo queremos. Además, nos ahorramos especificar en todo momento la base de datos, ya que esa es la lógica de programación con <code>dplyr()</code>.</p>
+<p>La estructura de <code>mutate()</code> es generalmente esta:</p>
+<p><code>dplyr::mutate(datos, nueva_variable = funcion())</code></p>
+<p>Además, la función <code>mutate()</code> de <code>dplyr</code> no solo nos permite recodificar variables, sino que también <em>crear</em> otras nuevas manteniendo las originales. Para este ejemplo usaremos dos funciones adicionales de <code>dplyr</code> que, al combinarlas con <code>mutate()</code>, podremos transformar variables de manera muy sencilla.</p>
 <p>En este ejemplo, transformaremos las variables <code>edad</code> e <code>ingresos</code>, y crearemos una nueva variable llamada <code>año</code> de la encuesta y otra llamada <code>ingreso_minimo</code>.</p>
 <p><strong>¡Veámos cómo se hace!</strong></p>
 <p>Generemos las nueva variable año:</p>
