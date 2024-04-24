@@ -94,15 +94,12 @@ La estructura general para importar datos es la siguiente:
 `read_*("ruta_hacia_archivo/nombre_archivo.*")`
 
 ```{r include=FALSE}
-
 elsoc_2022 <- haven::read_sav("input/data/ELSOC_W06_v1.0_SPSS.sav")
-
 ```
 
 
 ```{r eval=FALSE, include=TRUE}
 elsoc_2022 <- read_sav("input/data/ELSOC_W06_v1.0_SPSS.sav")
-
 ```
 
 ::: callout-note
@@ -271,13 +268,9 @@ La estructura de `mutate()` es generalmente esta:
 Recodifiquemos las variables sexo e ingresos:
 
 ```{r collapse=FALSE, warning=FALSE}
+proc_elsoc$sexo <- car::recode(proc_elsoc$sexo, recodes = c("'Hombre' = 'Masculino'; 'Mujer' = 'Femenino'"))
 
-proc_elsoc <- dplyr::mutate(proc_elsoc,
-                            sexo = car::recode(sexo,
-                                               recodes = c("'Hombre' = 'Masculino'; 'Mujer' = 'Femenino'")),
-                            ingreso = car::recode(ingreso, 
-                                                  recodes = c("-888 = NA; -999 = NA")))
-
+proc_elsoc$ingreso <- car::recode(proc_elsoc$ingreso, recodes = c("-888 = NA; -999 = NA"))
 
 proc_elsoc
 ```
@@ -285,19 +278,16 @@ proc_elsoc
 Ahora recodifiquemos las demás variables. Además de recodificar valores propiamente tal, con `recode()` podemos indicarle, en la misma función, que convierta la variable a `factor` y/o que le asigne niveles (ej. para variables ordinales).
 
 ```{r collapse=FALSE, warning=FALSE}
-
-proc_elsoc <- dplyr::mutate(proc_elsoc,
-                            autor_democ = car::recode(autor_democ,
+proc_elsoc$autor_democ <- car::recode(proc_elsoc$autor_democ,
                             recodes = c("1 = 'La democracia es preferible a cualquier otra forma de gobierno'; 
                             2 = 'En algunas circunstancias, un gobierno autoritario puede ser preferible a uno democratico'; 
                             3 = 'A la gente como uno, nos da lo mismo un regimen democratico que uno autoritario'; 
                             4 = 'Ninguna'; 
                             -888 = NA; 
                             -999 = NA"),
-                            as.factor = TRUE)) # convertir a factor
+                            as.factor = TRUE) # convertir a factor
             
-proc_elsoc <- dplyr::mutate(proc_elsoc,
-                            jv_delincuentes = car::recode(jv_delincuentes,
+proc_elsoc$jv_delincuentes <- car::recode(proc_elsoc$jv_delincuentes,
                                             recodes = c("1 = 'Nunca';
                                                        2 = 'Pocas veces';
                                                        3 = 'Algunas veces';
@@ -310,7 +300,7 @@ proc_elsoc <- dplyr::mutate(proc_elsoc,
                                                      "Pocas veces",
                                                      "Algunas veces",
                                                      "Muchas veces",
-                                                     "Siempre")))# ordenamos niveles
+                                                     "Siempre"))# ordenamos niveles
   
 proc_elsoc
 ```
