@@ -1,6 +1,6 @@
 ---
 title: "Práctica 4. Análisis descriptivo de datos en R"
-date: "2023-05-11"
+date: "2024-05-05"
 lang: es
 output:
   number_sections: true
@@ -72,7 +72,7 @@ En este práctico utilizaremos los siguientes paquetes:
 
 5.  `sjmisc`: para analizar descriptivamente datos 
 
-6.  `crosstable`: para tablas cruzadas o de contingencia
+6.  `sjPlot`: para tablas cruzadas o de contingencia
 
 
 
@@ -81,7 +81,7 @@ pacman::p_load(tidyverse, # colección de paquetes para manipulación de datos
                dplyr, # para manipular datos
                psych, # para analizar datos
                sjmisc, # para analizar datos
-               crosstable) # para tablas de contingencia
+               sjPlot) # para tablas de contingencia
 
 
 options(scipen = 999) # para desactivar notacion cientifica
@@ -172,13 +172,19 @@ También podemos cruzar dos variables mediante las llamadas tablas de contingenc
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
 
-crosstable(datos_proc, cols = sexo, by = tramo_edad)
+sjt.xtab(datos_proc$sexo, datos_proc$tramo_edad)
 
-crosstable(datos_proc, cols = sexo, by = tramo_edad, total = "both") #fila y columna
+sjt.xtab(datos_proc$sexo, datos_proc$tramo_edad,
+         show.cell.prc = TRUE, #fila y columna
+         show.summary = FALSE) 
 
-crosstable(datos_proc, cols = sexo, by = tramo_edad, total = "row") #solo fila
+sjt.xtab(datos_proc$sexo, datos_proc$tramo_edad,
+         show.row.prc = TRUE, #solo fila
+         show.summary = FALSE) 
 
-crosstable(datos_proc, cols = sexo, by = tramo_edad, total = "column") #solo columna
+sjt.xtab(datos_proc$sexo, datos_proc$tramo_edad,
+         show.col.prc=TRUE, #solo columna
+         show.summary=FALSE) 
 
 ```
 
@@ -270,9 +276,4 @@ Hoy aprendimos a procesar datos en R. En detalle, vimos:
 1.  Cómo establecer un flujo de trabajo de procesamiento y análisis de datos en R.
 
 2.  Realizar análisis descriptivos en R según el nivel de medición de las variables
-
-## Video de clase
-
-{{< video https://youtu.be/2Z2KYScppPA >}}
-
 
