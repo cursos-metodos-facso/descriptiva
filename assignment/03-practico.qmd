@@ -1,6 +1,6 @@
 ---
 title: "Práctica 3. Procesamiento, limpieza y manipulación de datos en R"
-date: "2023-05-11"
+date: "2024-05-11"
 lang: es
 output:
   number_sections: true
@@ -404,7 +404,7 @@ select(proc_elsoc, ingreso, ingreso_minimo) #veamosla!
 Este último paso es bastante sencillo, solo debemos especificar la base que queremos guadar y su ruta:
 
 ```{r collapse=FALSE}
-saveRDS(proc_elsoc, file = "output/datos_proc.Rdata")
+save(proc_elsoc,file="output/proc_elsoc.Rdata")
 ```
 
 

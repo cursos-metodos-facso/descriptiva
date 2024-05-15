@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -81,13 +81,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "limit": 20,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -96,7 +90,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
-    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -107,7 +100,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:title" content="Estadística Descriptiva - Análisis Factorial Exploratorio">
 <meta property="og:description" content="">
 <meta property="og:image" content="https://descriptiva-2024.netlify.app/files/logo.png">
-<meta property="og:site_name" content="Estadística Descriptiva">
+<meta property="og:site-name" content="Estadística Descriptiva">
 <meta property="og:locale" content="en_US">
 <meta property="og:image:height" content="500">
 <meta property="og:image:width" content="500">
@@ -125,9 +118,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
+      <div class="navbar-brand-container">
     <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Estadística Descriptiva</span>
     </a>
@@ -139,38 +132,38 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html"> 
-<span class="menu-text">Programa</span></a>
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
+ <span class="menu-text">Programa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html"> 
-<span class="menu-text">Planificación</span></a>
+    <a class="nav-link" href="../schedule.html" rel="" target="">
+ <span class="menu-text">Planificación</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../class/index.html"> 
-<span class="menu-text">Clases</span></a>
+    <a class="nav-link" href="../class/index.html" rel="" target="">
+ <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignment/index.html"> 
-<span class="menu-text">Prácticos</span></a>
+    <a class="nav-link" href="../assignment/index.html" rel="" target="">
+ <span class="menu-text">Prácticos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../trabajos.html"> 
-<span class="menu-text">Trabajos</span></a>
+    <a class="nav-link" href="../trabajos.html" rel="" target="">
+ <span class="menu-text">Trabajos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../resource/index.html"> 
-<span class="menu-text">Recursos</span></a>
+    <a class="nav-link" href="../resource/index.html" rel="" target="">
+ <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://rstudio.cloud"> <i class="bi bi-cloud-fill" role="img" aria-label="RStudio.cloud">
+    <a class="nav-link" href="https://rstudio.cloud" rel="" target=""><i class="bi bi-cloud-fill" role="img" aria-label="RStudio.cloud">
 </i> 
-<span class="menu-text"></span></a>
+ <span class="menu-text"></span></a>
   </li>  
 </ul>
-          </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
 </div>
+          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -229,15 +222,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
-
 </header>
-
 
 <section id="librerías-y-datos" class="level1">
 <h1>Librerías y Datos</h1>
 <section id="librerías" class="level2">
 <h2 class="anchored" data-anchor-id="librerías">Librerías</h2>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-1_c5b8dbd8551de3431117a5274717e7cb">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(stargazer, <span class="co"># Reporte</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>sjPlot, sjmisc, <span class="co"># reporte y gráficos</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sjlabelled,</span>
@@ -253,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="datos" class="level2">
 <h2 class="anchored" data-anchor-id="datos">Datos</h2>
 <p>Lectura de datos</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-2_bd2c492c53f3e9a52a61b00fc23999e2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"input/data/efa_asignaturas.csv"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
@@ -262,7 +253,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="exploración-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="exploración-de-datos">Exploración de datos</h2>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-4_4ca23032f8c8b54c585b9c58ad31b228">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      BIO             GEO            CHEM            ALG            CALC      
@@ -297,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="descriptivos" class="level1">
 <h1>Descriptivos</h1>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-5_eba8bbede8b0b002bb7599fc6fa22e1f">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(data, <span class="at">type =</span> <span class="st">"text"</span>)  <span class="co"># para visualizar en consola</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
@@ -313,7 +304,9 @@ STAT      300 2.937  1.259    1   5
 ------------------------------------</code></pre>
 </div>
 </div>
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-6_928bff528df75252b3dff188e89cecaf">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stargazer</span>(data, <span class="at">type =</span> <span class="st">"html"</span>) <span class="co"># a html</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 <table style="text-align:center">
 <tbody><tr>
 <td colspan="6" style="border-bottom: 1px solid black">
@@ -467,10 +460,12 @@ STAT
 <td colspan="6" style="border-bottom: 1px solid black">
 </td>
 </tr>
+
 </tbody></table>
+</div>
 <section id="gráfico-barras-apiladas" class="level2">
 <h2 class="anchored" data-anchor-id="gráfico-barras-apiladas">Gráfico barras apiladas</h2>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-7_c12158fdf910e7bea23b4debd9cb6cd2">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#sjplot(data$BIO, "frq") # no muy buena descripción ...</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -479,15 +474,11 @@ STAT
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackfrq</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Gráfico final</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-8_73fcdb26ddf72d8d0ce95b06a2dbb2b0">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">#label values</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span>  <span class="fu">set_labels</span> (., <span class="at">labels=</span><span class="fu">c</span>(<span class="st">"No le agrada"</span><span class="ot">=</span><span class="dv">1</span>,</span>
@@ -495,18 +486,14 @@ STAT
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot_stackfrq</span>(data, <span class="at">sort.frq =</span> <span class="st">"last.desc"</span>, <span class="at">geom.colors =</span> <span class="st">"OrRd"</span>) <span class="co">#+ theme(legend.position="bottom")</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
 <section id="analisis-de-matriz-de-correlaciones" class="level2">
 <h2 class="anchored" data-anchor-id="analisis-de-matriz-de-correlaciones">Analisis de matriz de correlaciones</h2>
 <p>Matriz</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-9_17b9d9b760a21f6025bd291e54d3498c">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>corMat  <span class="ot">&lt;-</span> <span class="fu">cor</span>(data)  <span class="co"># estimar matriz pearson</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">digits=</span><span class="dv">2</span>)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>corMat <span class="co"># muestra matriz</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -521,9 +508,10 @@ STAT 0.20 0.23 0.166 0.409 0.51 1.00</code></pre>
 </div>
 </div>
 <p>Reporte tabla</p>
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-10_62a916846ead9aad4fe181e961e1772d">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_corr</span>(data, <span class="at">triangle =</span> <span class="st">"lower"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div>
-<table data-quarto-postprocess="true" class="table">
+<div class="cell-output-display">
+<table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <tbody>
 <tr class="odd">
 <td data-quarto-table-cell-role="th" style="font-style: italic; font-weight: normal; border-top: double black; border-bottom: 1px solid black; padding: 0.2cm">&nbsp;</td>
@@ -594,28 +582,21 @@ STAT 0.20 0.23 0.166 0.409 0.51 1.00</code></pre>
 </tbody>
 </table>
 </div>
+</div>
 <p>Reporte gráfico con corrplot</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-11_ca156d3d0060b863e445459e3349163f">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>M<span class="ot">=</span><span class="fu">cor</span>(data) <span class="co"># matriz simple de correlaciones de los datos</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="at">type=</span><span class="st">"lower"</span>) <span class="co"># lower x bajo diagonal</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Otra opción</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-12_7d4857f6abe9268643d8fe28fa7feb9f">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">corrplot</span>(M, <span class="at">type=</span><span class="st">"lower"</span>,</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">order=</span><span class="st">"AOE"</span>, <span class="at">cl.pos=</span><span class="st">"b"</span>, <span class="at">tl.pos=</span><span class="st">"d"</span>) <span class="co">#agrega nombres en diag.</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 </section>
@@ -624,7 +605,7 @@ STAT 0.20 0.23 0.166 0.409 0.51 1.00</code></pre>
 <h1>Análisis factorial</h1>
 <p>¿Qué se puede deducir de la matriz de correlaciones en relación a la estructura subyacente en términos de variables latentes? Vemos dos grupos de indicadores asociados entre sí, y no asociados con el otro grupo. Por un lado, el grupo de chem, bio y geo, y por otro el de stat, calc y alg.</p>
 <p>Adecuación de matriz para análisis factorial</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-13_5f61c61e5a80dc2517f217a81ae2f861">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">KMO</span>(corMat)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Kaiser-Meyer-Olkin factor adequacy
@@ -649,30 +630,22 @@ $df
 <section id="seleccion-de-numero-de-factores" class="level2">
 <h2 class="anchored" data-anchor-id="seleccion-de-numero-de-factores">Seleccion de numero de factores</h2>
 <p>Graficos</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-14_1eba56c8b4d93d21054346242103fa8e">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">scree.plot</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-</div>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-15_6816a0fd76b93cd50521c36053163dad">
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.parallel</span>(corMat, <span class="at">n.obs=</span><span class="dv">300</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="672"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Parallel analysis suggests that the number of factors =  2  and the number of components =  2 </code></pre>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-16_8e7638e62e660e22d200bc11012fef84">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(nFactors)</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>ev <span class="ot">&lt;-</span> <span class="fu">eigen</span>(corMat) <span class="co"># get eigenvalues</span></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>ap <span class="ot">&lt;-</span> <span class="fu">parallel</span>(<span class="at">subject=</span><span class="dv">300</span>,<span class="at">var=</span><span class="dv">6</span>,</span>
@@ -680,11 +653,7 @@ $df
 <span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>nS <span class="ot">&lt;-</span> <span class="fu">nScree</span>(<span class="at">x=</span>ev<span class="sc">$</span>values, <span class="at">aparallel=</span>ap<span class="sc">$</span>eigen<span class="sc">$</span>qevpea)</span>
 <span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plotnScree</span>(nS)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-16-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p>Factor de aceleración: solución numérica que muestra el punto que presenta el mayor cambio de pendiente</p>
@@ -693,7 +662,7 @@ $df
 <section id="extracción" class="level2">
 <h2 class="anchored" data-anchor-id="extracción">Extracción</h2>
 <p>Ejes principales</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-17_bd1c25793ca70be2c051c82f2e47c25b">
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>fac_pa <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> data, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">fm=</span> <span class="st">"pa"</span>)</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#summary(fac_pa)</span></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>fac_pa</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -745,24 +714,20 @@ Minimum correlation of possible factor scores     0.77 0.86</code></pre>
 </div>
 </div>
 <p>Maximum likelihood</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-18_8841b4ebbcb5c49835e36f1eb8c8a456">
 <div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>fac_ml <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> data, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">fm=</span> <span class="st">"ml"</span>)</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(fac_ml)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Plot de cargas factoriales ml</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-19_d5434de1136f01aafa33d701ec79bb38">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">factor.plot</span>(fac_ml, <span class="at">labels=</span><span class="fu">rownames</span>(fac_ml<span class="sc">$</span>loadings))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="05-resource_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
+<p><img src="05-resource_files/figure-html/unnamed-chunk-19-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
 <p><strong>Obtención de Puntajes factoriales</strong></p>
 <p>Los puntajes factoriales son vectores/variables que representan al factor latente como una variable observada y que por lo tanto suma una columna a la base de datos por cada factor extraído. Como la variable latente no tiene métrica, se le otorga una con media 0 y varianza 1. Los puntajes son una especie de índice pero donde la constribución de cada indicador al índice se encuentra ponderada por su carga factorial (su contribución a la variable latente común o factor).</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-20_56954ffbd067d49e7aeaf6bffbdecab8">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>fac_ml <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> data, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">fm=</span> <span class="st">"ml"</span>, <span class="at">scores=</span><span class="st">"regression"</span>)</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>data2<span class="ot">=</span>data</span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>data3 <span class="ot">&lt;-</span> <span class="fu">cbind</span>(data2, fac_ml<span class="sc">$</span>scores)</span>
@@ -781,7 +746,7 @@ Minimum correlation of possible factor scores     0.77 0.86</code></pre>
 <section id="rotación" class="level2">
 <h2 class="anchored" data-anchor-id="rotación">Rotación</h2>
 <p>Varimax (ortogonal)</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-21_85d4f1c3a3dd9a15ab3f88e09833c068">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>fac_ml_var <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> data, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">fm=</span> <span class="st">"ml"</span>, <span class="at">rotate=</span><span class="st">"varimax"</span>) <span class="co"># ortogonal</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>fac_ml_var</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -827,7 +792,7 @@ Minimum correlation of possible factor scores     0.76 0.91</code></pre>
 </div>
 </div>
 <p>Promax (oblicua)</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-22_98f292598d71871f97e4fa10a167f7b8">
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>fac_ml_pro <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> data, <span class="at">nfactors =</span> <span class="dv">2</span>, <span class="at">fm=</span> <span class="st">"ml"</span>, <span class="at">rotate=</span><span class="st">"promax"</span>)</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>fac_ml_pro</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -881,13 +846,12 @@ Minimum correlation of possible factor scores     0.77 0.91</code></pre>
 <section id="reporte-tabla-análisis-factorial" class="level2">
 <h2 class="anchored" data-anchor-id="reporte-tabla-análisis-factorial">Reporte: Tabla análisis factorial</h2>
 <p>A html via sjPlot</p>
-<div class="cell">
+<div class="cell" data-hash="05-resource_cache/html/unnamed-chunk-23_cd104d97a461ecc2f15c24ab789cd8f4">
 <div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tab_fa</span>(data, <span class="at">rotation =</span> <span class="st">"varimax"</span>,<span class="at">show.comm =</span> <span class="cn">TRUE</span>, <span class="at">title =</span> <span class="st">"Análisis factorial asignaturas"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Parallel analysis suggests that the number of factors =  2  and the number of components =  NA </code></pre>
 </div>
 <div class="cell-output-display">
-<div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
 <caption>Análisis factorial asignaturas</caption>
 <tbody>
@@ -946,7 +910,6 @@ Minimum correlation of possible factor scores     0.77 0.91</code></pre>
 </tr>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 </section>
@@ -1038,27 +1001,10 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-    var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/descriptiva-2024\.netlify\.app");
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-        // undo the damage that might have been done by quarto-nav.js in the case of
-        // links that we want to consider external
-        if (link.dataset.originalHref !== undefined) {
-          link.href = link.dataset.originalHref;
-        }
-      }
-    }
-  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+  function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
+      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1068,17 +1014,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start',
+      placement: 'bottom-start'
     };
-    if (contentFn) {
-      config.content = contentFn;
-    }
-    if (onTriggerFn) {
-      config.onTrigger = onTriggerFn;
-    }
-    if (onUntriggerFn) {
-      config.onUntrigger = onUntriggerFn;
-    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1090,130 +1027,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      if (note) {
-        return note.innerHTML;
-      } else {
-        return "";
-      }
-    });
-  }
-  const xrefs = window.document.querySelectorAll('a.quarto-xref');
-  const processXRef = (id, note) => {
-    // Strip column container classes
-    const stripColumnClz = (el) => {
-      el.classList.remove("page-full", "page-columns");
-      if (el.children) {
-        for (const child of el.children) {
-          stripColumnClz(child);
-        }
-      }
-    }
-    stripColumnClz(note)
-    if (id === null || id.startsWith('sec-')) {
-      // Special case sections, only their first couple elements
-      const container = document.createElement("div");
-      if (note.children && note.children.length > 2) {
-        container.appendChild(note.children[0].cloneNode(true));
-        for (let i = 1; i < note.children.length; i++) {
-          const child = note.children[i];
-          if (child.tagName === "P" && child.innerText === "") {
-            continue;
-          } else {
-            container.appendChild(child.cloneNode(true));
-            break;
-          }
-        }
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(container);
-        }
-        return container.innerHTML
-      } else {
-        if (window.Quarto?.typesetMath) {
-          window.Quarto.typesetMath(note);
-        }
-        return note.innerHTML;
-      }
-    } else {
-      // Remove any anchor links if they are present
-      const anchorLink = note.querySelector('a.anchorjs-link');
-      if (anchorLink) {
-        anchorLink.remove();
-      }
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(note);
-      }
-      // TODO in 1.5, we should make sure this works without a callout special case
-      if (note.classList.contains("callout")) {
-        return note.outerHTML;
-      } else {
-        return note.innerHTML;
-      }
-    }
-  }
-  for (var i=0; i<xrefs.length; i++) {
-    const xref = xrefs[i];
-    tippyHover(xref, undefined, function(instance) {
-      instance.disable();
-      let url = xref.getAttribute('href');
-      let hash = undefined; 
-      if (url.startsWith('#')) {
-        hash = url;
-      } else {
-        try { hash = new URL(url).hash; } catch {}
-      }
-      if (hash) {
-        const id = hash.replace(/^#\/?/, "");
-        const note = window.document.getElementById(id);
-        if (note !== null) {
-          try {
-            const html = processXRef(id, note.cloneNode(true));
-            instance.setContent(html);
-          } finally {
-            instance.enable();
-            instance.show();
-          }
-        } else {
-          // See if we can fetch this
-          fetch(url.split('#')[0])
-          .then(res => res.text())
-          .then(html => {
-            const parser = new DOMParser();
-            const htmlDoc = parser.parseFromString(html, "text/html");
-            const note = htmlDoc.getElementById(id);
-            if (note !== null) {
-              const html = processXRef(id, note);
-              instance.setContent(html);
-            } 
-          }).finally(() => {
-            instance.enable();
-            instance.show();
-          });
-        }
-      } else {
-        // See if we can fetch a full url (with no hash to target)
-        // This is a special case and we should probably do some content thinning / targeting
-        fetch(url)
-        .then(res => res.text())
-        .then(html => {
-          const parser = new DOMParser();
-          const htmlDoc = parser.parseFromString(html, "text/html");
-          const note = htmlDoc.querySelector('main.content');
-          if (note !== null) {
-            // This should only happen for chapter cross references
-            // (since there is no id in the URL)
-            // remove the first header
-            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
-              note.children[0].remove();
-            }
-            const html = processXRef(null, note);
-            instance.setContent(html);
-          } 
-        }).finally(() => {
-          instance.enable();
-          instance.show();
-        });
-      }
-    }, function(instance) {
+      return note.innerHTML;
     });
   }
       let selectedAnnoteEl;
@@ -1257,7 +1071,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
-            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1283,32 +1096,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
-        // Handle positioning of the toggle
-    window.addEventListener(
-      "resize",
-      throttle(() => {
-        elRect = undefined;
-        if (selectedAnnoteEl) {
-          selectCodeLines(selectedAnnoteEl);
-        }
-      }, 10)
-    );
-    function throttle(fn, ms) {
-    let throttle = false;
-    let timer;
-      return (...args) => {
-        if(!throttle) { // first call gets through
-            fn.apply(this, args);
-            throttle = true;
-        } else { // all the others get throttled
-            if(timer) clearTimeout(timer); // cancel #2
-            timer = setTimeout(() => {
-              fn.apply(this, args);
-              timer = throttle = false;
-            }, ms);
-        }
-      };
-    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1371,18 +1158,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">
-<p>Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by Kevin Carrasco &amp; Daniela Olivares <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></p>
-</div>   
+    <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by Kevin Carrasco &amp; Daniela Olivares <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
     <div class="nav-footer-center">
       &nbsp;
     </div>
-    <div class="nav-footer-right">
-<p>Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/cursos-metodos-facso/descriptiva">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></p>
-</div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/cursos-metodos-facso/descriptiva">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>
-
 
 
 
