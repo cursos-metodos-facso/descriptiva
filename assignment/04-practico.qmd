@@ -197,7 +197,7 @@ A diferencia de las variables categóricas, a las variables numéricas (interval
 Como ya vimos en clases:
 
 - dentro de las medidas de tendencia central que podemos calcular para describir a una variable numérica encontramos: media, mediana;
-- dentro de las medidas de dispersión podemos señalar: desviación estándar, variancia, coeficiente de variación, rango;
+- dentro de las medidas de dispersión podemos señalar: desviación estándar, variancia, rango;
 - dentro de las medidas de posición podemos mencionar: mediana, q1, q3, mínimo, máximo.
 
 ::: callout-tip
@@ -262,12 +262,11 @@ proc_elsoc %>%
             q2 = quantile(ingreso, probs = .75),
             rango = max(ingreso) - min(ingreso),
             desviacion_estandar = sd(ingreso),
-            varianza = var(ingreso),
-            coef_variacion = sd(ingreso)/mean(ingreso))
+            varianza = var(ingreso))
 
 ```
 
-Ahora, conocemos no solo los estádisticos anteriores, sino que también obtuvimos la varianza y el coeficiente de variación. 
+Ahora, conocemos no solo los estádisticos anteriores, sino que también obtuvimos la varianza y la desviación estándar. 
 
 ## Resumen
 
