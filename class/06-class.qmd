@@ -7,7 +7,7 @@ lang: es
 ## Documento de presentación
 
 
-<iframe src= 06.pdf height="550" width=100% allowfullscreen="true">
+<iframe src= 06_clase.pdf height="550" width=100% allowfullscreen="true">
 
 </iframe> 
 
