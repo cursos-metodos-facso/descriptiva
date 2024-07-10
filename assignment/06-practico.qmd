@@ -10,83 +10,23 @@ output:
 
 ## Objetivo de la práctica
 
-El objetivo de esta guía práctica es introducir a la visualización de datos con R, considerando las mejores prácticas para comunicar datos y análisis en ciencias sociales.
+El objetivo de esta guía práctica es aplicar los conocimientos aprendidos en clases sobre la forma de una distribución en R, comprendiendo sus usos, relevancia y formas de analizarla. También veremos visualización de datos con R, considerando las mejores prácticas para comunicar datos y análisis en ciencias sociales.
 
-En detalle, aprenderemos:
 
-1. Qué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.
+1. La noción de una distribución y sus tipos (continuas y discretas)
 
-2. Visualizar datos univariados con `{ggplot2}`.
+2. Estimar e interpretar la asimetría y curtosis de una distribución
+
+3. Contrastar distribuciones empíricas con teóricas
+
+4. Qué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.
+
+5. Visualizar datos univariados con `{ggplot2}`.
 
 
 ## Recursos de la práctica
 
 En esta práctica trabajaremos con la base de datos de la Encuesta de Opinión Pública (CEP) de Diciembre del 2019 realizada por el [Centro de Estudios Públicos](https://www.cepchile.cl/). Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace [{{< fa table >}} `CEP 2019`](https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/Input/data/CEP_dic2019.sav) podrán descargar el archivo que contiene la base CEP Diciembre 2019.
-
-# ¿Qué es visualizar datos?
-
-La visualización de datos consiste en dar sentido a filas y columnas de datos, presentándolos en un formato fácilmente comprensible a una audiencia. 
-
-![](../images/visual1.png)
-
-Visualizar datos es una de las tareas más recurrentes en estadística, al mismo tiempo que es una de las formas más delicadas de comunicar información. ¿A qué nos referimos? básicamente a que, como investigadores/as, comunicamos nuestros resultados buscando resaltar un aspecto de la realidad e intentando crear un mensaje con los datos. Por ello, **es sumamente importante** hacerlo de forma fidedigna, sencilla y pensando siempre en cómo la audiencia podría interpretarlo. 
-
-![](../images/visual2.png)
-
-### Cómo NO visualizar datos
-
-Es bastante común ver malas formas de comunicar datos; en los medios de comunicación, redes sociales e inclusive en la misma investigación acádemica. Esto ocurre por diversos motivos, ya sea por elementos gráficos, de escalas o de orden que engañan al ojo y percepción humana. Algunos ejemplos de cómo **no** se deben comunicar datos son: 
-
-```{r echo=FALSE, warning=FALSE, out.width="60%", fig.align='left'}
-knitr::include_graphics("../images/pinera.png", error = FALSE)
-```
-
-
-```{r echo=FALSE, warning=FALSE, out.width="60%", fig.align='right'}
-knitr::include_graphics("../images/tercera.jpeg", error = FALSE)
-```
-
-### Algunos principios para visualizar datos
-
-¿Y entonces **cómo realizar una buena/correcta visualización de datos**? Tengamos como premisa la siguiente cita:
-
-_"La excelencia gráfica es la presentación bien diseñada de datos interesantes: una cuestión de sustancia, de estadística y de diseño... [Consiste] en ideas complejas comunicadas con claridad, precisión y eficacia. ... [Es] lo que da al espectador el mayor número de ideas en el menor tiempo con la menor tinta en el menor espacio ... [Es] casi siempre multivariante ... Y la excelencia gráfica requiere decir la verdad sobre los datos"._ 
-
-_Edward Tufte, The Visual Display of Quantitative Information, p. 51_
-
-
-:::::: {.row .d-flex .justify-content-center}
-::::: {.col-md-6} 
-:::: {.card .bg-danger .text-white}
-::: {.card-body}
-
-**10 Principios para la visualización de datos**
-
-1. Conoce a tu audiencia ¿Qué preguntas necesitan respuesta?
-
-2. Utiliza el tipo de gráfico adecuado para representar el tipo de información que dispone.
-
-3. La forma sigue a la función. Concéntrate en cómo va a utilizar los datos tu público y deja que eso determine el estilo de presentación.
-
-4.  Proporcione el contexto necesario para que los datos se interpreten y se actúe en consecuencia.
-
-5. Mantenga la sencillez. Elimine la información no esencial.
-
-6. Resalte la información más importante 
-
-7. Utilice los colores con prudencia
-
-8. Utilice cuidadosamente las proporciones para que las diferencias de tamaño en el diseño representen fielmente las diferencias de valor.
-
-9. Sé escéptico. Pregúntese qué datos no están representados y qué información podría, por tanto, malinterpretarse o perderse.
-
-10. Muestra la verdad de tus datos, no lo que quisieras creer.
-
-:::
-::::
-:::::
-::::::
-
 
 # Preparación de datos
 
@@ -163,7 +103,6 @@ Por último, guardamos la base procesada.
 saveRDS(proc_cep, file = "Output/proc_cep.RData")
 ```
 
-
 # Análisis de la forma de distribución
 
 Antes de visualizar los datos, es crucial analizar la forma de la distribución de nuestras variables. En este ejemplo tenemos:
@@ -184,16 +123,155 @@ Recordemos que por distribución nos referimos al ordenamiento de las categoría
 
 sjmisc::frq(proc_cep$empleo)
 
-psych::describe(proc_cep$edad,
-                quant = c(.25,.75),
-                IQR = TRUE)
-
 psych::describe(proc_cep$satisfaccion,
                 quant = c(.25,.75),
                 IQR = TRUE)
 
 
 ```
+
+Analicemos e interpretemos la forma de la distribución de nuestras variables. En este ejemplo tenemos:
+
+- una de razón,
+- una ordinal de 10 categorías. 
+
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+
+psych::describe(proc_cep$edad)
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = edad)) + 
+  geom_density(color = "black", fill = "#FA8072", alpha = 0.8)  + 
+  labs(title ="Diagrama densidad: Edad", 
+       x = "Edad", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") 
+
+```
+
+A partir de los estadísticos entregados, sabemos que la variable `edad` tiene una asimetría positiva (skew = 0.14) pero baja (< 0.5), lo cual indica que los datos se tienden a distribuir hacía los menores valores del eje X. Por su parte, la curtosis es negativa (kurtosis = -0.93) o platicúrtica, lo cual indica que existe una baja concentración en el centro de los datos. 
+
+
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+
+psych::describe(proc_cep$satisfaccion)
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = satisfaccion)) + 
+  geom_density(color = "black", fill = "darkred", alpha = 0.8)  + 
+  labs(title ="Histograma densidad: Satisfaccion", 
+       x = "Satisfaccion", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") 
+```
+
+En cuanto a la variable `satisfaccion`, tenemos una asimetría negativa (skew = -0.32) aunque baja, indicando que los datos se tienden a distribuir hacia la parte superior de la variable. Además, la curtosis también es negativa o platicúrtica (kurtosis = -0.45), por lo que existe una baja concentración en el centro de los datos. 
+
+# Distribuciones empíricas y teóricas
+
+Como vimos en clases, **una distribución empírica (u observada) es la distribución de los valores que asume la variable** en un grupo concreto a partir de una observación. 
+
+Mientras que, por su parte, **una distribución teórica es función matématica** que expresan la distribución de un conjunto de números mediante su probabilidad de ocurencia. En palabras sencillas, es una función de densidad que permite asignar probabilidades de ocurrencia a los resultados. 
+
+
+::: callout-tip
+
+**Variable aleatoria**
+
+En las distribuciones teóricas, a veces nos vamos a encontrar con el concepto de _variable aleatoria_. ¿Qué es? En probabilidad y estadística, una variable aleatoria es una variable cuyos valores posibles son resultados numéricos de un fenómeno aleatorio. 
+
+:::
+
+
+**Cuando una distribución empírica se asejema a una teórica, podemos aplicarle a la primera las propiedades de la última. Así, nos permiten hacer inferencia estadística y conocer una serie de características de la población. **
+
+Una de las distribuciones teóricas más utilizada es la normal o Gaussiana, la cual es una herramienta potente y ampliamente utilizada en estadística y probabilidad, debido a sus numerosas propiedades útiles y a sus aplicaciones prácticas en un gran número de campos y contextos.
+
+
+**Contrastemos ahora la distribución empírica de nuestras variables con la distribución normal**
+
+
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+
+ggplot(proc_cep, aes(edad)) + 
+  geom_histogram(aes(x = edad, y = ..density..), bins = 50, color = "black", fill = "grey") +
+  geom_density(color = "blue")
+
+ggplot(proc_cep, aes(edad)) + 
+  geom_histogram(aes(x = edad, y = ..density..), bins = 50, color = "black", fill = "grey") +
+  geom_density(color = "blue")+
+  stat_function(fun = dnorm, args = list(mean = mean(proc_cep$edad), sd = sd(proc_cep$edad)))
+```
+
+En la primera figura vemos la distribución empírica de la variable `edad` (histograma y densidad). En la segunda, agregamos la curva normal (o distribución), y obtenemos una evaluación gráfica de qué tan bien nuestros datos se ajustan a esta distribución teórica. 
+
+
+# ¿Qué es visualizar datos?
+
+La visualización de datos consiste en dar sentido a filas y columnas de datos, presentándolos en un formato fácilmente comprensible a una audiencia. 
+
+![](../images/visual1.png)
+
+Visualizar datos es una de las tareas más recurrentes en estadística, al mismo tiempo que es una de las formas más delicadas de comunicar información. ¿A qué nos referimos? básicamente a que, como investigadores/as, comunicamos nuestros resultados buscando resaltar un aspecto de la realidad e intentando crear un mensaje con los datos. Por ello, **es sumamente importante** hacerlo de forma fidedigna, sencilla y pensando siempre en cómo la audiencia podría interpretarlo. 
+
+![](../images/visual2.png)
+
+### Cómo NO visualizar datos
+
+Es bastante común ver malas formas de comunicar datos; en los medios de comunicación, redes sociales e inclusive en la misma investigación acádemica. Esto ocurre por diversos motivos, ya sea por elementos gráficos, de escalas o de orden que engañan al ojo y percepción humana. Algunos ejemplos de cómo **no** se deben comunicar datos son: 
+
+```{r echo=FALSE, warning=FALSE, out.width="60%", fig.align='left'}
+knitr::include_graphics("../images/pinera.png", error = FALSE)
+```
+
+
+```{r echo=FALSE, warning=FALSE, out.width="60%", fig.align='right'}
+knitr::include_graphics("../images/tercera.jpeg", error = FALSE)
+```
+
+### Algunos principios para visualizar datos
+
+¿Y entonces **cómo realizar una buena/correcta visualización de datos**? Tengamos como premisa la siguiente cita:
+
+_"La excelencia gráfica es la presentación bien diseñada de datos interesantes: una cuestión de sustancia, de estadística y de diseño... [Consiste] en ideas complejas comunicadas con claridad, precisión y eficacia. ... [Es] lo que da al espectador el mayor número de ideas en el menor tiempo con la menor tinta en el menor espacio ... [Es] casi siempre multivariante ... Y la excelencia gráfica requiere decir la verdad sobre los datos"._ 
+
+_Edward Tufte, The Visual Display of Quantitative Information, p. 51_
+
+
+:::::: {.row .d-flex .justify-content-center}
+::::: {.col-md-6} 
+:::: {.card .bg-danger .text-white}
+::: {.card-body}
+
+**10 Principios para la visualización de datos**
+
+1. Conoce a tu audiencia ¿Qué preguntas necesitan respuesta?
+
+2. Utiliza el tipo de gráfico adecuado para representar el tipo de información que dispone.
+
+3. La forma sigue a la función. Concéntrate en cómo va a utilizar los datos tu público y deja que eso determine el estilo de presentación.
+
+4.  Proporcione el contexto necesario para que los datos se interpreten y se actúe en consecuencia.
+
+5. Mantenga la sencillez. Elimine la información no esencial.
+
+6. Resalte la información más importante 
+
+7. Utilice los colores con prudencia
+
+8. Utilice cuidadosamente las proporciones para que las diferencias de tamaño en el diseño representen fielmente las diferencias de valor.
+
+9. Sé escéptico. Pregúntese qué datos no están representados y qué información podría, por tanto, malinterpretarse o perderse.
+
+10. Muestra la verdad de tus datos, no lo que quisieras creer.
+
+:::
+::::
+:::::
+::::::
 
 # Visualización de datos con `ggplot2`
 
@@ -405,52 +483,6 @@ ggplot(data = proc_cep,
 
 ```
 
-### 5. Graficos de violin 
 
-Los gráficos de violin permiten visualizar la distribución de una variable numérica para uno o varios grupos. Es muy parecido a un boxplot, pero permite una comprensión más profunda de la distribución.
-
-```{r eval=TRUE, warning=FALSE, include=TRUE}
-ggplot(data = proc_cep, 
-       mapping = aes(y = satisfaccion, x = tramo_edad, fill = tramo_edad)) + # especificamos datos y mapping 
-  geom_violin(alpha = 0.8)  + # agregamos geometria y colores
-  labs(title ="Gráfico de violin: Satisfaccion por tramo etario", 
-       y = "Satisfaccion", 
-       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
-
-```
-
-### 6. Grilla de gráficos
-
-Hay veces en que queremos la distribución univariada de una variable para dos o más grupos, pero que cada uno de estos grupos tenga su propio gráfico. Podemos hacerlo con `ggplot2` de manera bastante optimizada. 
-
-Por ejemplo, separemos en dos graficos o grillas un diagrama de densidad de la variable satisfacción segun la condicion de empleo usando `facet_wrap()` 
-
-```{r eval=TRUE, warning=FALSE, include=TRUE}
-
-ggplot(data = proc_cep, 
-       mapping = aes(x = satisfaccion)) + # especificamos datos y mapping 
-  geom_density(color = "black", fill = "darkblue", alpha = 0.8)  + # agregamos geometria y colores
-  facet_wrap(.~empleo)+ # agregamos el facet o paneles para diferenciar
-  labs(title ="Diagramas de densidad de satisfaccion según situación del empleo", 
-       x = "Satisfaccion", 
-       y = "Frecuencia",
-       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
-
-```
-
-
-
-
-## Resumen
-
-Hoy aprendimos a visualizar datos en R. En detalle, vimos:
-
-1. Qué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.
-
-2. Visualizar datos univariados de diversas formas con `{ggplot2}`.
-
-## Video tutorial
-
-{{< video https://youtu.be/QXP0NKIEV7I >}}
 
 
