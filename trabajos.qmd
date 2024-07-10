@@ -3,50 +3,64 @@ title: Trabajos
 lang: es
 ---
 
-## Evaluación
+# Términos de Referencia Entrega Informe
 
-El curso tendrá dos instancias de evaluación: 
+## Presentación y directrices generales
 
-- **Taller Colectivo**: Este taller grupal (60% de la nota final) tiene por objetivo aplicar los contenidos del curso a una tématica de interés específica en formato de artículo de investigación breve. Esto implica que los estudiantes deberán plantear un fenómeno social a investigar, el problema de investigación y su relevencia, precisar el argumento o hipótesis central, describir la metodología utilizada y analizar descriptivamente variables relativas a dicho fenónomeno. Consistirá en **dos informes**, uno de diseño de investigación (20%) y otro de análisis y conclusiones (40%). Los talleres son elaborados en grupos de máximo 4 integrantes.
+La presente evaluación tiene por objetivo que las y los estudiantes apliquen de forma integral los contenidos del curso a una temática de interés específica utilizando la base de datos de la Encuesta de Bienestar Social (EBS) 2021, en formato de reporte de investigación breve.
 
-- **Tareas Individuales**: Las tareas individuales (40% de la nota final) tienen por objetivo aplicar los contenidos del Laboratorio de Análisis de Datos y también de las clases lectivas del curso a actividades prácticas. Esto implica que los estudiantes deberán demostrar el aprendizaje de herramientas básicas de procesamiento, limpieza y manipulación de datos, además de analizar descriptivamente y visualizar variables, todo ello siendo correctamente reportado. Consistirán en **3 tareas individuales** a lo largo del semestre, en donde cada una equivaldrá a un 13.3%. 
+## Cuestiones a considerar
 
-## Taller Colectivo
+1. El trabajo debe ser realizado en grupos de 5 estudiantes, que deben ser inscritos en el siguiente enlace.
+2. Deben elegir uno de los módulos de la Encuesta de Bienestar Social (EBS) 2021, del cual tomarán las variables con las que elaborarán el informe.
+3. Se realizará una entrega final tipo reporte de investigación, que se irá construyendo a lo largo del semestre.
+4. Se recomienda que elaboren un problema de investigación que trate sobre las características sociales de algún problema actual de la sociedad chilena.
+5. El peso de esta evaluación sobre la nota final del curso es del 40%.
+6. Se asignará una bonificación por asistencia a los talleres prácticos de R de manera individual.
 
-### Informe 1
+## Instrucciones para el Informe
 
-El objetivo general de la evaluación es que los estudiantes planteen un fenómeno social a investigar, el problema de investigación y su relevancia, precisar el argumento o hipótesis central, formular una pregunta y un objetivo general de investigación, y definir la base de datos y las variables a utilizar para analizar dicho fenómeno.
+### COMPONENTES DEL INFORME
 
-Términos de referencia del Informe N°1 Taller Colectivo: [{{< fa file-archive >}} TDR1.pdf](/projects/TDR1_Informe_Taller_Colectivo_ED_2023.pdf)
+| COMPONENTES                | DETALLE                                                                                                                                                                                                                                                                                       | PUNTAJE |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------|
+| Formulación del problema   | Fundamente el interés sociológico que habilita el estudio de la temática elegida (¿Qué se va a estudiar?, ¿Por qué es importante?, ¿Qué se sabe sobre el tema?), utilizando al menos 3 referencias bibliográficas. Además, formule una pregunta y un objetivo general de investigación.        | 1,0     |
+| Definición base de datos   | Defina la fuente de información a utilizar indicando el nombre de la base de datos y la institución que la disponibiliza, la población que busca representar el estudio, el procedimiento de muestreo utilizado y el tamaño de la muestra.                                                      | 0,5     |
+| Definición variables       | Seleccionar un mínimo de 4 variables para, mediante su estudio, responder a la pregunta de investigación. Para cada variable debe indicar: i) breve descripción, ii) nivel de medición, iii) nombre en la base de datos y fraseo en la encuesta, iv) qué aspecto del fenómeno de interés representa | 2,0     |
+| Tablas de frecuencia       | Calcular una tabla de frecuencia (absoluta y relativa) para las variables nominales y ordinales e interpretar. Los cálculos deben ser realizados en R.                                                                                                                                        | 2,0     |
+| Medidas de tendencia central | Calcular e interpretar las medidas de tendencia central para las variables intervalares y de razón seleccionadas. Colocarlas en una tabla. Los cálculos deben ser realizados en R.                                                                                                            | 2,0     |
+| Medidas de dispersión      | Calcular el rango, la desviación estándar y el coeficiente de variación para las variables intervalares y de razón seleccionadas. Colocarlas en una tabla. Los cálculos deben ser realizados en R.                                                                                            | 2,0     |
+| Medidas de posición        | Calcular el valor mínimo y máximo, el cuartil 1 y el cuartil 3 para las variables intervalares y de razón seleccionadas. Colocarlas en una tabla. Los cálculos deben ser realizados en R.                                                                                                      | 2,0     |
+| Gráficos                   | Presentar al menos 2 gráficos seleccionando para su construcción aquellas variables más relevantes para el problema de investigación. Los gráficos deben ser realizados en R.                                                                                                                 | 2,0     |
+| Conclusiones               | En las conclusiones se deben sintetizar los aspectos más relevantes de los análisis estadísticos ya expuestos, articulando toda la información trabajada. Además, debe reflexionar sobre los límites de su diseño de investigación y señalar posibles ejes de investigación.                       | 2,0     |
+| Trabajo en R               | Entregar la carpeta con el Proyecto R, que contenga un archivo .Rproject, y las carpetas input, procesamiento y output. Se evaluará que los códigos utilizados generen las salidas (tablas, gráficos, etc.) que se presentan en el informe.                                                     | 3,0     |
 
-### Informe 2
+# Aspectos formales
 
-El objetivo general de la evaluación es que los estudiantes elaboren un reporte de investigación que desarrolle de forma integrada los aspectos de diseño de la investigación, análisis estadístico y presentación de resultados, así como la elaboración de conclusiones. Se espera que se integren las correcciones realizadas en la entrega previa.
+Para la construcción del reporte de investigación, por favor considere:
 
-Términos de referencia del Informe N°2 Taller Colectivo: [{{< fa file-archive >}} TDR2.pdf](/projects/TDR2_Informe_Taller_Colectivo_ED_2023.pdf)
+- El trabajo debe tener una portada que incluya: título, logo de la universidad, nombre de los estudiantes, profesor/a, fecha y ayudantes.
+- Debe incluirse un índice. Tablas, referencias y bibliografía utilizada debe presentarse en formato APA.
+- La fuente a utilizar debe ser Letra Times New Roman 12, interlineado simple y justificado. Notas a pie de página en tamaño 10.
+- El trabajo debe tener una redacción adecuada y sin errores de ortografía.
+- Se descontarán hasta 5 décimas sobre la nota final por errores de este tipo.
 
+# Fecha y formato de entrega
 
-## Tareas Individuales
+El formato de entrega del informe debe ser un documento en formato Microsoft Word (.docx) o formato PDF (.pdf). Fecha de entrega: viernes 19 de julio hasta las 23:59 vía módulo Tareas en plataforma U-Cursos.
 
-### Tarea 1
+- Entregas atrasadas hasta las 0:30 del sábado 20 de julio tendrán 0,5 puntos de descuento sobre la nota final.
+- Entregas atrasadas hasta las 23:59 del sábado 20 de julio tendrán 1,0 puntos de descuento sobre la nota final.
+- Entregas atrasadas hasta el domingo 21 de julio hasta las 23:59 tendrán 2,0 puntos de descuento sobre la nota final. No serán evaluadas entregas posteriores a esta fecha.
 
-El objetivo de esta tarea es que los estudiantes demuestren el aprendizaje de las herramientas básicas sobre procesamiento, limpieza y manipulación de datos en los softwares Excel y SPSS (aprendidas en clases).
+# Sobre plagio
 
-Pauta Tarea Individual N°1: [{{< fa file-archive >}} Tarea01.pdf](/projects/pauta_tarea01.pdf)
+Todos los trabajos se procesan en software para detección de plagio: evidencia de una situación de plagio implica obtención de la nota mínima en la evaluación (1,0) junto con constituirse como causal de reprobación de la asignatura.
 
+# Recomendaciones para la entrega
 
-### Tarea 2
+- Máxima de escritura: una idea por párrafo.
+- La idea del párrafo se resume en la primera parte del párrafo.
+- Declarar domicilio disciplinar: ej, mencionar la palabra "sociología" en el primer/segundo párrafo.
 
-El objetivo de esta tarea es que los estudiantes demuestren el aprendizaje de las herramientas básicas sobre procesamiento, limpieza y manipulación de datos en el software Rstudio (aprendidas en las sesiones 2 y 3 del Laboratorio), además de que analicen variables a través de medidas de tendencia central, dispersión y posición (aprendidas en sesión 4 del Laboratorio), sabiendo interpretar y reflexionar críticamente sobre los resultados obtenidos.
-
-Pauta Tarea Individual N°2: [{{< fa file-archive >}} Tarea02.pdf](/projects/pauta_tarea02_ED_2023.pdf)
-
-### Tarea 3
-
-El objetivo de esta tarea es que los estudiantes demuestren el aprendizaje de las herramientas básicas sobre visualización de datos y análisis de la forma de una distribución utilizando el software R (aprendidas en las sesiones 6 y 7 del Laboratorio), sabiendo interpretar y reflexionar críticamente sobre los resultados obtenidos.
-
-Pauta Tarea Individual N°3: [{{< fa file-archive >}} Tarea03.pdf](/projects/pauta_tarea03.pdf)
-
-# Requisitos de aprobación
-
-- Nota mínima de aprobación: 4,0 (en escala de 1 a 7).
+En caso de tener dudas, no dude en contactar a sus ayudantes respectivos, o bien, vía foro U-Cursos al equipo docente de la asignatura.
