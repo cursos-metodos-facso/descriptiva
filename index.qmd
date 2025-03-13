@@ -2,7 +2,7 @@
 title: "Estadística Descriptiva"
 lang: es
 details: |
-  SOC01014-1 • Primer Semestre 2024<br>Departamento de Sociología, Facultad de Ciencias Sociales<br>Universidad de Chile
+  SOC01014-1 • Primer Semestre 2025<br>Departamento de Sociología, Facultad de Ciencias Sociales<br>Universidad de Chile
 sidebar: false
 toc: false
 page-layout: full
@@ -52,38 +52,28 @@ withr::with_dir(here::here(), {
 
 Daniela Olivares
 
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
+- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other.email >}}">{{< var other.email >}}</a>
 
 <div class="image-cropper">
   <img src="https://ca.slack-edge.com/T011KJPE10W-U01RB6BA7NK-10ffb897b8d4-512" alt="avatar" class="profile-pic" width="80" height="80" />
 </div>
 
 
-Kevin Carrasco
+María Fernanda Núñez
 
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other.email >}}">{{< var other.email >}}</a>
+- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
 
 **Ayudantes**
 
 - Victoria Arias
 
-- Leonardo Capobianco
-
-- Catalina Díaz
-
 - Martina Gallardo
 
-- Antonia Jimenez
+- Matilda Raccagni
 
-- Sophia Karoussis
+- Tomás Urzúa
 
-- Cristobal Mejías
-
-- Yerkho Nuñez
-
-- Juan Prado
-
-- Luis Ríos
+- Felipe Vega
 
 - Benjamín Zavala
 
@@ -92,9 +82,9 @@ Kevin Carrasco
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
 ### Actividades
 
-- {{< fa university >}} &nbsp; **Lunes 8:30-10:00** - Aulario B/1
+- {{< fa university >}} &nbsp; **Martes 8:30-10:00** - Aulario B1
 
-- {{< fa computer >}} &nbsp; **Miércoles 8:30-10:00** - Aulario B/1 y Sala 45 facso
+- {{< fa computer >}} &nbsp; **Jueves 8:30-10:00** - Aulario B1 y Sala 45 facso
 
 :::
 
@@ -104,6 +94,8 @@ Kevin Carrasco
 {{< var instructor.contact_policy >}}
 
 ### Versiones anteriores del curso
+
+- [2024](https://version2024--descriptiva-2024.netlify.app/)
 
 - [2023](https://version-2023--descriptiva-2024.netlify.app/)
 

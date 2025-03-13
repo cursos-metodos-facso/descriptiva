@@ -1,4 +1,4 @@
-author: Daniela Olivares
+author: Daniela Olivares Collío & María Fernanda Núñez
 
 instructor:
   name: Rodrigo Asún
@@ -17,10 +17,10 @@ other2:
 
 course:
   number: "SOC01014-1"
-  semester: "Primer Semestre 2024"
+  semester: "Primer Semestre 2025"
   days: "Martes y Jueves"
   time: "8:30 AM - 10:00 AM"
-  location: "Aulario B - sala B1"
+  location: "Aulario B - Sala B1"
   location2: "Prácticos Sala B1 y sala 45"
   dates: "Marzo–Julio, 2025"
   github: "https://github.com/cursos-metodos-facso/descriptiva"
