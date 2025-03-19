@@ -50,7 +50,7 @@ withr::with_dir(here::here(), {
 </div>
 
 
-Daniela Olivares
+Daniela Olivares Collío
 
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
 
