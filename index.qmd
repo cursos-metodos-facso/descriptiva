@@ -55,7 +55,7 @@ Daniela Olivares
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other.email >}}">{{< var other.email >}}</a>
 
 <div class="image-cropper">
-  <img src="https://ca.slack-edge.com/T011KJPE10W-U01RB6BA7NK-10ffb897b8d4-512" alt="avatar" class="profile-pic" width="80" height="80" />
+  <img src="https://ucampus.uchile.cl/d/r/usuario/59/595eac1ba1e7c71fbbea076608baba9c/perfil/07435de0e419362c626faa92216dcbd8.jpg" alt="avatar" class="profile-pic" width="80" height="80" />
 </div>
 
 
@@ -95,9 +95,9 @@ María Fernanda Núñez
 
 ### Versiones anteriores del curso
 
-- [2024](https://version2024--descriptiva-2024.netlify.app/)
+- [2024](https://version2024--estadictica-descriptiva-uch.netlify.app/)
 
-- [2023](https://version-2023--descriptiva-2024.netlify.app/)
+- [2023](https://version2023--estadistica-descriptiva-uch.netlify.app/)
 
 :::
 
