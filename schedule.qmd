@@ -5,60 +5,48 @@ toc: false
 page-layout: full
 ---
 
-Los dos componentes centrales del curso son las clases lectivas y las sesiones de Laboratorio de Análisis de Datos. Las **clases** se realizarán los días **Jueves 08:30 a 11:45 ** en sala **sala 7 y 8 del Aulario A**, mientras que las sesiones de Laboratorio se realizarán los días **Jueves 08:30 a 11:45 ** vía Zoom con una periodicidad de cada 2 semanas.
+Los dos componentes centrales del curso son las clases lectivas y las sesiones prácticas de Análisis de Datos. Las **clases** se realizarán los días **Martes y Jueves** de **08:30 a 10:00** en la **sala 1 del Aulario B** , mientras que las sesiones de Práctos se realizarán los días **Jueves** de **08:30 a 10:00** en la **Sala 1 del Aulario B, y sala 45** (ver planificación de sesiones).
 
 -   [**Clases**]() (<i class="fas fa-chalkboard-teacher"></i> ): Documentos de presentación y lecturas asociadas.
 
--   [**Prácticas**]() (<i class="fas fa-user-edit"></i>): Actividades prácticas en Laboratorio de Análisis de Datos a desarrollar durante el semestre.
+-   [**Prácticos**]() (<i class="fas fa-user-edit"></i>): Actividades prácticas de Análisis de Datos a desarrollar durante el semestre.
 
 -   [**Evaluaciones**]() (<i class="fas fa-book-reader"></i>): Evaluaciones individuales y colectivas a desarrollar durante el semestre.
 
 
-| |<i class="fas fa-chalkboard-teacher"></i>  Clases  |  <i class="fas fa-user-edit"></i>   Prácticas | <i class="fas fa-book-reader"></i> Evaluaciones
+| |<i class="fas fa-chalkboard-teacher"></i>  Clases  |  <i class="fas fa-user-edit"></i>   Prácticos | <i class="fas fa-book-reader"></i> Evaluaciones
 -----|------------|----------------------------------|-----------
 <font color="orange"> **Marzo** </font> |   |   |
 ### UNIDAD 1: Sociología y estadística
 |||
 -----|------------|-------------------|-----------
-Lunes 11 | **1. La estadística como herramienta de investigación sociológica**  |   | - Leer detalladamente [programa del curso](syllabus.html)
-Lunes 18 | **2. Epistemología, límites y potencialidades de la investigación cuantitativa.** | | 
-Lunes 25 | **3. La medición en ciencias sociales: algunos conceptos fundamentales.** | | 
+Semana 1 (10/03) | 1. La estadística como herramienta de investigación sociológica |  | 
+Semana 2 (17/03) | 2. Epistemología, límites y potencialidades de la investigación cuantitativa. | | 
+Semana 3 (24/03) | 3. La medición en ciencias sociales: algunos conceptos fundamentales.| | 
 <font color="orange"> **Abril** </font> |   |   |
-Lunes 01 | **4. Datos y bases de datos. Ética de la investigación con datos sociales.** | | 
-Miércoles 03 |  | Práctico 1 |                                                                
+Semana 4 (31/03) | 4. Datos y bases de datos. Ética de la investigación con datos sociales. | Práctico 1 | 
+                                                              
 ### UNIDAD 2: La descripción de los datos.
 |||
 -----|------------|-------------------|-----------
-Lunes 08 | **5. Medidas de tendencia central.**  |   |
-Miércoles 10 |  | Práctico 2 | 
-Lunes 15 | **6. Medidas de dispersión.** |   |
-Miércoles 17 | | Práctico 3 | 
-Lunes 22 | **7. Medidas de posición.** |  |
-Miércoles 24| | Práctico 4 | 
-Lunes 29 | **Receso** | |
+Semana 5 (07/04) | 5. Medidas de tendencia central.  | Práctico 2 |
+Semana 6 (14/04) | 6. Medidas de dispersión. | Práctico 3 |
+Semana 7 (21/04) | 7. Medidas de posición. | Práctico 4 |
+Semana 8 (28/04) | 8. Visualización de datos y distribuciones de datos. | *Feriado* |
 <font color="orange"> **Mayo** </font> |   |   |
-Miércoles 01 | | **Receso** |
-Lunes 06 | **8.Visualización de datos y distribuciones de datos.** | |
-Miércoles 08 | | Práctico 5 |
 ### UNIDAD 3: La forma de una distribución
 |||
 -----|------------|-------------------|-----------
-Lunes 13 | **9. Noción de función y distribución.**  | | 
-Miércoles 15 |  | Práctico 6 | 
-Lunes 20 | **10. Asimetría y Curtosis.** | | 
-Miércoles 22 | | Práctico 7 |
-Lunes 27 | **11. Distribución normal y puntuación Z.** | |
-Miércoles 29 | | Práctico 8 |
+Semana 9 (05/05) | 9. Noción de función y distribución. | Práctico 5 |
+Semana 10 (12/05) | 10. Asimetría y Curtosis. | Práctico 6 |
+Semana 11 (19/05) | *Receso* | *Receso* |
+Semana 12 (26/05) | 12. Concepto de distribución estadística. Distribución normal y sus probabilidades. | Práctico 7|
 <font color="orange"> **Junio** </font> |   |   |
-Lunes 03 |**12. Probabilidades en la distribución normal y otras distribuciones** |  |
-Miércoles 05 | | Práctico 9 |
 ### UNIDAD 4: Introducción a la inferencia estadística
 |||
 -----|------------|-------------------|-----------
-Lunes 10 | **13. Fundamentos de la significación estadística, universo y muestra.** | 
-Miércoles 12 | | Práctico 10 |
-Lunes 17 | **14. Noción de distribución de muestreo, parámetros y estadísticos.**
-Lunes 24 | **15. Hipótesis y pruebas de hipótesis.** | |
+Semana 13 (02/06) | 13. Fundamentos de la significación estadística, universo y muestra. | Práctico 8 | 
+Semana 14 (09/06) | 14. Noción de distribución de muestreo, parámetros y estadísticos. | Práctico 9 |
+Semana 15 (16/06) | 15. Inferencia, ponderadores y factores de expansión. | |
+Semana 16 (23/06) | 16. Introducción a las hipótesis y pruebas de hipótesis. | |
 <font color="orange"> **Julio** </font> |   |   |
-Lunes 01 | **16. Inferencia estadística univariada, ponderadores y factores de expansión.** | |
-
