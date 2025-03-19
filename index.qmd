@@ -2,7 +2,7 @@
 title: "Estadística Descriptiva"
 lang: es
 details: |
-  SOC01014-1 • Primer Semestre 2024<br>Departamento de Sociología, Facultad de Ciencias Sociales<br>Universidad de Chile
+  SOC01014-1 • Primer Semestre 2023<br>Departamento de Sociología, Facultad de Ciencias Sociales<br>Universidad de Chile
 sidebar: false
 toc: false
 page-layout: full
@@ -50,7 +50,7 @@ withr::with_dir(here::here(), {
 </div>
 
 
-Daniela Olivares
+Daniela Olivares Collío
 
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
 - {{< fa calendar-check >}} &nbsp; [Agendar reunión]({{< var other2.appointment_url >}})
@@ -86,9 +86,7 @@ Andreas Laffert
 
 {{< var instructor.contact_policy >}}
 
-### Versiones anteriores del curso
 
-- [2023](https://version2023--descriptiva-facso.netlify.app/)
 
 :::
 

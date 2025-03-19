@@ -415,9 +415,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Estadística Descriptiva",
+    "title": "\n            Estadística Descriptiva\n        ",
     "section": "",
-    "text": "Estadística Descriptiva\n        \n        \n            \n        \n        \n            SOC01014-1 • Primer Semestre 2024Departamento de Sociología, Facultad de Ciencias SocialesUniversidad de Chile\n        \n    \n    \n        \n    \n\n\n\n\n\nEquipo docente\nProfesor\n\n\n\nRodrigo Asún\n\n   Departamento de Sociología FACSO\n   rasun@uchile.cl\n\nApoyos docentes\n\n\n\nDaniela Olivares\n\n   danielaolivarescollio@gmail.com\n   Agendar reunión\n\n\n\n\nAndreas Laffert\n\n   andreas.laffert@ug.uchile.cl\n   Agendar reunión\n\nAyudantes\n\n\n\n\n\n\nActividades\n\n   Lunes 8:30-10:00 - Aulario B/1\n   Miércoles 8:30-10:00 Online\n\n\n\n\nContacto\nA través de correo o U-Cursos\n\n\nVersiones anteriores del curso\n\n2023"
+    "text": "Estadística Descriptiva\n        \n        \n            \n        \n        \n            SOC01014-1 • Primer Semestre 2023Departamento de Sociología, Facultad de Ciencias SocialesUniversidad de Chile\n        \n    \n    \n        \n    \n\n\n\n\n\nEquipo docente\nProfesor\n\n\n\nRodrigo Asún\n\n   Departamento de Sociología FACSO\n   rasun@uchile.cl\n\nApoyos docentes\n\n\n\nDaniela Olivares Collío\n\n   danielaolivarescollio@gmail.com\n   Agendar reunión\n\n\n\n\nAndreas Laffert\n\n   andreas.laffert@ug.uchile.cl\n   Agendar reunión\n\nAyudantes\n\n\n\n\n\n\nActividades\n\n   Lunes 8:30-10:00 - Aulario B/1\n   Miércoles 8:30-10:00 Online\n\n\n\nContacto\nA través de correo o U-Cursos"
   },
   {
     "objectID": "resource/01-resource.html",
@@ -571,7 +571,7 @@
     "href": "syllabus.html",
     "title": "Programa",
     "section": "",
-    "text": "Rodrigo Asún\n   Departamento de Sociología FACSO\n   rasun@uchile.cl\n\n\n\n\n\n   Lunes y Miércoles\n   Marzo–Julio, 2024\n   8:30 AM - 10:00 AM\n   Aulario B - sala B1"
+    "text": "Departamento de Sociología FACSO\n   rasun@uchile.cl\n\n\n\n\n\n   Lunes y Miércoles\n   Marzo–Julio, 2024\n   8:30 AM - 10:00 AM\n   Aulario B - sala B1"
   },
   {
     "objectID": "syllabus.html#propósito-general-del-curso",
@@ -964,5 +964,12 @@
     "title": "Laboratorio de Análisis de Datos",
     "section": "Trabajo con software R",
     "text": "Trabajo con software R\nPara los análisis estadísticos de este curso usamos el programa R, en parte porque es gratuito, pero la principal razón es que es de código abierto. Esto quiere decir que cualquier persona puede revisar cómo está hecho y aportar con modificaciones y procedimientos nuevos, como son las librerías que realizan funciones específicas.\nEl carácter de apertura de R posee muchas ventajas, pero también conlleva complicaciones. Se actualiza permanentemente, así como también las librerías, y esto puede generar problemas de compatibilidad y de fallas en ejecución del código de análisis.\nPara minimizar estos posibles problemas en este curso, vamos a:\n\ntrabajar con la misma y última versión de R, que es la 4.2\nevitar uso de tilde, ñ, espacios y mayúsculas tanto en carpetas y archivos, así como también en los nombres de las variables\nal momento de hacer consultas sobre problemas en la ejecución del código, adjuntar la siguiente información:\n\nCódigo completo hasta que se produce el problema\nIndicar línea del código donde se produce el problema\nAdjuntar el resultado del output de la información de la sesión (sessionInfo())\n\n\n\nInstalación de R & RStudio\nPara esta versión del curso vamos a trabajar con el programa R Version 4.2 (se sugiere la última versión 4.2.2) y con RStudio, que ofrece un entorno más amigable para trabajar con R.\nPara instalar R: ir a https://cran.r-project.org/index.html y bajar/instalar la versión correspondiente a la plataforma utilizada (Windows, Mac o Linux)\nPara instalar RStudio: ir a https://posit.co/downloads/ y bajar/instalar RStudio desktop, Open Source License (libre).\nSi por alguna razón se prefiere trabajar sin descargar, también se puede utilizar RCloud, abajo un tutorial de una versión anterior del curso de estadística multivarada\n\n\n\n\n\n\n\nSobre el trabajo en hojas de código en RStudio\n\nEl trabajo de análisis en RStudio se efectua en una hoja de código (o R script o sintaxis, o para los usuarios de Stata la do-file), que es donde se anotan los comandos y funciones. Para abrir una hoja, en RStudio ir a File > New File > R Script (o ctrl+shift+N),y aparecerá un panel con una pestaña “Untitled” (sin título). Esta es la hoja de código donde se anotan los comandos.\nLos contenidos de las hojas de código son básicamente 2:\n\ncomandos o funciones: se escriben en la hoja, y para ejecutarlos se debe posicionar el cursor en la línea respectiva y ctrl+enter, el resultado aparecerá en el panel de resultados o Consola.\ntexto: para escribir títulos, comentarios, y todo lo que permita entender qué se está haciendo, al principio de la línea respectiva escribir el signo #\n\nPara grabar nuestra hoja de código y así respaldar nuestros análisis, File > Save (o ctrl+s), y dar un nombre al archivo. Recordar: breve, sin espacios ni tildes ni eñes. Por defecto, la extensión de estos archivos es .R"
+  },
+  {
+    "objectID": "trabajos.html#evaluación",
+    "href": "trabajos.html#evaluación",
+    "title": "Trabajos",
+    "section": "",
+    "text": "El curso tendrá dos instancias de evaluación:\n\nTaller Colectivo: Este taller grupal (60% de la nota final) tiene por objetivo aplicar los contenidos del curso a una tématica de interés específica en formato de artículo de investigación breve. Esto implica que los estudiantes deberán plantear un fenómeno social a investigar, el problema de investigación y su relevencia, precisar el argumento o hipótesis central, describir la metodología utilizada y analizar descriptivamente variables relativas a dicho fenónomeno. Consistirá en dos informes, uno de diseño de investigación (20%) y otro de análisis y conclusiones (40%). Los talleres son elaborados en grupos de máximo 4 integrantes.\nTareas Individuales: Las tareas individuales (40% de la nota final) tienen por objetivo aplicar los contenidos del Laboratorio de Análisis de Datos y también de las clases lectivas del curso a actividades prácticas. Esto implica que los estudiantes deberán demostrar el aprendizaje de herramientas básicas de procesamiento, limpieza y manipulación de datos, además de analizar descriptivamente y visualizar variables, todo ello siendo correctamente reportado. Consistirán en 3 tareas individuales a lo largo del semestre, en donde cada una equivaldrá a un 13.3%."
   }
 ]

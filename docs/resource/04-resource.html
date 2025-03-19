@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.269">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -120,7 +91,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -151,88 +123,98 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <span class="navbar-title">Estadística Descriptiva</span>
     </a>
   </div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+            <div id="quarto-search" class="" title="Buscar"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Navegación de palanca" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../syllabus.html">
+    <a class="nav-link" href="../syllabus.html" rel="" target="">
  <span class="menu-text">Programa</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../schedule.html">
+    <a class="nav-link" href="../schedule.html" rel="" target="">
  <span class="menu-text">Planificación</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../class/index.html">
+    <a class="nav-link" href="../class/index.html" rel="" target="">
  <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../content/index.html">
+    <a class="nav-link" href="../assignment/index.html" rel="" target="">
  <span class="menu-text">Prácticos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../trabajos.html">
+    <a class="nav-link" href="../trabajos.html" rel="" target="">
  <span class="menu-text">Trabajos</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../resource/index.html" aria-current="page">
+    <a class="nav-link active" href="../resource/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Recursos</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://rstudio.cloud"><i class="bi bi-cloud-fill" role="img" aria-label="RStudio.cloud">
+    <a class="nav-link" href="https://rstudio.cloud" rel="" target=""><i class="bi bi-cloud-fill" role="img" aria-label="RStudio.cloud">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
 </ul>
-              <div id="quarto-search" class="" title="Search"></div>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Procesamiento, limpieza y manipulación de datos en R</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../resource/04-resource.html">Procesamiento, limpieza y manipulación de datos en R base</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
     </div>
   </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resource/index.html" class="sidebar-item-text sidebar-link">Descripción</a>
+  <a href="../resource/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Descripción</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resource/01-resource.html" class="sidebar-item-text sidebar-link">Bases de Datos</a>
+  <a href="../resource/01-resource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bases de Datos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resource/02-resource.html" class="sidebar-item-text sidebar-link">Uso de R</a>
+  <a href="../resource/02-resource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uso de R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resource/03-resource.html" class="sidebar-item-text sidebar-link">Importar datos en R</a>
+  <a href="../resource/03-resource.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Importar datos en R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../resource/04-resource.html" class="sidebar-item-text sidebar-link active">Procesamiento, limpieza y manipulación de datos en R base</a>
+  <a href="../resource/04-resource.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Procesamiento, limpieza y manipulación de datos en R base</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -269,7 +251,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Procesamiento, limpieza y manipulación de datos en R</h1>
+<h1 class="title">Procesamiento, limpieza y manipulación de datos en R</h1>
 </div>
 
 
@@ -349,12 +331,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>elsoc_2022 <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"input/data/ELSOC_W06_v1.0_SPSS.sav"</span>) <span class="co"># Si funciona!</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Nota
 </div>
 </div>
@@ -409,7 +391,7 @@ Nota
  8 Mujer  
  9 Mujer  
 10 Hombre 
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>También podemos seleccionar más de una columna/variable utilizando funciones básicas de R. Por ejemplo, usando <code>c()</code></p>
@@ -429,7 +411,7 @@ Nota
  8 Mujer        57     1
  9 Mujer        47     1
 10 Hombre       79     2
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>O bien, indicando desde qué columna hasta cuál quiero seleccionar.</p>
@@ -449,7 +431,7 @@ Nota
  8 Mujer        57     8     1
  9 Mujer        47     4     1
 10 Hombre       79     4     2
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>Y, obviamente, podemos utilizar el nombre de las variables.</p>
@@ -469,7 +451,7 @@ Nota
  8 Mujer        57
  9 Mujer        47
 10 Hombre       79
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>Ahora, <strong>¡apliquemos conocimientos!</strong> <em>seleccionando y renombrando</em> las variables de interés en un nueva base llamada <code>proc_elsoc</code>.</p>
@@ -499,7 +481,7 @@ Nota
  8      57 Mujer         0     1      4
  9      47 Mujer    600000     1      3
 10      79 Hombre       NA     2      1
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(proc_elsoc) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"edad"</span>, <span class="st">"sexo"</span>, <span class="st">"ingreso"</span>, <span class="st">"autor_democ"</span>, <span class="st">"jv_delincuentes"</span>) <span class="co"># renonbramos</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -518,7 +500,7 @@ Nota
  8    57 Mujer        0           1               4
  9    47 Mujer   600000           1               3
 10    79 Hombre      NA           2               1
-# … with 990 more rows</code></pre>
+# ℹ 990 more rows</code></pre>
 </div>
 </div>
 <p>Esta nueva base de datos sigue manteniendo los 1.000 casos/filas, pero ahora solo tiene 5 variables/columnas. ¿Qué pasa si solo quiero trabajar con un subconjunto de estos datos, por ejemplo, las mujeres mayores a 25 años? La respuesta es <strong><em>filtrar</em>.</strong></p>
@@ -543,7 +525,7 @@ Nota
  8    25 Hombre      NA           1               2
  9    42 Hombre 1100000           1               4
 10    51 Hombre  800000           1               1
-# … with 542 more rows</code></pre>
+# ℹ 542 more rows</code></pre>
 </div>
 </div>
 <p>Para indicarle a R que nos filtre aquellos casos que cumplen con la condición de ser iguales a 1 (autor_democ == 1), usamos el operador <code>==</code>. ¿Y esto de dónde salió? recuerda que los operadores en R los vimos en la <a href="https://descriptiva-facso.netlify.app/content/02-content.html">segunda sesión</a>.</p>
@@ -564,7 +546,7 @@ Nota
  8    25 Hombre      NA           1               2
  9    42 Hombre 1100000           1               4
 10    51 Hombre  800000           1               1
-# … with 534 more rows</code></pre>
+# ℹ 534 more rows</code></pre>
 </div>
 </div>
 <p>Pero, ¿y si tengo variables tipo <code>character</code> o <code>factor</code>? Tanto en R base como con <code>dplyr</code> podemos especificar condiciones y filtrar este tipo de datos usando las comillas <code>" "</code>.</p>
@@ -584,7 +566,7 @@ Nota
  8    78 Mujer      NA           4               1
  9    65 Mujer      NA           1               1
 10    69 Mujer      NA           2               1
-# … with 646 more rows</code></pre>
+# ℹ 646 more rows</code></pre>
 </div>
 </div>
 <p><strong>¡Apliquémos conocimientos!</strong> Filtremos nuestros datos quedándonos solo con aquellos casos o personas que tengan o sean mayores a 25 años de edad.</p>
@@ -606,7 +588,7 @@ Nota
  8    57 Mujer        0           1               4
  9    47 Mujer   600000           1               3
 10    79 Hombre      NA           2               1
-# … with 970 more rows</code></pre>
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -615,12 +597,12 @@ Nota
 <p>Una parte fundamental del procesamiento e integración de datos es la recodificación de variables. Esto implica que, a determinadas variables, le aplicaremos ciertos cambios de acuerdo a ciertas reglas y criterios establecidos con anterioridad, siempre cuidando la coherencia con nuestro objetivo de investigación.</p>
 <p>Hay múltiples formas de recodificar en R, pero en este ejemplo trabajaremos con el comando <code>recode()</code> del paquete <code>car</code>.</p>
 <p>Esta vez, recodificaremos las siguientes variables: <code>sexo</code>, <code>ingreso</code>, <code>autor_democ</code> y <code>jv_delincuentes</code>. Para esto, nos apoyaremos en el libro de códigos.</p>
-<div class="callout-tip callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Tip
 </div>
 </div>
@@ -652,7 +634,7 @@ Tip
  8    57 Femenino        0           1               4
  9    47 Femenino   600000           1               3
 10    79 Masculino      NA           2               1
-# … with 970 more rows</code></pre>
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
 <p>Ahora recodifiquemos las demás variables. Además de recodificar valores propiamente tal, con <code>recode()</code> podemos indicarle, en la misma función, que convierta la variable a <code>factor</code> y/o que le asigne niveles (ej. para variables ordinales).</p>
@@ -684,27 +666,27 @@ Tip
 <span id="cb28-25"><a href="#cb28-25" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 980 × 5
-    edad sexo      ingreso autor_democ                                   jv_de…¹
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                         &lt;fct&gt;  
- 1    38 Masculino 4000000 La democracia es preferible a cualquier otra… &lt;NA&gt;   
- 2    45 Femenino  2700000 La democracia es preferible a cualquier otra… Alguna…
- 3    42 Masculino  600000 A la gente como uno, nos da lo mismo un regi… &lt;NA&gt;   
- 4    29 Masculino 1250000 La democracia es preferible a cualquier otra… Nunca  
- 5    53 Femenino   500000 En algunas circunstancias, un gobierno autor… Alguna…
- 6    52 Femenino       NA A la gente como uno, nos da lo mismo un regi… Pocas …
- 7    50 Femenino       NA En algunas circunstancias, un gobierno autor… Siempre
- 8    57 Femenino        0 La democracia es preferible a cualquier otra… Muchas…
- 9    47 Femenino   600000 La democracia es preferible a cualquier otra… Alguna…
-10    79 Masculino      NA En algunas circunstancias, un gobierno autor… Nunca  
-# … with 970 more rows, and abbreviated variable name ¹​jv_delincuentes</code></pre>
+    edad sexo      ingreso autor_democ                           jv_delincuentes
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
+ 1    38 Masculino 4000000 La democracia es preferible a cualqu… &lt;NA&gt;           
+ 2    45 Femenino  2700000 La democracia es preferible a cualqu… Algunas veces  
+ 3    42 Masculino  600000 A la gente como uno, nos da lo mismo… &lt;NA&gt;           
+ 4    29 Masculino 1250000 La democracia es preferible a cualqu… Nunca          
+ 5    53 Femenino   500000 En algunas circunstancias, un gobier… Algunas veces  
+ 6    52 Femenino       NA A la gente como uno, nos da lo mismo… Pocas veces    
+ 7    50 Femenino       NA En algunas circunstancias, un gobier… Siempre        
+ 8    57 Femenino        0 La democracia es preferible a cualqu… Muchas veces   
+ 9    47 Femenino   600000 La democracia es preferible a cualqu… Algunas veces  
+10    79 Masculino      NA En algunas circunstancias, un gobier… Nunca          
+# ℹ 970 more rows</code></pre>
 </div>
 </div>
-<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Nota
 </div>
 </div>
@@ -745,19 +727,19 @@ Nota
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 496 × 5
-    edad sexo      ingreso autor_democ                                   jv_de…¹
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                         &lt;fct&gt;  
- 1    45 Femenino  2700000 La democracia es preferible a cualquier otra… Alguna…
- 2    29 Masculino 1250000 La democracia es preferible a cualquier otra… Nunca  
- 3    53 Femenino   500000 En algunas circunstancias, un gobierno autor… Alguna…
- 4    57 Femenino        0 La democracia es preferible a cualquier otra… Muchas…
- 5    47 Femenino   600000 La democracia es preferible a cualquier otra… Alguna…
- 6    39 Masculino 1350000 La democracia es preferible a cualquier otra… Muchas…
- 7    42 Masculino 1100000 La democracia es preferible a cualquier otra… Muchas…
- 8    51 Masculino  800000 La democracia es preferible a cualquier otra… Nunca  
- 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo un regi… Alguna…
-10    45 Femenino   500000 La democracia es preferible a cualquier otra… Nunca  
-# … with 486 more rows, and abbreviated variable name ¹​jv_delincuentes</code></pre>
+    edad sexo      ingreso autor_democ                           jv_delincuentes
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                                 &lt;fct&gt;          
+ 1    45 Femenino  2700000 La democracia es preferible a cualqu… Algunas veces  
+ 2    29 Masculino 1250000 La democracia es preferible a cualqu… Nunca          
+ 3    53 Femenino   500000 En algunas circunstancias, un gobier… Algunas veces  
+ 4    57 Femenino        0 La democracia es preferible a cualqu… Muchas veces   
+ 5    47 Femenino   600000 La democracia es preferible a cualqu… Algunas veces  
+ 6    39 Masculino 1350000 La democracia es preferible a cualqu… Muchas veces   
+ 7    42 Masculino 1100000 La democracia es preferible a cualqu… Muchas veces   
+ 8    51 Masculino  800000 La democracia es preferible a cualqu… Nunca          
+ 9    38 Masculino 1600000 A la gente como uno, nos da lo mismo… Algunas veces  
+10    45 Femenino   500000 La democracia es preferible a cualqu… Nunca          
+# ℹ 486 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -788,20 +770,19 @@ Nota
 <span id="cb38-11"><a href="#cb38-11" aria-hidden="true" tabindex="-1"></a>proc_elsoc</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 496 × 7
-    edad sexo      ingreso autor_democ                   jv_de…¹ tramo…² tramo…³
-   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;                         &lt;fct&gt;   &lt;chr&gt;   &lt;chr&gt;  
- 1    45 Femenino  2700000 La democracia es preferible … Alguna… Adultos Tramo 5
- 2    29 Masculino 1250000 La democracia es preferible … Nunca   Jovenes Tramo 5
- 3    53 Femenino   500000 En algunas circunstancias, u… Alguna… Adultos Tramo 2
- 4    57 Femenino        0 La democracia es preferible … Muchas… Adultos Tramo 1
- 5    47 Femenino   600000 La democracia es preferible … Alguna… Adultos Tramo 3
- 6    39 Masculino 1350000 La democracia es preferible … Muchas… Adultos Tramo 5
- 7    42 Masculino 1100000 La democracia es preferible … Muchas… Adultos Tramo 5
- 8    51 Masculino  800000 La democracia es preferible … Nunca   Adultos Tramo 4
- 9    38 Masculino 1600000 A la gente como uno, nos da … Alguna… Adultos Tramo 5
-10    45 Femenino   500000 La democracia es preferible … Nunca   Adultos Tramo 2
-# … with 486 more rows, and abbreviated variable names ¹​jv_delincuentes,
-#   ²​tramo_edad, ³​tramo_ingreso</code></pre>
+    edad sexo      ingreso autor_democ  jv_delincuentes tramo_edad tramo_ingreso
+   &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt; &lt;fct&gt;        &lt;fct&gt;           &lt;chr&gt;      &lt;chr&gt;        
+ 1    45 Femenino  2700000 La democrac… Algunas veces   Adultos    Tramo 5      
+ 2    29 Masculino 1250000 La democrac… Nunca           Jovenes    Tramo 5      
+ 3    53 Femenino   500000 En algunas … Algunas veces   Adultos    Tramo 2      
+ 4    57 Femenino        0 La democrac… Muchas veces    Adultos    Tramo 1      
+ 5    47 Femenino   600000 La democrac… Algunas veces   Adultos    Tramo 3      
+ 6    39 Masculino 1350000 La democrac… Muchas veces    Adultos    Tramo 5      
+ 7    42 Masculino 1100000 La democrac… Muchas veces    Adultos    Tramo 5      
+ 8    51 Masculino  800000 La democrac… Nunca           Adultos    Tramo 4      
+ 9    38 Masculino 1600000 A la gente … Algunas veces   Adultos    Tramo 5      
+10    45 Femenino   500000 La democrac… Nunca           Adultos    Tramo 2      
+# ℹ 486 more rows</code></pre>
 </div>
 </div>
 <p>Ahora, generemos una nueva variable llamada <code>ingreso_minimo</code> con la función <code>ifelse()</code>.</p>
@@ -823,7 +804,7 @@ Nota
  8  800000 sobre minimo  
  9 1600000 sobre minimo  
 10  500000 sobre minimo  
-# … with 486 more rows</code></pre>
+# ℹ 486 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -867,9 +848,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -934,6 +929,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -976,8 +1057,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2023 by <a href="?var:instructor.url">Andreas Laffert</a> <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
-    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/Andreas-Lafferte/descriptiva">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
+    <div class="nav-footer-left">Content <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> 2024 by Andreas Laffert <br> All content licensed under a <i class="fa-brands fa-creative-commons" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-by" aria-hidden="true"></i> <i class="fa-brands fa-creative-commons-nc" aria-hidden="true"></i> <a href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International license (CC BY-NC 4.0)</a></div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">Made with <i class="fa-brands fa-r-project" aria-hidden="true"></i> and <a href="https://quarto.org/">Quarto</a><br> <a href="https://github.com/cursos-metodos-facso/descriptiva">View the source at <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</a></div>
   </div>
 </footer>
 
