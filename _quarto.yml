@@ -47,7 +47,8 @@ website:
         file: class/index.qmd
       - text: "Prácticos"
         file: assignment/index.qmd
-      - trabajos.qmd
+      - text: "Evaluaciones"
+        file: evaluaciones.qmd
       - text: "Recursos"
         file: resource/index.qmd
       - icon: cloud-fill
