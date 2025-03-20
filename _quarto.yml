@@ -27,12 +27,6 @@ website:
   description: "Estadística Descriptiva"
   favicon: "/files/logo-removebg-preview.png"
 
-  twitter-card:
-    image: "/files/logo.png"
-    card-style: summary_large_image
-    creator: "@kevincarrascoq1"
-    site: "@kevincarrascoq1"
-
   open-graph:
     image: "/files/logo.png"
     locale: en_US
