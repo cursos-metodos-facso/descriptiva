@@ -50,7 +50,7 @@ withr::with_dir(here::here(), {
 </div>
 
 
-Daniela Olivares
+{{< var other.name >}}
 
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other.email >}}">{{< var other.email >}}</a>
 
@@ -59,7 +59,7 @@ Daniela Olivares
 </div>
 
 
-María Fernanda Núñez
+{{< var other2.name >}}
 
 - {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
 
@@ -69,7 +69,11 @@ María Fernanda Núñez
 
 - Martina Gallardo
 
+- Nicolás Outerbridge
+
 - Matilda Raccagni
+
+- Isidora Ramos
 
 - Tomás Urzúa
 
