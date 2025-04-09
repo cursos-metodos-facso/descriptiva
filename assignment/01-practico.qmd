@@ -1,6 +1,6 @@
 ---
-title: "Práctica 1. Introducción al lenguaje R"
-date: "2024-04-03"
+title: "Práctico 01. Introducción al lenguaje R"
+date: "2025-04-10"
 lang: es
 output:
   number_sections: true
