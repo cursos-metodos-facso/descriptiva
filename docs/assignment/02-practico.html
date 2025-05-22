@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:width" content="500">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -136,7 +136,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignment/index.html" rel="" target="">
+    <a class="nav-link active" href="../assignment/index.html" rel="" target="" aria-current="page">
  <span class="menu-text">Prácticos</span></a>
   </li>  
   <li class="nav-item">
@@ -158,10 +158,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignment/01-practico.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../assignment/02-practico.html">2: Conocimientos básicos de programación en R</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Información general</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Laboratorio de Análisis de Datos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Sesiones</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/01-practico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1: Introducción al lenguaje R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/02-practico.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">2: Conocimientos básicos de programación en R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -171,18 +228,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#presentación" id="toc-presentación" class="nav-link active" data-scroll-target="#presentación">Presentación</a>
   <ul class="collapse">
   <li><a href="#objetivo-de-la-práctica" id="toc-objetivo-de-la-práctica" class="nav-link" data-scroll-target="#objetivo-de-la-práctica">0. Objetivo de la práctica</a></li>
-  <li><a href="#conocimientos-básicos-de-programación" id="toc-conocimientos-básicos-de-programación" class="nav-link" data-scroll-target="#conocimientos-básicos-de-programación">1. Conocimientos básicos de programación</a>
+  <li><a href="#r-es-una-cocina" id="toc-r-es-una-cocina" class="nav-link" data-scroll-target="#r-es-una-cocina">1. R es una cocina</a>
   <ul class="collapse">
-  <li><a href="#r-como-calculadora" id="toc-r-como-calculadora" class="nav-link" data-scroll-target="#r-como-calculadora">1.1 R como calculadora</a></li>
-  <li><a href="#un-lenguaje-orientado-a-objetos" id="toc-un-lenguaje-orientado-a-objetos" class="nav-link" data-scroll-target="#un-lenguaje-orientado-a-objetos">1.2 Un lenguaje orientado a objetos</a></li>
+  <li><a href="#primera-parte-de-la-estructura-de-datos-columnas-y-objetos" id="toc-primera-parte-de-la-estructura-de-datos-columnas-y-objetos" class="nav-link" data-scroll-target="#primera-parte-de-la-estructura-de-datos-columnas-y-objetos">1.1 Primera parte de la estructura de datos: <em>columnas y objetos</em></a></li>
+  <li><a href="#segunda-parte-de-la-estructura-de-datos-filas-y-funcionamiento-de-una-base-de-datos" id="toc-segunda-parte-de-la-estructura-de-datos-filas-y-funcionamiento-de-una-base-de-datos" class="nav-link" data-scroll-target="#segunda-parte-de-la-estructura-de-datos-filas-y-funcionamiento-de-una-base-de-datos">1.2 Segunda parte de la estructura de datos: <em>filas y funcionamiento de una base de datos</em></a></li>
+  <li><a href="#entonces-dentro-de-la-investigación-sociológica-y-estadística-lo-que-hacemos-es" id="toc-entonces-dentro-de-la-investigación-sociológica-y-estadística-lo-que-hacemos-es" class="nav-link" data-scroll-target="#entonces-dentro-de-la-investigación-sociológica-y-estadística-lo-que-hacemos-es">1.3 Entonces, dentro de la investigación sociológica y estadística lo que hacemos es:</a></li>
   </ul></li>
-  <li><a href="#operadores-en-r" id="toc-operadores-en-r" class="nav-link" data-scroll-target="#operadores-en-r">2. Operadores en R</a></li>
-  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">3. Tipos de datos</a>
+  <li><a href="#conocimientos-básicos-de-programación" id="toc-conocimientos-básicos-de-programación" class="nav-link" data-scroll-target="#conocimientos-básicos-de-programación">2. Conocimientos básicos de programación</a>
   <ul class="collapse">
-  <li><a href="#qué-son-los-tipos-de-datos" id="toc-qué-son-los-tipos-de-datos" class="nav-link" data-scroll-target="#qué-son-los-tipos-de-datos">3.1 ¿Qué son los tipos de datos?</a></li>
-  <li><a href="#qué-tipos-de-datos-encontramos-en-r" id="toc-qué-tipos-de-datos-encontramos-en-r" class="nav-link" data-scroll-target="#qué-tipos-de-datos-encontramos-en-r">3.2 ¿Qué tipos de datos encontramos en R?</a></li>
+  <li><a href="#r-como-calculadora" id="toc-r-como-calculadora" class="nav-link" data-scroll-target="#r-como-calculadora">2.1 R como calculadora</a></li>
+  <li><a href="#un-lenguaje-orientado-a-objetos" id="toc-un-lenguaje-orientado-a-objetos" class="nav-link" data-scroll-target="#un-lenguaje-orientado-a-objetos">2.2 Un lenguaje orientado a objetos</a></li>
   </ul></li>
-  <li><a href="#cargar-librerías" id="toc-cargar-librerías" class="nav-link" data-scroll-target="#cargar-librerías">4. Cargar librerías</a></li>
+  <li><a href="#operadores-en-r" id="toc-operadores-en-r" class="nav-link" data-scroll-target="#operadores-en-r">3. Operadores en R</a></li>
+  <li><a href="#tipos-de-datos" id="toc-tipos-de-datos" class="nav-link" data-scroll-target="#tipos-de-datos">4. Tipos de datos</a>
+  <ul class="collapse">
+  <li><a href="#qué-son-los-tipos-de-datos" id="toc-qué-son-los-tipos-de-datos" class="nav-link" data-scroll-target="#qué-son-los-tipos-de-datos">4.1 ¿Qué son los tipos de datos?</a></li>
+  <li><a href="#qué-tipos-de-datos-encontramos-en-r" id="toc-qué-tipos-de-datos-encontramos-en-r" class="nav-link" data-scroll-target="#qué-tipos-de-datos-encontramos-en-r">4.2 ¿Qué tipos de datos encontramos en R?</a></li>
+  </ul></li>
+  <li><a href="#cargar-librerías" id="toc-cargar-librerías" class="nav-link" data-scroll-target="#cargar-librerías">5. Cargar librerías</a></li>
   </ul></li>
   <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen">Resumen</a></li>
   </ul>
@@ -195,7 +258,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title display-7">Práctica 2. Conocimientos básicos de programación en R</h1>
 
 <div class="date-block bg-content text-white p-2">
-  <p class="date">Sesión del jueves, 13 de abril de 2023</p>
+  <p class="date">Sesión del jueves, 22 de mayo de 2025</p>
 </div>
 </header>
 
@@ -206,133 +269,481 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>El objetivo de esta guía práctica es introducirnos en los procedimientos básicos del uso del lenguaje y ambiente R.</p>
 <p>En detalle, aprenderemos:</p>
 <ol type="1">
+<li><p>R como una cocina</p></li>
 <li><p>Herramientas básicas de programación en R</p></li>
 <li><p>Operadores en R</p></li>
 <li><p>Tipos de datos</p></li>
 </ol>
 </section>
+<section id="r-es-una-cocina" class="level2">
+<h2 class="anchored" data-anchor-id="r-es-una-cocina">1. R es una cocina</h2>
+<p>En la sesión de hoy, comenzaremos de forma distinta, no utilizaremos los conceptos técnicos del software de lleno, sino que los iremos conociendo de a poco. Para cumplir ese objetivo, es que la idea es iniciar con un ejemplo, al que llamaremos <strong><em>“R es una cocina”</em></strong>.</p>
+<p>Lo primero, entonces, es que pensemos que RStudio, nuestra interfaz que visualizamos en estos momentos, es una cocina. Es importante que usemos la imaginación, ya que evidentemente no se ve como una cocina.</p>
+<p><br></p>
+<section id="primera-parte-de-la-estructura-de-datos-columnas-y-objetos" class="level3">
+<h3 class="anchored" data-anchor-id="primera-parte-de-la-estructura-de-datos-columnas-y-objetos">1.1 Primera parte de la estructura de datos: <em>columnas y objetos</em></h3>
+<p><br></p>
+<p>Cuando cocinamos siempre debemos realizar un paso previo antes de todo: <em>preparar la cocina o el espacio de trabajo</em>.</p>
+<section id="primero-debemos-precalentar-la-cocina" class="level4">
+<h4 class="anchored" data-anchor-id="primero-debemos-precalentar-la-cocina">Primero, debemos precalentar la cocina</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(beepr, dplyr, tidyverse) </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">beep</span>(<span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sin este paso, no podemos empezar a trabajar en nuestra sesión, por eso es muy impotante. Al igual que cuando precalentamos un horno o esperamos a que caliente el aceite antes de colocar los ingredientes.</p>
+</div>
+</div>
+<p>Con la cocina precalentada, podemos avanzar al siguiente paso.</p>
+</section>
+<section id="ahora-debemos-agregar-los-ingredientes" class="level4">
+<h4 class="anchored" data-anchor-id="ahora-debemos-agregar-los-ingredientes">Ahora debemos agregar los ingredientes…</h4>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Importante
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Deben ser la misma cantidad de elementos dentro del parentésis</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ingrediente_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">1</span>) <span class="co">#10 casos</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>ingrediente_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">100</span>, <span class="dv">91</span>, <span class="dv">87</span>, <span class="dv">100</span>, <span class="dv">55</span>, <span class="dv">61</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>ingrediente_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">35</span>,<span class="dv">35</span>,<span class="dv">20</span>,<span class="dv">15</span>,<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">25</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>ingrediente_4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"pisca"</span>, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharadita"</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>, </span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"pisca"</span>, </span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"pisca"</span>, </span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharadita"</span>, </span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharadita"</span>, </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>, </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>, </span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Si vamos viendo, nuestros ingredientes se van <em>acumulando en el cuadrante de abajo</em> (como valores). En ese sentido y en contexto de nuestro ejemplo, nuestra cocina va <em>almacenando los ingredientes que queremos utilizar para hacer un <strong>plato</strong></em>.</p>
+</section>
+<section id="ahora-bien-ya-con-los-ingredientes-listos-es-momento-de-hacer-nuestro-plato.-para-ello-hacemos-lo-siguiete" class="level4">
+<h4 class="anchored" data-anchor-id="ahora-bien-ya-con-los-ingredientes-listos-es-momento-de-hacer-nuestro-plato.-para-ello-hacemos-lo-siguiete">Ahora bien, ya con los ingredientes listos, es momento de hacer nuestro plato. Para ello, hacemos lo siguiete:</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plato <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(ingrediente_1, </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>                    ingrediente_2,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                    ingrediente_3, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                    ingrediente_4)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">beep</span>(<span class="dv">1</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Si volvemos a mirar en el cuadrante de abajo, el plato está listo (tal como lo indica el sonido de la cocina al finalizar la acción) y se encuentra almacenado no como un valor, sino que como un <strong>dato</strong>. Al que llamaremos, en términos más técnicos, un <strong><em>objeto</em></strong>.</p>
+<p>Así, tenemos hasta ahora, combinando el contexto de nuestro ejemplo y los tecnicismos del software:</p>
+<p><br></p>
+<blockquote class="blockquote">
+<p>Un <strong>plato</strong> que corresponde a un <strong><em>objeto</em></strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Cuatro <strong>ingredientes</strong> que componen el plato, que son <strong><em>valores</em></strong> que integran el objeto, dispuestos en <strong>columnas</strong>.</p>
+</blockquote>
+<p><br> <br></p>
+</section>
+</section>
+<section id="segunda-parte-de-la-estructura-de-datos-filas-y-funcionamiento-de-una-base-de-datos" class="level3">
+<h3 class="anchored" data-anchor-id="segunda-parte-de-la-estructura-de-datos-filas-y-funcionamiento-de-una-base-de-datos">1.2 Segunda parte de la estructura de datos: <em>filas y funcionamiento de una base de datos</em></h3>
+<p><br></p>
+<p>Pensemos que, de tanto que se ha encontrado el plato dentro de la cocina, llegaron las <strong>hormigas</strong> a buscarlo.</p>
+<p>Para seguir con la idea, debemos agregarlas de forma manual, de la siguiente manera:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>plato<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"hormiga_a"</span>,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_b"</span>, </span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_c"</span>, </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_d"</span>, </span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_e"</span>, </span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_f"</span>,</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_g"</span>, </span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_h"</span>, </span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_i"</span>, </span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_j"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Así, las hormigas se almacenaran en el valor <code>ID</code>, ya que será el identificador de cada una dentro de nuestra cocina y, específicamente, dentro de nuestro plato.</p>
+<p>Si retomamos la estrcutura de datos de nuestros ingredientes, estos se componene de 10 valores, que, en términos de nuestro ejemplo, son <em>partes</em> que componenen el ingrdiente (como <code>gramos</code> y <code>cucharadas</code>). Esto lo hicimos a propósito, para que cada valor o parte del ingrediente este asociado a cada hormiga. De ese modo, podemos ver cuánto de cada ingrediente de nuestro plato se llevo cada hormiga y, con esto, hacemos un análisis más detallado de lo que ellas se llevaron del plato.</p>
+<p>En ese sentido, ya no sólo decimos:</p>
+<blockquote class="blockquote">
+<p><em>“Llegaron las hormigas al plato y se llevan cosas de este”</em></p>
+</blockquote>
+<p>Sino que, podemos decir cosas más específicas al respecto:</p>
+<blockquote class="blockquote">
+<p><em>“Dentro del plato, la <code>hormiga_a</code> se llevo una pisca del <code>ingrediente_4</code> y la <code>hormiga_b</code> se llevo 25 milígramos del <code>ingrediente_3</code>”</em></p>
+</blockquote>
+<p><br> <br></p>
+<section id="ahora-bien-cómo-podemos-ver-cuánto-saco-cada-hormiga-de-un-ingediente-en-específico" class="level4">
+<h4 class="anchored" data-anchor-id="ahora-bien-cómo-podemos-ver-cuánto-saco-cada-hormiga-de-un-ingediente-en-específico">Ahora bien, ¿cómo podemos ver cuánto saco cada hormiga de un ingediente en específico?</h4>
+<p><br></p>
+<p>¡Con estadística descriptiva!</p>
+<p><br></p>
+<p>Para ello, podemos usar una tabla de contingencia, con la cual cruzamos dos datos, en este caso hormigas con el <code>ingrediente_4</code>. Quedaría algo así:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>summarytools<span class="sc">::</span><span class="fu">ctable</span>(plato<span class="sc">$</span>ID, plato<span class="sc">$</span>ingrediente_4)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cross-Tabulation, Row Proportions  
+ID * ingrediente_4  
+Data Frame: plato  
+
+----------- --------------- ------------ ------------- ------------ -------------
+              ingrediente_4    cucharada   cucharadita        pisca         Total
+         ID                                                                      
+  hormiga_a                   0 (  0.0%)    0 (  0.0%)   1 (100.0%)    1 (100.0%)
+  hormiga_b                   0 (  0.0%)    1 (100.0%)   0 (  0.0%)    1 (100.0%)
+  hormiga_c                   1 (100.0%)    0 (  0.0%)   0 (  0.0%)    1 (100.0%)
+  hormiga_d                   0 (  0.0%)    0 (  0.0%)   1 (100.0%)    1 (100.0%)
+  hormiga_e                   0 (  0.0%)    0 (  0.0%)   1 (100.0%)    1 (100.0%)
+  hormiga_f                   0 (  0.0%)    1 (100.0%)   0 (  0.0%)    1 (100.0%)
+  hormiga_g                   0 (  0.0%)    1 (100.0%)   0 (  0.0%)    1 (100.0%)
+  hormiga_h                   1 (100.0%)    0 (  0.0%)   0 (  0.0%)    1 (100.0%)
+  hormiga_i                   1 (100.0%)    0 (  0.0%)   0 (  0.0%)    1 (100.0%)
+  hormiga_j                   1 (100.0%)    0 (  0.0%)   0 (  0.0%)    1 (100.0%)
+      Total                   4 ( 40.0%)    3 ( 30.0%)   3 ( 30.0%)   10 (100.0%)
+----------- --------------- ------------ ------------- ------------ -------------</code></pre>
+</div>
+</div>
+<p>Aquí podemos ver que la <code>hormiga_a</code> se llevo una pisca del <code>ingrediente_4</code> de nuestro plato y, al contrario, la <code>horrmiga_c</code> se llevo una cucharada.</p>
+</section>
+<section id="pero-y-si-sólo-queremos-ver-a-la-hormiga-g" class="level4">
+<h4 class="anchored" data-anchor-id="pero-y-si-sólo-queremos-ver-a-la-hormiga-g">Pero… ¿y si sólo queremos ver a la hormiga g?</h4>
+<p><br></p>
+<p>¡Filtramos!</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>hg <span class="ot">&lt;-</span> plato <span class="sc">%&gt;%</span> <span class="fu">filter</span>(ID <span class="sc">==</span> <span class="st">"hormiga_g"</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(hg)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>'data.frame':   1 obs. of  5 variables:
+ $ ingrediente_1: num 4
+ $ ingrediente_2: num 87
+ $ ingrediente_3: num 15
+ $ ingrediente_4: chr "cucharadita"
+ $ ID           : chr "hormiga_g"</code></pre>
+</div>
+</div>
+<p>Hasta acá hemos visto la utilidad de nuestra cocina, tanto en el almacenamiento de los ingredientes, la creación de platos y en el análisis de los procesos que pueden estar ocurriendo dentro de la misma.</p>
+<p>A la información que vimos en el apartado anterior, ahora se agrega un tecnicismo más:</p>
+<blockquote class="blockquote">
+<p>Las hormigas poseen un pocentaje del ingrediente, en ese sentido, toman un valor de cada ingrediente que compone el plato, lo que se encuentra en las <strong>filas</strong></p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Nuestra cocina nos permite <strong>calcular</strong> cómo se distribuyen estos valores de cada ingrediente entre las hormigas</p>
+</blockquote>
+<p>Con lo anterior, ya podemos describirlo y entenderlo en el lenguaje de R y de ciencia de datos. Ahora, nos iremos a lo técnico, pero siempre retomando nuestro ejemplo de que <strong>R es una cocina</strong>.</p>
+<p><br> <br></p>
+</section>
+<section id="en-términos-concretos-y-hablando-ya-con-el-lenuaje-de-r" class="level4">
+<h4 class="anchored" data-anchor-id="en-términos-concretos-y-hablando-ya-con-el-lenuaje-de-r">En términos concretos y hablando ya con el lenuaje de R…</h4>
+<p><br></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p>Antes recordemos tres conceptos básicos: <strong>tablas</strong>, <strong>filas</strong> y <strong>columnas</strong>.</p>
+<p>Una <em><strong>tabla</strong> esta compuesta por filas y columnas</em>, y aquello entrega <strong><em>celdas o casillas</em></strong>.</p>
+<ul>
+<li><p>Las filas son <strong>horizontales</strong></p></li>
+<li><p>Las columnas <strong>verticales</strong></p></li>
+<li><p>En la tabla estas se <strong><em>cruzan entre sí</em></strong>, dicho cruce son las <strong>celdas</strong></p></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><em>¿Para qué nos sirve saber esto?</em></p>
+<p>Para entender el <strong>funcionamiento de una base de datos</strong>.</p>
+<p>RStudio para hacer los análisis estadísticos, utiliza bases de datos, las cuales podemos entender, con la terminología que manejamos hasta ahora, como “tablas” con datos en su interior.</p>
+</div>
+</div>
+<blockquote class="blockquote">
+<p><em>Así, una celda es el dato de un caso específico para una variable específica</em></p>
+</blockquote>
+<p><br></p>
+<p>Entonces, hasta ahora tenemos lo siguiente:</p>
+<table class="table">
+<colgroup>
+<col style="width: 36%">
+<col style="width: 44%">
+<col style="width: 18%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Estructura básica</th>
+<th>En Ciencias Sociales</th>
+<th>En nuestro ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fila</td>
+<td>Casos</td>
+<td>Hormigas</td>
+</tr>
+<tr class="even">
+<td>Columnas</td>
+<td>Variables</td>
+<td>Ingredientes</td>
+</tr>
+<tr class="odd">
+<td>Matriz</td>
+<td>Bases de datos o data frames</td>
+<td>Plato</td>
+</tr>
+</tbody>
+</table>
+<p><br> <br></p>
+<p>Ahora bien, lo que hicimos en la práctica con el plato, es que este se comporta como el almacenador de “algo” y le <em>asignamos</em> los ingredientes (que, en el fondo, son valores).</p>
+<blockquote class="blockquote">
+<p><em>En R, como es una cocina, trabajamos en función de ir creando platos (u, dicho de forma técnica, <strong>objetos</strong>)</em></p>
+</blockquote>
+<div class="columns">
+<div class="column" style="width:45%;">
+<ol type="a">
+<li>Podemos agregar ingredientes a un mismo plato, en su proceso de preparación, en un lenguaje más técnico, esto es <strong><em>sobreescribir un objeto</em></strong></li>
+</ol>
+</div><div class="column" style="width:45%;">
+<ol start="2" type="a">
+<li>Podemos ir almacendando platos distintos en nuestra cocina, en un lenguaje más técnico, esto es <strong><em>crear un objeto</em></strong></li>
+</ol>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">view</span>(plato)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+</section>
+<section id="ahora-que-entendemos-la-estructura-de-datos-cómo-se-ve-esto-en-la-realidad" class="level4">
+<h4 class="anchored" data-anchor-id="ahora-que-entendemos-la-estructura-de-datos-cómo-se-ve-esto-en-la-realidad">Ahora que entendemos la estructura de datos, ¿cómo se ve esto en la realidad?</h4>
+<p><br></p>
+<p>En nuestro estudio, tendremos bases de datos provinientes de encuestas, pueden ser de opinión, censales, etc.</p>
+<p>En ese sentido, nuesta estructura de datos se verá de la siguiente manera:</p>
+<ul>
+<li><p>Las filas serán <strong>personas</strong></p></li>
+<li><p>Las columnas <strong>preguntas de un cuestionario</strong></p></li>
+<li><p>La base de datos la <em>combinacion de ambas</em></p></li>
+</ul>
+<blockquote class="blockquote">
+<p><em>Así, las celdas son la respuesta específica de una persona a una pregunta específica</em></p>
+</blockquote>
+<p><br></p>
+<p>Si lo vemos dentro de nuestra analogía:</p>
+<ul>
+<li><p><em>La <strong>encuesta</strong> es nuestro <strong>plato</strong></em></p></li>
+<li><p><em>Las <strong>preguntas</strong> son los <strong>ingredientes</strong> que componen ese plato</em></p></li>
+</ul>
+<p>Al entender que las hormigas sacan un pocentaje de los ingredientes, le entregamos un <strong><em>valor específico a cada una de ese ingrediente</em></strong>.</p>
+<p>En ese sentido:</p>
+<blockquote class="blockquote">
+<p>Cierto porcentaje del ingrediente le pertenece a una hormiga</p>
+</blockquote>
+<p>En los datos de una encuesta:</p>
+<blockquote class="blockquote">
+<p>Cierto porcentaje del dato le pertenece a una persona, ya que aquello es su respuesta a la pregunta del cuestionario</p>
+</blockquote>
+<p><br></p>
+</section>
+</section>
+<section id="entonces-dentro-de-la-investigación-sociológica-y-estadística-lo-que-hacemos-es" class="level3">
+<h3 class="anchored" data-anchor-id="entonces-dentro-de-la-investigación-sociológica-y-estadística-lo-que-hacemos-es">1.3 Entonces, dentro de la investigación sociológica y estadística lo que hacemos es:</h3>
+<p><br></p>
+<p>Utilizar nuestra <strong><em>cocina estadística</em></strong> para observar esas respuestas que tienen un valor para nosotr-s.</p>
+<p>Las respuestas de las personas nos indican <strong>tendencias, percepciones, y condiciones objetivas en las que viven</strong>. Esos datos son valiosos para nuestra labor, ya que podemos analizarlos para tener una noción de <em>cómo se distirbuyen dichas caracterísitcas en la sociedad</em>.</p>
+<p>Del mismo modo, podriamos ver cómo se distribuye cierto ingrediente en las homigas, o qué ingrediente prefieren más la hormigas sólo observando sus frecuencias e identificando el ingrediente más popular.</p>
+<p><br></p>
+<p><em>¿Cuál es la utilidad de eso en lo concreto?</em>: Nos permite realizar <strong>hipótesis</strong> y <strong>preguntas de investigación</strong>.</p>
+<p><br></p>
+<table class="table">
+<colgroup>
+<col style="width: 54%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>En el caso de las hormigas…</th>
+<th>En Ciencias Sociales…</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Podríamos hipotetizar, por ejemplo, que el ingrediente 1 es más dañino, y esa razón podría ser una posible explicación a su baja frecuencia. Otra hipótesis podría ser que ese ingrediente es más difícil de conseguir del plato.</td>
+<td>Algo similar se ve cuando evaluamos los ingresos a nivel de hogar. Con análisis descriptivos ya podemos ver brechas, desigualdades y aproximaciones a la distribución, según los estadísticos que calculemos.</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>Con esto en mente, ¡ya podemos andentrarnos a un lenguaje más técnico y los conocimientos básicos de programación para utilizar RStudio!</p>
+</section>
+</section>
 <section id="conocimientos-básicos-de-programación" class="level2">
-<h2 class="anchored" data-anchor-id="conocimientos-básicos-de-programación">1. Conocimientos básicos de programación</h2>
+<h2 class="anchored" data-anchor-id="conocimientos-básicos-de-programación">2. Conocimientos básicos de programación</h2>
 <p>Revisemos algunos conocimientos básicos para la programación en R. Pero antes, tengamos dos cosas en mente:</p>
 <ul>
 <li><p>Primero, ¿qué es codificar?, en programación <strong>codificar corresponde a un proceso de entrega de instrucciones</strong> en un lenguaje específico, siguiendo un orden lógico y coherente.</p></li>
 <li><p>Segundo, de aquí en adelante nos manejaremos con una máxima en el curso; <strong><em>existe un acuerdo implícito entre tú y R</em>: R hará todos los cálculos por ti, pero en cambio <em>tú</em> debes dar las instrucciones con total precisión.</strong></p></li>
 </ul>
 <section id="r-como-calculadora" class="level3">
-<h3 class="anchored" data-anchor-id="r-como-calculadora">1.1 R como calculadora</h3>
+<h3 class="anchored" data-anchor-id="r-como-calculadora">2.1 R como calculadora</h3>
 <p>Uno de los usos más sencillos y que están a la base de R, es usarlo como una calculadora.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span><span class="sc">+</span><span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">/</span><span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span><span class="sc">/</span><span class="dv">5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">*</span><span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="dv">27-2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="dv">27-2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 25</code></pre>
 </div>
 </div>
 <p>Como podrás ver, el resultado de estas instrucciones aparecen como un <code>[1]</code> en la consola. También podemos hacer operatorias más complejas y con más cálculos.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span><span class="sc">*</span>(<span class="dv">7</span><span class="sc">+</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">45-32</span>)<span class="sc">+</span><span class="dv">8</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="dv">12</span><span class="sc">*</span>(<span class="dv">7</span><span class="sc">+</span><span class="dv">2</span>)<span class="sc">+</span>(<span class="dv">45-32</span>)<span class="sc">+</span><span class="dv">8</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 129</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span><span class="sc">^</span><span class="dv">2</span> <span class="sc">-</span> <span class="dv">2</span><span class="sc">^</span><span class="dv">2</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 480</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">200</span> <span class="sc">*</span> <span class="dv">30</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">/</span><span class="dv">200</span> <span class="sc">*</span> <span class="dv">30</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.15</code></pre>
 </div>
 </div>
+<p>Siguiendo el ejemplo de las hormigas, estas acciones son las que nos permiten utilizar la cocina para calcular distribuciones de los ingredientes por hormiga.</p>
 </section>
 <section id="un-lenguaje-orientado-a-objetos" class="level3">
-<h3 class="anchored" data-anchor-id="un-lenguaje-orientado-a-objetos">1.2 Un lenguaje orientado a objetos</h3>
-<p>R es un lenguaje de programación orientado a objetos. ¿Qué significa eso?, implica que podemos crear elementos dentro del ambiente de R, a los cuales les <strong>asignaremos información</strong> que quedará almacenada, información que puede ir desde números, palabras, cálculos hasta grandes bases de datos.</p>
-<p>Todas las instrucciones en R en las que crees objetos, es decir, instrucciones de <strong>asignación</strong>, tendrán la misma estructura:</p>
+<h3 class="anchored" data-anchor-id="un-lenguaje-orientado-a-objetos">2.2 Un lenguaje orientado a objetos</h3>
+<p>En nuestro ejemplo, hablamos de sobreescribir y crear objetos, si bien lo hicimos sin saber muy bien a qué nos referiamos, dentro de lo más técnico lo podemos entender de la siguiente manera:</p>
+<p>Lo primero, la frase que utiliaremos de aquí en adelante: <strong>R es un lenguaje de programación orientado a objetos</strong>.</p>
+<p><em>¿Qué significa eso?</em>: implica que podemos crear elementos dentro del ambiente de R, a los cuales les <strong>asignaremos información</strong> que quedará almacenada, información que puede ir desde números, palabras, cálculos hasta grandes bases de datos.</p>
+<p>Todas las instrucciones en R en las que crees objetos, es decir, instrucciones de <strong>asignación</strong>, tendrán la <em>misma estructura</em>:</p>
 <p><code>nombre_objeto &lt;- valor</code></p>
 <p>El asignador <code>&lt;-</code> se utiliza para crear objetos y forma parte de uno de los <strong>operadores</strong> usados en R.</p>
 <p>Los elementos que podemos asignar a objetos son múltiples, como números, palabras acompañadas siempre de corchetes <code>" "</code> y vectores que corresponden a un conjunto o secuencia de elementos del mismo tipo definidos por la funcion de concatenar = <code>c()</code>.</p>
 <p>Veamos un ejemplo creando objetos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># asignar</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>x <span class="co"># ejecutar</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">4</span> <span class="co"># asignar</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>x <span class="co"># ejecutar</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Hola mundo"</span> <span class="co"># los carácteres alfabéticos siempre van acompañados de corchetes</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>y </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="st">"Hola mundo"</span> <span class="co"># los carácteres alfabéticos siempre van acompañados de corchetes</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>y </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Hola mundo"</code></pre>
 </div>
 </div>
-<p>¿Y concatenando? Hacemos un vector.</p>
+<p>¿Y concatenando? Hacemos un <strong>vector</strong>.</p>
+<p>Esto es lo que hicimos para crear los ingredientes del plato, el plato y las hormigas del plato. En definitiva creamos vectores y aquello lo hicimos a partir de la creación de obejtos: Es decir, asignamos valores concatenados a un objeto contenedor de esta información (en este caso, que llamamos <code>ingrediente_1</code>, <code>ingrediente_2</code>, <code>ingrediente_3</code>, <code>ingrediente_4</code> <code>plato</code>y <code>ID</code>)</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>edad <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>,<span class="dv">22</span>,<span class="dv">36</span>,<span class="dv">19</span>,<span class="dv">35</span>) <span class="co"># concatenar (variable de razon)</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>edad</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>ingrediente_1 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">4</span>,<span class="dv">3</span>,<span class="dv">8</span>,<span class="dv">1</span>) <span class="co">#10 casos</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>ingrediente_2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">100</span>, <span class="dv">200</span>, <span class="dv">50</span>, <span class="dv">30</span>, <span class="dv">100</span>, <span class="dv">91</span>, <span class="dv">87</span>, <span class="dv">100</span>, <span class="dv">55</span>, <span class="dv">61</span>)</span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>ingrediente_3 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">25</span>,<span class="dv">30</span>,<span class="dv">35</span>,<span class="dv">35</span>,<span class="dv">20</span>,<span class="dv">15</span>,<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">25</span>)</span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>ingrediente_4 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"pisca"</span>, </span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharadita"</span>, </span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>, </span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"pisca"</span>, </span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"pisca"</span>, </span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharadita"</span>, </span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharadita"</span>, </span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>, </span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>, </span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"cucharada"</span>)</span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>plato<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"hormiga_a"</span>,</span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_b"</span>, </span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_c"</span>, </span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_d"</span>, </span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_e"</span>, </span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_f"</span>,</span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_g"</span>, </span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_h"</span>, </span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_i"</span>, </span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>        <span class="st">"hormiga_j"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ahora, <em>¿cómo se vería esto en vectores que utilizaríamos para un trabajo?</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>edad <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">18</span>,<span class="dv">22</span>,<span class="dv">36</span>,<span class="dv">19</span>,<span class="dv">35</span>) <span class="co"># concatenar (variable de razon)</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>edad</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 18 22 36 19 35</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>genero <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co"># masculino = 1; femenino = 2; transgenero = 3 (variable nominal)</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>genero </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>genero <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>) <span class="co"># masculino = 1; femenino = 2; transgenero = 3 (variable nominal)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>genero </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 3 1 1 2 3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>gse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ABC1"</span>, <span class="st">"C2"</span>, <span class="st">"E"</span>, <span class="st">"AbC1"</span>, <span class="st">"E"</span>)  <span class="co"># tambíen se pueden usar carácteres (variable ordinal)</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>gse</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>gse <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"ABC1"</span>, <span class="st">"C2"</span>, <span class="st">"E"</span>, <span class="st">"AbC1"</span>, <span class="st">"E"</span>)  <span class="co"># tambíen se pueden usar carácteres (variable ordinal)</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>gse</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "ABC1" "C2"   "E"    "AbC1" "E"   </code></pre>
 </div>
 </div>
 <p><strong>¡Hagamos una pequeño reto!</strong>: ¿Cuál es el valor de a y b? Si a &lt;- 5; b &lt;- a; a &lt;- 4</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">4</span></span>
-<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a) <span class="co"># imprimir en la consola</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>b <span class="ot">&lt;-</span> a</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">4</span></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(a) <span class="co"># imprimir en la consola</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(b)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(b)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> <span class="dv">10</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 14</code></pre>
 </div>
 </div>
-<p>Ahora, sea z = a^2 ¿qué resultado obtenemos de a * b + z?</p>
+<p>Y… <em>¿En el ejemplo de las hormigas?</em>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> a<span class="sc">^</span><span class="dv">2</span> <span class="co"># asignar</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>a <span class="sc">*</span> b <span class="sc">+</span> z</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Para observar los valores del ingrediente 1</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(ingrediente_1) <span class="co"># imprimir en la consola</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 36</code></pre>
+<pre><code> [1] 2 3 4 5 6 7 4 3 8 1</code></pre>
 </div>
 </div>
-<p>Además de lo anterior, en R es fundamental la creación de <strong>data.frames</strong>. Un Data.frame es una estructura de datos de dos dimensiones (columnas y filas), donde las columnas pueden ser de diferente naturaleza, pero deben tener el mismo largo. A partir de ella agrupamos variables en una matriz, o sea, construimos una base de datos. Es como “pegar” las columnas (variables) una al lado de otra.</p>
-<p>Creemos un data.frame con los vectores que ya creamos antes.</p>
+<p>Sin embargo, considerando que anteriomente alojamos el <code>ingrediente_1</code> en el objeto <code>plato</code>, podemos hacer lo siguiente también para observar los valores del <code>ingrediente_1</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>base1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(genero, gse, edad) <span class="co"># Resulta como objeto de "datos" en</span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>                                       <span class="co"># entorno.</span></span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>base1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(plato<span class="sc">$</span>ingrendiente_1) <span class="co"># imprimir en la consola</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>El signo <code>$</code> es otro operador importante, que nos permite indicar en qué objeto está almacenada cierta variable que queremos observar.</p>
+<p><em>¿Por qué debemos utilizarlo?</em> Por nuestra premisa inicial: Dado que <em>R esta orientado a la creación de objetos</em>, por ende cualquier valor esta almacenado en un objeto. En este caso <code>ingrediente_1</code> lo integramos dentro del objeto <code>plato</code>.</p>
+<p>Esto último esta vinculado a un proceso fundamental en R: la creación de <strong>data.frames</strong>, ya que si vemos la naturaleza del objeto <code>plato</code> con la función <code>class(plato)</code>, esto nos indicará que se trata de un data.frame.</p>
+<p>Un <strong>Data.frame</strong> es una estructura de datos de dos dimensiones (columnas y filas), donde las columnas pueden ser de diferente naturaleza, pero deben tener el mismo largo. A partir de ella agrupamos variables en una matriz, o sea, construimos una base de datos. <em>Es como “pegar” las columnas (variables) una al lado de otra</em>.</p>
+<p>Para verlo con otro ejemplo, creemos un data.frame con los vectores que ya creamos antes:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>base1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(genero, gse, edad) <span class="co"># Resulta como objeto de "datos" en</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>                                       <span class="co"># entorno.</span></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>base1</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  genero  gse edad
 1      3 ABC1   18
@@ -342,16 +753,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 5      3    E   35</code></pre>
 </div>
 </div>
-<p>Como puedes ver, para crear el data.frame usamos la función que lleva el mismo nombre, colocando dentro del paréntesis los vectores que creamos anteriormente: <code>data.frame(mis_vectores)</code>.</p>
+<p>Como puedes ver, para crear el data.frame, tanto en este ejemplo como cuando creamos el plato, usamos la función que lleva el mismo nombre, colocando dentro del paréntesis los vectores que creamos anteriormente: <code>data.frame(mis_vectores)</code>.</p>
 <p>Ahora, creemos un <code>data.frame</code> desce cero. En este ejemplo, crearemos los vectores dentro de la función <code>data.frame()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de como crear un data.frame desde 0: </span></span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>base2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sexo=</span><span class="fu">c</span>(<span class="st">"H"</span>,<span class="st">"M"</span>,<span class="st">"H"</span>,<span class="st">"M"</span>,<span class="st">"H"</span>,<span class="st">"M"</span>),</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Estatura=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">1.76</span>,<span class="fl">1.82</span>,<span class="fl">1.60</span>,<span class="fl">1.90</span>,<span class="fl">1.66</span>),</span>
-<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Peso=</span><span class="fu">c</span>(<span class="dv">67</span>,<span class="dv">58</span>,<span class="dv">66</span>,<span class="dv">48</span>,<span class="dv">75</span>,<span class="dv">55</span>))</span>
-<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(base2)  <span class="co"># Me permite visualizar las primeras filas</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo de como crear un data.frame desde 0: </span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>base2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Sexo=</span><span class="fu">c</span>(<span class="st">"H"</span>,<span class="st">"M"</span>,<span class="st">"H"</span>,<span class="st">"M"</span>,<span class="st">"H"</span>,<span class="st">"M"</span>),</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Estatura=</span><span class="fu">c</span>(<span class="fl">1.83</span>,<span class="fl">1.76</span>,<span class="fl">1.82</span>,<span class="fl">1.60</span>,<span class="fl">1.90</span>,<span class="fl">1.66</span>),</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Peso=</span><span class="fu">c</span>(<span class="dv">67</span>,<span class="dv">58</span>,<span class="dv">66</span>,<span class="dv">48</span>,<span class="dv">75</span>,<span class="dv">55</span>))</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(base2)  <span class="co"># Me permite visualizar las primeras filas</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Sexo Estatura Peso
 1    H     1.83   67
@@ -362,62 +773,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 6    M     1.66   55</code></pre>
 </div>
 </div>
+<p><br></p>
 </section>
 </section>
 <section id="operadores-en-r" class="level2">
-<h2 class="anchored" data-anchor-id="operadores-en-r">2. Operadores en R</h2>
+<h2 class="anchored" data-anchor-id="operadores-en-r">3. Operadores en R</h2>
 <p>Antes de trabajar con datos, debemos conocer el concepto de <strong>operadores</strong>. Estos símbolos no son de uso exclusivo en R, pero no todos tienen el mismo significado que en otros softwares.</p>
 <p>Los operadores son símbolos que permiten, en los distintos procedimientos de procesamiento, simplificar procesos. Por ejemplo, serán útilizados cuando filtremos nuestros datos para personas de ciertas categorías, cuando calculemos variables nuevas (de manera aritmética o condicional) o, simplemente, cuando queramos hacer procesos “concatenados”.</p>
 <p><img src="../images/operadores.png" class="img-fluid"></p>
 <p>¡Veamos algunos ejemplos!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">==</span> <span class="dv">5</span> <span class="co"># igualdad</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="dv">20</span> <span class="sc">==</span> <span class="dv">5</span> <span class="co"># igualdad</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="sc">&gt;=</span> <span class="dv">14</span> <span class="co"># mayor o igual que</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="dv">30</span> <span class="sc">&gt;=</span> <span class="dv">14</span> <span class="co"># mayor o igual que</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span> <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="co"># menor o igual que</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="dv">22</span> <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="co"># menor o igual que</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="sc">!=</span> <span class="dv">10</span> <span class="co"># no es igual a</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="dv">25</span> <span class="sc">!=</span> <span class="dv">10</span> <span class="co"># no es igual a</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] TRUE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="dv">10</span>; y <span class="ot">=</span> <span class="dv">5</span>; p <span class="sc">&lt;=</span> y <span class="co"># operatoria en objetos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>p <span class="ot">=</span> <span class="dv">10</span>; y <span class="ot">=</span> <span class="dv">5</span>; p <span class="sc">&lt;=</span> y <span class="co"># operatoria en objetos</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
 </div>
 </section>
 <section id="tipos-de-datos" class="level2">
-<h2 class="anchored" data-anchor-id="tipos-de-datos">3. Tipos de datos</h2>
+<h2 class="anchored" data-anchor-id="tipos-de-datos">4. Tipos de datos</h2>
 <section id="qué-son-los-tipos-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="qué-son-los-tipos-de-datos">3.1 ¿Qué son los tipos de datos?</h3>
+<h3 class="anchored" data-anchor-id="qué-son-los-tipos-de-datos">4.1 ¿Qué son los tipos de datos?</h3>
 <p>En R, al igual que en la mayoría de lenguajes de programación, contamos con datos de diversos tipos, en razón de los cuales podemos realizar determinados procedimientos de tratamiento o análisis.</p>
 <p><strong>Los tipos de datos están íntimamente relacionados con el nivel de medición de las variables</strong> a las que corresponden. Como viste en clases, la teoría de los niveles de medición contempla cuatro tipos:</p>
 <p><img src="../images/noir2.jpg" class="img-fluid"></p>
 </section>
 <section id="qué-tipos-de-datos-encontramos-en-r" class="level3">
-<h3 class="anchored" data-anchor-id="qué-tipos-de-datos-encontramos-en-r">3.2 ¿Qué tipos de datos encontramos en R?</h3>
+<h3 class="anchored" data-anchor-id="qué-tipos-de-datos-encontramos-en-r">4.2 ¿Qué tipos de datos encontramos en R?</h3>
 <p>Para responder esta pregunta, ¡metamos nuestras manos en los datos!. En esta oportunidad trabajaremos sobre un subset de datos del Modulo de Desigualdad Social de la encuesta <a href="https://www.gesis.org/en/issp/home">International Social Survey Programme del 2019</a>. Esta base la descargaremos directamente desde internet por esta vez (en futuras sesiones aprenderemos cómo cargar bases de datos).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co">#cargamos la base de datos desde internet</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/Andreas-Lafferte/descriptiva/blob/main/data/db-proc.RData?raw=true"</span>))</span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rand_df) <span class="co"># ver primeros casos de la base</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="co">#cargamos la base de datos desde internet</span></span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/Andreas-Lafferte/descriptiva/blob/main/data/db-proc.RData?raw=true"</span>))</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(rand_df) <span class="co"># ver primeros casos de la base</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>       pais edad   sexo          ideologia percepcion_conflictos
-1     Suiza   23 Hombre          Izquierda                     2
-2     Chile   27  Mujer Sin identificación                     2
-3     Rusia   43  Mujer Sin identificación                     1
-4 Finlandia   71  Mujer Sin identificación                     1
-5     Japon   54  Mujer          Izquierda                     2
-6  Lituania   67  Mujer Sin identificación                     1</code></pre>
+<pre><code># A tibble: 6 × 5
+  pais       edad sexo   ideologia          percepcion_conflictos
+  &lt;chr&gt;     &lt;dbl&gt; &lt;fct&gt;  &lt;fct&gt;                              &lt;dbl&gt;
+1 Suiza        23 Hombre Izquierda                              2
+2 Chile        27 Mujer  Sin identificación                     2
+3 Rusia        43 Mujer  Sin identificación                     1
+4 Finlandia    71 Mujer  Sin identificación                     1
+5 Japon        54 Mujer  Izquierda                              2
+6 Lituania     67 Mujer  Sin identificación                     1</code></pre>
 </div>
 </div>
 <section id="i-character" class="level4">
@@ -425,7 +839,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Los datos <code>character</code> están directamente asociados a las variables cualitativas (o categóricas). Generalmente suelen ser variables de texto abierto, como es el caso de la variable <strong>pais</strong>, que detalla el país de procedencia de la persona encuestada.</p>
 <p>Para conocer cuál es el tipo de variable en R, utilizamos el comando <code>class()</code>, y para detallar dentro de la base de datos cuál es la variable de interés, utilizamos el símbolo <code>$</code> posterior a la base de datos:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>pais) <span class="co"># siempre es la misma estructura = base$variable</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>pais) <span class="co"># siempre es la misma estructura = base$variable</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
@@ -436,11 +850,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="ii-factor">II) Factor</h4>
 <p>Las variables de tipo <code>factor</code> son ideales para trabajar con variables de tipo nominal u ordinal. Esto es así debido a que permiten establecer un orden entre las categorías de la variable, lo cual es fundamental si trabajamos, por ejemplo, con variables nominales como el sexo de los encuestados, o si trabajamos con variables ordinales como su ideología política.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>sexo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>sexo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "factor"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>ideologia)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>ideologia)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "factor"</code></pre>
 </div>
@@ -450,7 +864,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h4 class="anchored" data-anchor-id="iii-numeric">III) Numeric</h4>
 <p>Las variables de tipo <code>numeric</code> son variables de tipo númerica, las cuales pueden ser intervales o de razón. Así, por ejemplo, cuando trabajamos con variables de razón trabajamos con variables como el número de hijos o la edad (aunque sería extraño encuestar a alguien con 0 años).</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(rand_df<span class="sc">$</span>edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
@@ -459,17 +873,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 <section id="cargar-librerías" class="level2">
-<h2 class="anchored" data-anchor-id="cargar-librerías">4. Cargar librerías</h2>
+<h2 class="anchored" data-anchor-id="cargar-librerías">5. Cargar librerías</h2>
 <p>En R se trabaja a partir de paquetes (packages). ¿Qué son? De forma resumida, los paquetes son un conjunto de funciones o herramientas que pueden ser usadas en R. Los directorios de R donde se almacenan los paquetes se denominan librerías. La lógica es instalar paquetes y luego cargar (o llamar) las librerías cada vez que es necesario usarlas.</p>
 <p>Usualmente para cargar paquetes lo hacemos de la siguiente manera:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"paquete"</span>)</span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(paquete)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"paquete"</span>)</span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(paquete)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Pero en esta ocasión utilizaremos un paquete llamado <strong>pacman</strong>, que facilita y agiliza la lectura (instalación y carga) de los paquetes a utilizar en R. De esta forma lo instalamos 1 única vez así:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a href="#cb69-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb69-2"><a href="#cb69-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Luego instalaremos y cargaremos los paquetes de R de la siguiente manera, volviendo más eficiente el procedimiento de carga de paquetes.</p>
 <p>En este práctico utilizaremos seis paquetes</p>
@@ -481,14 +895,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p><code>car</code>: para recodificar/agrupar valores de variables</p></li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># colección de paquetes para manipulación de datos</span></span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>               dplyr, <span class="co"># para manipular datos</span></span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>               haven, <span class="co"># para importar datos</span></span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>               car <span class="co"># para recodificar datos</span></span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>               )</span>
-<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb59-7"><a href="#cb59-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
-<span id="cb59-8"><a href="#cb59-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(tidyverse, <span class="co"># colección de paquetes para manipulación de datos</span></span>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>               dplyr, <span class="co"># para manipular datos</span></span>
+<span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>               haven, <span class="co"># para importar datos</span></span>
+<span id="cb70-4"><a href="#cb70-4" aria-hidden="true" tabindex="-1"></a>               car <span class="co"># para recodificar datos</span></span>
+<span id="cb70-5"><a href="#cb70-5" aria-hidden="true" tabindex="-1"></a>               )</span>
+<span id="cb70-6"><a href="#cb70-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb70-7"><a href="#cb70-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co"># para desactivar notacion cientifica</span></span>
+<span id="cb70-8"><a href="#cb70-8" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>()) <span class="co"># para limpiar el entorno de trabajo</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Como se puede ver, antes de la función p_load hay un <code>::</code>, esto se refiere a que se “fuerza” que esa función provenga de ese paquete (en este caso del paquete <code>pacman</code>).</p>
 </section>
@@ -497,6 +911,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1>Resumen</h1>
 <p>Hoy aprendimos distintas herramientas básicas para utilizar el lenguaje y ambiente R. Como resumen:</p>
 <ul>
+<li><p>Estructura de datos en R: filas, columnas, data.frames</p></li>
 <li><p>Utilizar R como calculadora, su lógica orientada a objetos creando objetos, vectores y data.frames</p></li>
 <li><p>Operadores en R</p></li>
 <li><p>Tipos de datos en R como variables cualitativas (character o factor) y cuantitativas (numeric)</p></li>
