@@ -1,6 +1,6 @@
 ---
 title: "Práctica 3. Procesamiento, limpieza y manipulación de datos en R"
-date: "2024-05-11"
+date: "2025-05-29"
 lang: es
 output:
   number_sections: true
