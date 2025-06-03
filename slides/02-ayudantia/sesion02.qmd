@@ -10,13 +10,13 @@ knitr:
 
 format: 
   revealjs:
-    logo: ../images/logo.png
+    logo: images/logo.png
     slide-number: true
     theme: [pp.scss]
     title-slide-attributes:
       visibility: false
       data-background-image: images/logo.png
-      data-background-size: ../images/logo.png
+      data-background-size: images/logo.png
     auto-play-media: true
 
 
@@ -27,7 +27,7 @@ editor:
 ## {data-background-color="#00788d"}
 :::: {.columns .v-center-container}
 ::: {.column width=20%}
-![](../images/logo.png){width="80%" fig-align="right"} <br>
+![](images/logo.png){width="80%" fig-align="right"} <br>
 
 :::
 ::: {.column width=80%}
@@ -70,7 +70,7 @@ Equipo docente Estadística Descriptiva
 
 :::{.columns}
 ::: {.column width="60%"}
-![](../images/sesion2.png)
+![](images/sesion2.png)
 :::
 
 ::: {.column width="5%"}
@@ -193,4 +193,4 @@ $$
 | *paquete `dplyr`* |  `dplyr::summarise(base, Rango = max(variable) - min(variable), Varianza = var(variable), Desviacion_Estandar = sd(variable))`|
 
 ## [*Gracias por su atención*]{.black}{data-background-color="#00788d"} 
-![](../images/logo.png){width="50%"}
+![](images/logo.png){width="50%"}

@@ -8,8 +8,12 @@ output:
 
 ## Documento de presentación
  
-<iframe src=/slides/02-ayudantia/sesion02.html height="550" width=100% allowfullscreen="true">
+<iframe src="https://mafenunez.github.io/materiales-docencia/presentaciones/sesion02.html"
+        style="width: 100%; height: 90vh; border: none;"
+        allowfullscreen>
 </iframe> 
+
+
 
 ## Guía de ejercicios
 
