@@ -1,0 +1,18 @@
+---
+title: "Ayudantía 02. Medidas de Dispersión"
+#date: false
+lang: es
+output:
+  number_sections: true
+---
+
+## Documento de presentación
+ 
+<iframe src=/slides/02-ayudantia/sesion02.html height="550" width=100% allowfullscreen="true">
+</iframe> 
+
+## Guía de ejercicios
+
+<iframe src= 02_guia.pdf height="550" width=100% allowfullscreen="true">
+
+</iframe> 

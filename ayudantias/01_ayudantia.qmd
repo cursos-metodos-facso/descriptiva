@@ -1,0 +1,19 @@
+---
+title: "Ayudantía 01. Medidas de Frecuencias y Tendencia Central"
+#date: false
+lang: es
+output:
+  number_sections: true
+---
+## Documento de presentación
+ 
+<iframe src=/slides/01-ayudantia/sesion01.html height="550" width=100% allowfullscreen="true">
+
+</iframe> 
+
+
+## Guía de ejercicios
+
+<iframe src= 01_guía.pdf height="550" width=100% allowfullscreen="true">
+
+</iframe> 

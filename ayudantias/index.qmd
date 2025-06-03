@@ -1,0 +1,27 @@
+---
+title: "Sesiones de ayudantía"
+lang: es
+---
+
+En esta sección se aloja el contenido de las ayudantías, a las cuales van asociadas dos materiales: **presentaciones** y **guías de ejercicios**. 
+
+## Sobre las sesiones
+
+L-s ayudantes apoyaran a sus grupos designados a partir de *sesiones personalizadas*. Estas serán **3 sesiones**, en las cuales se verán los distintos estadísticos aprendidos en clases. 
+
+- La sesión 1 corresponde a las **medidas de frecuencia y tendencia central**
+- La sesión 2 corresponde a las **medidas de dispersión**
+- La sesión 3 corresponde a las **medidas de posición y forma**
+
+Para estas sesiones sus ayudantes se coordinarán con ustedes mediante el canal de comunicación que utilicen. 
+
+En estas se dará un espacio de **presentación y discusión del contenido**, junto a una instancia práctica en que se les entregará una **guía de ejercicios** orientada a los estadísticos vistos en la sesión. 
+
+
+:::{.callout-important}
+La realización de la guía de ejercicios **por sesión** proporcionará **1 décima** para la entrega final del trabajo grupal (*es decir, se puede optar a un total 3 décimas*). 
+
+Para optar a esta bonificación **la guía debe ser realizada dentro de la sesión de ayudantía**. De todos modos, las guías quedarán disponibles para su estudio autónomo.
+
+:::
+

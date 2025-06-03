@@ -41,6 +41,8 @@ website:
         file: class/index.qmd
       - text: "Prácticos"
         file: assignment/index.qmd
+      - text: "Ayudantías"
+        file: ayudantias/index.qmd
       - text: "Evaluaciones"
         file: evaluaciones.qmd
       - text: "Recursos"
@@ -102,6 +104,24 @@ website:
 # #              file: assignment/07-practico.qmd
 # #            - text: "8: Inferencia estadística univariada"
 # #              file: assignment/08-practico.qmd
+
+    - title: "Ayudantías"
+      style: "docked"
+      search: false
+      background: dark
+      contents:
+        - section: "Información general"
+          contents:
+            - ayudantias/index.qmd
+        - section: "Sesiones"
+          contents:
+            - text: "1: Medidas de Frecuencia y Tendencia Central"
+              file: ayudantias/01_ayudantia.qmd
+            - text: "2: Medidas de Dispersión"
+              file: ayudantias/02_ayudantia.qmd
+           # - text: "3: Medidas de Posición y Forma"
+            #  file: ayudantias/03-ayudantia.qmd
+
 
     - title: "Recursos"
       style: "docked"

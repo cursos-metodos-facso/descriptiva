@@ -1,0 +1,7 @@
+---
+title: "Ayudantía 03. Medidas de Posición y  Forma"
+#date: false
+lang: es
+output:
+  number_sections: true
+---
