@@ -38,13 +38,13 @@ Semana 10 (12/05) | Suspensión por toma. | |
 Semana 11 (19/05) | Medidas de tendencia central. | Práctico 2 |
 Semana 12 (26/05) | Medidas de dispersión. | Práctico 3|
 <font color="orange"> **Junio** </font> |   |   |
-Semana 13 (02/06) | Medidas de posición. | Práctico 3 | 
-Semana 14 (09/06) | Visualización de datos y distribuciones de datos. | Práctico 4 |
+Semana 13 (02/06) | Medidas de posición. | Práctico 3 | Entrega Parcial Reporte de Investigación (06/06) |
+Semana 14 (09/06) | Visualización de datos y distribuciones de datos. | Práctico 4 | Entrega Tarea Individual Excel y SPSS (09/06) |
 ### UNIDAD 3: La forma de una distribución
 |||
 -----|------------|-------------------|-----------
 Semana 15 (16/06) | Noción de función y distribución. | Práctico 5 |
-Semana 16 (23/06) | Asimetría y Curtosis.| Sesión de apoyo a trabajos. |
+Semana 16 (23/06) | Asimetría y Curtosis.| Sesión de apoyo a trabajos. | Entrega Final Reporte de Investigación (27/06) |
 <font color="orange"> **Julio** </font> |   |   |
 Semana 17 (30/06) | Concepto de distribución estadística. Distribución normal y sus probabilidades. |  |
 Semana 18 (07/07) | Exámenes |  |
