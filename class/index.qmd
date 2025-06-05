@@ -1,5 +1,5 @@
 ---
-title: "Presentaciones y lecturas"
+title: "Presentaciones"
 ---
 
 En esta sección se encuentran las **presentaciones de las clases lectivas** de la cátedra de Estadística Descriptiva.

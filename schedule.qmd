@@ -20,33 +20,32 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
 ### UNIDAD 1: Sociología y estadística
 |||
 -----|------------|-------------------|-----------
-Semana 1 (10/03) | 1. La estadística como herramienta de investigación sociológica |  | 
-Semana 2 (17/03) | 2. Epistemología, límites y potencialidades de la investigación cuantitativa. | | 
-Semana 3 (24/03) | 3. La medición en ciencias sociales: algunos conceptos fundamentales.| | 
+Semana 1 (10/03) | La estadística como herramienta de investigación sociológica |  | 
+Semana 2 (17/03) | Epistemología, límites y potencialidades de la investigación cuantitativa. | | 
+Semana 3 (24/03) | La medición en ciencias sociales: algunos conceptos fundamentales.| | 
 <font color="orange"> **Abril** </font> |   |   |
-Semana 4 (31/03) | 4. Datos y bases de datos. Ética de la investigación con datos sociales. | Práctico 1 | 
-                                                              
+Semana 4 (31/03) | Datos y bases de datos. Ética de la investigación con datos sociales. |  | 
+Semana 5 (07/04) | Datos y bases de datos. Ética de la investigación con datos sociales.   | Práctico 1 |
+Semana 6 (14/04) | Suspensión por paro. |   |
+Semana 7 (21/04) | Suspensión por toma. |   |
+Semana 8 (28/04) | Suspensión por toma. | *Feriado* |
+<font color="orange"> **Mayo** </font> |   |   |
+Semana 9 (05/05) | Suspensión por toma |  |
+Semana 10 (12/05) | Suspensión por toma. | |
 ### UNIDAD 2: La descripción de los datos.
 |||
 -----|------------|-------------------|-----------
-Semana 5 (07/04) | 5. Medidas de tendencia central.  | Práctico 2 |
-Semana 6 (14/04) | 6. Medidas de dispersión. | Práctico 3 |
-Semana 7 (21/04) | 7. Medidas de posición. | Práctico 4 |
-Semana 8 (28/04) | 8. Visualización de datos y distribuciones de datos. | *Feriado* |
-<font color="orange"> **Mayo** </font> |   |   |
+Semana 11 (19/05) | Medidas de tendencia central. | Práctico 2 |
+Semana 12 (26/05) | Medidas de dispersión. | Práctico 3|
+<font color="orange"> **Junio** </font> |   |   |
+Semana 13 (02/06) | Medidas de posición. | Práctico 3 | 
+Semana 14 (09/06) | Visualización de datos y distribuciones de datos. | Práctico 4 |
 ### UNIDAD 3: La forma de una distribución
 |||
 -----|------------|-------------------|-----------
-Semana 9 (05/05) | 9. Noción de función y distribución. | Práctico 5 |
-Semana 10 (12/05) | 10. Asimetría y Curtosis. | Práctico 6 |
-Semana 11 (19/05) | *Receso* | *Receso* |
-Semana 12 (26/05) | 12. Concepto de distribución estadística. Distribución normal y sus probabilidades. | Práctico 7|
-<font color="orange"> **Junio** </font> |   |   |
-### UNIDAD 4: Introducción a la inferencia estadística
-|||
------|------------|-------------------|-----------
-Semana 13 (02/06) | 13. Fundamentos de la significación estadística, universo y muestra. | Práctico 8 | 
-Semana 14 (09/06) | 14. Noción de distribución de muestreo, parámetros y estadísticos. | Práctico 9 |
-Semana 15 (16/06) | 15. Inferencia, ponderadores y factores de expansión. | |
-Semana 16 (23/06) | 16. Introducción a las hipótesis y pruebas de hipótesis. | |
+Semana 15 (16/06) | Noción de función y distribución. | Práctico 5 |
+Semana 16 (23/06) | Asimetría y Curtosis.| Sesión de apoyo a trabajos. |
 <font color="orange"> **Julio** </font> |   |   |
+Semana 17 (30/06) | Concepto de distribución estadística. Distribución normal y sus probabilidades. |  |
+Semana 18 (07/07) | Exámenes |  |
+Semana 19 (14/07) | Exámenes |  |

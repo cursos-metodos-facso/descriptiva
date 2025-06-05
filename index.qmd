@@ -40,7 +40,7 @@ withr::with_dir(here::here(), {
 {{< var instructor.name >}}
 
 - {{< fa university >}} &nbsp; {{< var instructor.office >}}
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
+- {{< fa envelope >}} &nbsp; {{< var instructor.email >}}
 
 
 **Apoyos docentes**
@@ -52,7 +52,7 @@ withr::with_dir(here::here(), {
 
 {{< var other.name >}}
 
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other.email >}}">{{< var other.email >}}</a>
+- {{< fa envelope >}} &nbsp; {{< var other.email >}}
 
 <div class="image-cropper">
   <img src="https://ucampus.uchile.cl/d/r/usuario/59/595eac1ba1e7c71fbbea076608baba9c/perfil/07435de0e419362c626faa92216dcbd8.jpg" alt="avatar" class="profile-pic" width="80" height="80" />
@@ -61,7 +61,8 @@ withr::with_dir(here::here(), {
 
 {{< var other2.name >}}
 
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
+- {{< fa envelope >}} &nbsp; {{< var other2.email >}}
+
 
 **Ayudantes**
 
@@ -80,6 +81,7 @@ withr::with_dir(here::here(), {
 - Felipe Vega
 
 - Benjamín Zavala
+
 
 :::
 

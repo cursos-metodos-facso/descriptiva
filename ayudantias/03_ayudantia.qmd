@@ -5,3 +5,18 @@ lang: es
 output:
   number_sections: true
 ---
+
+## Documento de presentación
+ 
+<iframe src="https://mafenunez.github.io/materiales-docencia/presentaciones/sesion03.html"
+        style="width: 100%; height: 90vh; border: none;"
+        allowfullscreen>
+</iframe>
+
+
+
+## Guía de ejercicios
+
+<iframe src= 03_guía.pdf height="550" width=100% allowfullscreen="true">
+
+</iframe> 
