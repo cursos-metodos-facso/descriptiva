@@ -2,18 +2,17 @@ author: Andreas Laffert
 
 instructor:
   name: Rodrigo Asún
-  email: rasun@uchile.cl
+  email: "[rasun@uchile.cl](mailto:rasun@uchile.cl)"
   office: "Departamento de Sociología FACSO"
   contact_policy: >-
     A través de correo o U-Cursos
 
 other:
-  email: kevin.carrasco@ug.uchile.cl
-  appointment_url: kevin.carrasco@ug.uchile.cl
-
+  email: "[kevin.carrasco@ug.uchile.cl](mailto:kevin.carrasco@ug.uchile.cl)"
+  #appointment_url:
 other2:
-  email: danielaolivarescollio@gmail.com
-  appointment_url: danielaolivarescollio@gmail.com
+  email: "[danielaolivarescollio@gmail.com](mailto:danielaolivarescollio@gmail.com)"
+  #appointment_url: danielaolivarescollio@gmail.com
 
 course:
   number: "SOC01014-1"
