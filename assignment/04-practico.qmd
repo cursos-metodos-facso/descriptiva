@@ -1,6 +1,6 @@
 ---
 title: "Práctica 4. Análisis descriptivo de datos en R"
-date: "2024-05-15"
+date: "2025-06-12"
 lang: es
 output:
   number_sections: true
@@ -14,10 +14,30 @@ El objetivo de esta guía práctica es conocer las principales formas de realiza
 
 En detalle, aprenderemos:
 
-1.  Establecer un flujo de trabajo ordenado en un script (.R).
+[**1.  Establecer un flujo de trabajo ordenado en un script (.R).**]{.text-black}
 
-2.  Aplicar análisis estadísticos descriptivos a variables según su nivel de medición
+:::: {.card .bg-light .text-black}
+**2.  Aplicar análisis estadísticos descriptivos a <br> variables según su nivel de medición:**
 
+:::{.columns}
+
+::: {.column width="45%"}
+*Variables categóricas*
+
+- Medidas de **Frecuencia**
+- **Tablas de contingencia o cruzadas**
+:::
+
+::: {.column width="45%"}
+*Variables númericas*
+
+- Medidas de **Tendencia Central**
+- Medidas de **Dispersión**
+- Medidas de **Posición** 
+:::
+:::
+
+::::
 
 ## Recursos de la práctica
 
@@ -98,6 +118,13 @@ load("output/proc_elsoc.Rdata")
 load(url("https://github.com/cursos-metodos-facso/descriptiva/raw/main/assignment/output/proc_elsoc.Rdata"))
 ```
 
+
+::: {.callout-note}
+Recordar: la función `load()` proviene de *r base* y nos permite cargar bases de datos en formato **.Rdata**.
+
+También, podemos cargar *bases desde internet* utilizando la función `url()`. 
+:::
+
 ## 3 Explorar datos 
 
 ```{r eval = F}
@@ -106,19 +133,19 @@ names(proc_elsoc) # Nombre de columnas
 dim(proc_elsoc) # Dimensiones
 str(proc_elsoc) # Estructura de los datos (las clases y categorias de repuesta)
 ```
-En este caso, nuestra base de datos procesada tiene 496 casos y 9 variables.
+En este caso, nuestra *base de datos procesada* tiene **496 casos** y **9 variables**.
 
 ## 4 Análisis 
 
 ### 4.1 Estadísticos descriptivos para variables categóricas
 
-Cuando tenemos variables catégoricas, sean nominales u ordinales, podemos utilizar tablas de frecuencias. Recordemos que las frecuencias es una manera ordenar datos según el valor alcanzado en la distribución de una variable.
+Cuando tenemos variables catégoricas, sean *nominales u ordinales*, podemos utilizar **tablas de frecuencias**. Recordemos que las frecuencias es una *manera ordenar datos según el valor alcanzado en la distribución de una variable*.
 
-#### 4.1.1 Frecuencias 
+#### 4.1.1 Medidas de Frecuencia 
 
 ##### a) Absolutas y relativas
 
-Para las variables nominales podemos usar tablas de frecuencias absolutas y relativas, y con ellas conocer la moda, es dedir, el valor con mayor cantidad de observaciones. Para ello, una manera sencilla de hacerlo es mediante la función `table` de R.
+Para las variables *nominales* podemos usar tablas de frecuencias absolutas y relativas, y con ellas conocer la moda, es dedir, el valor con mayor cantidad de observaciones. Para ello, una manera sencilla de hacerlo es mediante la función `table` de R.
 
 ```{r eval=TRUE, collapse=FALSE}
 table(proc_elsoc$sexo)
@@ -131,14 +158,27 @@ table(proc_elsoc$autor_democ)
 Lo anterior nos entrega la frecuencia absoluta de las variables. Con ello, podemos observar que, en cuanto la preferencias entre autoritarismo y democracia, la mayoría de nuestros casos se concentran en "La democracia es preferible a cualquier otra forma de gobierno". Para conocer la frecuencia relativa o porcentual de estas podemos utilizar el comando `prop.table`.
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
+prop.table(table(proc_elsoc$autor_democ))*100 
+```
+
+*Otra forma de calcularlo es utilizando el lenguaje orientado a objetos*:
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
 (freq_table1 <-table(proc_elsoc$autor_democ))
 prop.table(freq_table1)*100 
 ```
+
 Así, podemos sostener que un 57,9% de los casos concideran que la democracia es preferible a cualquier otra forma de gobierno.
 
 ##### b) Acumuladas
 
-Mientras que si trabajamos con variables ordinales, podemos usar también la frecuencia acumulada:
+Mientras que si trabajamos con variables *ordinales*, podemos usar también la frecuencia acumulada:
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+cumsum(prop.table(table(proc_elsoc$tramo_ingreso))*100) 
+```
+
+*Otra forma de calcularlo es utilizando el lenguaje orientado a objetos*:
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
 (freq_table2 <- table(proc_elsoc$tramo_ingreso))
@@ -146,6 +186,7 @@ Mientras que si trabajamos con variables ordinales, podemos usar también la fre
 cumsum(freq_table3)
 
 ```
+
 
 A partir de este estadístico, podemos ver que un 55% de los casos se ubican debajo del tramo 2 de ingresos, lo cual en términos sustantivos señala que un 55% de las observaciones obtienen menos de $500.000 de ingresos mensuales. 
 
@@ -168,7 +209,7 @@ sjmisc::frq(proc_elsoc$tramo_ingreso)
 
 #### 4.1.2 Tablas de contingencia
 
-También podemos cruzar dos variables mediante las llamadas tablas de contingencia o tablas cruzadas. Además de conocer la frecuencia absoluta en cada casilla, podemos también conocer la proporción o frecuencia relativa para cada casilla y el total de la filas y columnas.
+También podemos cruzar dos variables mediante las llamadas **tablas de contingencia** o **tablas cruzadas**. Además de conocer la frecuencia absoluta en cada casilla, podemos también conocer la proporción o frecuencia relativa para cada casilla y el total de la *filas* y *columnas*.
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
 
@@ -192,27 +233,97 @@ sjt.xtab(proc_elsoc$sexo, proc_elsoc$tramo_edad,
 
 ### 4.2 Estadísticos descriptivos para variables númericas
 
-A diferencia de las variables categóricas, a las variables numéricas (intervalaras o de razón) les podemos calcular una mayor cantidad de estadísticos descriptivos, como medidas de tendencia central, dispersión o posición. 
+A diferencia de las variables categóricas, a las variables numéricas (*intervalaras o de razón*) les podemos calcular una mayor cantidad de estadísticos descriptivos, como medidas de tendencia central, dispersión o posición. 
 
 Como ya vimos en clases:
 
-- dentro de las medidas de tendencia central que podemos calcular para describir a una variable numérica encontramos: media, mediana;
-- dentro de las medidas de dispersión podemos señalar: desviación estándar, variancia, rango;
-- dentro de las medidas de posición podemos mencionar: mediana, q1, q3, mínimo, máximo.
+- Dentro de las *medidas de tendencia central* que podemos calcular para describir a una variable numérica encontramos: **media o promedio**, **mediana**;
+- Dentro de las *medidas de dispersión* podemos señalar: **desviación estándar**, **varianza**, **rango**;
+- Dentro de las *medidas de posición* podemos mencionar: **mediana o q2**, **q1**, **q3**, **mínimo**, **máximo**.
 
 ::: callout-tip
 
 Recordemos que:
 
-- las medidads de tendencia central expresan el valor alrededor del cual se sitúa la mayor cantidad de los datos. Estamos mirando hacia el centro de los datos. 
+- Las ***medidas de tendencia central*** expresan el valor alrededor del cual se sitúa la mayor cantidad de los datos. Estamos mirando hacia el **centro** de los datos. 
 
-- las medidas de dispersión buscan cuantificar lo próximo o alejado que están los valores de una variable de un punto central. Estamos mirando la dispersión de los datos respecto a su centro.
+- Las ***medidas de dispersión*** buscan cuantificar lo próximo o alejado que están los valores de una variable de un punto central. Estamos mirando la **dispersión de los datos respecto a su centro**.
 
-- las medidas de posición señalan en qué “lugar” de una distribución se encuentra un dato o un conjunto de datos en relación al resto.
+- Las ***medidas de posición*** señalan en **qué “lugar”** de una distribución se encuentra un dato o un conjunto de datos en relación al resto.
 
 :::
 
 En R existen distintas formas de cálcular este tipo de estadísticos descriptivos. 
+
+#### 4.2.1 Para cada estadístico
+
+##### a) Medidas de Tendencia Central
+
+- **Media o promedio ($\bar{x}$)**:
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+mean(proc_elsoc$ingreso, na.rm = TRUE)
+```
+
+- **Mediana** 
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+median(proc_elsoc$ingreso, na.rm = TRUE)
+```
+
+##### b) Medidas de Dispersión
+
+- **Varianza**
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+var(proc_elsoc$ingreso)
+```
+
+- **Desviación estándar**
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+sd(proc_elsoc$ingreso)
+```
+
+
+- **Rango** 
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+diff(range(proc_elsoc$ingreso))
+```
+
+
+
+##### c) Medidas de Posición
+
+- **Primer cuartil (Q1)**
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+quantile(proc_elsoc$ingreso, probs = .25)
+```
+
+- **Segundo cuartil (Q2) o Mediana**
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+quantile(proc_elsoc$ingreso, probs = .50)
+```
+
+
+- **Tercer cuartil (Q3)**
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+quantile(proc_elsoc$ingreso, probs = .75)
+```
+
+
+- **Percentiles** 
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+quantile(proc_elsoc$ingreso, probs = seq(0, 1, 0.01))
+```
+
+
+#### 4.2.2 Para un conjunto de estadísticos
 
 ##### a) Con `summary` 
 
@@ -259,7 +370,7 @@ proc_elsoc %>%
   summarise(media = mean(ingreso),
             mediana = median(ingreso),
             q1 = quantile(ingreso, probs = .25),
-            q2 = quantile(ingreso, probs = .75),
+            q3 = quantile(ingreso, probs = .75),
             rango = max(ingreso) - min(ingreso),
             desviacion_estandar = sd(ingreso),
             varianza = var(ingreso))
@@ -270,9 +381,9 @@ Ahora, conocemos no solo los estádisticos anteriores, sino que también obtuvim
 
 ## Resumen
 
-Hoy aprendimos a procesar datos en R. En detalle, vimos:
+Hoy aprendimos a *analizar datos en R*. En detalle, vimos:
 
-1.  Cómo establecer un flujo de trabajo de procesamiento y análisis de datos en R.
+[**1.  Cómo establecer un flujo de trabajo de procesamiento y análisis de datos en R.**]{.text-black}
 
-2.  Realizar análisis descriptivos en R según el nivel de medición de las variables
+[**2.  Realizar análisis descriptivos en R según el nivel de medición de las variables**]{.text-black}
 

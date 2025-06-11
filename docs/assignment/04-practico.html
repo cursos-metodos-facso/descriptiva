@@ -103,6 +103,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="Estadística Descriptiva - Práctica 4. Análisis descriptivo de datos en R">
 <meta property="og:image" content="https://estadistica-descriptiva-uch.netlify.app/files/logo.png">
@@ -112,7 +141,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta property="og:image:width" content="500">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -142,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">Clases</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignment/index.html"> 
+    <a class="nav-link active" href="../assignment/index.html" aria-current="page"> 
 <span class="menu-text">Prácticos</span></a>
   </li>  
   <li class="nav-item">
@@ -168,10 +197,79 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignment/01-practico.html">Sesiones</a></li><li class="breadcrumb-item"><a href="../assignment/04-practico.html">4: Análisis descriptivo de datos en R</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Información general</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Laboratorio de Análisis de Datos</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Sesiones</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/01-practico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">1: Introducción al lenguaje R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/02-practico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">2: Conocimientos básicos de programación en R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/03-practico.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">3: Procesamiento, limpieza y manipulación de datos en R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/04-practico.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">4: Análisis descriptivo de datos en R</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -206,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title display-7">Práctica 4. Análisis descriptivo de datos en R</h1>
 
 <div class="date-block bg-content text-white p-2">
-  <p class="date">Sesión del miércoles, 15 de mayo de 2024</p>
+  <p class="date">Sesión del jueves, 12 de junio de 2025</p>
 </div>
 </header>
 
@@ -217,10 +315,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="objetivo-de-la-práctica">Objetivo de la práctica</h2>
 <p>El objetivo de esta guía práctica es conocer las principales formas de realizar analísis estadísticos descriptivo en R, aplicando los concocimientos aprendidos durante el curso.</p>
 <p>En detalle, aprenderemos:</p>
-<ol type="1">
-<li><p>Establecer un flujo de trabajo ordenado en un script (.R).</p></li>
-<li><p>Aplicar análisis estadísticos descriptivos a variables según su nivel de medición</p></li>
-</ol>
+<p><span class="text-black"><strong>1. Establecer un flujo de trabajo ordenado en un script (.R).</strong></span></p>
+<div class="card bg-light text-black">
+<p><strong>2. Aplicar análisis estadísticos descriptivos a <br> variables según su nivel de medición:</strong></p>
+<div class="columns">
+<div class="column" style="width:45%;">
+<p><em>Variables categóricas</em></p>
+<ul>
+<li>Medidas de <strong>Frecuencia</strong></li>
+<li><strong>Tablas de contingencia o cruzadas</strong></li>
+</ul>
+</div><div class="column" style="width:45%;">
+<p><em>Variables númericas</em></p>
+<ul>
+<li>Medidas de <strong>Tendencia Central</strong></li>
+<li>Medidas de <strong>Dispersión</strong></li>
+<li>Medidas de <strong>Posición</strong></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="recursos-de-la-práctica" class="level2">
 <h2 class="anchored" data-anchor-id="recursos-de-la-práctica">Recursos de la práctica</h2>
@@ -285,6 +399,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="fu">url</span>(<span class="st">"https://github.com/cursos-metodos-facso/descriptiva/raw/main/assignment/output/proc_elsoc.Rdata"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recordar: la función <code>load()</code> proviene de <em>r base</em> y nos permite cargar bases de datos en formato <strong>.Rdata</strong>.</p>
+<p>También, podemos cargar <em>bases desde internet</em> utilizando la función <code>url()</code>.</p>
+</div>
+</div>
 </section>
 <section id="explorar-datos" class="level2">
 <h2 class="anchored" data-anchor-id="explorar-datos">3 Explorar datos</h2>
@@ -294,18 +422,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(proc_elsoc) <span class="co"># Dimensiones</span></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(proc_elsoc) <span class="co"># Estructura de los datos (las clases y categorias de repuesta)</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>En este caso, nuestra base de datos procesada tiene 496 casos y 9 variables.</p>
+<p>En este caso, nuestra <em>base de datos procesada</em> tiene <strong>496 casos</strong> y <strong>9 variables</strong>.</p>
 </section>
 <section id="análisis" class="level2">
 <h2 class="anchored" data-anchor-id="análisis">4 Análisis</h2>
 <section id="estadísticos-descriptivos-para-variables-categóricas" class="level3">
 <h3 class="anchored" data-anchor-id="estadísticos-descriptivos-para-variables-categóricas">4.1 Estadísticos descriptivos para variables categóricas</h3>
-<p>Cuando tenemos variables catégoricas, sean nominales u ordinales, podemos utilizar tablas de frecuencias. Recordemos que las frecuencias es una manera ordenar datos según el valor alcanzado en la distribución de una variable.</p>
-<section id="frecuencias" class="level4">
-<h4 class="anchored" data-anchor-id="frecuencias">4.1.1 Frecuencias</h4>
+<p>Cuando tenemos variables catégoricas, sean <em>nominales u ordinales</em>, podemos utilizar <strong>tablas de frecuencias</strong>. Recordemos que las frecuencias es una <em>manera ordenar datos según el valor alcanzado en la distribución de una variable</em>.</p>
+<section id="medidas-de-frecuencia" class="level4">
+<h4 class="anchored" data-anchor-id="medidas-de-frecuencia">4.1.1 Medidas de Frecuencia</h4>
 <section id="a-absolutas-y-relativas" class="level5">
 <h5 class="anchored" data-anchor-id="a-absolutas-y-relativas">a) Absolutas y relativas</h5>
-<p>Para las variables nominales podemos usar tablas de frecuencias absolutas y relativas, y con ellas conocer la moda, es dedir, el valor con mayor cantidad de observaciones. Para ello, una manera sencilla de hacerlo es mediante la función <code>table</code> de R.</p>
+<p>Para las variables <em>nominales</em> podemos usar tablas de frecuencias absolutas y relativas, y con ellas conocer la moda, es dedir, el valor con mayor cantidad de observaciones. Para ello, una manera sencilla de hacerlo es mediante la función <code>table</code> de R.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(proc_elsoc<span class="sc">$</span>sexo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -334,7 +462,22 @@ En algunas circunstancias, un gobierno autoritario puede ser preferible a uno de
 </div>
 <p>Lo anterior nos entrega la frecuencia absoluta de las variables. Con ello, podemos observar que, en cuanto la preferencias entre autoritarismo y democracia, la mayoría de nuestros casos se concentran en “La democracia es preferible a cualquier otra forma de gobierno”. Para conocer la frecuencia relativa o porcentual de estas podemos utilizar el comando <code>prop.table</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>(freq_table1 <span class="ot">&lt;-</span><span class="fu">table</span>(proc_elsoc<span class="sc">$</span>autor_democ))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(proc_elsoc<span class="sc">$</span>autor_democ))<span class="sc">*</span><span class="dv">100</span> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+          A la gente como uno, nos da lo mismo un regimen democratico que uno autoritario 
+                                                                                22.580645 
+En algunas circunstancias, un gobierno autoritario puede ser preferible a uno democratico 
+                                                                                12.500000 
+                           La democracia es preferible a cualquier otra forma de gobierno 
+                                                                                57.862903 
+                                                                                  Ninguna 
+                                                                                 7.056452 </code></pre>
+</div>
+</div>
+<p><em>Otra forma de calcularlo es utilizando el lenguaje orientado a objetos</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>(freq_table1 <span class="ot">&lt;-</span><span class="fu">table</span>(proc_elsoc<span class="sc">$</span>autor_democ))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
           A la gente como uno, nos da lo mismo un regimen democratico que uno autoritario 
@@ -346,7 +489,7 @@ En algunas circunstancias, un gobierno autoritario puede ser preferible a uno de
                                                                                   Ninguna 
                                                                                        35 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(freq_table1)<span class="sc">*</span><span class="dv">100</span> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">prop.table</span>(freq_table1)<span class="sc">*</span><span class="dv">100</span> </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
           A la gente como uno, nos da lo mismo un regimen democratico que uno autoritario 
@@ -363,21 +506,29 @@ En algunas circunstancias, un gobierno autoritario puede ser preferible a uno de
 </section>
 <section id="b-acumuladas" class="level5">
 <h5 class="anchored" data-anchor-id="b-acumuladas">b) Acumuladas</h5>
-<p>Mientras que si trabajamos con variables ordinales, podemos usar también la frecuencia acumulada:</p>
+<p>Mientras que si trabajamos con variables <em>ordinales</em>, podemos usar también la frecuencia acumulada:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>(freq_table2 <span class="ot">&lt;-</span> <span class="fu">table</span>(proc_elsoc<span class="sc">$</span>tramo_ingreso))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cumsum</span>(<span class="fu">prop.table</span>(<span class="fu">table</span>(proc_elsoc<span class="sc">$</span>tramo_ingreso))<span class="sc">*</span><span class="dv">100</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Tramo 1   Tramo 2   Tramo 3   Tramo 4   Tramo 5 
+ 15.52419  55.44355  71.57258  83.66935 100.00000 </code></pre>
+</div>
+</div>
+<p><em>Otra forma de calcularlo es utilizando el lenguaje orientado a objetos</em>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>(freq_table2 <span class="ot">&lt;-</span> <span class="fu">table</span>(proc_elsoc<span class="sc">$</span>tramo_ingreso))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Tramo 1 Tramo 2 Tramo 3 Tramo 4 Tramo 5 
      77     198      80      60      81 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>(freq_table3 <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(freq_table2)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>(freq_table3 <span class="ot">&lt;-</span> <span class="fu">prop.table</span>(freq_table2)<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
  Tramo 1  Tramo 2  Tramo 3  Tramo 4  Tramo 5 
 15.52419 39.91935 16.12903 12.09677 16.33065 </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cumsum</span>(freq_table3)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cumsum</span>(freq_table3)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  Tramo 1   Tramo 2   Tramo 3   Tramo 4   Tramo 5 
  15.52419  55.44355  71.57258  83.66935 100.00000 </code></pre>
@@ -386,8 +537,8 @@ Tramo 1 Tramo 2 Tramo 3 Tramo 4 Tramo 5
 <p>A partir de este estadístico, podemos ver que un 55% de los casos se ubican debajo del tramo 2 de ingresos, lo cual en términos sustantivos señala que un 55% de las observaciones obtienen menos de $500.000 de ingresos mensuales.</p>
 <p>También podemos unir todas estas frecuencias en una sola tabla:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>tbl3 <span class="ot">&lt;-</span> <span class="fu">table</span>(proc_elsoc<span class="sc">$</span>tramo_ingreso)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(<span class="at">Freq=</span>tbl3, <span class="at">relat =</span> <span class="fu">prop.table</span>(tbl3)<span class="sc">*</span><span class="dv">100</span>, <span class="at">Cum =</span> <span class="fu">cumsum</span>(tbl3))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>tbl3 <span class="ot">&lt;-</span> <span class="fu">table</span>(proc_elsoc<span class="sc">$</span>tramo_ingreso)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(<span class="at">Freq=</span>tbl3, <span class="at">relat =</span> <span class="fu">prop.table</span>(tbl3)<span class="sc">*</span><span class="dv">100</span>, <span class="at">Cum =</span> <span class="fu">cumsum</span>(tbl3))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        Freq    relat Cum
 Tramo 1   77 15.52419  77
@@ -399,7 +550,7 @@ Tramo 5   81 16.33065 496</code></pre>
 </div>
 <p>Otra manera de calcular frecuencias (absolutas, relativas y acumuladas) en R, es mediante la función <code>frq()</code> del paquete <code>sjmisc</code>, el cual entrega todo lo anterior con un solo comando.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>sjmisc<span class="sc">::</span><span class="fu">frq</span>(proc_elsoc<span class="sc">$</span>tramo_ingreso)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>sjmisc<span class="sc">::</span><span class="fu">frq</span>(proc_elsoc<span class="sc">$</span>tramo_ingreso)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x &lt;character&gt; 
 # total N=496 valid N=496 mean=2.74 sd=1.31
@@ -418,9 +569,9 @@ Tramo 5 |  81 | 16.33 |   16.33 | 100.00
 </section>
 <section id="tablas-de-contingencia" class="level4">
 <h4 class="anchored" data-anchor-id="tablas-de-contingencia">4.1.2 Tablas de contingencia</h4>
-<p>También podemos cruzar dos variables mediante las llamadas tablas de contingencia o tablas cruzadas. Además de conocer la frecuencia absoluta en cada casilla, podemos también conocer la proporción o frecuencia relativa para cada casilla y el total de la filas y columnas.</p>
+<p>También podemos cruzar dos variables mediante las llamadas <strong>tablas de contingencia</strong> o <strong>tablas cruzadas</strong>. Además de conocer la frecuencia absoluta en cada casilla, podemos también conocer la proporción o frecuencia relativa para cada casilla y el total de la <em>filas</em> y <em>columnas</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <table style="border-collapse:collapse; border:none;">
  <tbody><tr>
@@ -463,9 +614,9 @@ Tramo 5 |  81 | 16.33 |   16.33 | 100.00
  
 </tbody></table>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad,</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.cell.prc =</span> <span class="cn">TRUE</span>, <span class="co">#fila y columna</span></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.summary =</span> <span class="cn">FALSE</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad,</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.cell.prc =</span> <span class="cn">TRUE</span>, <span class="co">#fila y columna</span></span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.summary =</span> <span class="cn">FALSE</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
@@ -524,9 +675,9 @@ Tramo 5 |  81 | 16.33 |   16.33 | 100.00
 </table>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad,</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.row.prc =</span> <span class="cn">TRUE</span>, <span class="co">#solo fila</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.summary =</span> <span class="cn">FALSE</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad,</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.row.prc =</span> <span class="cn">TRUE</span>, <span class="co">#solo fila</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.summary =</span> <span class="cn">FALSE</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
@@ -585,9 +736,9 @@ Tramo 5 |  81 | 16.33 |   16.33 | 100.00
 </table>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad,</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.col.prc=</span><span class="cn">TRUE</span>, <span class="co">#solo columna</span></span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.summary=</span><span class="cn">FALSE</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sjt.xtab</span>(proc_elsoc<span class="sc">$</span>sexo, proc_elsoc<span class="sc">$</span>tramo_edad,</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.col.prc=</span><span class="cn">TRUE</span>, <span class="co">#solo columna</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">show.summary=</span><span class="cn">FALSE</span>) </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <table data-quarto-postprocess="true" class="table table-sm table-striped small">
@@ -651,12 +802,12 @@ Tramo 5 |  81 | 16.33 |   16.33 | 100.00
 </section>
 <section id="estadísticos-descriptivos-para-variables-númericas" class="level3">
 <h3 class="anchored" data-anchor-id="estadísticos-descriptivos-para-variables-númericas">4.2 Estadísticos descriptivos para variables númericas</h3>
-<p>A diferencia de las variables categóricas, a las variables numéricas (intervalaras o de razón) les podemos calcular una mayor cantidad de estadísticos descriptivos, como medidas de tendencia central, dispersión o posición.</p>
+<p>A diferencia de las variables categóricas, a las variables numéricas (<em>intervalaras o de razón</em>) les podemos calcular una mayor cantidad de estadísticos descriptivos, como medidas de tendencia central, dispersión o posición.</p>
 <p>Como ya vimos en clases:</p>
 <ul>
-<li>dentro de las medidas de tendencia central que podemos calcular para describir a una variable numérica encontramos: media, mediana;</li>
-<li>dentro de las medidas de dispersión podemos señalar: desviación estándar, variancia, rango;</li>
-<li>dentro de las medidas de posición podemos mencionar: mediana, q1, q3, mínimo, máximo.</li>
+<li>Dentro de las <em>medidas de tendencia central</em> que podemos calcular para describir a una variable numérica encontramos: <strong>media o promedio</strong>, <strong>mediana</strong>;</li>
+<li>Dentro de las <em>medidas de dispersión</em> podemos señalar: <strong>desviación estándar</strong>, <strong>varianza</strong>, <strong>rango</strong>;</li>
+<li>Dentro de las <em>medidas de posición</em> podemos mencionar: <strong>mediana o q2</strong>, <strong>q1</strong>, <strong>q3</strong>, <strong>mínimo</strong>, <strong>máximo</strong>.</li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -670,18 +821,137 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Recordemos que:</p>
 <ul>
-<li><p>las medidads de tendencia central expresan el valor alrededor del cual se sitúa la mayor cantidad de los datos. Estamos mirando hacia el centro de los datos.</p></li>
-<li><p>las medidas de dispersión buscan cuantificar lo próximo o alejado que están los valores de una variable de un punto central. Estamos mirando la dispersión de los datos respecto a su centro.</p></li>
-<li><p>las medidas de posición señalan en qué “lugar” de una distribución se encuentra un dato o un conjunto de datos en relación al resto.</p></li>
+<li><p>Las <strong><em>medidas de tendencia central</em></strong> expresan el valor alrededor del cual se sitúa la mayor cantidad de los datos. Estamos mirando hacia el <strong>centro</strong> de los datos.</p></li>
+<li><p>Las <strong><em>medidas de dispersión</em></strong> buscan cuantificar lo próximo o alejado que están los valores de una variable de un punto central. Estamos mirando la <strong>dispersión de los datos respecto a su centro</strong>.</p></li>
+<li><p>Las <strong><em>medidas de posición</em></strong> señalan en <strong>qué “lugar”</strong> de una distribución se encuentra un dato o un conjunto de datos en relación al resto.</p></li>
 </ul>
 </div>
 </div>
 <p>En R existen distintas formas de cálcular este tipo de estadísticos descriptivos.</p>
+<section id="para-cada-estadístico" class="level4">
+<h4 class="anchored" data-anchor-id="para-cada-estadístico">4.2.1 Para cada estadístico</h4>
+<section id="a-medidas-de-tendencia-central" class="level5">
+<h5 class="anchored" data-anchor-id="a-medidas-de-tendencia-central">a) Medidas de Tendencia Central</h5>
+<ul>
+<li><strong>Media o promedio (<span class="math inline">\(\bar{x}\)</span>)</strong>:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(proc_elsoc<span class="sc">$</span>ingreso, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 679514.1</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Mediana</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(proc_elsoc<span class="sc">$</span>ingreso, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 500000</code></pre>
+</div>
+</div>
+</section>
+<section id="b-medidas-de-dispersión" class="level5">
+<h5 class="anchored" data-anchor-id="b-medidas-de-dispersión">b) Medidas de Dispersión</h5>
+<ul>
+<li><strong>Varianza</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(proc_elsoc<span class="sc">$</span>ingreso)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 373781716972</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Desviación estándar</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(proc_elsoc<span class="sc">$</span>ingreso)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 611376.9</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Rango</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">diff</span>(<span class="fu">range</span>(proc_elsoc<span class="sc">$</span>ingreso))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 5000000</code></pre>
+</div>
+</div>
+</section>
+<section id="c-medidas-de-posición" class="level5">
+<h5 class="anchored" data-anchor-id="c-medidas-de-posición">c) Medidas de Posición</h5>
+<ul>
+<li><strong>Primer cuartil (Q1)</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(proc_elsoc<span class="sc">$</span>ingreso, <span class="at">probs =</span> .<span class="dv">25</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   25% 
+350000 </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Segundo cuartil (Q2) o Mediana</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(proc_elsoc<span class="sc">$</span>ingreso, <span class="at">probs =</span> .<span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   50% 
+500000 </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Tercer cuartil (Q3)</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(proc_elsoc<span class="sc">$</span>ingreso, <span class="at">probs =</span> .<span class="dv">75</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   75% 
+800000 </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Percentiles</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(proc_elsoc<span class="sc">$</span>ingreso, <span class="at">probs =</span> <span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="fl">0.01</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     0%      1%      2%      3%      4%      5%      6%      7%      8%      9% 
+      0   30000   68000   97000  118200  147500  150000  156500  180000  200000 
+    10%     11%     12%     13%     14%     15%     16%     17%     18%     19% 
+ 200000  200000  227000  250000  250000  250000  280000  280000  300000  300000 
+    20%     21%     22%     23%     24%     25%     26%     27%     28%     29% 
+ 300000  300000  300000  308500  336000  350000  350000  360000  374200  380000 
+    30%     31%     32%     33%     34%     35%     36%     37%     38%     39% 
+ 380000  391750  400000  400000  400000  400000  400000  400000  400000  400000 
+    40%     41%     42%     43%     44%     45%     46%     47%     48%     49% 
+ 400000  400000  400000  420000  450000  450000  457000  477900  486000  500000 
+    50%     51%     52%     53%     54%     55%     56%     57%     58%     59% 
+ 500000  500000  500000  500000  500000  500000  530000  571500  600000  600000 
+    60%     61%     62%     63%     64%     65%     66%     67%     68%     69% 
+ 600000  600000  600000  617000  650000  700000  700000  700000  700000  700000 
+    70%     71%     72%     73%     74%     75%     76%     77%     78%     79% 
+ 700000  750000  800000  800000  800000  800000  800000  850000  900000  900000 
+    80%     81%     82%     83%     84%     85%     86%     87%     88%     89% 
+ 920000 1000000 1000000 1000000 1050000 1100000 1200000 1200000 1200000 1200000 
+    90%     91%     92%     93%     94%     95%     96%     97%     98%     99% 
+1300000 1400000 1500000 1535000 1730000 1812500 1900000 2000000 2520000 3500000 
+   100% 
+5000000 </code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="para-un-conjunto-de-estadísticos" class="level4">
+<h4 class="anchored" data-anchor-id="para-un-conjunto-de-estadísticos">4.2.2 Para un conjunto de estadísticos</h4>
 <section id="a-con-summary" class="level5">
 <h5 class="anchored" data-anchor-id="a-con-summary">a) Con <code>summary</code></h5>
 <p>Podemos obtener rapidamente un resumen de los datos con la funcion <code>summary</code> de R</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(proc_elsoc<span class="sc">$</span>ingreso)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(proc_elsoc<span class="sc">$</span>ingreso)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
       0  350000  500000  679514  800000 5000000 </code></pre>
@@ -694,9 +964,9 @@ Tip
 <section id="b-con-psych" class="level5">
 <h5 class="anchored" data-anchor-id="b-con-psych">b) Con <code>psych</code></h5>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(proc_elsoc<span class="sc">$</span>ingreso,</span>
-<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">quant =</span> <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>),</span>
-<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">IQR =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(proc_elsoc<span class="sc">$</span>ingreso,</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>                <span class="at">quant =</span> <span class="fu">c</span>(.<span class="dv">25</span>,.<span class="dv">75</span>),</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">IQR =</span> T)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>   vars   n     mean       sd median  trimmed    mad min     max   range skew
 X1    1 496 679514.1 611376.9 500000 572434.7 296520   0 5000000 5000000 3.01
@@ -714,17 +984,17 @@ X1    13.42 27451.63 450000 350000 800000</code></pre>
 <h5 class="anchored" data-anchor-id="c-con-summarise-de-dplyr">c) Con <code>summarise</code> de <code>dplyr</code></h5>
 <p>Otra manera de obtener todos los estadísticos que necesitamos es utilizando <code>dplyr</code>. Aquí, le especificamos lo que requerimos, pero debemos saber bien cómo calcular tales medidas:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="sc">%&gt;%</span> </span>
-<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(ingreso),</span>
-<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mediana =</span> <span class="fu">median</span>(ingreso),</span>
-<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">q1 =</span> <span class="fu">quantile</span>(ingreso, <span class="at">probs =</span> .<span class="dv">25</span>),</span>
-<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">q2 =</span> <span class="fu">quantile</span>(ingreso, <span class="at">probs =</span> .<span class="dv">75</span>),</span>
-<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">rango =</span> <span class="fu">max</span>(ingreso) <span class="sc">-</span> <span class="fu">min</span>(ingreso),</span>
-<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">desviacion_estandar =</span> <span class="fu">sd</span>(ingreso),</span>
-<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">varianza =</span> <span class="fu">var</span>(ingreso))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="sc">%&gt;%</span> </span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">media =</span> <span class="fu">mean</span>(ingreso),</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>            <span class="at">mediana =</span> <span class="fu">median</span>(ingreso),</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">q1 =</span> <span class="fu">quantile</span>(ingreso, <span class="at">probs =</span> .<span class="dv">25</span>),</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">q3 =</span> <span class="fu">quantile</span>(ingreso, <span class="at">probs =</span> .<span class="dv">75</span>),</span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">rango =</span> <span class="fu">max</span>(ingreso) <span class="sc">-</span> <span class="fu">min</span>(ingreso),</span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">desviacion_estandar =</span> <span class="fu">sd</span>(ingreso),</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">varianza =</span> <span class="fu">var</span>(ingreso))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 7
-    media mediana     q1     q2   rango desviacion_estandar      varianza
+    media mediana     q1     q3   rango desviacion_estandar      varianza
     &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;               &lt;dbl&gt;         &lt;dbl&gt;
 1 679514.  500000 350000 800000 5000000             611377. 373781716972.</code></pre>
 </div>
@@ -733,13 +1003,12 @@ X1    13.42 27451.63 450000 350000 800000</code></pre>
 </section>
 </section>
 </section>
+</section>
 <section id="resumen" class="level2">
 <h2 class="anchored" data-anchor-id="resumen">Resumen</h2>
-<p>Hoy aprendimos a procesar datos en R. En detalle, vimos:</p>
-<ol type="1">
-<li><p>Cómo establecer un flujo de trabajo de procesamiento y análisis de datos en R.</p></li>
-<li><p>Realizar análisis descriptivos en R según el nivel de medición de las variables</p></li>
-</ol>
+<p>Hoy aprendimos a <em>analizar datos en R</em>. En detalle, vimos:</p>
+<p><span class="text-black"><strong>1. Cómo establecer un flujo de trabajo de procesamiento y análisis de datos en R.</strong></span></p>
+<p><span class="text-black"><strong>2. Realizar análisis descriptivos en R según el nivel de medición de las variables</strong></span></p>
 
 
 </section>
