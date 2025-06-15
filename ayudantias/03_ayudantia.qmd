@@ -17,6 +17,6 @@ output:
 
 ## Guía de ejercicios
 
-<iframe src= 03_guía.pdf height="550" width=100% allowfullscreen="true">
+<iframe src= 03_guia.pdf height="550" width=100% allowfullscreen="true">
 
 </iframe> 

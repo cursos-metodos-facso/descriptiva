@@ -110,18 +110,6 @@
     "text": "Lecturas"
   },
   {
-    "objectID": "class/06-class.html#lecturas",
-    "href": "class/06-class.html#lecturas",
-    "title": "Presentación",
-    "section": "Lecturas",
-    "text": "Lecturas",
-    "crumbs": [
-      "Clases",
-      "Sesiones",
-      "6: Función y distribución de variables"
-    ]
-  },
-  {
     "objectID": "ayudantias/index.html",
     "href": "ayudantias/index.html",
     "title": "Sesiones de ayudantía",
@@ -912,7 +900,12 @@
     "href": "ayudantias/03_ayudantia.html#guía-de-ejercicios",
     "title": "Ayudantía 03. Medidas de Posición y Forma",
     "section": "Guía de ejercicios",
-    "text": "Guía de ejercicios"
+    "text": "Guía de ejercicios",
+    "crumbs": [
+      "Ayudantías",
+      "Sesiones",
+      "3: Medidas de Posición y Forma"
+    ]
   },
   {
     "objectID": "class/07-class.html#lecturas",
