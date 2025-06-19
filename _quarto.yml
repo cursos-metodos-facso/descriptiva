@@ -96,8 +96,8 @@ website:
               file: assignment/03-practico.qmd
             - text: "4: Análisis descriptivo de datos en R"
               file: assignment/04-practico.qmd
-# #            - text: "5: Procesamiento y análisis de datos en R"
-# #              file: assignment/05-practico.qmd
+            - text: "5: Distribución y Visualización de datos con R"
+              file: assignment/05-practico.qmd
 #             - text: "5: Visualización de datos y forma de distribución"
 #               file: assignment/06-practico.qmd
 # #            - text: "7: Forma de una distribución"

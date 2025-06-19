@@ -1,6 +1,6 @@
 ---
-title: "Práctica 5. Repaso procesamiento y análisis de datos en R"
-date: "2023-05-18"
+title: "Práctica 5. Distribución y Visualización de datos con R"
+date: "2025-06-19"
 lang: es
 output:
   number_sections: true
@@ -10,409 +10,640 @@ output:
 
 ## Objetivo de la práctica
 
-El objetivo de esta guía práctica es repasar los procedimientos básicos para el procesamiento y análisis descripivo de datos en R, los cuales fueron vistos en las sesiones pasadas del laboratorio.
-
-En detalle, aprenderemos:
-
-1.  Establecer un flujo de trabajo en R.
-
-2.  Procesar, limpiar y transformar bases de datos en R.
-
-3.  Realizar análisis desciptivos (medidas de posición, tendencia central y dispersión) en R.
+El objetivo de esta guía práctica es aplicar los conocimientos aprendidos en clases sobre la forma de una distribución en R, comprendiendo sus usos, relevancia y formas de analizarla. También veremos visualización de datos con R, considerando las mejores prácticas para comunicar datos y análisis en ciencias sociales.
 
 
-**¡Al final de esta práctica la idea es que cada un\_ elabore y entienda su propio documento de preparación y análisis de datos!**
+[1. La noción de una **distribución** y sus tipos (continuas y discretas)]{.text-black}
+
+[2. Estimar e interpretar la **asimetría** y **curtosis** de una distribución]{.text-black}
+
+[3. Contrastar **distribuciones empíricas** con **teóricas*]{.text-black}
+
+[4. La noción de **distribución muestral**]{.text-black}
+
+[5. Qué es la **visualización de datos** y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.]{.text-black}
+
+[6. Visualizar datos univariados con `{ggplot2}`.]{.text-black}
+
+# 1. Noción de una distribución
+
+:::::: {.row .d-flex .justify-content-center}
+::::: {.col-md-6} 
+:::: {.card .bg-danger .text-white}
+::: {.card-body}
+
+En estadística, una distribución se refiere al conjunto de todos los valores posibles de una variable y las frecuencias (o probabilidades) con las que se producen. Generalmente, tendemos a concebir una distribución a partir del **ordenamiento de dichas categorías de respuesta y su frecuencia de ocurrencia**. 
+
+:::
+::::
+:::::
+::::::
+
+
+<br>
+
+Es una **función que muestra la frecuencia con la que se da cada valor o rango de valores en un conjunto de datos**. Esto implica que, por función, nos referimos a que *la magnitud de una variable depende de otra*. Con ello, nacen dos conceptos: 
+
+i) el **dominio**, que se refiere a todos los _posibles valores_ para los que la función está definida 
+
+ii) el **recorrido**, que se refiere a los _valores que efectivamente toma_ una variable en una función `F(x)`
+
+**¿Y para que me sirve conocer la distribución de una variable?**
+
+Al comprender la distribución de una variable, **podemos entender mejor las tendencias centrales** (como la media o la mediana), **la variabilidad** (como el rango o la desviación estándar) y la probabilidad de diferentes resultados o sucesos.
+
+Además, cuando una distribución empírica se asemeja a una teórica, podemos aplicarle las propiedades de esta última y realizar inferencias y pruebas de hipótesis. 
+
+```{r include=FALSE}
+library(tidyverse)
+load(file = "Input/data/Salaries.Rdata")
+load(file = "Input/data/starwars.Rdata")
+
+```
+
+## 1.1 Distribuciones continuas y discretas 
+
+Existen dos tipos de distribuciones según el nivel de medición de las variables: las continuas y las discretas. 
+
+Como cabe esperar, **las distribuciones continuas aplican a variables numericas (intervalares y de razón)**. Es una distribución que describe la probabilidad o frecuencia de que una variable continua tome un valor particular dado un intervalo o un rango. Toma valores a lo largo de un continuo de dominio ($R$), es decir, su dominio son todos los números reales.
+
+
+```{r echo=FALSE, warning=FALSE}
+
+Salaries %>% 
+  ggplot(aes(x = salary))+
+  geom_histogram(fill = "grey60", color = "black")+
+  labs(y = "Frecuencia", x = "Salarios", title = "Distribución continua")+
+  theme_classic()
+
+```
+
+Por su parte, **las distribuciones discretas son comunmente utilizadas con variables categóricas (nominales y ordinales).** Son distribuciones en las que una variable sólo puede tomar un número contable de valores distintos. En otras palabras, es una distribución en la que la variable sólo puede tomar valores específicos, en lugar de cualquier valor dentro de un intervalo. Su dominio es un conjunto de
+valores enteros ($N, Z, Q$).
+
+```{r echo=FALSE, warning=FALSE}
+
+starwars %>% 
+  ggplot(aes(x = eye_color))+
+  geom_bar(fill = "grey60", color = "black")+
+  labs(y = "Frecuencia", x = "Color ojos", title = "Distribución discreta")+
+  theme_classic()
+  
+```
 
 ## Recursos de la práctica
 
-En esta práctica trabajaremos con un subset de los datos del Estudio Longitudinal Social de Chile (ELSOC) realizado por [COES](https://coes.cl/encuesta-panel/). Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace [{{< fa table >}} `ELSOC 2022`](https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/input/data/elsoc_w06_subset.dta) podrán descargar el archivo que contiene la base ELSOC 2022.
+En esta práctica trabajaremos con la base de datos de la Encuesta de Opinión Pública (CEP) de Diciembre del 2019 realizada por el [Centro de Estudios Públicos](https://www.cepchile.cl/). Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace [{{< fa table >}} `CEP 2019`](https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/Input/data/CEP_dic2019.sav) podrán descargar el archivo que contiene la base CEP Diciembre 2019.
 
-Recuerden que siempre es importante trabajar con el manual/libro de códigos de las bases de datos. El manual de la ELSOC 2022 lo pueden encontrar [aquí](https://coes.cl/wp-content/uploads/Listado-de-Variables-ELSOC-2.xlsx).
+## Preparación de datos
 
+### 1. Cargar librerías
 
-# Establecer flujo de trabajo en R
-
-Pasos a seguir: 
-
-- Descargar la base de datos vía U-Cursos o mediante el enlace [{{< fa table >}} `ELSOC 2022`](https://github.com/Andreas-Lafferte/descriptiva/raw/main/content/input/data/elsoc_w06_subset.dta) 
-- Crear un proyecto de R (.Rproj) que se llame _"laboratorio03"_
-- Crear carpetas de **Input, Procesamiento y Output**
-- Ubicar la base de datos en la carpeta Input
-- Crear un Script (.R) en la carpeta Procesamiento que se llame _"01proc-data"_ 
-- Crear un Script (.R) en la carpeta Procesamiento que se llame _"02analisis"_ 
-
-
-En esta parte, trabajaremos sobre el script de _01proc-data_
-
-# Procesamiento, limpieza y manipulación de datos
-
-### 1 Cargar librerías
-
-En este ejemplo vamos a usar la siguientes librerías:
-
-1.  `pacman`: este facilita y agiliza la lectura de los paquetes a utilizar en R
-
-2.  `tidyverse`: colección de paquetes, de la cual utilizaremos dplyr y haven
-
-3.  `dplyr`: nos permite seleccionar variables de un set de datos
-
-4.  `haven`: cargar y exportar bases de datos en formatos .sav y .dta
-
-5.  `car`: para recodificar/agrupar valores de variables
-
-6.  `psych`: para análisis descriptivo de datos
-
-7.  `sjmisc`: para análisis descriptivo de datos
- 
-8.  `crosstable`: para tablas de contingencia o doble entrada
-
-
-Primero, si nos tenemos instalado el paquete `pacman`, debemos instalarlo y y llamarlo tradicionalmente. Si ya lo tienes instalado, no es necesario este paso, solo debes llamarlo con `library()`.
-
-```{r eval=FALSE, include=TRUE}
-install.packages("pacman") #para instalar
-library(pacman) # para llamar/cargar
-```
-
-Luego de tener cargado el paquete `pacman`, procedemos a usarlo para instalar y cargar las demás librerías:
+Para esta sesión, usaremos librerías que ya conocemos en prácticos pasados:
 
 ```{r echo=TRUE}
 pacman::p_load(tidyverse, # colección de paquetes para manipulación de datos
-               dplyr, # para manipular datos
                haven, # para importar datos
-               car) # para recodificar datos
-              
-```
-
-
-También se recomienda limpiar nuestro entorno de trabajo y eliminar la notación cientifica, seteando ciertas funciones. 
-
-```{r echo=TRUE}
-options(scipen = 999) # para desactivar notacion cientifica
-rm(list = ls()) # para limpiar el entorno de trabajo
-```
-
-
-### 2 Importar datos
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-elsoc_2022 <- read_dta("Input/data/elsoc_w06_subset.dta") # Funciona 
-```
-
-
-### 3 Explorar datos
-
-```{r eval = F}
-View(elsoc_2022) # Ver datos
-names(elsoc_2022) # Nombre de columnas
-dim(elsoc_2022) # Dimensiones
-str(elsoc_2022) # Estructura de los datos (las clases y categorias de repuesta)
-```
-
-
-### 4 Limpiar datos
-
-![](../images/clean.data.jpg)
-
-#### 4.1 Seleccionar
-
-En este ejemplo utilizaremos las siguientes variables: 
-
- * **m0_sexo**: sexo del entrevistado
- * **m0_edad**: edad del entrevistado
- * **m13**: ingreso mensual entrevistado
- * **c03**: altruismo social generalizado
- * **c05_03**: grado de confianza en carabineros
- 
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-
-proc_elsoc <- elsoc_2022 %>% 
-  dplyr::select(edad = m0_edad,
-                sexo = m0_sexo,
-                ingreso = m13,
-                altruismo = c03,
-                confianza_carab = c05_03)
-
-proc_elsoc
-```
-
-
-#### 4.2 Filtrar
-
-Quedémonos con aquellos casos cuya edad sea mayor o igual a 15 años.
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-proc_elsoc <- proc_elsoc %>% dplyr::filter(edad >= 25)
-
-proc_elsoc
-```
-
-
-
-#### 4.3 Recodificar
-
-Recodifiquemos las variables `sexo` e `ingreso`:
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE, warning=FALSE}
-proc_elsoc <- proc_elsoc %>% 
-  dplyr::mutate(sexo = car::recode(sexo,
-                            recodes = c("'Hombre' = 'Masculino'; 'Mujer' = 'Femenino'")),
-                ingreso = car::recode(ingreso, 
-                               recodes = c("-888 = NA; -999 = NA")))
-
-proc_elsoc
-```
-
-
-Ahora, las variables `altruismo` y `confianza_carab` conviertiéndolas a factor y, si es pertinente, asigarles niveles.
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-
-proc_elsoc <- proc_elsoc %>%
-  dplyr::mutate(altruismo = car::recode(altruismo,
-                                 recodes = c("1 = 'La mayoria de las veces tratan de ayudar a los demas';
-                                              2 = 'La mayoria de las veces se preocupan solo de si mismas';
-                                              3 = 'Depende';
-                                              -666 = NA;
-                                              -777 = NA;
-                                              -888 = NA;
-                                              -999 = NA"),
-                                 as.factor = TRUE), # transformar a factor
-         confianza_carab = car::recode(confianza_carab,
-                                       recodes = c("1 = 'Nada';
-                                                    2 = 'Poca';
-                                                    3 = 'Algo';
-                                                    4 = 'Bastante';
-                                                    5 = 'Mucha';
-                                                    -666 = NA;
-                                                    -777 = NA;
-                                                    -888 = NA;
-                                                    -999 = NA"),
-                                       as.factor = TRUE, # transformar a factor
-                                       levels = c("Nada",
-                                                  "Poca",
-                                                  "Algo",
-                                                  "Bastante",
-                                                  "Mucha"))) # asignar niveles
-
-proc_elsoc
-```
-
-
-#### 4.4 Tratamiento casos pérdidos
-
-Identifiquemos primero los casos pérdidos tanto en la base de datos completa como en las respectivas variables. 
-
-```{r eval=FALSE, include=TRUE, collapse=FALSE}
-is.na(proc_elsoc)
-
-is.na(proc_elsoc$ingreso)
-```
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-sum(is.na(proc_elsoc))
-
-```
-
-
-En toda la base, tenemos 454 casos pérdidos. Ahora veamos cuántos hay por cada columna/variable.
-
-```{r collapse=FALSE}
-colSums(is.na(proc_elsoc))
-```
-
-Una vez identificamos los valores nulos, podemos proceder a **removerlos** de la base de datos. El comando `na.omit()` eliminará todas las filas que presenten casos perdidos.
-
-```{r collapse=FALSE}
-proc_elsoc <- na.omit(proc_elsoc)
-
-proc_elsoc
-```
-
-### 5 Transformar variables 
-
-En este ejemplo, transformaremos las variables `edad` e `ingresos`, y crearemos una nueva variable llamada `año` de la encuesta y otra llamada `ingreso_minimo`. 
-
-**¡Veámos cómo se hace!**
-
-Generemos las nueva variable año:
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-proc_elsoc <- proc_elsoc %>% dplyr::mutate(ano = 2022)
-
-proc_elsoc
-```
-
-
-#### Transformar variables con `case_when()` e `if_else()`
-
-Generemos nuevas variables para `edad` e `ingresos` dejándolas como tramos con `case_when()`. 
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-proc_elsoc <- proc_elsoc %>% 
-  dplyr::mutate(tramo_edad = case_when(edad <= 29 ~ "Jovenes",
-                                       edad >= 30 & edad <= 59 ~ "Adultos",
-                                       edad >= 60 ~ "Adutos mayores"),
-                tramo_ingreso = case_when(ingreso <= 250000 ~ "Tramo 1",
-                                          ingreso > 250000 & ingreso <= 500000 ~ "Tramo 2",      
-                                          ingreso > 500000 & ingreso <= 750000 ~ "Tramo 3",      
-                                          ingreso > 750000 & ingreso <= 1000000 ~ "Tramo 4",       
-                                          ingreso > 1000000 ~ "Tramo 5"))
-
-proc_elsoc
-```
-
-
-Ahora, generemos una nueva variable llamada `ingreso_minimo` con la función `if_else()`.
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-
-proc_elsoc <- proc_elsoc %>% 
-  dplyr::mutate(ingreso_minimo = if_else(ingreso < 410000, "debajo minimo", "sobre minimo"))
-
-proc_elsoc
-```
-
-
-### 6 Guardar y exportar
-
-```{r collapse=FALSE}
-saveRDS(proc_elsoc, file = "Output/datos_proc.Rdata")
-```
-
-
-# Análisis descriptivo de datos
-
-Recordemos que el flujo recomendado de trabajo en R corresponde a:
-
-- Descargar la base de datos 
-- Crear un proyecto de R (.Rproj) 
-- Crear carpetas de **Input, Procesamiento y Output**
-- Ubicar la base de datos en la carpeta Input
-- Crear un Script (.R) en la carpeta Procesamiento que se llame _"01proc-data"_ 
-- Crear un Script (.R) en la carpeta Procesamiento que se llame _"02analisis"_
-
-Como ya tenemos creado el archivo de sintaxis llamado _"02analisis"_ trabajamos sobre él.
-
-
-### 1 Cargar librerías
-
-Este paso ya lo realizamos y cargamos todas las librerías necesarias. Pero si, al trabajar los distintos script lo hacemos en sesiones diferentes, debemos volver a cargar las librerías.
-
-```{r eval=FALSE, include=TRUE}
-install.packages("pacman") #para instalar
-library(pacman) # para llamar/cargar
-```
-
-
-```{r echo=TRUE}
-pacman::p_load(tidyverse, # colección de paquetes para manipulación de datos
-               dplyr, # para manipular datos
+               car,# para recodificar datos
                psych, # para analizar datos
-               crosstable, # para tablas de contingencia
                sjmisc) # para analizar datos
 
 options(scipen = 999) # para desactivar notacion cientifica
 rm(list = ls()) # para limpiar el entorno de trabajo
+              
 ```
 
-### 2 Importar datos
+### 2. Importar datos
 
-Usamos los datos creados en el procesamiento que se encuentran guardados en la carpeta output.
-
-```{r collapse=FALSE}
-datos_proc <- readRDS("output/datos_proc.Rdata")
-```
-
-
-
-### 3 Estadísticos descriptivos para variables categóricas
-
-Para analizar de manera descriptiva a las variables categóricas, esto es, con nivel de medición nominal y ordinal, podemos calcular tablas de frecuencias.
-
-#### 3.1. Frecuencias absolutas y relativas
-
-Para las variables nominales podemos usar tablas de frecuencias absolutas y relativas, y con ellas conocer la moda, es dedcir, el valor con mayor cantidad de observaciones. 
-
+Cargamos la base de datos CEP Diciembre 2019 mediante el paquete `haven` 
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
-(freq_table1 <-table(datos_proc$altruismo))
-prop.table(freq_table1)*100 
+cep <- haven::read_sav("Input/data/CEP_dic2019.sav")
 
 ```
 
-Acá podemos ver que el valor con mayor cantidad de obervaciones corresponde a _"La mayoria de las veces se preocupan solo de si mismas"_.
+### 3. Limpiar datos
 
-#### 3.2. Frecuencias acumuladas
-
-Mientras que si trabajamos con variables ordinales, podemos usar también la frecuencia acumulada:
-
-```{r eval=TRUE, include=TRUE, collapse=FALSE}
-(freq_table2 <- table(datos_proc$tramo_ingreso))
-(freq_table3 <- prop.table(freq_table2)*100)
-cumsum(freq_table3)
-
-tbl3 <- table(datos_proc$tramo_ingreso)
-cbind(Freq=tbl3, relat = prop.table(tbl3)*100, Cum = cumsum(tbl3))
-```
-
-Otra manera de calcular frecuencias (absolutas, relativas y acumuladas) en R, es mediante la función `frq()` del paquete `sjmisc`. 
+#### 3.1 **Seleccionamos** las variables de interés y las renombramos:
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
 
-sjmisc::frq(datos_proc$tramo_ingreso)
-
+proc_cep <- cep %>% 
+  select(edad = DS_P2_EXACTA,
+         sexo = DS_P1,
+         empleo = DS_P5, 
+         satisfaccion = SV_1)
+  
 ```
 
-#### 3.3. Tablas de contingencia
 
-También podemos cruzar dos variables mediante las llamadas tablas de contingencia o tablas cruzadas. Además de conocer la frecuencia absoluta en cada casilla, podemos también conocer la proporción o frecuencia relativa para cada casilla y el total de la filas y columnas.
+#### 3.2 **Recodificamos** las variables `satisfaccion`, `sexo` y `empleo`. Ademas, transformamos la variable `edad` a tramos:
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
 
-crosstable(datos_proc, cols = sexo, by = tramo_edad)
+proc_cep$sexo <- as.factor(proc_cep$sexo) # primero pasamos a factor la variable al venir con etiquetas
+proc_cep$empleo <- as.factor(proc_cep$empleo)
 
-crosstable(datos_proc, cols = sexo, by = tramo_edad, total = "both") #fila y columna
+proc_cep <- proc_cep %>% 
+  mutate(satisfaccion=car::recode(satisfaccion, recodes = c("88 = NA; 99 = NA")),
+         sexo = car::recode(sexo, recodes = c("1 = 'Hombre'; 2 = 'Mujer'")),
+         empleo = car::recode(empleo, recodes = c("1 = 'Ocupado'; 2 = 'Desocupado'; 3 = 'Nunca ha trabajado'; 99 = NA")),
+         tramo_edad = case_when(edad <= 29 ~ "Jovenes",
+                                edad >= 30 & edad <= 59 ~ "Adultos",
+                                edad >= 60 ~ "Adutos mayores")) 
 
-crosstable(datos_proc, cols = sexo, by = tramo_edad, total = "row") #solo fila
-
-crosstable(datos_proc, cols = sexo, by = tramo_edad, total = "column") #solo columna
 
 ```
 
+:::{.callout-note}
+Recordar: cuando recodifcamos buscamos *reducir o agrupar categorías*. Aquello es posible considerando los **niveles de medición de las variables (NOIR)** y sus **propiedades** (que son *acumulativas*). De modo que recodificamos variables que sean cuantitativas a cualitativas, no al revés.
 
-### 4 Estadísticos descriptivos para variables numéricas 
+- **N**: variables **n**ominales. Propiedad (1): *clasifican*
+- **O**: variables **o**rdinales. Propiedad (2): *clasifican y ordenan*
+- **I**: variables **i**ntervalares. Propiedad (3): *clasifican, ordenan y expresan magnitudes*
+- **R**: variables de **r**azón. Propiedad (4): *clasifican, ordenan, expresan magnitudes y permiten operar sus categorías (aditividad)*
+:::
 
-A diferencia de las variables categóricas, a las variables numéricas les podemos calcular una mayor cantidad de estadísticos descriptivos, como medidas de tendencia central, dispersión o posición. 
 
-Como ya vimos en clases:
+#### 3.4 **Removemos los valores perdidos** o missing (NA). 
 
-- dentro de las medidas de tendencia central que podemos calcular para describir a una variable numérica encontramos: media, mediana;
-- dentro de las medidas de dispersión podemos señalar: desviación estándar, variancia, coeficiente de variación, rango;
-- dentro de las medidas de posición podemos mencionar: mediana, q1, q3, mínimo, máximo.
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+proc_cep <- na.omit(proc_cep)
+```
+
+
+### 4. Por último, **guardamos** la base procesada. 
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
 
-psych::describe(datos_proc$edad)
+saveRDS(proc_cep, file = "Output/proc_cep.RData")
+```
 
-psych::describe(datos_proc$edad,
-                quant = c(.25,.75),
-                IQR = TRUE)
 
-psych::describe(datos_proc$ingreso,
-                quant = c(.25,.75),
-                IQR = T)
+# 2. Estadísticos de forma: Asimetría y curtosis
+
+La asimetría es la medida en que la distribución de una variable se aleja de una distribución simétrica a ambos lados de su punto central. **¿Qué tan simétrica es la distribución de mis datos en ambos lados de sus colas respecto al centro?**
+
+Por su parte, la curtosis es la medida del grado de agrupamiento de los datos de una distribución. **¿Qué tan agrupados están mis datos en la distribución?**
+
+Ambas son útiles para conocer de mejor manera la distribución de nuestros datos, además de que nos permiten conocer bajo qué supuestos podemos realizar analisis más complejos (próximos cursos de la carrera).
+
+Para ver un ejemplo aplicado, ocuparemos los datos del práctico anterior. 
+
+
+## 2.1 Preparación de datos
+
+Cargamos las librerías y datos que ocuparemos 
+
+```{r echo=TRUE}
+pacman::p_load(tidyverse, 
+               psych, 
+               sjmisc) 
+
+options(scipen = 999) 
+rm(list = ls()) 
+
+proc_cep <- readRDS("Output/proc_cep.RData")
+
+```
+
+
+## 2.2 Análisis de la forma de distribución
+
+Analicemos e interpretemos la forma de la distribución de nuestras variables. En este ejemplo tenemos:
+
+- una de razón,
+- una ordinal de 10 categorías. 
+
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+
+psych::describe(proc_cep$edad)
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = edad)) + 
+  geom_density(color = "black", fill = "#FA8072", alpha = 0.8)  + 
+  labs(title ="Diagrama densidad: Edad", 
+       x = "Edad", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") 
+
+```
+
+A partir de los estadísticos entregados, sabemos que la variable `edad` tiene una asimetría positiva (skew = 0.14) pero baja (< 0.5), lo cual indica que los datos se tienden a distribuir hacía los menores valores del eje X. Por su parte, la curtosis es negativa (kurtosis = -0.93) o platicúrtica, lo cual indica que existe una baja concentración en el centro de los datos. 
+
+
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+
+psych::describe(proc_cep$satisfaccion)
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = satisfaccion)) + 
+  geom_density(color = "black", fill = "darkred", alpha = 0.8)  + 
+  labs(title ="Histograma densidad: Satisfaccion", 
+       x = "Satisfaccion", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") 
+```
+
+En cuanto a la variable `satisfaccion`, tenemos una asimetría negativa (skew = -0.32) aunque baja, indicando que los datos se tienden a distribuir hacia la parte superior de la variable. Además, la curtosis también es negativa o platicúrtica (kurtosis = -0.45), por lo que existe una baja concentración en el centro de los datos. 
+
+# 3. Distribuciones empíricas y teóricas
+
+Como vimos en clases, **una distribución empírica (u observada) es la distribución de los valores que asume la variable** en un grupo concreto a partir de una observación. 
+
+Mientras que, por su parte, **una distribución teórica es función matématica** que expresan la distribución de un conjunto de números mediante su probabilidad de ocurencia. En palabras sencillas, es una función de densidad que permite asignar probabilidades de ocurrencia a los resultados. 
+
+
+::: callout-tip
+
+**Variable aleatoria**
+
+En las distribuciones teóricas, a veces nos vamos a encontrar con el concepto de _variable aleatoria_. ¿Qué es? En probabilidad y estadística, una variable aleatoria es una variable cuyos valores posibles son resultados numéricos de un fenómeno aleatorio. 
+
+:::
+
+
+**Cuando una distribución empírica se asejema a una teórica, podemos aplicarle a la primera las propiedades de la última. Así, nos permiten hacer inferencia estadística y conocer una serie de características de la población. **
+
+Una de las distribuciones teóricas más utilizada es la normal o Gaussiana, la cual es una herramienta potente y ampliamente utilizada en estadística y probabilidad, debido a sus numerosas propiedades útiles y a sus aplicaciones prácticas en un gran número de campos y contextos.
+
+
+**Contrastemos ahora la distribución empírica de nuestras variables con la distribución normal**
+
+
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE}
+
+ggplot(proc_cep, aes(edad)) + 
+  geom_histogram(aes(x = edad, y = ..density..), bins = 50, color = "black", fill = "grey") +
+  geom_density(color = "blue")
+
+ggplot(proc_cep, aes(edad)) + 
+  geom_histogram(aes(x = edad, y = ..density..), bins = 50, color = "black", fill = "grey") +
+  geom_density(color = "blue")+
+  stat_function(fun = dnorm, args = list(mean = mean(proc_cep$edad), sd = sd(proc_cep$edad)))
+```
+
+En la primera figura vemos la distribución empírica de la variable `edad` (histograma y densidad). En la segunda, agregamos la curva normal (o distribución), y obtenemos una evaluación gráfica de qué tan bien nuestros datos se ajustan a esta distribución teórica. 
+
+
+Hagamos lo mismo con la variable `satisfaccion`
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE, warning=FALSE}
+
+ggplot(proc_cep, aes(satisfaccion)) + 
+  geom_histogram(aes(x = satisfaccion, y = ..density..), color = "black", fill = "grey") +
+  scale_x_continuous(limits = c(0,15)) +
+  geom_density(color = "blue")+
+    stat_function(fun = dnorm, args = list(mean = mean(proc_cep$satisfaccion), sd = sd(proc_cep$satisfaccion)))
+
+```
+
+
+Una mejor manera de ver si nuestros datos o distribución empírica se ajustan a una distribución normal, es mediante los Q-Q plots.
+
+```{r eval=TRUE, include=TRUE, collapse=FALSE, warning=FALSE}
+
+ggplot(proc_cep, aes(sample = edad)) +
+  stat_qq() +
+  stat_qq_line(color = "blue")
+
+ggplot(proc_cep, aes(sample = satisfaccion)) +
+  stat_qq() +
+  stat_qq_line(color = "blue")
+
+```
+
+La idea es que ajuste la curva teorica (la recta) con la mayor cantidad de puntos (la variable observada). Nos permite ver donde ajusta y donde no ajusta.
+
+# 4. Distribución muestral
+
+Una última distribución corresponde a la distribución muestral o de muestreo. Esta se define como la **distribución de una estimación** (ej. promedio de IQ) **en base a todas las posibles muestras** que podemos obtener de la población. En otras palabras, es la distribución teórica (generadas a partir de una función matemática) que tendrá un estadístico en infinitas muestras seleccionadas al azar de una población.
+
+Por ejemplo, si en cada una de esas muestras calculamos $\overline{X}$, podremos comprobar que no siempre toma el mismo valor, sino que varía de una muestra a otra. Estos posibles valores del estadístico $\overline{X}$ constituyen su distribución muestral
+
+
+```{r echo=FALSE, warning=FALSE, out.width="80%", fig.align='left'}
+knitr::include_graphics("../images/muestral.png", error = FALSE)
+```
+
+Veamos un ejemplo simulado con los puntajes PSU. Primero, creemos una base de datos ficticia para una distribución muestral indicando la cantidad de muestras (en este caso 300.000), y el promedio y desviación estándar que tendrá. 
+
+```{r eval=TRUE, include=TRUE, warning=FALSE}
+psu1 <- rnorm(n = 300000, mean = 500, sd = 110)
+
+psych::describe(psu1)
+
+```
+
+
+Ahora, grafiquemos esta distribución y veamos qué tanto ajusta con la distribución normal. 
+
+```{r eval=TRUE, include=TRUE, warning=FALSE, collapse=FALSE}
+
+ggplot(data.frame(psu1), aes(x = psu1)) +
+  geom_histogram(color = "black", fill = "#FA8072") +
+  ggtitle("Puntaje PSU - 300.000 observaciones")
+
+ggplot(data.frame(psu1), aes(psu1)) +
+  geom_histogram(aes(x = psu1, y = ..density..), bins = 50, color = "black", fill = "grey") +
+  stat_function(fun = dnorm, args = list(mean = mean(psu1), sd = sd(psu1)), color = "red")
 
 
 ```
 
-## Video de clase
+Como vemos, dado que obtuvimos esta distribución de puntajes PSU mediante un muestreo aleatorio y repetido, es decir, que sacamos el puntaje PSU promedio de N muestras, tenemos una distribución empiríca que se ajusta a una distribución normal.
 
-#### Primer bloque
+# 5. ¿Qué es visualizar datos?
 
-{{< video https://youtu.be/2ugaq1OAL94 >}}
+La visualización de datos consiste en dar sentido a filas y columnas de datos, presentándolos en un formato fácilmente comprensible a una audiencia. 
 
-#### Segundo bloque
+![](../images/visual1.png)
 
-{{< video https://youtu.be/1_lAulfXv_w >}}
+Visualizar datos es una de las tareas más recurrentes en estadística, al mismo tiempo que es una de las formas más delicadas de comunicar información. ¿A qué nos referimos? básicamente a que, como investigadores/as, comunicamos nuestros resultados buscando resaltar un aspecto de la realidad e intentando crear un mensaje con los datos. Por ello, **es sumamente importante** hacerlo de forma fidedigna, sencilla y pensando siempre en cómo la audiencia podría interpretarlo. 
 
+![](../images/visual2.png)
+
+### 5.1 Cómo NO visualizar datos
+
+Es bastante común ver malas formas de comunicar datos; en los medios de comunicación, redes sociales e inclusive en la misma investigación acádemica. Esto ocurre por diversos motivos, ya sea por elementos gráficos, de escalas o de orden que engañan al ojo y percepción humana. Algunos ejemplos de cómo **no** se deben comunicar datos son: 
+
+```{r echo=FALSE, warning=FALSE, out.width="60%", fig.align='left'}
+knitr::include_graphics("../images/pinera.png", error = FALSE)
+```
+
+
+```{r echo=FALSE, warning=FALSE, out.width="60%", fig.align='right'}
+knitr::include_graphics("../images/tercera.jpeg", error = FALSE)
+```
+
+### 5.2 Algunos principios para visualizar datos
+
+¿Y entonces **cómo realizar una buena/correcta visualización de datos**? Tengamos como premisa la siguiente cita:
+
+_"La excelencia gráfica es la presentación bien diseñada de datos interesantes: una cuestión de sustancia, de estadística y de diseño... [Consiste] en ideas complejas comunicadas con claridad, precisión y eficacia. ... [Es] lo que da al espectador el mayor número de ideas en el menor tiempo con la menor tinta en el menor espacio ... [Es] casi siempre multivariante ... Y la excelencia gráfica requiere decir la verdad sobre los datos"._ 
+
+_Edward Tufte, The Visual Display of Quantitative Information, p. 51_
+
+
+:::::: {.row .d-flex .justify-content-center}
+::::: {.col-md-6} 
+:::: {.card .bg-danger .text-white}
+::: {.card-body}
+
+**10 Principios para la visualización de datos**
+
+1. Conoce a tu audiencia ¿Qué preguntas necesitan respuesta?
+
+2. Utiliza el tipo de gráfico adecuado para representar el tipo de información que dispone.
+
+3. La forma sigue a la función. Concéntrate en cómo va a utilizar los datos tu público y deja que eso determine el estilo de presentación.
+
+4.  Proporcione el contexto necesario para que los datos se interpreten y se actúe en consecuencia.
+
+5. Mantenga la sencillez. Elimine la información no esencial.
+
+6. Resalte la información más importante 
+
+7. Utilice los colores con prudencia
+
+8. Utilice cuidadosamente las proporciones para que las diferencias de tamaño en el diseño representen fielmente las diferencias de valor.
+
+9. Sé escéptico. Pregúntese qué datos no están representados y qué información podría, por tanto, malinterpretarse o perderse.
+
+10. Muestra la verdad de tus datos, no lo que quisieras creer.
+
+:::
+::::
+:::::
+::::::
+
+# 6. Visualización de datos con `ggplot2`
+
+Una vez que conocemos cómo es la distribución de nuestras variables, procedemos a graficarlas considerando los principios para una buena visualizacion de datos. 
+
+Pero antes, debemos conocer qué es `ggplot2` y cúal es su lógica. 
+
+```{r echo=FALSE, warning=FALSE, out.width="50%", fig.align='left'}
+knitr::include_graphics("../images/gg.png", error = FALSE)
+```
+
+`Ggplot2` es un potente paquete para visualizar datos en R. **Funciona por capas**, comenzando desde lo más central o nuclear hasta llegar a los detalles más estéticos necesarios. 
+
+1. La **primera capa corresponde a los datos**, es decir, las variables que queremos graficar ya listas y procesadas.
+2. La **segunda corresponde** al "mapping", que es básicamente determinar **cuáles variables serán el eje X e Y**, si existen grupos u otros. 
+3. La **tercera es la geometría**, la cual se refiere a la **forma** que tendrá el gráfico (líneas, barras, puntos, boxplot, violinplot, etc.). 
+
+
+**¡COMENCEMOS!**
+
+### 6.1 Diagrama de barras
+
+La forma más común de presentar variables nominales es mediante un gráfico de barras.
+
+En este primer ejemplo iremos capa por capa (o paso por paso), para entender la logica de `ggplot2`, en los siguientes lo haremos en conjunto.
+
+```{r eval=TRUE, include=TRUE, warning=FALSE, collapse=FALSE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo)) # especificamos datos y mapping 
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo)) + # especificamos datos y mapping 
+  geom_bar() # agregamos geometria o forma 
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo)) + # especificamos datos y mapping 
+  geom_bar(color = "black", fill = "darkblue") # agregamos geometria y color y relleno
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo)) + # especificamos datos y mapping 
+  geom_bar(color = "black", fill = "darkblue") + # agregamos geometria y color y relleno
+  scale_y_continuous(limits = c(0,1000)) # agregamos escala en eje Y y ponemos limites minimos y maximos
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo)) + # especificamos datos y mapping 
+  geom_bar(color = "black", fill = "darkblue") + # agregamos geometria y color y relleno
+  scale_y_continuous(limits = c(0,1000)) +# agregamos escala en eje Y y ponemos limites minimos y maximos
+  labs(title ="Condición de empleo 2019", 
+       x = "Situación empleo", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo)) + # especificamos datos y mapping 
+  geom_bar(color = "black", fill = "darkblue") + # agregamos geometria y color y relleno
+  scale_y_continuous(limits = c(0,1000)) +# agregamos escala en eje Y y ponemos limites minimos y maximos
+  labs(title ="Condición de empleo 2019", 
+       x = "Situación empleo", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") +# agregamos titulo, nombres a los ejes y fuente
+  geom_text(aes(label = ..count..), stat = "count", vjust = 1.5, colour = "white") # agregamos las freq de cada barra
+
+
+
+```
+
+¿Y podemos diferenciar por sexo en este mismo gráfico? **Claro que sí**, debemos indicar la variable que agrupa en el mapping o coordenadas mediante el argumento _fill_.
+
+```{r eval=TRUE, warning=FALSE, include=TRUE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo, fill = sexo)) + # especificamos datos y mapping 
+  geom_bar() + # agregamos geometria 
+  scale_y_continuous(limits = c(0,1000)) +# agregamos escala en eje Y y ponemos limites minimos y maximos
+  labs(title ="Condición de empleo, segun sexo 2019", 
+       x = "Situación empleo", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") +# agregamos titulo, nombres a los ejes y fuente
+  geom_text(aes(label = ..count..), stat = "count", colour = "white", position = position_stack(.1)) # agregams freq de cada barra por grupo
+
+
+```
+
+Ahora tenemos un gráfico de barras apiladas según el sexo de los entrevistados, y dicha agrupación nos aparece como una leyenda en la parte izquierda del grafico con el nombre de los grupos. 
+
+¿Y si en vez de que sea apilado, quiero que las barras por sexo estén una al lado de la otra? Fácil, debemos especifícarlo dentro de la geometría.
+
+```{r eval=TRUE, warning=FALSE, include=TRUE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo, fill = sexo)) + # especificamos datos y mapping 
+  geom_bar(position = "dodge2") + # agregamos geometria y especificamos posicion 
+  labs(title ="Condición de empleo, segun sexo 2019", 
+       x = "Situación empleo", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") +# agregamos titulo, nombres a los ejes y fuente
+  geom_text(aes(label = ..count..), stat = "count", colour = "white", 
+    vjust = 1.5, position = position_dodge(.9)) # agregamos freq de cada barra por grupo
+```
+
+```{r eval=TRUE, warning=FALSE, include=TRUE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = empleo, fill = tramo_edad)) + # especificamos datos y mapping 
+  geom_bar(position = "dodge2") + # agregamos geometria y especificamos posicion 
+  labs(title ="Condición de empleo, segun tramo etario 2019", 
+       x = "Situación empleo", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") +# agregamos titulo, nombres a los ejes y fuente
+  geom_text(aes(label = ..count..), stat = "count", colour = "white", 
+    vjust = 1.5, position = position_dodge(.9)) # agregamos freq de cada barra por grupo
+
+```
+
+
+### 6.2 Histogramas
+
+Cuando tenemos variables con muchas categorías de respuesta, como las variables continuas u ordinales de más de 7 categorías, podemos usar histogramas para representar su distribución.
+
+```{r eval=TRUE, warning=FALSE, include=TRUE, collapse=FALSE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = edad)) + # especificamos datos y mapping 
+  geom_histogram()# agregamos geometria 
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = edad)) + # especificamos datos y mapping 
+  geom_histogram(color = "black", fill = "#FA8072")  + # agregamos geometria y colores
+  labs(title ="Histograma frecuencias abs: Edad", 
+       x = "Edad", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+```
+
+```{r eval=TRUE, warning=FALSE, include=TRUE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = satisfaccion)) + # especificamos datos y mapping 
+  geom_histogram(color = "black", fill = "darkred")  + # agregamos geometria y colores
+  labs(title ="Histograma frecuencias abs: Satisfaccion", 
+       x = "Satisfaccion", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+
+```
+
+### 6.3 Digrama de densidad
+
+Los diagramas de densidad son una forma más suavizada de observar la distribución de una variable, siendo comunmente utilizados para contrastar distribuciones empíricas con las teóricas.
+
+```{r eval=TRUE, warning=FALSE, include=TRUE, collapse=FALSE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = edad)) + # especificamos datos y mapping 
+  geom_density(color = "black", fill = "#FA8072", alpha = 0.8)  + # agregamos geometria y colores
+  labs(title ="Diagrama densidad: Edad", 
+       x = "Edad", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+ggplot(data = proc_cep, 
+       mapping = aes(x = satisfaccion)) + # especificamos datos y mapping 
+  geom_density(color = "black", fill = "darkred", alpha = 0.8)  + # agregamos geometria y colores
+  labs(title ="Histograma densidad: Satisfaccion", 
+       x = "Satisfaccion", 
+       y = "Frecuencia",
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+
+```
+
+
+### 6.4 Gráficos de caja y bigote
+
+Como vimos en clases, los graficos de cajas y bigotes nos sirven para observar la mediana de los datos, el Q1 y Q3, el IQR, los valores minimos y maximos, y los valores atípicos. 
+
+```{r eval=TRUE, warning=FALSE, include=TRUE, collapse=FALSE}
+
+ggplot(data = proc_cep, 
+       mapping = aes(y = edad)) + # especificamos datos y mapping 
+  geom_boxplot(fill = "darkblue", alpha = 0.8)  + # agregamos geometria y colores
+  labs(title ="Gráfico de cajas: Edad", 
+       y = "Edad", 
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+
+ggplot(data = proc_cep, 
+       mapping = aes(y = satisfaccion)) + # especificamos datos y mapping 
+  geom_boxplot(fill = "darkred", alpha = 0.8)  + # agregamos geometria y colores
+  labs(title ="Gráfico de cajas: Satisfaccion", 
+       y = "Satisfaccion", 
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+
+```
+
+Ahora, segmentemos en un grafico de cajas la variable satisfaccion por tramo etario.
+
+```{r eval=TRUE, warning=FALSE, include=TRUE}
+ggplot(data = proc_cep, 
+       mapping = aes(y = satisfaccion, fill = tramo_edad)) + # especificamos datos y mapping 
+  geom_boxplot(alpha = 0.8)  + # agregamos geometria y colores
+  labs(title ="Gráfico de cajas: Satisfaccion por tramo etario", 
+       y = "Satisfaccion", 
+       caption = "Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.") # agregamos titulo, nombres a los ejes y fuente
+
+```
+
+
+
+## Resumen
+
+Hoy aprendimos a visualizar datos en R. En detalle, vimos:
+
+[1. La noción de una **distribución** y sus tipos (continuas y discretas)]{.text-black}
+
+[2. Estimar e interpretar la **asimetría** y **curtosis** de una distribución]{.text-black}
+
+[3. Contrastar **distribuciones empíricas** con **teóricas*]{.text-black}
+
+[4. La noción de **distribución muestral**]{.text-black}
+
+[5. Qué es la **visualización de datos** y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.]{.text-black}
+
+[6. Visualizar datos univariados con `{ggplot2}`.]{.text-black}

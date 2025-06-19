@@ -788,42 +788,42 @@
   {
     "objectID": "assignment/06-practico.html",
     "href": "assignment/06-practico.html",
-    "title": "Práctica 6. Visualización de datos con R",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
     "section": "",
-    "text": "El objetivo de esta guía práctica es aplicar los conocimientos aprendidos en clases sobre la forma de una distribución en R, comprendiendo sus usos, relevancia y formas de analizarla. También veremos visualización de datos con R, considerando las mejores prácticas para comunicar datos y análisis en ciencias sociales.\n\nLa noción de una distribución y sus tipos (continuas y discretas)\nEstimar e interpretar la asimetría y curtosis de una distribución\nContrastar distribuciones empíricas con teóricas\nQué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.\nVisualizar datos univariados con {ggplot2}.\n\n\n\n\nEn esta práctica trabajaremos con la base de datos de la Encuesta de Opinión Pública (CEP) de Diciembre del 2019 realizada por el Centro de Estudios Públicos. Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace  CEP 2019 podrán descargar el archivo que contiene la base CEP Diciembre 2019."
+    "text": "El objetivo de esta guía práctica es aplicar los conocimientos aprendidos en clases sobre la forma de una distribución en R, comprendiendo sus usos, relevancia y formas de analizarla. También veremos visualización de datos con R, considerando las mejores prácticas para comunicar datos y análisis en ciencias sociales.\n1. La noción de una distribución y sus tipos (continuas y discretas)\n2. Estimar e interpretar la asimetría y curtosis de una distribución\n3. Contrastar distribuciones empíricas con **teóricas*\n4. La noción de distribución muestral\n5. Qué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.\n6. Visualizar datos univariados con {ggplot2}."
   },
   {
     "objectID": "assignment/06-practico.html#objetivo-de-la-práctica",
     "href": "assignment/06-practico.html#objetivo-de-la-práctica",
-    "title": "Práctica 6. Visualización de datos con R",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
     "section": "",
-    "text": "El objetivo de esta guía práctica es aplicar los conocimientos aprendidos en clases sobre la forma de una distribución en R, comprendiendo sus usos, relevancia y formas de analizarla. También veremos visualización de datos con R, considerando las mejores prácticas para comunicar datos y análisis en ciencias sociales.\n\nLa noción de una distribución y sus tipos (continuas y discretas)\nEstimar e interpretar la asimetría y curtosis de una distribución\nContrastar distribuciones empíricas con teóricas\nQué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.\nVisualizar datos univariados con {ggplot2}."
+    "text": "El objetivo de esta guía práctica es aplicar los conocimientos aprendidos en clases sobre la forma de una distribución en R, comprendiendo sus usos, relevancia y formas de analizarla. También veremos visualización de datos con R, considerando las mejores prácticas para comunicar datos y análisis en ciencias sociales.\n1. La noción de una distribución y sus tipos (continuas y discretas)\n2. Estimar e interpretar la asimetría y curtosis de una distribución\n3. Contrastar distribuciones empíricas con **teóricas*\n4. La noción de distribución muestral\n5. Qué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.\n6. Visualizar datos univariados con {ggplot2}."
   },
   {
     "objectID": "assignment/06-practico.html#recursos-de-la-práctica",
     "href": "assignment/06-practico.html#recursos-de-la-práctica",
-    "title": "Práctica 6. Visualización de datos con R",
-    "section": "",
-    "text": "En esta práctica trabajaremos con la base de datos de la Encuesta de Opinión Pública (CEP) de Diciembre del 2019 realizada por el Centro de Estudios Públicos. Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace  CEP 2019 podrán descargar el archivo que contiene la base CEP Diciembre 2019."
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
+    "section": "Recursos de la práctica",
+    "text": "Recursos de la práctica\nEn esta práctica trabajaremos con la base de datos de la Encuesta de Opinión Pública (CEP) de Diciembre del 2019 realizada por el Centro de Estudios Públicos. Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace  CEP 2019 podrán descargar el archivo que contiene la base CEP Diciembre 2019."
   },
   {
     "objectID": "assignment/06-practico.html#cargar-librerías",
     "href": "assignment/06-practico.html#cargar-librerías",
-    "title": "Práctica 6. Visualización de datos con R",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
     "section": "1. Cargar librerías",
     "text": "1. Cargar librerías\nPara esta sesión, usaremos librerías que ya conocemos en prácticos pasados:\n\npacman::p_load(tidyverse, # colección de paquetes para manipulación de datos\n               haven, # para importar datos\n               car,# para recodificar datos\n               psych, # para analizar datos\n               sjmisc) # para analizar datos\n\noptions(scipen = 999) # para desactivar notacion cientifica\nrm(list = ls()) # para limpiar el entorno de trabajo"
   },
   {
     "objectID": "assignment/06-practico.html#importar-datos",
     "href": "assignment/06-practico.html#importar-datos",
-    "title": "Práctica 6. Visualización de datos con R",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
     "section": "2. Importar datos",
     "text": "2. Importar datos\nCargamos la base de datos CEP Diciembre 2019 mediante el paquete haven\n\ncep &lt;- haven::read_sav(\"Input/data/CEP_dic2019.sav\")"
   },
   {
     "objectID": "assignment/06-practico.html#limpiar-datos",
     "href": "assignment/06-practico.html#limpiar-datos",
-    "title": "Práctica 6. Visualización de datos con R",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
     "section": "3. Limpiar datos",
     "text": "3. Limpiar datos\nSeleccionamos las variables de interés y las renombramos:\n\nproc_cep &lt;- cep %&gt;% \n  select(edad = DS_P2_EXACTA,\n         sexo = DS_P1,\n         empleo = DS_P5, \n         satisfaccion = SV_1)\n\nRecodificamos las variables satisfaccion, sexo y empleo. Ademas, transformamos la variable edad a tramos:\n\nproc_cep$sexo &lt;- as.factor(proc_cep$sexo) # primero pasamos a factor la variable al venir con etiquetas\nproc_cep$empleo &lt;- as.factor(proc_cep$empleo)\n\nproc_cep &lt;- proc_cep %&gt;% \n  mutate(satisfaccion=car::recode(satisfaccion, recodes = c(\"88 = NA; 99 = NA\")),\n         sexo = car::recode(sexo, recodes = c(\"1 = 'Hombre'; 2 = 'Mujer'\")),\n         empleo = car::recode(empleo, recodes = c(\"1 = 'Ocupado'; 2 = 'Desocupado'; 3 = 'Nunca ha trabajado'; 99 = NA\")),\n         tramo_edad = case_when(edad &lt;= 29 ~ \"Jovenes\",\n                                edad &gt;= 30 & edad &lt;= 59 ~ \"Adultos\",\n                                edad &gt;= 60 ~ \"Adutos mayores\")) \n\nRemovemos los valores perdidos o missing.\n\nproc_cep &lt;- na.omit(proc_cep)\n\nPor último, guardamos la base procesada.\n\nsaveRDS(proc_cep, file = \"Output/proc_cep.RData\")"
   },
@@ -941,5 +941,47 @@
     "title": "Planificación",
     "section": "",
     "text": "Los dos componentes centrales del curso son las clases lectivas y las sesiones prácticas de Análisis de Datos. Las clases se realizarán los días Martes y Jueves de 08:30 a 10:00 en la sala 1 del Aulario B , mientras que las sesiones de Práctos se realizarán los días Jueves de 08:30 a 10:00 en la Sala 1 del Aulario B, y sala 45 (ver planificación de sesiones).\n\nClases ( ): Documentos de presentación y lecturas asociadas.\nPrácticos (): Actividades prácticas de Análisis de Datos a desarrollar durante el semestre.\nEvaluaciones (): Evaluaciones individuales y colectivas a desarrollar durante el semestre.\n\n\n\n\n\n\n\n\n\n\n\n Clases\n Prácticos\n Evaluaciones\n\n\n\n\n Marzo \n\n\n\n\n\n\n\nUNIDAD 1: Sociología y estadística\n\n\n\n\n\n\n\n\n\nSemana 1 (10/03)\nLa estadística como herramienta de investigación sociológica\n\n\n\n\nSemana 2 (17/03)\nEpistemología, límites y potencialidades de la investigación cuantitativa.\n\n\n\n\nSemana 3 (24/03)\nLa medición en ciencias sociales: algunos conceptos fundamentales.\n\n\n\n\n Abril \n\n\n\n\n\nSemana 4 (31/03)\nDatos y bases de datos. Ética de la investigación con datos sociales.\n\n\n\n\nSemana 5 (07/04)\nDatos y bases de datos. Ética de la investigación con datos sociales.\nPráctico 1\n\n\n\nSemana 6 (14/04)\nSuspensión por paro.\n\n\n\n\nSemana 7 (21/04)\nSuspensión por toma.\n\n\n\n\nSemana 8 (28/04)\nSuspensión por toma.\nFeriado\n\n\n\n Mayo \n\n\n\n\n\nSemana 9 (05/05)\nSuspensión por toma\n\n\n\n\nSemana 10 (12/05)\nSuspensión por toma.\n\n\n\n\n\n\n\nUNIDAD 2: La descripción de los datos.\n\n\n\n\n\n\n\n\n\nSemana 11 (19/05)\nMedidas de tendencia central.\nPráctico 2\n\n\n\nSemana 12 (26/05)\nMedidas de dispersión.\nPráctico 3\n\n\n\n Junio \n\n\n\n\n\nSemana 13 (02/06)\nMedidas de posición.\nPráctico 3\nEntrega Parcial Reporte de Investigación (06/06)\n\n\nSemana 14 (09/06)\nVisualización de datos y distribuciones de datos.\nPráctico 4\nEntrega Tarea Individual Excel y SPSS (09/06)\n\n\n\n\n\nUNIDAD 3: La forma de una distribución\n\n\n\n\n\n\n\n\n\nSemana 15 (16/06)\nNoción de función y distribución.\nPráctico 5\n\n\n\nSemana 16 (23/06)\nAsimetría y Curtosis.\nSesión de apoyo a trabajos.\nEntrega Final Reporte de Investigación (27/06)\n\n\n Julio \n\n\n\n\n\nSemana 17 (30/06)\nConcepto de distribución estadística. Distribución normal y sus probabilidades.\n\n\n\n\nSemana 18 (07/07)\nExámenes\n\n\n\n\nSemana 19 (14/07)\nExámenes"
+  },
+  {
+    "objectID": "assignment/06-practico.html#distribuciones-continuas-y-discretas",
+    "href": "assignment/06-practico.html#distribuciones-continuas-y-discretas",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
+    "section": "1.1 Distribuciones continuas y discretas",
+    "text": "1.1 Distribuciones continuas y discretas\nExisten dos tipos de distribuciones según el nivel de medición de las variables: las continuas y las discretas.\nComo cabe esperar, las distribuciones continuas aplican a variables numericas (intervalares y de razón). Es una distribución que describe la probabilidad o frecuencia de que una variable continua tome un valor particular dado un intervalo o un rango. Toma valores a lo largo de un continuo de dominio (\\(R\\)), es decir, su dominio son todos los números reales.\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n\n\n\n\n\n\n\n\n\nPor su parte, las distribuciones discretas son comunmente utilizadas con variables categóricas (nominales y ordinales). Son distribuciones en las que una variable sólo puede tomar un número contable de valores distintos. En otras palabras, es una distribución en la que la variable sólo puede tomar valores específicos, en lugar de cualquier valor dentro de un intervalo. Su dominio es un conjunto de valores enteros (\\(N, Z, Q\\))."
+  },
+  {
+    "objectID": "assignment/06-practico.html#preparación-de-datos-1",
+    "href": "assignment/06-practico.html#preparación-de-datos-1",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
+    "section": "2.1 Preparación de datos",
+    "text": "2.1 Preparación de datos\nCargamos las librerías y datos que ocuparemos\n\npacman::p_load(tidyverse, \n               psych, \n               sjmisc) \n\noptions(scipen = 999) \nrm(list = ls()) \n\nproc_cep &lt;- readRDS(\"Output/proc_cep.RData\")"
+  },
+  {
+    "objectID": "assignment/06-practico.html#análisis-de-la-forma-de-distribución-1",
+    "href": "assignment/06-practico.html#análisis-de-la-forma-de-distribución-1",
+    "title": "Práctica 6. Visualización de datos con R",
+    "section": "2. Análisis de la forma de distribución",
+    "text": "2. Análisis de la forma de distribución\nAnalicemos e interpretemos la forma de la distribución de nuestras variables. En este ejemplo tenemos:\n\nuna de razón,\nuna ordinal de 10 categorías.\n\n\npsych::describe(proc_cep$edad)\n\n   vars    n  mean    sd median trimmed  mad min max range skew kurtosis   se\nX1    1 1474 48.43 17.84   48.5   48.01 21.5  18  99    81 0.14    -0.93 0.46\n\nggplot(data = proc_cep, \n       mapping = aes(x = edad)) + \n  geom_density(color = \"black\", fill = \"#FA8072\", alpha = 0.8)  + \n  labs(title =\"Diagrama densidad: Edad\", \n       x = \"Edad\", \n       y = \"Frecuencia\",\n       caption = \"Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.\") \n\n\n\n\n\n\n\n\nA partir de los estadísticos entregados, sabemos que la variable edad tiene una asimetría positiva (skew = 0.14) pero baja (&lt; 0.5), lo cual indica que los datos se tienden a distribuir hacía los menores valores del eje X. Por su parte, la curtosis es negativa (kurtosis = -0.93) o platicúrtica, lo cual indica que existe una baja concentración en el centro de los datos.\n\npsych::describe(proc_cep$satisfaccion)\n\n   vars    n mean   sd median trimmed  mad min max range  skew kurtosis   se\nX1    1 1474 6.87 2.18      7    6.97 2.97   1  10     9 -0.32    -0.45 0.06\n\nggplot(data = proc_cep, \n       mapping = aes(x = satisfaccion)) + \n  geom_density(color = \"black\", fill = \"darkred\", alpha = 0.8)  + \n  labs(title =\"Histograma densidad: Satisfaccion\", \n       x = \"Satisfaccion\", \n       y = \"Frecuencia\",\n       caption = \"Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.\") \n\n\n\n\n\n\n\n\nEn cuanto a la variable satisfaccion, tenemos una asimetría negativa (skew = -0.32) aunque baja, indicando que los datos se tienden a distribuir hacia la parte superior de la variable. Además, la curtosis también es negativa o platicúrtica (kurtosis = -0.45), por lo que existe una baja concentración en el centro de los datos."
+  },
+  {
+    "objectID": "assignment/06-practico.html#resumen",
+    "href": "assignment/06-practico.html#resumen",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
+    "section": "Resumen",
+    "text": "Resumen\nHoy aprendimos a visualizar datos en R. En detalle, vimos:\n1. La noción de una distribución y sus tipos (continuas y discretas)\n2. Estimar e interpretar la asimetría y curtosis de una distribución\n3. Contrastar distribuciones empíricas con **teóricas*\n4. La noción de distribución muestral\n5. Qué es la visualización de datos y cómo comunicarlos a una audiencia de manera eficiente, completa e insesgada.\n6. Visualizar datos univariados con {ggplot2}."
+  },
+  {
+    "objectID": "assignment/06-practico.html#análisis-de-la-forma-de-distribución",
+    "href": "assignment/06-practico.html#análisis-de-la-forma-de-distribución",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
+    "section": "2.2 Análisis de la forma de distribución",
+    "text": "2.2 Análisis de la forma de distribución\nAnalicemos e interpretemos la forma de la distribución de nuestras variables. En este ejemplo tenemos:\n\nuna de razón,\nuna ordinal de 10 categorías.\n\n\npsych::describe(proc_cep$edad)\n\n   vars    n  mean    sd median trimmed  mad min max range skew kurtosis   se\nX1    1 1474 48.43 17.84   48.5   48.01 21.5  18  99    81 0.14    -0.93 0.46\n\nggplot(data = proc_cep, \n       mapping = aes(x = edad)) + \n  geom_density(color = \"black\", fill = \"#FA8072\", alpha = 0.8)  + \n  labs(title =\"Diagrama densidad: Edad\", \n       x = \"Edad\", \n       y = \"Frecuencia\",\n       caption = \"Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.\") \n\n\n\n\n\n\n\n\nA partir de los estadísticos entregados, sabemos que la variable edad tiene una asimetría positiva (skew = 0.14) pero baja (&lt; 0.5), lo cual indica que los datos se tienden a distribuir hacía los menores valores del eje X. Por su parte, la curtosis es negativa (kurtosis = -0.93) o platicúrtica, lo cual indica que existe una baja concentración en el centro de los datos.\n\npsych::describe(proc_cep$satisfaccion)\n\n   vars    n mean   sd median trimmed  mad min max range  skew kurtosis   se\nX1    1 1474 6.87 2.18      7    6.97 2.97   1  10     9 -0.32    -0.45 0.06\n\nggplot(data = proc_cep, \n       mapping = aes(x = satisfaccion)) + \n  geom_density(color = \"black\", fill = \"darkred\", alpha = 0.8)  + \n  labs(title =\"Histograma densidad: Satisfaccion\", \n       x = \"Satisfaccion\", \n       y = \"Frecuencia\",\n       caption = \"Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019.\") \n\n\n\n\n\n\n\n\nEn cuanto a la variable satisfaccion, tenemos una asimetría negativa (skew = -0.32) aunque baja, indicando que los datos se tienden a distribuir hacia la parte superior de la variable. Además, la curtosis también es negativa o platicúrtica (kurtosis = -0.45), por lo que existe una baja concentración en el centro de los datos."
+  },
+  {
+    "objectID": "assignment/06-practico.html#preparación-de-datos",
+    "href": "assignment/06-practico.html#preparación-de-datos",
+    "title": "Práctica 5. Distribución y Visualización de datos con R",
+    "section": "Preparación de datos",
+    "text": "Preparación de datos\n\n1. Cargar librerías\nPara esta sesión, usaremos librerías que ya conocemos en prácticos pasados:\n\npacman::p_load(tidyverse, # colección de paquetes para manipulación de datos\n               haven, # para importar datos\n               car,# para recodificar datos\n               psych, # para analizar datos\n               sjmisc) # para analizar datos\n\noptions(scipen = 999) # para desactivar notacion cientifica\nrm(list = ls()) # para limpiar el entorno de trabajo\n\n\n\n2. Importar datos\nCargamos la base de datos CEP Diciembre 2019 mediante el paquete haven\n\ncep &lt;- haven::read_sav(\"Input/data/CEP_dic2019.sav\")\n\n\n\n3. Limpiar datos\n\n3.1 Seleccionamos las variables de interés y las renombramos:\n\nproc_cep &lt;- cep %&gt;% \n  select(edad = DS_P2_EXACTA,\n         sexo = DS_P1,\n         empleo = DS_P5, \n         satisfaccion = SV_1)\n\n\n\n3.2 Recodificamos las variables satisfaccion, sexo y empleo. Ademas, transformamos la variable edad a tramos:\n\nproc_cep$sexo &lt;- as.factor(proc_cep$sexo) # primero pasamos a factor la variable al venir con etiquetas\nproc_cep$empleo &lt;- as.factor(proc_cep$empleo)\n\nproc_cep &lt;- proc_cep %&gt;% \n  mutate(satisfaccion=car::recode(satisfaccion, recodes = c(\"88 = NA; 99 = NA\")),\n         sexo = car::recode(sexo, recodes = c(\"1 = 'Hombre'; 2 = 'Mujer'\")),\n         empleo = car::recode(empleo, recodes = c(\"1 = 'Ocupado'; 2 = 'Desocupado'; 3 = 'Nunca ha trabajado'; 99 = NA\")),\n         tramo_edad = case_when(edad &lt;= 29 ~ \"Jovenes\",\n                                edad &gt;= 30 & edad &lt;= 59 ~ \"Adultos\",\n                                edad &gt;= 60 ~ \"Adutos mayores\")) \n\n\n\n\n\n\n\nNota\n\n\n\nRecordar: cuando recodifcamos buscamos reducir o agrupar categorías. Aquello es posible considerando los niveles de medición de las variables (NOIR) y sus propiedades (que son acumulativas). De modo que recodificamos variables que sean cuantitativas a cualitativas, no al revés.\n\nN: variables nominales. Propiedad (1): clasifican\nO: variables ordinales. Propiedad (2): clasifican y ordenan\nI: variables intervalares. Propiedad (3): clasifican, ordenan y expresan magnitudes\nR: variables de razón. Propiedad (4): clasifican, ordenan, expresan magnitudes y permiten operar sus categorías (aditividad)\n\n\n\n\n\n3.4 Removemos los valores perdidos o missing (NA).\n\nproc_cep &lt;- na.omit(proc_cep)\n\n\n\n\n4. Por último, guardamos la base procesada.\n\nsaveRDS(proc_cep, file = \"Output/proc_cep.RData\")"
   }
 ]
