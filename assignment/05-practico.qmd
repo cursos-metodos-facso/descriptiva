@@ -86,7 +86,7 @@ starwars %>%
 
 ## Recursos de la práctica
 
-En esta práctica trabajaremos con la base de datos de la Encuesta de Opinión Pública (CEP) de Diciembre del 2019 realizada por el [Centro de Estudios Públicos](https://www.cepchile.cl/). Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace [{{< fa table >}} `CEP 2019`](https://github.com/cursos-metodos-facso/descriptiva/tree/main/data/CEP_dic2019.sav) podrán descargar el archivo que contiene la base CEP Diciembre 2019.
+En esta práctica trabajaremos con la base de datos de la Encuesta de Opinión Pública (CEP) de Diciembre del 2019 realizada por el [Centro de Estudios Públicos](https://www.cepchile.cl/). Esta base la pueden encontrar en el canal de U-Cursos sección Material Docente, o bien, en el siguiente enlace [{{< fa table >}} `CEP 2019`](https://github.com/cursos-metodos-facso/descriptiva/raw/main/assignment/Input/data/CEP_dic2019.sav) podrán descargar el archivo que contiene la base CEP Diciembre 2019.
 
 ## Preparación de datos
 
