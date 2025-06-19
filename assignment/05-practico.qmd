@@ -17,7 +17,7 @@ El objetivo de esta guía práctica es aplicar los conocimientos aprendidos en c
 
 [2. Estimar e interpretar la **asimetría** y **curtosis** de una distribución]{.text-black}
 
-[3. Contrastar **distribuciones empíricas** con **teóricas*]{.text-black}
+[3. Contrastar **distribuciones empíricas** con **teóricas**]{.text-black}
 
 [4. La noción de **distribución muestral**]{.text-black}
 
@@ -39,7 +39,6 @@ En estadística, una distribución se refiere al conjunto de todos los valores p
 :::::
 ::::::
 
-
 <br>
 
 Es una **función que muestra la frecuencia con la que se da cada valor o rango de valores en un conjunto de datos**. Esto implica que, por función, nos referimos a que *la magnitud de una variable depende de otra*. Con ello, nacen dos conceptos: 
@@ -56,9 +55,8 @@ Además, cuando una distribución empírica se asemeja a una teórica, podemos a
 
 ```{r include=FALSE}
 library(tidyverse)
-load(file = "Input/data/Salaries.Rdata")
-load(file = "Input/data/starwars.Rdata")
-
+load(file = "input/data/Salaries.Rdata")
+load(file = "input/data/starwars.Rdata")
 ```
 
 ## 1.1 Distribuciones continuas y discretas 
@@ -67,28 +65,23 @@ Existen dos tipos de distribuciones según el nivel de medición de las variable
 
 Como cabe esperar, **las distribuciones continuas aplican a variables numericas (intervalares y de razón)**. Es una distribución que describe la probabilidad o frecuencia de que una variable continua tome un valor particular dado un intervalo o un rango. Toma valores a lo largo de un continuo de dominio ($R$), es decir, su dominio son todos los números reales.
 
-
-```{r echo=FALSE, warning=FALSE}
-
+```{r echo=FALSE, warning=FALSE,message=FALSE}
 Salaries %>% 
   ggplot(aes(x = salary))+
   geom_histogram(fill = "grey60", color = "black")+
   labs(y = "Frecuencia", x = "Salarios", title = "Distribución continua")+
   theme_classic()
-
 ```
 
 Por su parte, **las distribuciones discretas son comunmente utilizadas con variables categóricas (nominales y ordinales).** Son distribuciones en las que una variable sólo puede tomar un número contable de valores distintos. En otras palabras, es una distribución en la que la variable sólo puede tomar valores específicos, en lugar de cualquier valor dentro de un intervalo. Su dominio es un conjunto de
 valores enteros ($N, Z, Q$).
 
 ```{r echo=FALSE, warning=FALSE}
-
 starwars %>% 
   ggplot(aes(x = eye_color))+
   geom_bar(fill = "grey60", color = "black")+
   labs(y = "Frecuencia", x = "Color ojos", title = "Distribución discreta")+
   theme_classic()
-  
 ```
 
 ## Recursos de la práctica
@@ -110,7 +103,6 @@ pacman::p_load(tidyverse, # colección de paquetes para manipulación de datos
 
 options(scipen = 999) # para desactivar notacion cientifica
 rm(list = ls()) # para limpiar el entorno de trabajo
-              
 ```
 
 ### 2. Importar datos
@@ -118,8 +110,7 @@ rm(list = ls()) # para limpiar el entorno de trabajo
 Cargamos la base de datos CEP Diciembre 2019 mediante el paquete `haven` 
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
-cep <- haven::read_sav("Input/data/CEP_dic2019.sav")
-
+cep <- haven::read_sav("input/data/CEP_dic2019.sav")
 ```
 
 ### 3. Limpiar datos
@@ -127,13 +118,11 @@ cep <- haven::read_sav("Input/data/CEP_dic2019.sav")
 #### 3.1 **Seleccionamos** las variables de interés y las renombramos:
 
 ```{r eval=TRUE, include=TRUE, collapse=FALSE}
-
 proc_cep <- cep %>% 
   select(edad = DS_P2_EXACTA,
          sexo = DS_P1,
          empleo = DS_P5, 
          satisfaccion = SV_1)
-  
 ```
 
 
