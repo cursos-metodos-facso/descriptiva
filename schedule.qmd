@@ -49,13 +49,13 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>
       <td style="padding: 14px;">Semana 4</td>
       <td style="padding: 14px;"><a href="/content/01-content.html">Datos y bases de datos. Ética de la investigación con datos sociales</a></td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Prácitco 1</td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-ejercicio-practico">Práctico 1</td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
-      <td style="padding: 14px;"><i class="fas fa-book-reader"></i> <a href="/content/01-content.html">Lectura: Introducción al lenguaje R</td>
+      <td style="padding: 14px;"><i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico">Lectura: Introducción al lenguaje R</td>
       <td style="padding: 14px;"></td>
     </tr>
     <!-- UNIDAD 2 -->
@@ -113,7 +113,13 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>
       <td style="padding: 14px;">Semana 9</td>
       <td style="padding: 14px;"><a href="/content/05-content.html"> Noción de función y distribución</a></td>
+      <td style="padding: 14px;">Práctico 6</td>
       <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td> 
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Medidas de forma</td>
       <td style="padding: 14px;"></td>
     </tr>
 <tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong></i> </strong></td></tr>
@@ -121,13 +127,13 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>    
       <td style="padding: 14px;">Semana 10</td>
       <td style="padding: 14px;"><a href="/content/01-content.html">Asimetría y Curtosis</a></td>
-      <td style="padding: 14px;">Práctico 6</td>
+      <td style="padding: 14px;">Práctico 7</td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td> 
-      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura :Medidas de forma</td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Inferencia</td>
       <td style="padding: 14px;"></td>
     </tr>
       <td style="padding: 14px;"></td>
@@ -158,7 +164,7 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>    
       <td style="padding: 14px;">Semana 14</td>
       <td style="padding: 14px;"><a href="/content/01-content.html">Noción de distribución de muestreo, parámetros y estadísticos, Inferencia, ponderadores y factores de expansión</a></td>
-      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;">**Sesión de apoyo trabajos**</td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>

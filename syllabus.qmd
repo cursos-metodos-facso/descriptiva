@@ -17,7 +17,7 @@ library(pander)
 
 - {{< fa user >}} &nbsp; {{< var instructor.name >}}
 - {{< fa university >}} &nbsp; {{< var instructor.office >}}
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
+- {{< fa envelope >}} &nbsp; {{< var instructor.email >}}
 
 :::
 
@@ -265,4 +265,6 @@ Bases de datos de interés
 
 -	https://ourworldindata.org/
 
+## Programación de sesiones
 
+Ver la [Planificación](https://estadistica-descriptiva-uch.netlify.app/schedule)

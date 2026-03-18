@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://estadistica-descriptiva-uch.netlify.app/syllabus.html</loc>
-    <lastmod>2025-06-05T01:51:49.925Z</lastmod>
+    <lastmod>2026-03-18T15:28:26.512Z</lastmod>
   </url>
   <url>
     <loc>https://estadistica-descriptiva-uch.netlify.app/index.html</loc>
@@ -54,11 +54,15 @@
   </url>
   <url>
     <loc>https://estadistica-descriptiva-uch.netlify.app/assignment/02-practico.html</loc>
-    <lastmod>2025-06-05T01:51:49.577Z</lastmod>
+    <lastmod>2026-03-18T15:53:06.215Z</lastmod>
   </url>
   <url>
     <loc>https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico.html</loc>
-    <lastmod>2025-06-05T01:51:49.575Z</lastmod>
+    <lastmod>2026-03-18T15:52:51.133Z</lastmod>
+  </url>
+  <url>
+    <loc>https://estadistica-descriptiva-uch.netlify.app/assignment/01-ejercicio-practico.html</loc>
+    <lastmod>2026-03-18T15:52:02.583Z</lastmod>
   </url>
   <url>
     <loc>https://estadistica-descriptiva-uch.netlify.app/assignment/02-practico-1.html</loc>
@@ -114,6 +118,6 @@
   </url>
   <url>
     <loc>https://estadistica-descriptiva-uch.netlify.app/schedule.html</loc>
-    <lastmod>2026-03-18T15:13:57.262Z</lastmod>
+    <lastmod>2026-03-18T15:55:13.033Z</lastmod>
   </url>
 </urlset>

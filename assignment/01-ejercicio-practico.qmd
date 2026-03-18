@@ -1,0 +1,9 @@
+---
+title: "Práctico 01. Introducción al lenguaje R"
+date: ""
+lang: es
+output:
+  number_sections: true
+---
+
+## Ejercicios 
