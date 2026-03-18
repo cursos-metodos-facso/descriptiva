@@ -5,47 +5,187 @@ toc: false
 page-layout: full
 ---
 
-Los dos componentes centrales del curso son las clases lectivas y las sesiones prácticas de Análisis de Datos. Las **clases** se realizarán los días **Martes y Jueves** de **08:30 a 10:00** en la **sala 1 del Aulario B** , mientras que las sesiones de Práctos se realizarán los días **Jueves** de **08:30 a 10:00** en la **Sala 1 del Aulario B, y sala 45** (ver planificación de sesiones).
+Los dos componentes centrales del curso son las clases lectivas y las sesiones prácticas de Análisis de Datos. Las **clases** se realizarán los días **Miércoles y Jueves** de **08:30 a 10:00** en la **sala 6 del Aulario C** , mientras que las sesiones de Práctos se realizarán los días **Jueves** de **08:30 a 10:00** en la **Sala 1 del Aulario B, y sala 45**.
 
 -   [**Clases**]() (<i class="fas fa-chalkboard-teacher"></i> ): Documentos de presentación y lecturas asociadas.
 
--   [**Prácticos**]() (<i class="fas fa-user-edit"></i>): Actividades prácticas de Análisis de Datos a desarrollar durante el semestre.
+-   [**Prácticos**]() (<i class="fas fa-user-edit"></i>): Actividades prácticas de Análisis de Datos a desarrollar durante el semestre. Cada práctico cuenta con una lectura que deben traer leída previamente. 
 
 -   [**Evaluaciones**]() (<i class="fas fa-book-reader"></i>): Evaluaciones individuales y colectivas a desarrollar durante el semestre.
 
 
-| |<i class="fas fa-chalkboard-teacher"></i>  Clases  |  <i class="fas fa-user-edit"></i>   Prácticos | <i class="fas fa-book-reader"></i> Evaluaciones
------|------------|----------------------------------|-----------
-<font color="orange"> **Marzo** </font> |   |   |
-### UNIDAD 1: Sociología y estadística
-|||
------|------------|-------------------|-----------
-Semana 1 (10/03) | La estadística como herramienta de investigación sociológica |  | 
-Semana 2 (17/03) | Epistemología, límites y potencialidades de la investigación cuantitativa. | | 
-Semana 3 (24/03) | La medición en ciencias sociales: algunos conceptos fundamentales.| | 
-<font color="orange"> **Abril** </font> |   |   |
-Semana 4 (31/03) | Datos y bases de datos. Ética de la investigación con datos sociales. |  | 
-Semana 5 (07/04) | Datos y bases de datos. Ética de la investigación con datos sociales.   | Práctico 1 |
-Semana 6 (14/04) | Suspensión por paro. |   |
-Semana 7 (21/04) | Suspensión por toma. |   |
-Semana 8 (28/04) | Suspensión por toma. | *Feriado* |
-<font color="orange"> **Mayo** </font> |   |   |
-Semana 9 (05/05) | Suspensión por toma |  |
-Semana 10 (12/05) | Suspensión por toma. | |
-### UNIDAD 2: La descripción de los datos.
-|||
------|------------|-------------------|-----------
-Semana 11 (19/05) | Medidas de tendencia central. | Práctico 2 |
-Semana 12 (26/05) | Medidas de dispersión. | Práctico 3|
-<font color="orange"> **Junio** </font> |   |   |
-Semana 13 (02/06) | Medidas de posición. | Práctico 3 | Entrega Parcial Reporte de Investigación (06/06) |
-Semana 14 (09/06) | Visualización de datos y distribuciones de datos. | Práctico 4 | Entrega Tarea Individual Excel y SPSS (09/06) |
-### UNIDAD 3: La forma de una distribución
-|||
------|------------|-------------------|-----------
-Semana 15 (16/06) | Noción de función y distribución. | Práctico 5 |
-Semana 16 (23/06) | Asimetría y Curtosis.| Sesión de apoyo a trabajos. | Entrega Final Reporte de Investigación (27/06) |
-<font color="orange"> **Julio** </font> |   |   |
-Semana 17 (30/06) | Concepto de distribución estadística. Distribución normal y sus probabilidades. |  |
-Semana 18 (07/07) | Exámenes |  |
-Semana 19 (14/07) | Exámenes |  |
+<br>
+
+<table style="width:100%; border-spacing: 0 12px; font-size: 16px;">
+  <thead>
+      <th style="padding: 14px;"></th>
+      <th style="padding: 14px;"><i class="fas fa-chalkboard-teacher"></i> Clases</th>
+      <th style="padding: 14px;"><i class="fas fa-user-edit"></i> Prácticos</th>
+      <th style="padding: 14px;"><i class="fas fa-book-reader"></i> Evaluaciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- UNIDAD 1 -->
+    <tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong> UNIDAD 1: <i>Sociología y estadística</i> </strong></td></tr>
+    <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Marzo</strong></span></td><td></td><td></td><td></td></tr>
+    <tr>
+      <td style="padding: 14px;">Semana 1</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">La estadística como herramienta de investigación sociológica</a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;">Semana 2</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Epistemología, límites y potencialidades de la investigación cuantitativa</a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;">Semana 3</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">La medición en ciencias sociales: algunos conceptos fundamentales</a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;">Semana 4</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Datos y bases de datos. Ética de la investigación con datos sociales</a></td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Prácitco 1</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"><i class="fas fa-book-reader"></i> <a href="/content/01-content.html">Lectura: Introducción al lenguaje R</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <!-- UNIDAD 2 -->
+<tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong> UNIDAD 2: <i>La descripción de los datos</i> </strong></td></tr>
+    <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Abril</strong></span></td><td></td><td></td><td></td></tr>
+    <tr>
+      <td style="padding: 14px;">Semana 5</td>
+      <td style="padding: 14px;"><a href="/content/02-content.html">Medidas de tendencia central</a></td>
+      <td style="padding: 14px;">Práctico 2 </td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Primeros pasos en R</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+      <td style="padding: 14px;">Semana 6</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Medidas de dispersión</a></td>
+      <td style="padding: 14px;">Práctico 3</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Procesamiento, limpienza y manipulación de datos</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;">Semana 7</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Medidas de posición</a></td>
+      <td style="padding: 14px;">Práctico 4 </td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura:  Procesamiento, limpienza y manipulación de datos</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;">Semana 8</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Visualización de datos y distribuciones de datos</a></td>
+      <td style="padding: 14px;">Práctico 5 </td>
+      <td style="padding: 14px;background-color: #D94A56;">**Entrega parcial del Reporte de investigación (24/04)**</td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Frecuencias, Medidas de tendencia central, dispersión y posición </td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <!-- UNIDAD 3 -->
+    <tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong> UNIDAD 3: <i>Forma de una distribución</i></strong></td></tr>
+    <tr>
+      <td style="padding: 14px;">Semana 9</td>
+      <td style="padding: 14px;"><a href="/content/05-content.html"> Noción de función y distribución</a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+<tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong></i> </strong></td></tr>
+    <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Mayo</strong></span></td><td></td><td></td><td></td></tr>
+    <tr>    
+      <td style="padding: 14px;">Semana 10</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Asimetría y Curtosis</a></td>
+      <td style="padding: 14px;">Práctico 6</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td> 
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura :Medidas de forma</td>
+      <td style="padding: 14px;"></td>
+    </tr>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <tr style="background-color: #e0e0e0;">
+      <td style="padding: 14px;">Semana 11</td>
+      <td style="padding: 14px;">**Semana de trabajo autónomo**</td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;">Semana 12</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Concepto de distribución estadística. Distribución normal y sus probabilidades. </a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <!-- UNIDAD 4 -->
+    <tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong> UNIDAD 4: <i>Forma de una distribución</i></strong></td></tr>
+    <tr>
+      <td style="padding: 14px;">Semana 13</td>
+      <td style="padding: 14px;"><a href="/content/05-content.html"> Fundamentos de la significación estadística, universo y muestra</a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+<tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong></i> </strong></td></tr>
+    <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Junio</strong></span></td><td></td><td></td><td></td></tr>
+    <tr>    
+      <td style="padding: 14px;">Semana 14</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Noción de distribución de muestreo, parámetros y estadísticos, Inferencia, ponderadores y factores de expansión</a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+    <tr>
+      <td style="padding: 14px;">Semana 15</td>
+      <td style="padding: 14px;"><a href="/content/01-content.html">Introducción a las hipótesis y pruebas de hipótesis</a></td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;background-color: #D94A56;">**Entrega Final del Reporte de investigación (12/06)**</td>
+    </tr>
+    <tr>
+      <tr style="background-color: #e0e0e0;">
+      <td style="padding: 14px;">Semana 16</td>
+      <td style="padding: 14px;">**Semana de preparación de exámenes**</td>
+      <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
+    </tr>
+ </tbody>
+</table>
+
+
+
+                       
+<br>
+
+## Exámenes finales 
+
+Ver [requisitos de aprobación y eximición](https://cuantitativa.netlify.app/syllabus#requisitos-de-aprobaci%C3%B3n)
+
+-   Examen de primera oportunidad: ***próximamente...*** 
+
+-   Examen de segunda oportunidad: ***próximamente...***

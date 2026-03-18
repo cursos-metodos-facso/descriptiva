@@ -10,6 +10,8 @@ format:
   html:
     template-partials:
       - html/home/title-block.html
+execute:
+  freeze: auto  
 course-logo: /files/img/logo.png
 ---
 
@@ -21,34 +23,41 @@ withr::with_dir(here::here(), {
 })
 ```
 
-::: {.home}
 
+
+### Equipo docente 
+::: {.home}
+:::: {style="background-color: #DFF2F2 "}
 ::: {.grid .course-details}
 
+
+
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
-### Equipo docente
+
+
+
+
 
 **Profesor**
-
 
 <div class="image-cropper">
   <img src="https://ucampus.uchile.cl/d/r/usuario/ba/ba7fdee322ce6c51d3c525d12065fd48/perfil/f62c8ca06f8a62b9553cd11ea59d1238.jpg">
 </div>
-
-
 
 {{< var instructor.name >}}
 
 - {{< fa university >}} &nbsp; {{< var instructor.office >}}
 - {{< fa envelope >}} &nbsp; {{< var instructor.email >}}
 
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
 
 **Apoyos docentes**
 
 <div class="image-cropper">
-  <img src="https://static.u-cursos.cl/r/usuario/af/af4bf2025223c7ec26f2b05853a831e8/datos_usuario/av_611aa760e705a.jpg" alt="avatar" class="profile-pic">
+  <img src="https://static.u-cursos.cl/r/usuario/af/af4bf2025223c7ec26f2b05853a831e8/datos_usuario/av_611aa760e705a.jpg" class="profile-pic">
 </div>
-
 
 {{< var other.name >}}
 
@@ -56,10 +65,15 @@ withr::with_dir(here::here(), {
 - {{< fa envelope >}} &nbsp; {{< var other.email >}}
 
 
-<div class="image-cropper">
-  <img src="https://ucampus.uchile.cl/d/r/usuario/59/595eac1ba1e7c71fbbea076608baba9c/perfil/496fa860bf25d94e31d726b0778e7ac0.jpg" alt="avatar" class="profile-pic" width="80" height="80" />
-</div>
 
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+<br>
+
+<div class="image-cropper">
+  <img src="https://ucampus.uchile.cl/d/r/usuario/59/595eac1ba1e7c71fbbea076608baba9c/perfil/496fa860bf25d94e31d726b0778e7ac0.jpg" class="profile-pic">
+</div>
 
 {{< var other2.name >}}
 
@@ -67,39 +81,59 @@ withr::with_dir(here::here(), {
 - {{< fa envelope >}} &nbsp; {{< var other2.email >}}
 
 
-**Ayudantes**
-
-
-
-
 :::
 
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
-### Actividades
 
-- {{< fa university >}} &nbsp; **Miércoles 8:30-10:00** - Aulario C6
+**Ayudantes**
 
-- {{< fa computer >}} &nbsp; **Jueves 8:30-10:00** - Aulario B1 y Sala 45 FACSO
-
-:::
-
-::: {.g-col-12 .g-col-md-4 .contact-policy}
-### Contacto
-
-{{< var instructor.contact_policy >}}
-
-### Versiones anteriores del curso
-
-- [2024](https://version2024--estadistica-descriptiva-uch.netlify.app/)
-
-- [2023](https://version2023--estadistica-descriptiva-uch.netlify.app/)
-
-- [2025](https://version2025--estadistica-descriptiva-uch.netlify.app/)
 
 :::
 
 :::
+:::
+:::
 
+:::: {style="background-color: #00788d "}
+:::: {.columns}
+
+::: {.column width="5%"}
 
 :::
+
+::: {.column width="40%"}
+### <span style="color: #E6E6E6  ;">Sesiones</span>
+
+<span style="color: #E6E6E6 ;"> {{< fa university >}} &nbsp; **Miércoles 8:30-10:00** Aulario C6 </span>
+<br>
+<span style="color: #E6E6E6 ;"> {{< fa computer >}} &nbsp; **Jueves 8:30-10:00** - Aulario B1 y Sala 45 FACSO </span>
+ 
+:::
+
+::: {.column width="10%"}
+
+:::
+
+::: {.column width="38%"}
+
+### <span style="color: #E6E6E6  ;">Versiones anteriores del curso</span>
+
+- <a href="https://version2024--estadistica-descriptiva-uch.netlify.app/" style="color: #E6E6E6;">2024</a>
+
+- <a href="https://version2023--estadistica-descriptiva-uch.netlify.app/" style="color: #E6E6E6;">2023</a>
+
+- <a href="https://version2025--estadistica-descriptiva-uch.netlify.app/" style="color: #E6E6E6;">2025</a>
+
+:::
+::::
+::::
+
+
+
+
+
+
+
+
+
 
