@@ -98,7 +98,7 @@ website:
               contents:
               - text: "Lectura 2: Conocimientos básicos de programación en R"
                 file: assignment/02-practico.qmd
-              - text: "Práctico 2"
+#              - text: "Práctico 2"
 #                file: assignment/02-ejercicio-practico.qmd
 #            - section: "Sesión 3"
 #              contents:
