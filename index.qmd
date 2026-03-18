@@ -2,7 +2,7 @@
 title: "Estadística Descriptiva"
 lang: es
 details: |
-  SOC01014-1 • Primer Semestre 2025<br>Departamento de Sociología, Facultad de Ciencias Sociales<br>Universidad de Chile
+  SOC01014 • Primer Semestre 2026<br>Departamento de Sociología, Facultad de Ciencias Sociales<br>Universidad de Chile
 sidebar: false
 toc: false
 page-layout: full
@@ -52,35 +52,24 @@ withr::with_dir(here::here(), {
 
 {{< var other.name >}}
 
+- {{< fa university >}} &nbsp; {{< var other.office >}}
 - {{< fa envelope >}} &nbsp; {{< var other.email >}}
 
+
 <div class="image-cropper">
-  <img src="https://ucampus.uchile.cl/d/r/usuario/59/595eac1ba1e7c71fbbea076608baba9c/perfil/07435de0e419362c626faa92216dcbd8.jpg" alt="avatar" class="profile-pic" width="80" height="80" />
+  <img src="https://ucampus.uchile.cl/d/r/usuario/59/595eac1ba1e7c71fbbea076608baba9c/perfil/496fa860bf25d94e31d726b0778e7ac0.jpg" alt="avatar" class="profile-pic" width="80" height="80" />
 </div>
 
 
 {{< var other2.name >}}
 
+- {{< fa university >}} &nbsp; {{< var other2.office >}}
 - {{< fa envelope >}} &nbsp; {{< var other2.email >}}
 
 
 **Ayudantes**
 
-- Victoria Arias
 
-- Martina Gallardo
-
-- Nicolás Outerbridge
-
-- Matilda Raccagni
-
-- Isidora Ramos
-
-- Tomás Urzúa
-
-- Felipe Vega
-
-- Benjamín Zavala
 
 
 :::
@@ -88,9 +77,9 @@ withr::with_dir(here::here(), {
 ::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
 ### Actividades
 
-- {{< fa university >}} &nbsp; **Martes 8:30-10:00** - Aulario B1
+- {{< fa university >}} &nbsp; **Miércoles 8:30-10:00** - Aulario C6
 
-- {{< fa computer >}} &nbsp; **Jueves 8:30-10:00** - Aulario B1 y Sala 45 facso
+- {{< fa computer >}} &nbsp; **Jueves 8:30-10:00** - Aulario B1 y Sala 45 FACSO
 
 :::
 
@@ -101,9 +90,11 @@ withr::with_dir(here::here(), {
 
 ### Versiones anteriores del curso
 
-- [2024](https://version2024--estadictica-descriptiva-uch.netlify.app/)
+- [2024](https://version2024--estadistica-descriptiva-uch.netlify.app/)
 
 - [2023](https://version2023--estadistica-descriptiva-uch.netlify.app/)
+
+- [2025](https://version2025--estadistica-descriptiva-uch.netlify.app/)
 
 :::
 
