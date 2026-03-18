@@ -1,0 +1,31 @@
+---
+title: "Práctico 03. Procesamiento, limpieza y manipulación de datos en R"
+date: ""
+lang: es
+output:
+  number_sections: true
+---
+
+
+::: {.callout-important}
+La siguiente práctica considera la realización de los contenidos aprendidos en la sesión 1. Es decir, los ejercicios a realizar a continuación, son realizados en un **script de R**, alojado en un Rproject.
+
+En caso de dudas, consultar [Lectura 1](https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico#flujo-de-trabajo-en-r)
+
+:::
+
+### Ejercicio 1
+
+ 
+
+### Ejercicio 2
+
+
+### Ejercicio 3
+
+### Ejercicio 4
+
+
+### Ejercicio 5
+
+### Ejercicio 6

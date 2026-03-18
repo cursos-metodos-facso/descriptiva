@@ -21,7 +21,7 @@ En estas se dará un espacio de **presentación y discusión del contenido**, ju
 :::{.callout-important}
 La realización de la guía de ejercicios **por sesión** proporcionará **1 décima** para la entrega final del trabajo grupal (*es decir, se puede optar a un total 3 décimas*). 
 
-Para optar a esta bonificación **la guía debe ser realizada dentro de la sesión de ayudantía**. De todos modos, las guías quedarán disponibles para su estudio autónomo.
+Para optar a esta bonificación **la guía debe ser realizada dentro de la sesión de ayudantía y enviada a la Tarea abierta de U-cursos correspondiente**. De todos modos, las guías quedarán disponibles para su estudio autónomo.
 
 :::
 

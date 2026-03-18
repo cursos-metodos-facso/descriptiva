@@ -12,7 +12,7 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
 -   [**Prácticos**]() (<i class="fas fa-user-edit"></i>): Actividades prácticas de Análisis de Datos a desarrollar durante el semestre. Cada práctico cuenta con una lectura que deben traer leída previamente. 
 
 -   [**Evaluaciones**]() (<i class="fas fa-book-reader"></i>): Evaluaciones individuales y colectivas a desarrollar durante el semestre.
-
+-   [**Ayudantías**]() (<i class="fas fa-chalkboard-teacher"></i> ): Sesiones personalizadas para repaso de contenidos y ejercicios para refuerzo de la Unidad 2.
 
 <br>
 
@@ -22,6 +22,7 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
       <th style="padding: 14px;"><i class="fas fa-chalkboard-teacher"></i> Clases</th>
       <th style="padding: 14px;"><i class="fas fa-user-edit"></i> Prácticos</th>
       <th style="padding: 14px;"><i class="fas fa-book-reader"></i> Evaluaciones</th>
+      <th style="padding: 14px;"><i class="fas fa-chalkboard-teacher"></i> Ayudantías</th>
     </tr>
   </thead>
   <tbody>
@@ -30,26 +31,30 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Marzo</strong></span></td><td></td><td></td><td></td></tr>
     <tr>
       <td style="padding: 14px;">Semana 1</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">La estadística como herramienta de investigación sociológica</a></td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/class/01-class">La estadística como herramienta de investigación sociológica</a></td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;">Semana 2</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Epistemología, límites y potencialidades de la investigación cuantitativa</a></td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/class/02-class">Epistemología, límites y potencialidades de la investigación cuantitativa</a></td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;">Semana 3</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">La medición en ciencias sociales: algunos conceptos fundamentales</a></td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/class/03-class">La medición en ciencias sociales: algunos conceptos fundamentales</a></td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;">Semana 4</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Datos y bases de datos. Ética de la investigación con datos sociales</a></td>
+      <td style="padding: 14px;"><a href="">Datos y bases de datos. Ética de la investigación con datos sociales</a></td>
       <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico">Práctico 1</td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <!-- UNIDAD 2 -->
@@ -57,8 +62,9 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Abril</strong></span></td><td></td><td></td><td></td></tr>
     <tr>
       <td style="padding: 14px;">Semana 5</td>
-      <td style="padding: 14px;"><a href="/content/02-content.html">Medidas de tendencia central</a></td>
+      <td style="padding: 14px;"><a href="">Medidas de tendencia central</a></td>
       <td style="padding: 14px;">Práctico 2 </td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
@@ -66,10 +72,12 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/02-practico">Lectura: Primeros pasos en R</td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
     </tr>
       <td style="padding: 14px;">Semana 6</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Medidas de dispersión</a></td>
+      <td style="padding: 14px;"><a href="">Medidas de dispersión</a></td>
       <td style="padding: 14px;">Práctico 3</td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
@@ -77,57 +85,66 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico"> Lectura: Procesamiento, limpienza y manipulación de datos</td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;">Semana 7</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Medidas de posición</a></td>
+      <td style="padding: 14px;"><a href="">Medidas de posición</a></td>
       <td style="padding: 14px;">Práctico 4 </td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/ayudantias/">Ayudantía 1</td>
     </tr>
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico"> Lectura:  Procesamiento, limpienza y manipulación de datos</td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;">Semana 8</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Visualización de datos y distribuciones de datos</a></td>
+      <td style="padding: 14px;"><a href="">Visualización de datos y distribuciones de datos</a></td>
       <td style="padding: 14px;">Práctico 5 </td>
       <td style="padding: 14px;background-color: #D94A56;">**Entrega parcial del Reporte de investigación (24/04)**</td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/ayudantias/">Ayudantía 2</td>
     </tr>
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Frecuencias, Medidas de tendencia central, dispersión y posición </td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
     </tr>
     <!-- UNIDAD 3 -->
     <tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong> UNIDAD 3: <i>Forma de una distribución</i></strong></td></tr>
     <tr>
       <td style="padding: 14px;">Semana 9</td>
-      <td style="padding: 14px;"><a href="/content/05-content.html"> Noción de función y distribución</a></td>
+      <td style="padding: 14px;"><a href=""> Noción de función y distribución</a></td>
       <td style="padding: 14px;">Práctico 6</td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/ayudantias/">Ayudantía 3</td>
     </tr>
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td> 
       <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Medidas de forma</td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
     </tr>
 <tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong></i> </strong></td></tr>
     <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Mayo</strong></span></td><td></td><td></td><td></td></tr>
     <tr>    
       <td style="padding: 14px;">Semana 10</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Asimetría y Curtosis</a></td>
+      <td style="padding: 14px;"><a href="">Asimetría y Curtosis</a></td>
       <td style="padding: 14px;">Práctico 7</td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td> 
       <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Inferencia</td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
       <td style="padding: 14px;"></td>
@@ -138,10 +155,12 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
       <td style="padding: 14px;">**Semana de trabajo autónomo**</td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
+      <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;">Semana 12</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Concepto de distribución estadística. Distribución normal y sus probabilidades. </a></td>
+      <td style="padding: 14px;"><a href="">Concepto de distribución estadística. Distribución normal y sus probabilidades. </a></td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
@@ -149,7 +168,8 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr><td colspan="4" style="padding: 14px; font-size: 22px;"><strong> UNIDAD 4: <i>Forma de una distribución</i></strong></td></tr>
     <tr>
       <td style="padding: 14px;">Semana 13</td>
-      <td style="padding: 14px;"><a href="/content/05-content.html"> Fundamentos de la significación estadística, universo y muestra</a></td>
+      <td style="padding: 14px;"><a href=""> Fundamentos de la significación estadística, universo y muestra</a></td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
@@ -157,20 +177,23 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr><td style="padding: 20px;"><span style="color: orange;"><strong>Junio</strong></span></td><td></td><td></td><td></td></tr>
     <tr>    
       <td style="padding: 14px;">Semana 14</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Noción de distribución de muestreo, parámetros y estadísticos, Inferencia, ponderadores y factores de expansión</a></td>
+      <td style="padding: 14px;"><a href="">Noción de distribución de muestreo, parámetros y estadísticos, Inferencia, ponderadores y factores de expansión</a></td>
       <td style="padding: 14px;">**Sesión de apoyo trabajos**</td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <td style="padding: 14px;">Semana 15</td>
-      <td style="padding: 14px;"><a href="/content/01-content.html">Introducción a las hipótesis y pruebas de hipótesis</a></td>
+      <td style="padding: 14px;"><a href="">Introducción a las hipótesis y pruebas de hipótesis</a></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;background-color: #D94A56;">**Entrega Final del Reporte de investigación (12/06)**</td>
+      <td style="padding: 14px;"></td>
     </tr>
     <tr>
       <tr style="background-color: #e0e0e0;">
       <td style="padding: 14px;">Semana 16</td>
       <td style="padding: 14px;">**Semana de preparación de exámenes**</td>
+      <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
     </tr>
