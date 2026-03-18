@@ -1,5 +1,5 @@
 ---
-title: "Lectura 2. Conocimientos básicos de programación en R"
+title: "Lectura. Conocimientos básicos de programación en R"
 date: ""
 lang: es
 output:

@@ -1,5 +1,5 @@
 ---
-title: "Lectura 01. Introducción al lenguaje R"
+title: "Introducción al lenguaje R"
 date: ""
 lang: es
 output:

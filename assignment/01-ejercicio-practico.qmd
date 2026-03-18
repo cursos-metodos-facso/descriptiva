@@ -7,3 +7,10 @@ output:
 ---
 
 ## Ejercicios 
+
+1. Genere un proyecto de R que incluya: 
+ - Carpetas según la lógica IPO
+ - Un script alojado en la carpeta Process
+ 
+ 
+ 2. Explique la diferencia entre R y RStudio 

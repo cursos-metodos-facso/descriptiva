@@ -1,0 +1,51 @@
+---
+title: "Práctico 02. Conocimientos básicos de programación en R"
+date: ""
+lang: es
+output:
+  number_sections: true
+---
+
+
+::: {.callout-important}
+La siguiente práctica considera la realización de los contenidos aprendidos en la sesión 1. Es decir, los ejercicios a realizar a continuación, son realizados en un **script de R**, alojado en un Rproject.
+
+En caso de dudas, consultar [Lectura 1](https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico#flujo-de-trabajo-en-r)
+
+:::
+
+### Ejercicio 1
+
+En su hoja, calcule su gasto en pasajes y comida, en lo que lleva de semana. 
+
+- La operación anterior, asignela a un objeto que lleve por nombre "gasto_semanal". 
+
+### Ejercicio 2
+
+Considerando como referencia que de la facultad hasta el portal hay una distancia de 500 metros, calcule aproximadamente la distancia que lleva recorrida durante esta mañana. 
+
+- La operación anterior, asignela a un objeto que lleve por nombre "recorrido".
+
+### Ejercicio 3
+Para ambos objetos generados, opere la función class() 
+
+
+### Ejercicio 4
+Ahora, genere los vectores necesarios, para realizar exitosamente el siguiente enunciado  
+
+Caso: 
+
+
+### Ejercicio 5
+operadores, con vector anterior 
+
+
+### Ejercicio 6
+La estudiante -- necesita trabajar con una base de datos para su trabajo del curso de análisis de datos. Para ello, necesita cargar varios paquete al mismo tiempo, necestia un paquete que contenga: 
+
+- funciones para importar datos en formato .sav
+- funciones para manipular los datos
+
+Escriba el código que debería realizar la estudiante en su script. 
+
+

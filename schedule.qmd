@@ -49,13 +49,7 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>
       <td style="padding: 14px;">Semana 4</td>
       <td style="padding: 14px;"><a href="/content/01-content.html">Datos y bases de datos. Ética de la investigación con datos sociales</a></td>
-      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-ejercicio-practico">Práctico 1</td>
-      <td style="padding: 14px;"></td>
-    </tr>
-    <tr>
-      <td style="padding: 14px;"></td>
-      <td style="padding: 14px;"></td>
-      <td style="padding: 14px;"><i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico">Lectura: Introducción al lenguaje R</td>
+      <td style="padding: 14px;"><a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico">Práctico 1</td>
       <td style="padding: 14px;"></td>
     </tr>
     <!-- UNIDAD 2 -->
@@ -70,7 +64,7 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
-      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Primeros pasos en R</td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/02-practico">Lectura: Primeros pasos en R</td>
       <td style="padding: 14px;"></td>
     </tr>
       <td style="padding: 14px;">Semana 6</td>
@@ -81,7 +75,7 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
-      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura: Procesamiento, limpienza y manipulación de datos</td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico"> Lectura: Procesamiento, limpienza y manipulación de datos</td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>
@@ -93,7 +87,7 @@ Los dos componentes centrales del curso son las clases lectivas y las sesiones p
     <tr>
       <td style="padding: 14px;"></td>
       <td style="padding: 14px;"></td>
-      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> Lectura:  Procesamiento, limpienza y manipulación de datos</td>
+      <td style="padding: 14px;"> <i class="fas fa-book-reader"></i> <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico"> Lectura:  Procesamiento, limpienza y manipulación de datos</td>
       <td style="padding: 14px;"></td>
     </tr>
     <tr>

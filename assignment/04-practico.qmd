@@ -1,5 +1,5 @@
 ---
-title: "Práctica 4. Análisis descriptivo de datos en R"
+title: "Lectura 4. Análisis descriptivo de datos en R"
 date: "2025-06-12"
 lang: es
 output:

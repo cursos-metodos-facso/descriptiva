@@ -45,8 +45,8 @@ website:
         file: ayudantias/index.qmd
       - text: "Evaluaciones"
         file: evaluaciones.qmd
-      - text: "Recursos"
-        file: resource/index.qmd
+     # - text: "Recursos"
+    #    file: resource/index.qmd
       - icon: cloud-fill
         href: "https://rstudio.cloud"
         aria-label: RStudio.cloud
@@ -90,27 +90,27 @@ website:
           contents:
             - section: "Sesión 1"
               contents:
-              - text: "Lectura 1: Introducción al lenguaje R"
+              - text: "Introducción al lenguaje R"
                 file: assignment/01-practico.qmd
-              - text: "Práctico 1"
-                file: assignment/01-ejercicio-practico.qmd
+             # - text: "Práctico 1"
+              #  file: assignment/01-ejercicio-practico.qmd
             - section: "Sesión 2"
               contents:
-              - text: "Lectura 2: Conocimientos básicos de programación en R"
+              - text: "Primeros pasos en R"
                 file: assignment/02-practico.qmd
-#              - text: "Práctico 2"
+              - text: "Práctico 2"
 #                file: assignment/02-ejercicio-practico.qmd
-#            - section: "Sesión 3"
-#              contents:
-#              - text: "Lectura 3: Introducción al lenguaje R"
-#                file: assignment/03-practico.qmd
-#              - text: "Práctico 1"
+            - section: "Sesión 3"
+              contents:
+              - text: "Procesamiento, limpienza y manipulación de datos"
+                file: assignment/03-practico.qmd
+              - text: "Práctico 3"
 #                file:
-#            - section: "Sesión 4"
-#              contents:
-#              - text: "Lectura 4: Introducción al lenguaje R"
-#                file: assignment/04-practico.qmd
-#              - text: "Práctico 1"
+            - section: "Sesión 4"
+              contents:
+              - text: "Procesamiento, limpienza y manipulación de datos"
+                file: assignment/03-practico.qmd
+              - text: "Práctico 4"
 #                file:
 #            - section: "Sesión 5"
 #              contents:
@@ -149,21 +149,21 @@ website:
 #              file: ayudantias/03_ayudantia.qmd
 
 
-    - title: "Recursos"
-      style: "docked"
-      search: false
-      background: dark
-      contents:
-        - text: "Descripción"
-          file: resource/index.qmd
-        - text: "Bases de Datos"
-          file: resource/01-resource.qmd
-        - text: "Uso de R"
-          file: resource/02-resource.qmd
-        - text: "Importar datos en R"
-          file: resource/03-resource.qmd
-        - text: "Procesamiento, limpieza y manipulación de datos en R base"
-          file: resource/04-resource.qmd
+#    - title: "Recursos"
+ #     style: "docked"
+#      search: false
+ #     background: dark
+  #    contents:
+   #     - text: "Descripción"
+    #      file: resource/index.qmd
+     #   - text: "Bases de Datos"
+      #    file: resource/01-resource.qmd
+      #  - text: "Uso de R"
+      #    file: resource/02-resource.qmd
+      #  - text: "Importar datos en R"
+       #   file: resource/03-resource.qmd
+      #  - text: "Procesamiento, limpieza y manipulación de datos en R base"
+       #   file: resource/04-resource.qmd
 
 
   page-footer:

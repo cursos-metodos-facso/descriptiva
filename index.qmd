@@ -27,7 +27,6 @@ withr::with_dir(here::here(), {
 
 ### Equipo docente 
 ::: {.home}
-:::: {style="background-color: #DFF2F2 "}
 ::: {.grid .course-details}
 
 
@@ -92,7 +91,7 @@ withr::with_dir(here::here(), {
 
 :::
 :::
-:::
+
 
 :::: {style="background-color: #00788d "}
 :::: {.columns}
@@ -118,10 +117,8 @@ withr::with_dir(here::here(), {
 
 ### <span style="color: #E6E6E6  ;">Versiones anteriores del curso</span>
 
-- <a href="https://version2024--estadistica-descriptiva-uch.netlify.app/" style="color: #E6E6E6;">2024</a>
-
 - <a href="https://version2023--estadistica-descriptiva-uch.netlify.app/" style="color: #E6E6E6;">2023</a>
-
+- <a href="https://version2024--estadistica-descriptiva-uch.netlify.app/" style="color: #E6E6E6;">2024</a>
 - <a href="https://version2025--estadistica-descriptiva-uch.netlify.app/" style="color: #E6E6E6;">2025</a>
 
 :::
