@@ -86,6 +86,27 @@ withr::with_dir(here::here(), {
 
 **Ayudantes**
 
+- Martina Buzio
+- Elisa Calderón
+- Renato De Luca
+
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+<br>
+
+- Jesús Díaz
+- Tomás González
+- Valentina Montecinos
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-md-4}
+
+<br>
+
+- Matilda Raccagni
+- Vicente Rojas
+- Matías Rojas
 
 :::
 
