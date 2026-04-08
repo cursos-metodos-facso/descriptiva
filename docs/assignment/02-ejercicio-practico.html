@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -141,7 +175,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link active" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
+  <li><a href="#repaso-sesión-anterior" id="toc-repaso-sesión-anterior" class="nav-link active" data-scroll-target="#repaso-sesión-anterior">Repaso sesión anterior</a></li>
+  <li><a href="#sesión-de-hoy-conceptos-claves" id="toc-sesión-de-hoy-conceptos-claves" class="nav-link" data-scroll-target="#sesión-de-hoy-conceptos-claves">Sesión de hoy: Conceptos claves</a></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
   <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
   <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
   <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
@@ -159,6 +195,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="repaso-sesión-anterior" class="level3">
+<h3 class="anchored" data-anchor-id="repaso-sesión-anterior">Repaso sesión anterior</h3>
+<iframe src="https://mafenunez.github.io/materiales-docencia/presentaciones/repaso-01.html" style="width: 100%; height: 90vh; border: none;" allowfullscreen="">
+</iframe>
+</section>
+<section id="sesión-de-hoy-conceptos-claves" class="level3">
+<h3 class="anchored" data-anchor-id="sesión-de-hoy-conceptos-claves">Sesión de hoy: Conceptos claves</h3>
+<div class="card bg-light text-black">
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Acciones en R
+<ul>
+<li><strong>Codificar</strong></li>
+<li><strong>Calcular</strong></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<ul>
+<li><strong>Objetos</strong>: Estructura de datos que contiene almacenada información, que puede ir desde números, palabras, cálculos hasta grandes bases de datos.</li>
+</ul>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li>Operadores
+<ul>
+<li><strong>Asignación</strong>: <code>&lt;-</code></li>
+<li><strong>Misceláneo</strong>:<code>$</code></li>
+<li><strong>Relacionales</strong>: <code>==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>!=</code>, <code>%in%</code></li>
+<li><strong>Aritméticos</strong>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<ul>
+<li>Estructura de datos en R: <em>tipos de objetos</em>
+<ul>
+<li><strong>Vector</strong></li>
+<li><strong>Data.frame</strong></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:40%;">
+<ul>
+<li><strong>Librerías/paquetes</strong></li>
+<li><strong>Funciones</strong></li>
+</ul>
+</div><div class="column" style="width:10%;">
+
+</div><div class="column" style="width:40%;">
+<ul>
+<li>Tipos de datos/clases
+<ul>
+<li><strong>Character</strong></li>
+<li><strong>Factor</strong></li>
+<li><strong>Numeric</strong></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -173,36 +277,97 @@ Importante
 <p>En caso de dudas, consultar <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico#flujo-de-trabajo-en-r">Lectura 1</a></p>
 </div>
 </div>
+</section>
 <section id="ejercicio-1" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
-<p>En su hoja, calcule su gasto en pasajes y comida, en lo que lleva de semana.</p>
+<p>En su hoja, calcule su gasto en pasajes y comida, durante los últimos 4 días.</p>
 <ul>
 <li>La operación anterior, asignela a un objeto que lleve por nombre “gasto_semanal”.</li>
 </ul>
 </section>
 <section id="ejercicio-2" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
-<p>Considerando como referencia que de la facultad hasta el portal hay una distancia de 500 metros, calcule aproximadamente la distancia que lleva recorrida durante esta mañana.</p>
+<p>Considerando como referencia que desde FACSO hasta el Cenco Ñuñoa hay una distancia de 500 metros, calcule aproximadamente la distancia recorrida para un estudiante que:</p>
 <ul>
-<li>La operación anterior, asignela a un objeto que lleve por nombre “recorrido”.</li>
+<li>Inicia su trayecto en FACSO, va al Cenco Ñuñoa a comprar un café.</li>
+<li>Luego, vuelve a FACSO para tomar sus clases de la mañana.<br>
+</li>
+<li>Posteriormente, vuelve a Cenco Ñuñoa a almorzar.</li>
+<li>Finalmente, se dirige a FACSO para tomar sus últimas clases de la tarde.</li>
 </ul>
+<p>La operación realizada, asignela a un objeto que lleve por nombre “recorrido”.</p>
 </section>
 <section id="ejercicio-3" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h3>
-<p>Para ambos objetos generados, opere la función class()</p>
+<p>Para ambos objetos generados, opere la función <code>class()</code>. Identifique a que se refiere la respuesta entregada luego de ejecutar la función y justifique.</p>
 </section>
 <section id="ejercicio-4" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
-<p>Ahora, genere los vectores necesarios, para realizar exitosamente el siguiente enunciado</p>
-<p>Caso:</p>
+<p>Ahora, genere los <strong>vectores</strong> necesarios, para realizar exitosamente el siguiente enunciado y luego genere el <strong>data.frame</strong> correspondiente.</p>
+<p><strong>Caso</strong>:</p>
+<ul>
+<li>La estudiante A debe crear un data.frame que contenga las siguentes variables:
+<ul>
+<li>Región de la persona, númerico</li>
+<li>Sexo de la persona, character</li>
+<li>Su grado de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, númerico</li>
+</ul></li>
+<li>Tiene los datos de 5 personas: una mujer de la región del Maule que considera al gobierno actual como un buen gobierno; un hombre de la región de Atacama que considera una gestión medianamente buena del gobierno actual; un hombre de la región Metropolitana que considera al gobierno actual como un mal gobierno; una mujer de la región Metropolitana que considera al gobierno actual como un mal gobierno; y un hombre de la región Metropolitana que cosidera que la gestión del gobierno es mala.</li>
+</ul>
 </section>
 <section id="ejercicio-5" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-5">Ejercicio 5</h3>
-<p>operadores, con vector anterior</p>
+<p>Si recordamos que los vectores son un conjunto de elementos, los cuales se encuentran ordenados por la posición en la que fueron codificados e incluídos en el objeto. Esa posición es lo que se conoce como índice. Para extraer un índice específico utilizamos <code>[]</code>, esto nos permite identificar el elemento del vector que estamos utilizando.</p>
+<p>Si creamos el vector <code>tazas_cafe</code>, para 5 personas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Objeto que indica la cantidad de tazas de cafe consumidas por 5 personas o 5 elementos</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>taza_cafe <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">4</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Tenemos que:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>taza_cafe <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="co">#la persona 1 consumió 2 tazas de café</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>, <span class="co">#la persona 2 consumió 2 tazas de café</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>               <span class="dv">1</span>, <span class="co">#la persona 3 consumió 1 taza de café</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>, <span class="co">#la persona 4 consumió 2 tazas de café</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>               <span class="dv">4</span>) <span class="co">#la persona 5 consumió 4 tazas de café</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Al identificar como persona 1, persona 2, persona 3, persona 4 y persona 5, lo hacemos según su posición en el vector. En términos técnicos es lo mismo que decir: el índice 1 del vector <code>taza_cafe</code> contiene la información de la cantidad de tazas que consumió la primera persona, correspondientes a 2 tazas.</p>
+<p>Entonces, también podemos decir:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>taza_cafe <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="co"># índice 1 </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>, <span class="co"># índice 2</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>               <span class="dv">1</span>, <span class="co"># índice 3</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>, <span class="co"># índice 4</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>               <span class="dv">4</span>) <span class="co"># índice 5</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Bajo este lenguaje, si queremos buscar el elemento 3 del vector <code>taza_cafe</code> (o, en términos del caso del ejemplo, si queremos observar cuántas tazas de cafe consumió la tercera persona), debemos utilizar el operador de indexación o de subconjuntos <code>[]</code>, que lleva su nombre ya que nos permite ver el índice en que se encuentra posicionado el elemento que queremos buscar de nuestro vector. Entonces:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Escribimos de la siguiente manera</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>taza_cafe[<span class="dv">3</span>]</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+<p>Si ejecutamos lo anterior, la consola nos devuelve el valor <code>1</code>, lo cual corresponde a la cantidad de tazas de café consumidas por la tercer persona.</p>
+<p>Considerando esta información:</p>
+<ol type="1">
+<li>Busqué:</li>
+</ol>
+<ul>
+<li>El elemento 2 del vector generado para la variable grado de de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, del Ejercicio 4</li>
+<li>El elemento 3 del vector generado para la variable grado de de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, del Ejercicio 4</li>
+<li>El elemento 4 del vector generado para la variable grado de de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, del Ejercicio 4</li>
+</ul>
+<ol start="2" type="1">
+<li><p>Utilize el operador relacional <code>==</code> para el elemento 2 y el elemento 3. Interprete el significado del resultado que entrega la consola al ejecutar dicho código.</p></li>
+<li><p>Utilize el operador relacional <code>==</code> para el elemento 3 y el elemento 4. Interprete el significado del resultado que entrega la consola al ejecutar dicho código.</p></li>
+</ol>
 </section>
 <section id="ejercicio-6" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-6">Ejercicio 6</h3>
-<p>La estudiante – necesita trabajar con una base de datos para su trabajo del curso de análisis de datos. Para ello, necesita cargar varios paquete al mismo tiempo, necestia un paquete que contenga:</p>
+<p>El estudiante B necesita trabajar con una base de datos para su trabajo del curso de análisis de datos. Para ello, necesita cargar varios paquetes al mismo tiempo, necestia un paquete que contenga:</p>
 <ul>
 <li>funciones para importar datos en formato .sav</li>
 <li>funciones para manipular los datos</li>

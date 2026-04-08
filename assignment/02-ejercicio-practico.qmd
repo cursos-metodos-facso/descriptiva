@@ -7,6 +7,82 @@ output:
 ---
 
 
+### Repaso sesión anterior
+
+<iframe src="https://mafenunez.github.io/materiales-docencia/presentaciones/repaso-01.html"
+        style="width: 100%; height: 90vh; border: none;"
+        allowfullscreen>
+</iframe>
+
+
+### Sesión de hoy: Conceptos claves 
+
+:::: {.card .bg-light .text-black}
+
+:::{.columns}
+
+::: {.column width=40%}
+
+
+
+- Acciones en R
+  - **Codificar**
+  - **Calcular**
+:::
+
+::: {.column width=10%}
+:::
+
+::: {.column width=40%}
+- **Objetos**: Estructura de datos que contiene almacenada información, que puede ir desde números, palabras, cálculos hasta grandes bases de datos. 
+
+:::
+:::
+
+:::{.columns}
+::: {.column width=40%}
+- Operadores
+  - **Asignación**: `<-`
+  - **Misceláneo**:`$`
+  - **Relacionales**: `==`, `<`, `>`, `<=`, `>=`, `!=`, `%in%`
+  - **Aritméticos**: `+`, `-`, `*`, `/`
+:::
+
+::: {.column width=10%}
+:::
+
+::: {.column width=40%}
+
+- Estructura de datos en R: *tipos de objetos*
+  - **Vector**
+  - **Data.frame**
+:::
+:::
+
+:::{.columns}
+::: {.column width=40%}
+- **Librerías/paquetes** 
+- **Funciones**
+:::
+
+::: {.column width=10%}
+:::
+
+::: {.column width=40%}
+- Tipos de datos/clases
+  - **Character**
+  - **Factor**
+  - **Numeric**
+:::
+:::  
+
+::::
+
+
+
+
+
+
 ::: {.callout-important}
 La siguiente práctica considera la realización de los contenidos aprendidos en la sesión 1. Es decir, los ejercicios a realizar a continuación, son realizados en un **script de R**, alojado en un Rproject.
 
@@ -16,32 +92,113 @@ En caso de dudas, consultar [Lectura 1](https://estadistica-descriptiva-uch.netl
 
 ### Ejercicio 1
 
-En su hoja, calcule su gasto en pasajes y comida, en lo que lleva de semana. 
+En su hoja, calcule su gasto en pasajes y comida, durante los últimos 4 días.
 
 - La operación anterior, asignela a un objeto que lleve por nombre "gasto_semanal". 
 
 ### Ejercicio 2
 
-Considerando como referencia que de la facultad hasta el portal hay una distancia de 500 metros, calcule aproximadamente la distancia que lleva recorrida durante esta mañana. 
+Considerando como referencia que desde FACSO hasta el Cenco Ñuñoa hay una distancia de 500 metros, calcule aproximadamente la distancia recorrida para un estudiante que:
 
-- La operación anterior, asignela a un objeto que lleve por nombre "recorrido".
+- Inicia su trayecto en FACSO, va al Cenco Ñuñoa a comprar un café. 
+- Luego, vuelve a FACSO para tomar sus clases de la mañana.   
+- Posteriormente, vuelve a Cenco Ñuñoa a almorzar. 
+- Finalmente, se dirige a FACSO para tomar sus últimas clases de la tarde. 
+
+
+La operación realizada, asignela a un objeto que lleve por nombre "recorrido".
 
 ### Ejercicio 3
-Para ambos objetos generados, opere la función class() 
+Para ambos objetos generados, opere la función `class()`. Identifique a que se refiere la respuesta entregada luego de ejecutar la función y justifique. 
 
 
 ### Ejercicio 4
-Ahora, genere los vectores necesarios, para realizar exitosamente el siguiente enunciado  
+Ahora, genere los **vectores** necesarios, para realizar exitosamente el siguiente enunciado y luego genere el **data.frame** correspondiente.  
 
-Caso: 
+**Caso**: 
+
+- La estudiante A debe crear un data.frame que contenga las siguentes variables:
+  - Región de la persona, númerico
+  - Sexo de la persona, character
+  - Su grado de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, númerico
+
+- Tiene los datos de 5 personas: una mujer de la región del Maule que considera al gobierno actual como un buen gobierno; un hombre de la región de Atacama que considera una gestión medianamente buena del gobierno actual; un hombre de la región Metropolitana que considera al gobierno actual como un mal gobierno; una mujer de la región Metropolitana que considera al gobierno actual como un mal gobierno; y un hombre de la región Metropolitana que cosidera que la gestión del gobierno es mala. 
+
 
 
 ### Ejercicio 5
-operadores, con vector anterior 
 
+Si recordamos que los vectores son un conjunto de elementos, los cuales se encuentran ordenados por la posición en la que fueron codificados e incluídos en el objeto. Esa posición es lo que se conoce como índice. Para extraer un índice específico utilizamos `[]`, esto nos permite identificar el elemento del vector que estamos utilizando. 
+
+Si creamos el vector `tazas_cafe`, para 5 personas: 
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Objeto que indica la cantidad de tazas de cafe consumidas por 5 personas o 5 elementos
+
+taza_cafe <- c(2,2,1,2,4)
+```
+
+Tenemos que: 
+
+```{r}
+#| echo: true
+#| eval: false
+
+taza_cafe <- c(2, #la persona 1 consumió 2 tazas de café
+               2, #la persona 2 consumió 2 tazas de café
+               1, #la persona 3 consumió 1 taza de café
+               2, #la persona 4 consumió 2 tazas de café
+               4) #la persona 5 consumió 4 tazas de café
+```
+
+Al identificar como persona 1, persona 2, persona 3, persona 4 y persona 5, lo hacemos según su posición en el vector. En términos técnicos es lo mismo que decir: el índice 1 del vector `taza_cafe` contiene la información de la cantidad de tazas que consumió la primera persona, correspondientes a 2 tazas. 
+
+Entonces, también podemos decir:
+
+```{r}
+#| echo: true
+#| eval: false
+
+taza_cafe <- c(2, # índice 1 
+               2, # índice 2
+               1, # índice 3
+               2, # índice 4
+               4) # índice 5
+```
+
+Bajo este lenguaje, si queremos buscar el elemento 3 del vector `taza_cafe` (o, en términos del caso del ejemplo, si queremos observar cuántas tazas de cafe consumió la tercera persona), debemos utilizar el operador de indexación o de subconjuntos `[]`, que lleva su nombre ya que nos permite ver el índice en que se encuentra posicionado el elemento que queremos buscar de nuestro vector. Entonces:
+
+```{r}
+#| echo: true
+#| eval: true
+
+# Escribimos de la siguiente manera
+
+taza_cafe[3]
+```
+
+Si ejecutamos lo anterior, la consola nos devuelve el valor `1`, lo cual corresponde a la cantidad de tazas de café consumidas por la tercer persona. 
+
+
+Considerando esta información:
+
+1. Busqué:
+
+- El elemento 2 del vector generado para la variable grado de de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, del Ejercicio 4
+- El elemento 3 del vector generado para la variable grado de de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, del Ejercicio 4
+- El elemento 4 del vector generado para la variable grado de de aprobación (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno, del Ejercicio 4
+
+
+2.  Utilize el operador relacional `==` para el elemento 2 y el elemento 3. Interprete el significado del resultado que entrega la consola al ejecutar dicho código.  
+
+
+3.  Utilize el operador relacional `==` para el elemento 3 y el elemento 4. Interprete el significado del resultado que entrega la consola al ejecutar dicho código.
 
 ### Ejercicio 6
-La estudiante -- necesita trabajar con una base de datos para su trabajo del curso de análisis de datos. Para ello, necesita cargar varios paquete al mismo tiempo, necestia un paquete que contenga: 
+El estudiante B necesita trabajar con una base de datos para su trabajo del curso de análisis de datos. Para ello, necesita cargar varios paquetes al mismo tiempo, necestia un paquete que contenga: 
 
 - funciones para importar datos en formato .sav
 - funciones para manipular los datos
