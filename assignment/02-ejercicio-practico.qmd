@@ -34,7 +34,7 @@ output:
 :::
 
 ::: {.column width=40%}
-- **Objetos**: Estructura de datos que contiene almacenada información, que puede ir desde números, palabras, cálculos hasta grandes bases de datos. 
+- **Objetos**: Estructura de datos que contiene información almacenada, que puede ir desde números, palabras, cálculos hasta grandes bases de datos. 
 
 :::
 :::
@@ -189,7 +189,7 @@ Si ejecutamos lo anterior, la consola nos devuelve el valor `1`, lo cual corresp
 
 Considerando esta información:
 
-1. Busqué en el **vector generado para la variable grado de de aprobación** (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno del Ejercicio 4:
+1. Busque en el **vector generado para la variable grado de aprobación** (Malo- Medianamente bueno - Bueno) respecto al gobierno de turno del Ejercicio 4:
 
 - El **elemento 2** de dicho vector. 
 - El **elemento 3** de dicho vector. 
