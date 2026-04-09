@@ -1,6 +1,6 @@
 ---
 title: "Práctico 02. Conocimientos básicos de programación en R"
-date: ""
+date: "2026-04-09"
 lang: es
 output:
   number_sections: true

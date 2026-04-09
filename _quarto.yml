@@ -99,7 +99,7 @@ website:
               - text: "Primeros pasos en R"
                 file: assignment/02-practico.qmd
               - text: "Práctico 2"
-#                file: assignment/02-ejercicio-practico.qmd
+                file: assignment/02-ejercicio-practico.qmd
             - section: "Sesión 3"
               contents:
               - text: "Procesamiento, limpienza y manipulación de datos"
