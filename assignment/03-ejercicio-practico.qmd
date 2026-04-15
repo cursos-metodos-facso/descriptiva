@@ -34,46 +34,61 @@ En caso de dudas, consultar [Lectura 1](https://estadistica-descriptiva-uch.netl
 
 :::
 
-A continuación se presentará un caso general en que se deben **procesar los datos** para una investigación sobre --. Las *intrucciones* sobre dicho procesamiento serán detalladas en cada *ejercicio.* 
+A continuación se presentará un caso general en que se deben **procesar los datos** para una investigación sobre "Percepciones respecto a los roles de género". Las *intrucciones* sobre dicho procesamiento serán detalladas en cada *ejercicio.* 
 
 Recuerde que deben seguir la lógica de procesamiento aprendida en la [lectura de hoy](https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico). 
 
 
-Se utiliza la base --
+**Datos**: Se utilizan los datos del Estudio Longitudinal Social de Chile (ELSOC) realizado por [COES](https://coes.cl/encuesta-panel/).Recuerden que siempre es importante trabajar con el manual/libro de códigos de las bases de datos. El manual de la ELSOC 2022 lo pueden encontrar [aquí](https://coes.cl/wp-content/uploads/Listado-de-Variables-ELSOC-2.xlsx).
 
-Interes de investigación --
 
-Por ende, se trabajará con las variables: 
+**Objetivo de la investigación**: Se busca distinguir las percepciones sobre los roles de género en tramos etarios y personas identificadas políticamente a la izquierda.   
 
-- añadir descripción de las variables
+Por ende, se trabajará con las siguientes **variables**: 
+
+ 
+- **Percepciones de los roles de género**: Se tienen 5 preguntas
+  - "Las mujeres tienden a ser más refinadas y a tener mejor gusto que los hombres" (g01_01)
+  - "Las mujeres deberían ser queridas y protegidas por los hombres" (g01_02) 
+  - "En nombre de la igualdad, muchas mujeres intentan conseguir ciertos privilegios" (g01_03)
+  - "Generalmente, cuando una mujer es derrotada limpiamente se queja de haber sufrido discriminación"(g01_04) 
+  - "Cuando no hay muchos trabajos disponibles, los hombres deberían tener más derecho a un trabajo que las mujeres"(g01_05)
+- **Edad**: m0_edad
+- **Identificación política**: "Usando una escala de 0 a 10 donde 0 es ser de "izquierda", 5 es ser de "centro" y 10 es ser de "derecha", ¿Dónde se ubicaría usted en esta escala? (c15)
 
 ### Ejercicio 1
 
-Importe los datos, para ello descargue la base en este [link]() 
+Importe los datos a utilizar. Para ello descargue la base de datos ELSOC 2022 en el siguiente [link](). 
 
 ### Ejercicio 2
 
-Utilizando `select()` Seleccione las variables... 
+Utilizando `select()` Seleccione las variables necesarias para el análisis.  
  
 
 ### Ejercicio 3
 
-Siguiendo la lógica de la limpieza inicial de los datos, limpie las variables seleccionadas.
+Siguiendo la lógica de la limpieza inicial de los datos, limpie las variables seleccionadas en el Ejercicio 2.
 
-Para ello, utilice las funciones `recode()` y `na.omit()`
+- Para ello, utilice las funciones `recode()` y `na.omit()` cuando corresponda. 
 
 
 ### Ejercicio 4
 
-Utilizando `mutate()` y `case_when()` transforme... 
+Utilizando `mutate()` y `case_when()` transforme la variable edad a tramos etarios, considerando 3 tramos: 
+
+- Jóvenes
+- Adultos
+- Adultos mayores
 
 
-Utilizando `mutate()` e `if_else()` transforme...
+Utilizando `mutate()` e `if_else()` transforme la variable de identificación política para que pueda medir la identificación con la izquierda política en una variable de dos categorías ("Sí" y "No")
+
+- Al tratarse de una escala de 11 puntos, propongan un umbral dentro de aquel puntaje que distinga ser o no de izquierda. Recuerde que dentro de dicha escala *0 es ser de "izquierda", 5 es ser de "centro" y 10 es ser de "derecha"*. 
 
 
 ### Ejercicio 5
 
-Guarde el objeto procesado...
+Considerando todas las modificaciones realizadas a su objeto en los ejercicios anteriores, guarde el objeto procesado en su carpeta "Output".  
 
 ### Ejercicio 6
 
