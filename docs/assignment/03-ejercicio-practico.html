@@ -71,6 +71,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Estadística Descriptiva - Práctico 03. Procesamiento, limpieza y manipulación de datos en R">
+<meta property="og:description" content="Estadística Descriptiva">
 <meta property="og:image" content="https://estadistica-descriptiva-uch.netlify.app/files/logo.png">
 <meta property="og:site_name" content="Estadística Descriptiva">
 <meta property="og:locale" content="en_US">
@@ -140,7 +141,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link active" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
+  <li><a href="#sesión-de-hoy-conceptos-claves" id="toc-sesión-de-hoy-conceptos-claves" class="nav-link active" data-scroll-target="#sesión-de-hoy-conceptos-claves">Sesión de hoy: Conceptos claves</a></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
   <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
   <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
   <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
@@ -158,6 +160,21 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="sesión-de-hoy-conceptos-claves" class="level3">
+<h3 class="anchored" data-anchor-id="sesión-de-hoy-conceptos-claves">Sesión de hoy: Conceptos claves</h3>
+<p>En la sesión de hoy, retomaremos nuestro flujo de trabajo IPO. Para ello, es importante recordar la estructura de nuestro trabajo, la cual debe tener la siguiente ruta:</p>
+<pre class="plaintext"><code>Rproject/
+├── input/
+│   └── data/
+│       
+├── processing/
+│   └── procesamiento.R/
+│       
+└── output/
+    └── datos-procesados.Rdata/</code></pre>
+<section id="pasos-procesamiento" class="level4">
+<h4 class="anchored" data-anchor-id="pasos-procesamiento">Pasos procesamiento</h4>
+<p><img src="../files/img/proc.png" class="img-fluid"></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -172,23 +189,59 @@ Importante
 <p>En caso de dudas, consultar <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico#flujo-de-trabajo-en-r">Lectura 1</a></p>
 </div>
 </div>
+<p>A continuación se presentará un caso general en que se deben <strong>procesar los datos</strong> para una investigación sobre –. Las <em>intrucciones</em> sobre dicho procesamiento serán detalladas en cada <em>ejercicio.</em></p>
+<p>Recuerde que deben seguir la lógica de procesamiento aprendida en la <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico">lectura de hoy</a>.</p>
+<p>Se utiliza la base –</p>
+<p>Interes de investigación –</p>
+<p>Por ende, se trabajará con las variables:</p>
+<ul>
+<li>añadir descripción de las variables</li>
+</ul>
+</section>
+</section>
 <section id="ejercicio-1" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
+<p>Importe los datos, para ello descargue la base en este <a href="">link</a></p>
 </section>
 <section id="ejercicio-2" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
+<p>Utilizando <code>select()</code> Seleccione las variables…</p>
 </section>
 <section id="ejercicio-3" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h3>
+<p>Siguiendo la lógica de la limpieza inicial de los datos, limpie las variables seleccionadas.</p>
+<p>Para ello, utilice las funciones <code>recode()</code> y <code>na.omit()</code></p>
 </section>
 <section id="ejercicio-4" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
+<p>Utilizando <code>mutate()</code> y <code>case_when()</code> transforme…</p>
+<p>Utilizando <code>mutate()</code> e <code>if_else()</code> transforme…</p>
 </section>
 <section id="ejercicio-5" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-5">Ejercicio 5</h3>
+<p>Guarde el objeto procesado…</p>
 </section>
 <section id="ejercicio-6" class="level3">
 <h3 class="anchored" data-anchor-id="ejercicio-6">Ejercicio 6</h3>
+<p>Considerando los contenidos vistos en la <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/02-ejercicio-practico">clase anterior</a>, responda:</p>
+<ul>
+<li>¿Qué tipo(s) de objeto(s) estamos utlizando en el ejercicio?</li>
+<li>Mencione algún vector que este presente en el ejercicio</li>
+<li>Indique la naturaleza de las variables</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Recuerde usar la función <code>class()</code> y el operador <code>$</code>, el cual nos permite identificar un objeto de estructura de datos distinta comtenido en otro objeto (por ejemplo, un vector que se encuentra dentro de un data.frame)</p>
+</div>
+</div>
 
 
 </section>

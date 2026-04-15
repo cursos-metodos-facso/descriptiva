@@ -6,6 +6,26 @@ output:
   number_sections: true
 ---
 
+### Sesión de hoy: Conceptos claves
+
+En la sesión de hoy, retomaremos nuestro flujo de trabajo IPO. Para ello, es importante recordar la estructura de nuestro trabajo, la cual debe tener la siguiente ruta: 
+
+```plaintext
+Rproject/
+├── input/
+│   └── data/
+│       
+├── processing/
+│   └── procesamiento.R/
+│       
+└── output/
+    └── datos-procesados.Rdata/
+```
+
+#### Pasos procesamiento
+
+![](../files/img/proc.png)
+
 
 ::: {.callout-important}
 La siguiente práctica considera la realización de los contenidos aprendidos en la sesión 1. Es decir, los ejercicios a realizar a continuación, son realizados en un **script de R**, alojado en un Rproject.
@@ -14,18 +34,55 @@ En caso de dudas, consultar [Lectura 1](https://estadistica-descriptiva-uch.netl
 
 :::
 
+A continuación se presentará un caso general en que se deben **procesar los datos** para una investigación sobre --. Las *intrucciones* sobre dicho procesamiento serán detalladas en cada *ejercicio.* 
+
+Recuerde que deben seguir la lógica de procesamiento aprendida en la [lectura de hoy](https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico). 
+
+
+Se utiliza la base --
+
+Interes de investigación --
+
+Por ende, se trabajará con las variables: 
+
+- añadir descripción de las variables
+
 ### Ejercicio 1
 
- 
+Importe los datos, para ello descargue la base en este [link]() 
 
 ### Ejercicio 2
 
+Utilizando `select()` Seleccione las variables... 
+ 
 
 ### Ejercicio 3
 
+Siguiendo la lógica de la limpieza inicial de los datos, limpie las variables seleccionadas.
+
+Para ello, utilice las funciones `recode()` y `na.omit()`
+
+
 ### Ejercicio 4
+
+Utilizando `mutate()` y `case_when()` transforme... 
+
+
+Utilizando `mutate()` e `if_else()` transforme...
 
 
 ### Ejercicio 5
 
+Guarde el objeto procesado...
+
 ### Ejercicio 6
+
+Considerando los contenidos vistos en la [clase anterior](https://estadistica-descriptiva-uch.netlify.app/assignment/02-ejercicio-practico), responda:
+
+- ¿Qué tipo(s) de objeto(s) estamos utlizando en el ejercicio?
+- Mencione algún vector que este presente en el ejercicio
+- Indique la naturaleza de las variables 
+
+::: {.callout-note}
+Recuerde usar la función `class()` y el operador `$`, el cual nos permite identificar un objeto de estructura de datos distinta comtenido en otro objeto (por ejemplo, un vector que se encuentra dentro de un data.frame)
+:::
