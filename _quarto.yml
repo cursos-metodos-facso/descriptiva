@@ -105,7 +105,7 @@ website:
               - text: "Procesamiento, limpienza y manipulación de datos"
                 file: assignment/03-practico.qmd
               - text: "Práctico 3"
-#                file:
+                file: assignment/03-ejercicio-practico.qmd
             - section: "Sesión 4"
               contents:
               - text: "Procesamiento, limpienza y manipulación de datos"
