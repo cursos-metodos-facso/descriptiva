@@ -39,7 +39,7 @@ A continuación se presentará un caso general en que se deben **procesar los da
 Recuerde que deben seguir la *lógica de procesamiento* aprendida en la [lectura de hoy](https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico). 
 
 
-**Datos**: Se utilizan los datos del Estudio Longitudinal Social de Chile (ELSOC) realizado por [COES](https://coes.cl/encuesta-panel/). Recuerden que siempre es importante trabajar con el manual/libro de códigos de las bases de datos. El manual de la ELSOC 2022 lo pueden encontrar [aquí](https://coes.cl/wp-content/uploads/Listado-de-Variables-ELSOC-2.xlsx).
+**Datos**: Se utilizan los datos del Estudio Longitudinal Social de Chile (ELSOC) realizado por [COES](https://conferencias.coes.cl/encuesta-panel/). Recuerden que siempre es importante trabajar con el manual/libro de códigos de las bases de datos. El manual de la ELSOC 2022 lo pueden encontrar [aquí](../data/Listado-de-Variables-ELSOC.xlsx).
 
 
 **Objetivo de la investigación**: Se busca distinguir las percepciones sobre los roles de género según tramos etarios y personas identificadas políticamente a la izquierda.   
