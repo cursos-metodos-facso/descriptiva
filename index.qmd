@@ -107,6 +107,8 @@ withr::with_dir(here::here(), {
 - Matilda Raccagni
 - Vicente Rojas
 - Matías Rojas
+- Amalia Tsukame
+
 
 :::
 
