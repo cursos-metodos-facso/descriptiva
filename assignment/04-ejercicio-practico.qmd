@@ -6,26 +6,217 @@ output:
   number_sections: true
 ---
 
+## Errores de R cuando procesamos una base de datos 
 
-::: {.callout-important}
-La siguiente práctica considera la realización de los contenidos aprendidos en la sesión 1. Es decir, los ejercicios a realizar a continuación, son realizados en un **script de R**, alojado en un Rproject.
+En el práctico anterior debían usar las siguientes funciones:  
 
-En caso de dudas, consultar [Lectura 1](https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico#flujo-de-trabajo-en-r)
+```{r}
+#| echo: true
+#| eval: false
+
+# PASO PREVIO: código para cargar librerias
+
+pacman::p_load(haven, dplyr, car)
+
+# EJERCICIO 1: código para importar datos 
+
+proc_elsoc <- read_sav("../data/ELSOC_W06_v1.0_SPSS.sav")
+
+# EJERCICIO 2: código para seleccionar datos
+
+proc_elsoc <- select(proc_elsoc, m0_edad, c15, g01_01, g01_02, g01_03, g01_04, g01_05)
+
+# EJERCICIO 3:código para recodificar datos 
+
+proc_elsoc$g01_01 <- car::recode(proc_elsoc$g01_01,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = ' Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"))
+
+
+```
+
+::: {.callout-note}
+Tal como se menciona en la lectura, antes de recodificar debemos **explorar los datos**. Como queremos ver la estructura de vectores especificos del data.frame, debemos usar el operador `$` y la siguientes funciones:
+
+- `table`(df`$`vector)
+- `sjmisc::frq`(df`$`vector)
 
 :::
 
-### Ejercicio 1
+Sin embargo, cuando intentaron `recodificar` les aparece el siguiente `error`: 
 
- 
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
 
-### Ejercicio 2
+pacman::p_load(haven, dplyr)
+proc_elsoc <- read_sav("../data/ELSOC_W06_v1.0_SPSS.sav")
+proc_elsoc <- select(proc_elsoc, m0_edad, c15, g01_01, g01_02, g01_03, g01_04, g01_05)
+```
 
 
-### Ejercicio 3
+```{r}
+#| echo: false
+#| eval: true
+#| error: true
+proc_elsoc$g01_01 <- car::recode(proc_elsoc$g01_01,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = ' Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"))
 
-### Ejercicio 4
+```
 
 
-### Ejercicio 5
+Esto es algo que ocurre *comunmente* cuando trabajamos con **datos secundarios** y con **bases de datos en formato `.sav`**, porque:
 
-### Ejercicio 6
+- Este formato es para ser utilizado en *SPSS*, donde las variables que entenderemos como *categóricas* (y que esperaríamos que se encuentren en clase "*character*" o en clase "*factor*"), se importaran como clase *númeric.* Dado que en SPSS permite *asignar etiquetas a los valores númericos*.
+
+### ¿Qué debemos hacer?
+
+Covertira a `character`:
+
+```{r}
+#| echo: true
+#| eval: true
+
+class(proc_elsoc$g01_01)
+
+proc_elsoc$g01_01 <- as.character(proc_elsoc$g01_01)
+
+class(proc_elsoc$g01_01)
+```
+
+Y, como se tratan de niveles de acuerdo, luego convertir a `factor` en la recodificación misma:
+
+```{r}
+proc_elsoc$g01_01 <- car::recode(proc_elsoc$g01_01,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = 'Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"),
+                                 as.factor = TRUE,
+                                 levels = c("Totalmente en desacuerdo",
+                                            "En desacuerdo",
+                                            "Ni de acuerdo ni en desacuerdo",
+                                            "De acuerdo",
+                                            "Totalmente de acuerdo"))
+
+class(proc_elsoc$g01_01)
+
+sjmisc::frq(proc_elsoc$g01_01)
+```
+
+
+### Otros errores comunes de R
+
+a) Error de tipeo en la **ruta del archivo** (cuando importamos nuestros datos): 
+
+```{r}
+#| error: true
+
+
+proc_elsoc <- read_sav("imput/ELSOC_W06_v1.0_SPSS.sav")
+
+```
+
+b) Error de tipeo en el **objeto** data.frame que estamos usando: 
+
+```{r}
+#| error: true
+
+proc_elsoc <- select(proc_elsoc, m0_edad, c15, g01_01, g01_02, g01_03, g01_04, g01_05)
+
+proc_elsoc <- na.omit(Proc_Elsoc)
+
+```
+
+c) Error de tipeo en la **estructura del código** que estamos utilizando (por ejemplo, no usar todos los paréntesis necesarios): 
+```{r}
+#| error: true
+
+proc_elsoc$m0_edad <- car::recode(proc_elsoc$m0_edad, recodes = c("-888 = NA; -999 = NA")
+
+```
+
+d) R no encuentra la **función** que queremos usar (debido a que no cargamos su paquete al inicio de la sesión): 
+```{r}
+#| error: true
+
+frq(proc_elsoc$c15)
+
+```
+
+
+## ¿Qué no vimos la sesión anterior? 
+
+La sesión anterior buscaba que ustedes se familiarizarán con el software y utilizarán el programa de la forma más básica. 
+Ahora, profundizaremos en otros aspectos que pasaron desapercibidos la sesión anterior, pero son muy útiles para su trabajo en R: temáticas de orden. 
+
+### Orden del Script de R 
+
+
+- Comentarios en el documento con `#`
+
+- **Secuencialidad** del código
+
+- Uso de **espacios (tecla ENTER)** en el documento de R:
+  - si bien el documento de R tiene los número en cada linea es solo para orientarnos en algún error de código, podemos hacer espacios y no ocurre nada malo, solo se ve más ordenado nuestro código.
+  
+- Nombre del objeto: sufijo "proc_" 
+  - distinguir entre: sobreescribir y escribir un objeto
+  
+- Seleccion de las variables con `select()`
+  - orden de selección
+  - renombrar las variables
+
+
+
+## Ejercicio 1
+
+*Renombre* las variables a: 
+
+- m0_edad = edad
+- c15 = izquierda
+- g01_01 = percepcion_refinadas
+- g01_02 = percepcion_protegidas
+- g01_03 = percepcion_privilegios
+- g01_04 = percepcion_discriminacion
+- g01_05 = percepcion_trabajo 
+
+
+## Ejercicio 2
+
+Aplique para **todas** las variables la función `class()` y la función `sjmisc::frq()`. 
+
+- Con esa información, *transforme* a `character` las variables que sean clase/naturaleza: `haven_labelled` `vctrs_vctr`  `double`
+
+- Luego, *recodifique* según corresponda. 
+
+## Ejercicio 3
+
+Comente su Archivo de R usando `#` y espacios con la tecla `Enter`, siga la estructura del siguiente [script de R](pasos-script.R) en su documento. 
+
+
+
+
+

@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -71,6 +105,7 @@ ul.task-list li input[type="checkbox"] {
 
 
 <meta property="og:title" content="Estadística Descriptiva - Práctico 04. Procesamiento, limpieza y manipulación de datos en R">
+<meta property="og:description" content="Estadística Descriptiva">
 <meta property="og:image" content="https://estadistica-descriptiva-uch.netlify.app/files/logo.png">
 <meta property="og:site_name" content="Estadística Descriptiva">
 <meta property="og:locale" content="en_US">
@@ -140,12 +175,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link active" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
+  <li><a href="#errores-de-r-cuando-procesamos-una-base-de-datos" id="toc-errores-de-r-cuando-procesamos-una-base-de-datos" class="nav-link active" data-scroll-target="#errores-de-r-cuando-procesamos-una-base-de-datos">Errores de R cuando procesamos una base de datos</a>
+  <ul class="collapse">
+  <li><a href="#qué-debemos-hacer" id="toc-qué-debemos-hacer" class="nav-link" data-scroll-target="#qué-debemos-hacer">¿Qué debemos hacer?</a></li>
+  <li><a href="#otros-errores-comunes-de-r" id="toc-otros-errores-comunes-de-r" class="nav-link" data-scroll-target="#otros-errores-comunes-de-r">Otros errores comunes de R</a></li>
+  </ul></li>
+  <li><a href="#qué-no-vimos-la-sesión-anterior" id="toc-qué-no-vimos-la-sesión-anterior" class="nav-link" data-scroll-target="#qué-no-vimos-la-sesión-anterior">¿Qué no vimos la sesión anterior?</a>
+  <ul class="collapse">
+  <li><a href="#orden-del-script-de-r" id="toc-orden-del-script-de-r" class="nav-link" data-scroll-target="#orden-del-script-de-r">Orden del Script de R</a></li>
+  </ul></li>
+  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
   <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
   <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
-  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
-  <li><a href="#ejercicio-5" id="toc-ejercicio-5" class="nav-link" data-scroll-target="#ejercicio-5">Ejercicio 5</a></li>
-  <li><a href="#ejercicio-6" id="toc-ejercicio-6" class="nav-link" data-scroll-target="#ejercicio-6">Ejercicio 6</a></li>
   </ul>
 </nav>
     </div>
@@ -158,37 +199,210 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
+<section id="errores-de-r-cuando-procesamos-una-base-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="errores-de-r-cuando-procesamos-una-base-de-datos">Errores de R cuando procesamos una base de datos</h2>
+<p>En el práctico anterior debían usar las siguientes funciones:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># PASO PREVIO: código para cargar librerias</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(haven, dplyr, car)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># EJERCICIO 1: código para importar datos </span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"../data/ELSOC_W06_v1.0_SPSS.sav"</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># EJERCICIO 2: código para seleccionar datos</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> <span class="fu">select</span>(proc_elsoc, m0_edad, c15, g01_01, g01_02, g01_03, g01_04, g01_05)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># EJERCICIO 3:código para recodificar datos </span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>proc_elsoc<span class="sc">$</span>g01_01 <span class="ot">&lt;-</span> car<span class="sc">::</span><span class="fu">recode</span>(proc_elsoc<span class="sc">$</span>g01_01,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"1 = 'Totalmente en desacuerdo';</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       2 = 'En desacuerdo';</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       3 = 'Ni de acuerdo ni en desacuerdo';</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       4 = 'De acuerdo';</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       5 = ' Totalmente de acuerdo';</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -666 = NA;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -777 = NA;</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -888 = NA; </span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -999 = NA"</span>))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Importante
+Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>La siguiente práctica considera la realización de los contenidos aprendidos en la sesión 1. Es decir, los ejercicios a realizar a continuación, son realizados en un <strong>script de R</strong>, alojado en un Rproject.</p>
-<p>En caso de dudas, consultar <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico#flujo-de-trabajo-en-r">Lectura 1</a></p>
+<p>Tal como se menciona en la lectura, antes de recodificar debemos <strong>explorar los datos</strong>. Como queremos ver la estructura de vectores especificos del data.frame, debemos usar el operador <code>$</code> y la siguientes funciones:</p>
+<ul>
+<li><code>table</code>(df<code>$</code>vector)</li>
+<li><code>sjmisc::frq</code>(df<code>$</code>vector)</li>
+</ul>
 </div>
 </div>
-<section id="ejercicio-1" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
+<p>Sin embargo, cuando intentaron <code>recodificar</code> les aparece el siguiente <code>error</code>:</p>
+<div class="cell">
+<div class="cell-output cell-output-error">
+<pre><code>Error in `[&lt;-`:
+! Can't convert `value` &lt;character&gt; to &lt;double&gt;.</code></pre>
+</div>
+</div>
+<p>Esto es algo que ocurre <em>comunmente</em> cuando trabajamos con <strong>datos secundarios</strong> y con <strong>bases de datos en formato <code>.sav</code></strong>, porque:</p>
+<ul>
+<li>Este formato es para ser utilizado en <em>SPSS</em>, donde las variables que entenderemos como <em>categóricas</em> (y que esperaríamos que se encuentren en clase “<em>character</em>” o en clase “<em>factor</em>”), se importaran como clase <em>númeric.</em> Dado que en SPSS permite <em>asignar etiquetas a los valores númericos</em>.</li>
+</ul>
+<section id="qué-debemos-hacer" class="level3">
+<h3 class="anchored" data-anchor-id="qué-debemos-hacer">¿Qué debemos hacer?</h3>
+<p>Covertira a <code>character</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(proc_elsoc<span class="sc">$</span>g01_01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "haven_labelled" "vctrs_vctr"     "double"        </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc<span class="sc">$</span>g01_01 <span class="ot">&lt;-</span> <span class="fu">as.character</span>(proc_elsoc<span class="sc">$</span>g01_01)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(proc_elsoc<span class="sc">$</span>g01_01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+<p>Y, como se tratan de niveles de acuerdo, luego convertir a <code>factor</code> en la recodificación misma:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc<span class="sc">$</span>g01_01 <span class="ot">&lt;-</span> car<span class="sc">::</span><span class="fu">recode</span>(proc_elsoc<span class="sc">$</span>g01_01,</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>                                            <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"1 = 'Totalmente en desacuerdo';</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       2 = 'En desacuerdo';</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       3 = 'Ni de acuerdo ni en desacuerdo';</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       4 = 'De acuerdo';</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       5 = 'Totalmente de acuerdo';</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -666 = NA;</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -777 = NA;</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -888 = NA; </span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="st">                                                       -999 = NA"</span>),</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">as.factor =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>                                 <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">"Totalmente en desacuerdo"</span>,</span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"En desacuerdo"</span>,</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"Ni de acuerdo ni en desacuerdo"</span>,</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"De acuerdo"</span>,</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>                                            <span class="st">"Totalmente de acuerdo"</span>))</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-18"><a href="#cb7-18" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(proc_elsoc<span class="sc">$</span>g01_01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "factor"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>sjmisc<span class="sc">::</span><span class="fu">frq</span>(proc_elsoc<span class="sc">$</span>g01_01)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>x &lt;categorical&gt; 
+# total N=2730 valid N=2721 mean=3.66 sd=0.91
+
+Value                          |    N | Raw % | Valid % | Cum. %
+----------------------------------------------------------------
+Totalmente en desacuerdo       |   48 |  1.76 |    1.76 |   1.76
+En desacuerdo                  |  343 | 12.56 |   12.61 |  14.37
+Ni de acuerdo ni en desacuerdo |  422 | 15.46 |   15.51 |  29.88
+De acuerdo                     | 1586 | 58.10 |   58.29 |  88.17
+Totalmente de acuerdo          |  322 | 11.79 |   11.83 | 100.00
+&lt;NA&gt;                           |    9 |  0.33 |    &lt;NA&gt; |   &lt;NA&gt;</code></pre>
+</div>
+</div>
 </section>
-<section id="ejercicio-2" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
+<section id="otros-errores-comunes-de-r" class="level3">
+<h3 class="anchored" data-anchor-id="otros-errores-comunes-de-r">Otros errores comunes de R</h3>
+<ol type="a">
+<li>Error de tipeo en la <strong>ruta del archivo</strong> (cuando importamos nuestros datos):</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"imput/ELSOC_W06_v1.0_SPSS.sav"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: 'imput/ELSOC_W06_v1.0_SPSS.sav' does not exist in current working directory ('C:/Users/LENOVO/Documents/GitHub/descriptiva/assignment').</code></pre>
+</div>
+</div>
+<ol start="2" type="a">
+<li>Error de tipeo en el <strong>objeto</strong> data.frame que estamos usando:</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> <span class="fu">select</span>(proc_elsoc, m0_edad, c15, g01_01, g01_02, g01_03, g01_04, g01_05)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>proc_elsoc <span class="ot">&lt;-</span> <span class="fu">na.omit</span>(Proc_Elsoc)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in eval(expr, envir, enclos): objeto 'Proc_Elsoc' no encontrado</code></pre>
+</div>
+</div>
+<ol start="3" type="a">
+<li>Error de tipeo en la <strong>estructura del código</strong> que estamos utilizando (por ejemplo, no usar todos los paréntesis necesarios):</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>proc_elsoc<span class="sc">$</span>m0_edad <span class="ot">&lt;-</span> car<span class="sc">::</span><span class="fu">recode</span>(proc_elsoc<span class="sc">$</span>m0_edad, <span class="at">recodes =</span> <span class="fu">c</span>(<span class="st">"-888 = NA; -999 = NA"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error: &lt;text&gt;:3:0: unexpected end of input
+1: proc_elsoc$m0_edad &lt;- car::recode(proc_elsoc$m0_edad, recodes = c("-888 = NA; -999 = NA")
+2: 
+  ^</code></pre>
+</div>
+</div>
+<ol start="4" type="a">
+<li>R no encuentra la <strong>función</strong> que queremos usar (debido a que no cargamos su paquete al inicio de la sesión):</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">frq</span>(proc_elsoc<span class="sc">$</span>c15)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in frq(proc_elsoc$c15): no se pudo encontrar la función "frq"</code></pre>
+</div>
+</div>
 </section>
-<section id="ejercicio-3" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h3>
 </section>
-<section id="ejercicio-4" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
+<section id="qué-no-vimos-la-sesión-anterior" class="level2">
+<h2 class="anchored" data-anchor-id="qué-no-vimos-la-sesión-anterior">¿Qué no vimos la sesión anterior?</h2>
+<p>La sesión anterior buscaba que ustedes se familiarizarán con el software y utilizarán el programa de la forma más básica. Ahora, profundizaremos en otros aspectos que pasaron desapercibidos la sesión anterior, pero son muy útiles para su trabajo en R: temáticas de orden.</p>
+<section id="orden-del-script-de-r" class="level3">
+<h3 class="anchored" data-anchor-id="orden-del-script-de-r">Orden del Script de R</h3>
+<ul>
+<li><p>Comentarios en el documento con <code>#</code></p></li>
+<li><p><strong>Secuencialidad</strong> del código</p></li>
+<li><p>Uso de <strong>espacios (tecla ENTER)</strong> en el documento de R:</p>
+<ul>
+<li>si bien el documento de R tiene los número en cada linea es solo para orientarnos en algún error de código, podemos hacer espacios y no ocurre nada malo, solo se ve más ordenado nuestro código.</li>
+</ul></li>
+<li><p>Nombre del objeto: sufijo “proc_”</p>
+<ul>
+<li>distinguir entre: sobreescribir y escribir un objeto</li>
+</ul></li>
+<li><p>Seleccion de las variables con <code>select()</code></p>
+<ul>
+<li>orden de selección</li>
+<li>renombrar las variables</li>
+</ul></li>
+</ul>
 </section>
-<section id="ejercicio-5" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-5">Ejercicio 5</h3>
 </section>
-<section id="ejercicio-6" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-6">Ejercicio 6</h3>
+<section id="ejercicio-1" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h2>
+<p><em>Renombre</em> las variables a:</p>
+<ul>
+<li>m0_edad = edad</li>
+<li>c15 = izquierda</li>
+<li>g01_01 = percepcion_refinadas</li>
+<li>g01_02 = percepcion_protegidas</li>
+<li>g01_03 = percepcion_privilegios</li>
+<li>g01_04 = percepcion_discriminacion</li>
+<li>g01_05 = percepcion_trabajo</li>
+</ul>
+</section>
+<section id="ejercicio-2" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h2>
+<p>Aplique para <strong>todas</strong> las variables la función <code>class()</code> y la función <code>sjmisc::frq()</code>.</p>
+<ul>
+<li><p>Con esa información, <em>transforme</em> a <code>character</code> las variables que sean clase/naturaleza: <code>haven_labelled</code> <code>vctrs_vctr</code> <code>double</code></p></li>
+<li><p>Luego, <em>recodifique</em> según corresponda.</p></li>
+</ul>
+</section>
+<section id="ejercicio-3" class="level2">
+<h2 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h2>
+<p>Comente su Archivo de R usando <code>#</code> y espacios con la tecla <code>Enter</code>, siga la estructura del siguiente <a href="pasos-script.R">script de R</a> en su documento.</p>
 
 
 </section>
