@@ -141,8 +141,8 @@ website:
             - ayudantias/index.qmd
         - section: "Sesiones"
           contents:
-#            - text: "1: Medidas de Frecuencia y Tendencia Central"
-#              file: ayudantias/01_ayudantia.qmd
+            - text: "1: Medidas de Frecuencia y Tendencia Central"
+              file: ayudantias/01_ayudantia.qmd
 #            - text: "2: Medidas de Dispersión"
 #              file: ayudantias/02_ayudantia.qmd
 #            - text: "3: Medidas de Posición y Forma"
