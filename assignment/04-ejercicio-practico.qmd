@@ -1,6 +1,6 @@
 ---
 title: "Práctico 04. Procesamiento, limpieza y manipulación de datos en R"
-date: ""
+date: "2026-04-23"
 lang: es
 output:
   number_sections: true
@@ -43,7 +43,7 @@ proc_elsoc$g01_01 <- car::recode(proc_elsoc$g01_01,
 ```
 
 ::: {.callout-note}
-Tal como se menciona en la lectura, antes de recodificar debemos **explorar los datos**. Como queremos ver la estructura de vectores especificos del data.frame, debemos usar el operador `$` y la siguientes funciones:
+Tal como se menciona en la lectura, antes de recodificar debemos **explorar los datos**. Como queremos ver la estructura de vectores específicos del data.frame, debemos usar el operador `$` y la siguientes funciones:
 
 - `table`(df`$`vector)
 - `sjmisc::frq`(df`$`vector)
@@ -170,24 +170,24 @@ frq(proc_elsoc$c15)
 ## ¿Qué no vimos la sesión anterior? 
 
 La sesión anterior buscaba que ustedes se familiarizarán con el software y utilizarán el programa de la forma más básica. 
-Ahora, profundizaremos en otros aspectos que pasaron desapercibidos la sesión anterior, pero son muy útiles para su trabajo en R: temáticas de orden. 
+Ahora, profundizaremos en otros aspectos que pasaron desapercibidos la sesión anterior, pero son muy útiles para su trabajo en R: **temáticas de orden**. 
 
 ### Orden del Script de R 
 
 
-- Comentarios en el documento con `#`
+- **Comentarios** en el documento con `#`
 
 - **Secuencialidad** del código
 
 - Uso de **espacios (tecla ENTER)** en el documento de R:
-  - si bien el documento de R tiene los número en cada linea es solo para orientarnos en algún error de código, podemos hacer espacios y no ocurre nada malo, solo se ve más ordenado nuestro código.
+  - Si bien el documento de R tiene los números en cada línea es solo para orientarnos en algún error de código, podemos hacer *espacios* y no ocurre nada malo, solo se ve más ordenado nuestro código.
   
-- Nombre del objeto: sufijo "proc_" 
-  - distinguir entre: sobreescribir y escribir un objeto
+- Nombre del objeto: sufijo "***proc_***" 
+  - Distinguir entre: *sobreescribir* y *escribir* un objeto
   
-- Seleccion de las variables con `select()`
-  - orden de selección
-  - renombrar las variables
+- **Seleccion** de las variables con `select()`
+  - *Orden* de selección
+  - *Renombrar* las variables
 
 
 
@@ -206,7 +206,7 @@ Ahora, profundizaremos en otros aspectos que pasaron desapercibidos la sesión a
 
 ## Ejercicio 2
 
-Aplique para **todas** las variables la función `class()` y la función `sjmisc::frq()`. 
+*Aplique* para **todas** las variables la función `class()` y la función `sjmisc::frq()`. 
 
 - Con esa información, *transforme* a `character` las variables que sean clase/naturaleza: `haven_labelled` `vctrs_vctr`  `double`
 
@@ -214,7 +214,7 @@ Aplique para **todas** las variables la función `class()` y la función `sjmisc
 
 ## Ejercicio 3
 
-Comente su Archivo de R usando `#` y espacios con la tecla `Enter`, siga la estructura del siguiente [script de R](pasos-script.R) en su documento. 
+*Comente* su Archivo de R usando `#` y espacios con la tecla `Enter`, siga la estructura del siguiente [script de R](pasos-script.R) en su documento. 
 
 
 

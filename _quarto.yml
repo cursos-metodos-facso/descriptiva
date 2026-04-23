@@ -111,7 +111,7 @@ website:
               - text: "Procesamiento, limpienza y manipulación de datos"
                 file: assignment/03-practico.qmd
               - text: "Práctico 4"
-#                file:
+                file: assignment/04-ejercicio-practico.qmd
 #            - section: "Sesión 5"
 #              contents:
 #              - text: "Lectura 5: Introducción al lenguaje R"
