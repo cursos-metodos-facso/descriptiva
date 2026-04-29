@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estadística Descriptiva - Práctica 5. Distribución y Visualización de datos con R</title>
+<title>Estadística Descriptiva - Lectura 5. Distribución y Visualización de datos con R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,7 +133,7 @@ window.Quarto = {
 };
 </script>
 
-<meta property="og:title" content="Estadística Descriptiva - Práctica 5. Distribución y Visualización de datos con R">
+<meta property="og:title" content="Estadística Descriptiva - Lectura 5. Distribución y Visualización de datos con R">
 <meta property="og:description" content="Estadística Descriptiva">
 <meta property="og:image" content="https://estadistica-descriptiva-uch.netlify.app/files/logo.png">
 <meta property="og:site_name" content="Estadística Descriptiva">
@@ -247,7 +247,7 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7">Práctica 5. Distribución y Visualización de datos con R</h1>
+<h1 class="title display-7">Lectura 5. Distribución y Visualización de datos con R</h1>
 
 <div class="date-block bg-content text-white p-2">
   <p class="date">Sesión del jueves, 19 de junio de 2025</p>
@@ -530,7 +530,7 @@ Tip
 <span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"blue"</span>)<span class="sc">+</span></span>
 <span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">stat_function</span>(<span class="at">fun =</span> dnorm, <span class="at">args =</span> <span class="fu">list</span>(<span class="at">mean =</span> <span class="fu">mean</span>(proc_cep<span class="sc">$</span>satisfaccion), <span class="at">sd =</span> <span class="fu">sd</span>(proc_cep<span class="sc">$</span>satisfaccion)))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -584,8 +584,8 @@ Tip
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>psych<span class="sc">::</span><span class="fu">describe</span>(psu1)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>   vars      n   mean     sd median trimmed    mad  min    max  range  skew
-X1    1 300000 500.24 109.88 500.38  500.33 109.96 7.23 976.71 969.48 -0.01
+<pre><code>   vars      n   mean     sd median trimmed    mad     min     max   range skew
+X1    1 300000 500.02 109.94 500.08  500.04 110.08 -114.09 1002.25 1116.35    0
    kurtosis  se
 X1        0 0.2</code></pre>
 </div>
@@ -596,7 +596,7 @@ X1        0 0.2</code></pre>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"black"</span>, <span class="at">fill =</span> <span class="st">"#FA8072"</span>) <span class="sc">+</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">"Puntaje PSU - 300.000 observaciones"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -837,7 +837,7 @@ X1        0 0.2</code></pre>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> edad)) <span class="sc">+</span> <span class="co"># especificamos datos y mapping </span></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>()<span class="co"># agregamos geometria </span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -854,7 +854,7 @@ X1        0 0.2</code></pre>
 <span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>,</span>
 <span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019."</span>) <span class="co"># agregamos titulo, nombres a los ejes y fuente</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>
@@ -873,7 +873,7 @@ X1        0 0.2</code></pre>
 <span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>,</span>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Fuente: Elaboración propia en base a Encuesta CEP Diciembre 2019."</span>) <span class="co"># agregamos titulo, nombres a los ejes y fuente</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
 </div>
 <div class="cell-output-display">
 <div>

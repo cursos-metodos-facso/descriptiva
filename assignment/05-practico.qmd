@@ -1,5 +1,5 @@
 ---
-title: "Práctica 5. Distribución y Visualización de datos con R"
+title: "Lectura 5. Distribución y Visualización de datos con R"
 date: "2025-06-19"
 lang: es
 output:
