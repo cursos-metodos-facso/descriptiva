@@ -1,0 +1,323 @@
+---
+title: "Práctico 05. Análisis descriptivo de datos en R"
+date: "2026-04-30"
+lang: es
+output:
+  number_sections: true
+---
+
+## Sesión anterior
+
+En el práctico anterior debían llegar al siguiente script:  
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: false
+
+# ******************************************************************************
+#
+#                               TALLER DE R
+#                         Esdística Descriptiva 2026
+#
+#                             Fecha: 30-04-2026
+#                            Nombre: Equipo 
+#
+#
+# ******************************************************************************
+
+# 0. Cargar librerías 
+
+pacman::p_load(haven, dplyr, car)
+
+# 1. Importar datos
+
+elsoc <- read_sav("input/data/ELSOC_W06_v1.0_SPSS.sav")
+
+# 2. Procesamiento de datos
+
+## 2.1 Seleccionar y renombrar
+
+proc_elsoc <- select(elsoc, 
+                   edad =  m0_edad, 
+                   izquierda =  c15, 
+                   percepcion_refinadas =  g01_01, 
+                   percepcion_protegidas = g01_02, 
+                   percepcion_privilegios = g01_03, 
+                   percepcion_discriminacion = g01_04, 
+                   percepcion_trabajo = g01_05)
+
+## 2.2 Explorar
+
+### 2.2.1 Valores
+sjmisc::frq(proc_elsoc$edad) # no presenta NA's
+sjmisc::frq(proc_elsoc$izquierda)
+sjmisc::frq(proc_elsoc$percepcion_refinadas)
+sjmisc::frq(proc_elsoc$percepcion_protegidas)
+sjmisc::frq(proc_elsoc$percepcion_privilegios)
+sjmisc::frq(proc_elsoc$percepcion_discriminacion)
+sjmisc::frq(proc_elsoc$percepcion_trabajo)
+
+### 2.2.2 Naturaleza
+class(proc_elsoc$edad) 
+class(proc_elsoc$izquierda)
+class(proc_elsoc$percepcion_refinadas)
+class(proc_elsoc$percepcion_protegidas)
+class(proc_elsoc$percepcion_privilegios)
+class(proc_elsoc$percepcion_discriminacion)
+class(proc_elsoc$percepcion_trabajo)
+
+
+## 2.3 Recodificar
+
+### 2.3.1 Variable tramos_edad 
+
+# recodificamos
+proc_elsoc <- mutate(proc_elsoc,
+                     tramo_edad = case_when(edad <= 29 ~ "Jovenes",
+                                            edad >= 30 & edad <= 59 ~ "Adultos",
+                                            edad >= 60 ~ "Adutos mayores"))
+
+### 2.3.2 Variable izquierda 
+
+
+# recodificamos 
+proc_elsoc$izquierda <- car::recode(proc_elsoc$izquierda,
+                                            recodes = c("
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"))
+
+# recodificamos para medir posición de izquierda
+proc_elsoc <- mutate(proc_elsoc,
+                     izquierda = if_else(izquierda < 4, "Sí", "No"))
+
+
+### 2.3.3 Variable percepcion_refinadas 
+
+# transformamos a naturaleza character
+proc_elsoc$percepcion_refinadas <- as.character(proc_elsoc$percepcion_refinadas)
+
+# revisamos
+class(proc_elsoc$percepcion_refinadas)
+
+# recodificamos
+proc_elsoc$percepcion_refinadas <- car::recode(proc_elsoc$percepcion_refinadas,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = 'Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"),
+                                 as.factor = TRUE,
+                                 levels = c("Totalmente en desacuerdo",
+                                            "En desacuerdo",
+                                            "Ni de acuerdo ni en desacuerdo",
+                                            "De acuerdo",
+                                            "Totalmente de acuerdo"))
+
+
+### 2.3.4 Variable percepcion_protegidas
+
+# transformamos a naturaleza character
+proc_elsoc$percepcion_protegidas <- as.character(proc_elsoc$percepcion_protegidas)
+
+#revisamos
+class(proc_elsoc$percepcion_protegidas)
+
+# recodificamos
+proc_elsoc$percepcion_protegidas <- car::recode(proc_elsoc$percepcion_protegidas,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = 'Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"),
+                                 as.factor = TRUE,
+                                 levels = c("Totalmente en desacuerdo",
+                                            "En desacuerdo",
+                                            "Ni de acuerdo ni en desacuerdo",
+                                            "De acuerdo",
+                                            "Totalmente de acuerdo"))
+
+
+### 2.3.5 Variable percepcion_privilegios
+
+# transformamos a naturaleza character
+proc_elsoc$percepcion_privilegios <- as.character(proc_elsoc$percepcion_privilegios)
+
+# revisamos
+class(proc_elsoc$percepcion_privilegios)
+
+# recodifcamos
+proc_elsoc$percepcion_privilegios <- car::recode(proc_elsoc$percepcion_privilegios,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = 'Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"),
+                                 as.factor = TRUE,
+                                 levels = c("Totalmente en desacuerdo",
+                                            "En desacuerdo",
+                                            "Ni de acuerdo ni en desacuerdo",
+                                            "De acuerdo",
+                                            "Totalmente de acuerdo"))
+
+### 2.3.6 Variable percepcion_discriminacion 
+
+# transformamos a naturaleza character
+proc_elsoc$percepcion_discriminacion <- as.character(proc_elsoc$percepcion_discriminacion)
+
+# revisamos
+class(proc_elsoc$percepcion_discriminacion)
+
+# recodificamos
+proc_elsoc$percepcion_discriminacion <- car::recode(proc_elsoc$percepcion_discriminacion,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = 'Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"),
+                                 as.factor = TRUE,
+                                 levels = c("Totalmente en desacuerdo",
+                                            "En desacuerdo",
+                                            "Ni de acuerdo ni en desacuerdo",
+                                            "De acuerdo",
+                                            "Totalmente de acuerdo"))
+
+
+### 2.3.7 Variable percepcion_trabajo
+
+# transformamos a naturaleza character
+proc_elsoc$percepcion_trabajo <- as.character(proc_elsoc$percepcion_trabajo)
+
+# revisamos
+class(proc_elsoc$percepcion_trabajo)
+
+# recodificamos
+proc_elsoc$percepcion_trabajo <- car::recode(proc_elsoc$percepcion_trabajo,
+                                            recodes = c("1 = 'Totalmente en desacuerdo';
+                                                       2 = 'En desacuerdo';
+                                                       3 = 'Ni de acuerdo ni en desacuerdo';
+                                                       4 = 'De acuerdo';
+                                                       5 = 'Totalmente de acuerdo';
+                                                       -666 = NA;
+                                                       -777 = NA;
+                                                       -888 = NA; 
+                                                       -999 = NA"),
+                                 as.factor = TRUE,
+                                 levels = c("Totalmente en desacuerdo",
+                                            "En desacuerdo",
+                                            "Ni de acuerdo ni en desacuerdo",
+                                            "De acuerdo",
+                                            "Totalmente de acuerdo"))
+
+## 2.4 Tratamiento de NA
+
+proc_elsoc <- na.omit(proc_elsoc)
+
+# 3. Guardar base procesada
+save(proc_elsoc,file="output/proc_elsoc.Rdata")
+
+
+```
+
+## Cargamos nuestros datos procesados para la sesión de hoy 
+
+Utilizaremos nuestros datos procesados de la sesión anterior. Para ello, debemos cargarlos usando la función `load()` que nos permite cargar datos en formato `.Rdata`:
+```{r}
+#| echo: true
+#| eval: false
+#| error: false
+
+
+load("output/proc_elsoc.Rdata") # indicamos la ruta del archivo alojado en la carpeta output
+```
+
+
+## Recordemos los conceptos centrales de esta sesión 
+
+::: {.callout-tip title="Análisis estadísticos descriptivos según su nivel de medición de las variables" icon=true}
+
+#### Variables categóricas
+
+Cuando tenemos variables catégoricas, sean *nominales u ordinales*, podemos utilizar **tablas de frecuencias** y **tablas de contingencia**. Recordemos que las frecuencias es una *manera ordenar datos según el valor alcanzado en la distribución de una variable*.
+
+
+#### Variables numéricas
+
+A diferencia de las variables categóricas, a las variables numéricas (*intervalaras o de razón*) les podemos calcular una mayor cantidad de estadísticos descriptivos, como medidas de tendencia central, dispersión o posición. 
+
+Como ya vimos en clases:
+
+- Dentro de las *medidas de tendencia central* que podemos calcular para describir a una variable numérica encontramos: **media o promedio**, **mediana**;
+- Dentro de las *medidas de dispersión* podemos señalar: **desviación estándar**, **varianza**, **rango**;
+- Dentro de las *medidas de posición* podemos mencionar: **mediana o q2**, **q1**, **q3**, **mínimo**, **máximo**.
+
+Recordemos que:
+
+- Las ***medidas de tendencia central*** expresan el valor alrededor del cual se sitúa la mayor cantidad de los datos. Estamos mirando hacia el **centro** de los datos. 
+
+- Las ***medidas de dispersión*** buscan cuantificar lo próximo o alejado que están los valores de una variable de un punto central. Estamos mirando la **dispersión de los datos respecto a su centro**.
+
+- Las ***medidas de posición*** señalan en **qué “lugar”** de una distribución se encuentra un dato o un conjunto de datos en relación al resto.
+
+:::
+
+## Ejercicio 1
+
+*Identifique* las variables categóricas (nominales y ordinales) y *calcule* sus **frecuencias** usando la función `sjmisc::frq()`
+
+## Ejercicio 2 
+
+*Calcule* una **tabla de contingencia** para las variables `izquierda` y `percepcion_refinadas` usando la función `sjt.xtab()` e *interprete* los resultados obtenidos de la tabla.  
+
+## Ejercicio 3 
+
+*Identifique* las variables numéricas (de intervalo y de razón) y *calcule* sus **medidas de tendencia central, dispersión y posición** usando la función `summary()` o la función `summarise()`
+
+## Ejercicio 4 
+
+*Genere* una nueva variable que agrupe las **percepciones sobre los roles de género** denominada "*percep_genero*". 
+
+- Para ello utilice la función `case_when()` 
+- La nueva variable deberá tener las siguientes condiciones: 
+  - Si `percepcion_refinadas`, `percepcion_protegidas`, `percepcion_privilegios`, `percepcion_discriminacion`, `percepcion_trabajo` es "Totalmente de acuerdo" y "De acuerdo", identificar en la categoría "*Tradicional*"
+  - Si`percepcion_refinadas`, `percepcion_protegidas`, `percepcion_privilegios`, `percepcion_discriminacion`, `percepcion_trabajo`  es "Ni de acuerdo ni en desacuerdo", identificar en la categoría "*Indiferente*"
+  - Si `percepcion_refinadas`, `percepcion_protegidas`, `percepcion_privilegios`, `percepcion_discriminacion`, `percepcion_trabajo` es "Totalmente en desacuerdo" y "En desacuerdo", identificar en la categoría "*Igualitaria*"
+
+## Ejercicio 5
+
+Recordando el enunciado del [Práctico 3](https://estadistica-descriptiva-uch.netlify.app/assignment/03-ejercicio-practico): 
+
+::: {.callout-note title="Enunciado" icon=false}
+
+**Objetivo de la investigación**: Se busca distinguir las percepciones sobre los roles de género según tramos etarios y personas identificadas políticamente a la izquierda.   
+
+Por ende, se trabajará con las siguientes **variables**: 
+
+- **Percepciones de los roles de género**: recodificada en `percep_genero`
+  
+- **Edad**: reccodifica en `tramos_edad`
+
+- **Identificación política**: recodificada en `izquierda` 
+::: 
+
+*Realice* los cálculos de los estadísticos necesarios que permitan responder el objetivo planteado e *interprete* los resultados que obtenga. 
+
+- Utilice **tablas de contingnecia**. 
