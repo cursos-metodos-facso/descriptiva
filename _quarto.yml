@@ -117,7 +117,7 @@ website:
               - text: "Análisis descriptivo de datos"
                 file: assignment/04-practico.qmd
               - text: "Práctico 5"
-#                file: assignment/05-ejercicio-practico.qmd
+                file: assignment/05-ejercicio-practico.qmd
 #            - section: "Sesión 6"
 #              contents:
 #              - text: "Lectura 6: Introducción al lenguaje R"
