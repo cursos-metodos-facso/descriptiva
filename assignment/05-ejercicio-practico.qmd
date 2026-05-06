@@ -232,7 +232,7 @@ proc_elsoc$percepcion_trabajo <- car::recode(proc_elsoc$percepcion_trabajo,
 proc_elsoc <- na.omit(proc_elsoc)
 
 # 3. Guardar base procesada
-save(proc_elsoc,file="output/proc_elsoc.Rdata")
+save(proc_elsoc,file="Output/proc_elsoc.Rdata")
 
 
 ```
