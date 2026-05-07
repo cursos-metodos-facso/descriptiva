@@ -122,8 +122,8 @@ website:
               contents:
               - text: "Distribución y Visualización de datos con R"
                 file: assignment/05-practico.qmd
-#              - text: "Práctico 6"
-#                file:
+              - text: "Práctico 6"
+                file: assignment/06-ejercicio-practico.qmd
 #            - section: "Sesión 7"
 #              contents:
 #              - text: "Lectura 7: Introducción al lenguaje R"
