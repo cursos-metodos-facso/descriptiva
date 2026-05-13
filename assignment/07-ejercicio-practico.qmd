@@ -60,8 +60,8 @@ proc_elsoc <- mutate(proc_elsoc,
                        percepcion_refinadas == "Totalmente en desacuerdo" ~ "Igualitaria",
                                                percepcion_refinadas == "En desacuerdo"  ~ "Igualitaria",
                                                percepcion_protegidas == "Totalmente en desacuerdo" ~ "Igualitaria",
-                                               percepcion_protegidas == "En deascuerdo"  ~ "Igualitaria",
-                                               percepcion_privilegios == "Totalmente en descuerdo" ~ "Igualitaria",
+                                               percepcion_protegidas == "En desacuerdo"  ~ "Igualitaria",
+                                               percepcion_privilegios == "Totalmente en desacuerdo" ~ "Igualitaria",
                                                percepcion_privilegios =="En desacuerdo"  ~ "Igualitaria",
                                                percepcion_discriminacion == "Totalmente en desacuerdo" ~ "Igualitaria",
                                                percepcion_discriminacion == "En desacuerdo"  ~ "Igualitaria",
@@ -138,7 +138,12 @@ Esto implica que debemos utilizar la **naturaleza numérica de nuestras variable
 #| error: false
 
 
-proc_elsoc <- mutate(proc_elsoc, percep_genero_sum = (percepcion_refinadas + percepcion_protegidas + percepcion_privilegios + percepcion_discriminacion + percepcion_trabajo)/5)                       
+proc_elsoc <- mutate(proc_elsoc, 
+                     percep_genero_sum = (percepcion_refinadas +
+                                            percepcion_protegidas + 
+                                            percepcion_privilegios + 
+                                            percepcion_discriminacion +
+                                            percepcion_trabajo)/5)                       
 
 ```
   
