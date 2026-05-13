@@ -60,20 +60,19 @@ proc_elsoc <- mutate(proc_elsoc,
                        
                        # Percepción igualitaria 
                        
-                       percepcion_refinadas == "Totalmente en descuerdo" ~ "Igualitaria",
-                                               percepcion_refinadas == "En descuerdo"  ~ "Igualitaria",
-                                               percepcion_protegidas == "Totalmente en descuerdo" ~ "Igualitaria",
-                                               percepcion_protegidas == "En descuerdo"  ~ "Igualitaria",
+                       percepcion_refinadas == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_refinadas == "En desacuerdo"  ~ "Igualitaria",
+                                               percepcion_protegidas == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_protegidas == "En deascuerdo"  ~ "Igualitaria",
                                                percepcion_privilegios == "Totalmente en descuerdo" ~ "Igualitaria",
-                                               percepcion_privilegios =="En descuerdo"  ~ "Igualitaria",
-                                               percepcion_discriminacion == "Totalmente en descuerdo" ~ "Igualitaria",
-                                               percepcion_discriminacion == "En descuerdo"  ~ "Igualitaria",
-                                               percepcion_trabajo == "Totalmente en descuerdo" ~ "Igualitaria",
-                                               percepcion_trabajo == "En descuerdo"  ~ "Igualitaria",
+                                               percepcion_privilegios =="En desacuerdo"  ~ "Igualitaria",
+                                               percepcion_discriminacion == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_discriminacion == "En desacuerdo"  ~ "Igualitaria",
+                                               percepcion_trabajo == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_trabajo == "En desacuerdo"  ~ "Igualitaria",
                                             ))
 
 ```
-
 
 ### Calcular *tablas de contingencia* con `sjt.xtab()`
 
@@ -183,110 +182,4 @@ Considerando el *sesgo por la distribución desigual de los casos para ambas var
 -  En la muestra, las personas que se identifican políticamente con la izquierda presentan en su gran mayoría una actitud tradicional hacia los roles de género (89.6%). Junto a una actitud más indiferente (9%) que igualitaria (1.4%). 
 
 
-## Clase de hoy: ¿Cómo visualizamos lo anterior? 
 
-::: {.callout-tip title="Conceptos claves" icon=true}
-
-#### Estadísticos de forma: Asimetría y Curstosis
-
-- **Asimetría**: medida en que la distribución de una variable se aleja de una distribución simétrica a ambos lados de su punto central. ¿Qué tan simétrica es la distribución de mis datos en ambos lados de sus colas respecto al centro?
-
-- **Curtosis**: medida del grado de agrupamiento de los datos de una distribución. ¿Qué tan agrupados están mis datos en la distribución?
-
-
-#### Idea de distribución: empírica, teórica y muestral 
-
-- **Distribución empírica (u observada)**: distribución de los valores que asume la variable en un grupo concreto a partir de una observación.
-
-- **Distribución teórica**: función matématica que expresan la distribución de un conjunto de números mediante su probabilidad de ocurencia. En palabras sencillas, es una función de densidad que permite asignar probabilidades de ocurrencia a los resultados.
-  - Una de las distribuciones teóricas más utilizada es la normal o Gaussiana.
-
-- **Distribución muestral o de muestreo**: distribución de una estimación (ej. promedio de IQ) en base a todas las posibles muestras que podemos obtener de la población. En otras palabras, es la distribución teórica (generadas a partir de una función matemática) que tendrá un estadístico en infinitas muestras seleccionadas al azar de una población.
-
-#### Vsiaulización de datos: `ggplot2`
-
-**10 Principios para la visualización de datos**
-
-1. Conoce a tu audiencia ¿Qué preguntas necesitan respuesta?
-
-2. Utiliza el tipo de gráfico adecuado para representar el tipo de información que dispone.
-
-3. La forma sigue a la función. Concéntrate en cómo va a utilizar los datos tu público y deja que eso determine el estilo de presentación.
-
-4. Proporcione el contexto necesario para que los datos se interpreten y se actúe en consecuencia.
-
-5. Mantenga la sencillez. Elimine la información no esencial.
-
-6. Resalte la información más importante
-
-7. Utilice los colores con prudencia
-
-8. Utilice cuidadosamente las proporciones para que las diferencias de tamaño en el diseño representen fielmente las diferencias de valor.
-
-9. Sé escéptico. Pregúntese qué datos no están representados y qué información podría, por tanto, malinterpretarse o perderse.
-
-10. Muestra la verdad de tus datos, no lo que quisieras creer.
-
-**Uso del paquete `ggplot2`**
-
-Funciona por capas, comenzando desde lo más central o nuclear hasta llegar a los detalles más estéticos necesarios.
-
-1. La primera capa corresponde a los **datos**, es decir, las variables que queremos graficar ya listas y procesadas.
-2. La segunda corresponde al “**mapping**”, que es básicamente determinar cuáles variables serán el eje X e Y, si existen grupos u otros.
-3. La tercera es la **geometría**, la cual se refiere a la forma que tendrá el gráfico (líneas, barras, puntos, boxplot, violinplot, etc.). 
-
-El **código** básico es el siguiente: 
-```{r}
-#| echo: true
-#| error: false
-#| eval: false
-
-
-ggplot(data = proc_elsoc, # Capa 1: datos
-       mapping = aes(x = percep_genero) +  # Capa 2: mapping 
-       geom_()) # capa 3: tipo de forma o geometría del gráfico
-```
-
-
-Tenemos distintas funciones para `geom_()` según el **tipo de forma o geometría** que queramos gráficar: 
-
-*Para graficar variables **categóricas***
-
-- Diagrama de barras: `geom_bar()`
-
-*Para graficar variables **numéricas***
-
-- Histogramas:`geom_histogram()`
-
-- Diagrama de densidad: `geom_density()`
-
-- Gráficos de caja y bigote: `geom_boxplot()`
-
-:::
-
-
-## Ejercicio 1
-
-*Calcule* la asimetría y la curtosis con `psych::describe()`para las variables `percep_genero` y `edad`. 
-
-
-## Ejercicio 2 
-*Calcule* el gráfico adecuado para visualizar la variable `izquierda`. 
-
-- *Recuerde que se trata de una variable categórica.*
-
-
-## Ejercicio 3 
-
-*Calcule* el gráfico más adecuado para visualizar la variable `edad`. 
-
-- *Recuerde que se trata de una variable numérica*
-
-
-## Ejercicio 4 
-
-*Calcule* el gráfico necesario para responder el objetivo de investigación (*distinguir las percepciones sobre los roles de género según tramos etarios y personas identificadas políticamente a la izquierda*) usando `ggplot2`. Para ello: 
-
-- *Realice* un gráfico de barras que diferencie por tramos de edad la variable `percep_genero`
-- *Realice* un gráfico de barras que diferencie por posición política de izquierda la variable `percep_genero`
-- Para ambos gráficos recuerde *incluir* las capas siguientes para añadir el título del gráfico, de las variables y a la fuente, con el argumento `labs()`.

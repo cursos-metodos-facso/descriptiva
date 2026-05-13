@@ -124,6 +124,8 @@ website:
                 file: assignment/05-practico.qmd
               - text: "Práctico 6"
                 file: assignment/06-ejercicio-practico.qmd
+              - text: "Práctico 7"
+                file: assignment/07-ejercicio-practico.qmd
 #            - section: "Sesión 7"
 #              contents:
 #              - text: "Lectura 7: Introducción al lenguaje R"

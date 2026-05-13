@@ -1,0 +1,265 @@
+---
+title: "Práctico 07. Distribución y Visualización de datos con R"
+date: "2026-05-14"
+lang: es
+output:
+  number_sections: true
+---
+
+## Sesión anterior
+
+- [Link para descarcar la base de hoy](../Output/proc_elsoc_2.Rdata) 
+
+**Cargar librerías y datos**:
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: false
+
+# cargar las librerias
+pacman::p_load(dplyr, car, sjPlot)
+
+# cargar datos
+load("input/proc_elsoc_2.Rdata")
+```
+
+**Teníamos el siguiente código para generar la nueva variable** `percep_genero`:
+```{r}
+#| echo: true
+#| eval: false
+#| error: false
+
+proc_elsoc <- mutate(proc_elsoc,
+                     percep_genero = case_when(
+                       
+                       # Percepción tradicional 
+                       
+                       percepcion_refinadas == "Totalmente de acuerdo" ~ "Tradicional",
+                                               percepcion_refinadas == "De acuerdo"  ~ "Tradicional",
+                                               percepcion_protegidas == "Totalmente de acuerdo" ~ "Tradicional",
+                                               percepcion_protegidas == "De acuerdo"  ~ "Tradicional",
+                                               percepcion_privilegios == "Totalmente de acuerdo" ~ "Tradicional",
+                                               percepcion_privilegios == "De acuerdo"  ~ "Tradicional",
+                                               percepcion_discriminacion == "Totalmente de acuerdo" ~ "Tradicional",
+                                               percepcion_discriminacion == "De acuerdo"  ~ "Tradicional",
+                                               percepcion_trabajo == "Totalmente de acuerdo" ~ "Tradicional",
+                                               percepcion_trabajo == "De acuerdo"  ~ "Tradicional",
+                       
+                       # Percepción indiferente
+                       
+                       percepcion_refinadas == "Ni de acuerdo ni en desacuerdo" ~ "Indiferente",
+                       percepcion_protegidas == "Ni de acuerdo ni en desacuerdo" ~ "Indiferente",
+                       percepcion_privilegios == "Ni de acuerdo ni en desacuerdo" ~ "Indiferente",
+                       percepcion_discriminacion == "Ni de acuerdo ni en desacuerdo" ~ "Indiferente",
+                       percepcion_trabajo == "Ni de acuerdo ni en desacuerdo" ~ "Indiferente",
+                       
+                       
+                       # Percepción igualitaria 
+                       
+                       percepcion_refinadas == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_refinadas == "En desacuerdo"  ~ "Igualitaria",
+                                               percepcion_protegidas == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_protegidas == "En deascuerdo"  ~ "Igualitaria",
+                                               percepcion_privilegios == "Totalmente en descuerdo" ~ "Igualitaria",
+                                               percepcion_privilegios =="En desacuerdo"  ~ "Igualitaria",
+                                               percepcion_discriminacion == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_discriminacion == "En desacuerdo"  ~ "Igualitaria",
+                                               percepcion_trabajo == "Totalmente en desacuerdo" ~ "Igualitaria",
+                                               percepcion_trabajo == "En desacuerdo"  ~ "Igualitaria",
+                                            ))
+
+```
+
+Sin embargo, esa *no es la forma más óptima de usar* `case_when()`, ya que la instrucción que le estamos dando al código es la siguiente:
+
+>*Asigne el caso cuando haya contestado la categoría específica*
+
+Pero... 
+
+Este ejercicio se lo pedimos múltiples veces para tres variables y aquello puede solaparse entre sí.
+
+Esto es normal y no un problema en sí mismo...
+
+:::::: {.row .d-flex .justify-content-center}
+::::: {.col-md-6} 
+:::: {.card .bg-danger .text-white}
+::: {.card-body}
+El problema recae en que `case_when()` prioriza la asginación del caso de acuerdo a la **condición que coloquemos primero en el código**. Aquello implica que la mayoría de los casos serán asignados a la categoría "Tradicional". 
+:::
+::::
+:::::
+::::::
+
+<br>
+
+***¿Qué debemos hacer?***
+
+Este primer código, aunque es caótico, nos permite entender el **uso** de `case_when()`. Y, por ende, responder a la pregunta por el ***cómo* funciona y sus implicancias**. 
+
+Ahora bien, ya entendiendo el *cómo*, lo que nos interesa cuando vamos a recodificar realmente es:
+
+
+:::::: {.row .d-flex .justify-content-center}
+::::: {.col-md-6} 
+:::: {.card .bg-danger .text-white}
+::: {.card-body}
+
+**En *qué* momento** debemos usar las funciones o herramientas que tenemos para realizar una recodificación. 
+
+:::
+::::
+:::::
+::::::
+
+<br>
+
+
+Ahora que ya entendemos el error del tratamiento realizado a las categorías de la variable y evidenciar así la presencia de un sesgo en la manipulación que hicimos, es que podemos adentrarnos, entonces, a la pregunta por el ***momento* en que debemos usar** `case_when()`. 
+
+Lo anterior, es importante, ya que **debemos usarlo**, pero debemos tomar una **decisión previa** que:
+
+- Nos permita capturar mejor la variabilidad de las percepciones que se encuentran presentes y hacer una agrupación con sentido sociológico de las mismas. 
+
+
+Esta decisión previa se trata de la *construcción de lo que llamaremos un **índice.***
+
+::: {.callout-note title="¿Qué es un *índice*?" icon=true}
+
+Es la forma operativa (o cuantitativa) en que representamos un concepto teórico a partir de la consideración de varias variables. Se trata de una medida que sintetiza nuestras variables mediante una operación matemática (por ejemplo, una suma de nuestras variables o un promedio de las mismas) y de ella resultan valores o puntajes. 
+:::
+
+
+Esto implica que debemos utilizar la **naturaleza numérica de nuestras variables**, ya que queremos realizar una **operación matemática *entre* ellas**: 
+
+```{r}
+#| echo: true
+#| eval: false
+#| error: false
+
+
+proc_elsoc <- mutate(proc_elsoc, percep_genero_sum = (percepcion_refinadas + percepcion_protegidas + percepcion_privilegios + percepcion_discriminacion + percepcion_trabajo)/5)                       
+
+```
+  
+  
+**Luego de ese procedimiento, ahora sí usamos** `case_when()`:  
+```{r}
+#| echo: true
+#| eval: false
+#| error: false
+
+proc_elsoc <- mutate(proc_elsoc,
+                 percep_genero = case_when( percep_genero_sum < 3.20 ~ "Tradicional", 
+                                            percep_genero_sum == 3.00 | percep_genero_sum < 3.80  ~ "Indiferente", 
+                                            percep_genero_sum >= 3.80 ~ "Igualitaria"))
+```
+
+
+## Clase de hoy: ¿Cómo visualizamos lo anterior? 
+
+::: {.callout-tip title="Conceptos claves" icon=true}
+
+#### Estadísticos de forma: Asimetría y Curstosis
+
+- **Asimetría**: medida en que la distribución de una variable se aleja de una distribución simétrica a ambos lados de su punto central. ¿Qué tan simétrica es la distribución de mis datos en ambos lados de sus colas respecto al centro?
+
+- **Curtosis**: medida del grado de agrupamiento de los datos de una distribución. ¿Qué tan agrupados están mis datos en la distribución?
+
+
+#### Idea de distribución: empírica, teórica y muestral 
+
+- **Distribución empírica (u observada)**: distribución de los valores que asume la variable en un grupo concreto a partir de una observación.
+
+- **Distribución teórica**: función matématica que expresan la distribución de un conjunto de números mediante su probabilidad de ocurencia. En palabras sencillas, es una función de densidad que permite asignar probabilidades de ocurrencia a los resultados.
+  - Una de las distribuciones teóricas más utilizada es la normal o Gaussiana.
+
+- **Distribución muestral o de muestreo**: distribución de una estimación (ej. promedio de IQ) en base a todas las posibles muestras que podemos obtener de la población. En otras palabras, es la distribución teórica (generadas a partir de una función matemática) que tendrá un estadístico en infinitas muestras seleccionadas al azar de una población.
+
+#### Vsiaulización de datos: `ggplot2`
+
+**10 Principios para la visualización de datos**
+
+1. Conoce a tu audiencia ¿Qué preguntas necesitan respuesta?
+
+2. Utiliza el tipo de gráfico adecuado para representar el tipo de información que dispone.
+
+3. La forma sigue a la función. Concéntrate en cómo va a utilizar los datos tu público y deja que eso determine el estilo de presentación.
+
+4. Proporcione el contexto necesario para que los datos se interpreten y se actúe en consecuencia.
+
+5. Mantenga la sencillez. Elimine la información no esencial.
+
+6. Resalte la información más importante
+
+7. Utilice los colores con prudencia
+
+8. Utilice cuidadosamente las proporciones para que las diferencias de tamaño en el diseño representen fielmente las diferencias de valor.
+
+9. Sé escéptico. Pregúntese qué datos no están representados y qué información podría, por tanto, malinterpretarse o perderse.
+
+10. Muestra la verdad de tus datos, no lo que quisieras creer.
+
+**Uso del paquete `ggplot2`**
+
+Funciona por capas, comenzando desde lo más central o nuclear hasta llegar a los detalles más estéticos necesarios.
+
+1. La primera capa corresponde a los **datos**, es decir, las variables que queremos graficar ya listas y procesadas.
+2. La segunda corresponde al “**mapping**”, que es básicamente determinar cuáles variables serán el eje X e Y, si existen grupos u otros.
+3. La tercera es la **geometría**, la cual se refiere a la forma que tendrá el gráfico (líneas, barras, puntos, boxplot, violinplot, etc.). 
+
+El **código** básico es el siguiente: 
+```{r}
+#| echo: true
+#| error: false
+#| eval: false
+
+
+ggplot(data = proc_elsoc, # Capa 1: datos
+       mapping = aes(x = percep_genero) +  # Capa 2: mapping 
+       geom_()) # capa 3: tipo de forma o geometría del gráfico
+```
+
+
+Tenemos distintas funciones para `geom_()` según el **tipo de forma o geometría** que queramos gráficar: 
+
+*Para graficar variables **categóricas***
+
+- Diagrama de barras: `geom_bar()`
+
+*Para graficar variables **numéricas***
+
+- Histogramas:`geom_histogram()`
+
+- Diagrama de densidad: `geom_density()`
+
+- Gráficos de caja y bigote: `geom_boxplot()`
+
+:::
+
+
+## Ejercicio 1
+
+*Calcule* la asimetría y la curtosis con `psych::describe()`para las variables `percep_genero` y `edad`. 
+
+
+## Ejercicio 2 
+*Calcule* el gráfico adecuado para visualizar la variable `izquierda`. 
+
+- *Recuerde que se trata de una variable categórica.*
+
+
+## Ejercicio 3 
+
+*Calcule* el gráfico más adecuado para visualizar la variable `edad`. 
+
+- *Recuerde que se trata de una variable numérica*
+
+
+## Ejercicio 4 
+
+*Calcule* el gráfico necesario para responder el objetivo de investigación (*distinguir las percepciones sobre los roles de género según tramos etarios y personas identificadas políticamente a la izquierda*) usando `ggplot2`. Para ello: 
+
+- *Realice* un gráfico de barras que diferencie por tramos de edad la variable `percep_genero`
+- *Realice* un gráfico de barras que diferencie por posición política de izquierda la variable `percep_genero`
+- Para ambos gráficos recuerde *incluir* las capas siguientes para añadir el título del gráfico, de las variables y a la fuente, con el argumento `labs()`.
