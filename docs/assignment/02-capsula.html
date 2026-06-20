@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Estadística Descriptiva - Práctico 03. Procesamiento, limpieza y manipulación de datos en R</title>
+<title>Estadística Descriptiva - Cápsula 01. Nociones básicas de programación en R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,8 +70,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Estadística Descriptiva - Práctico 03. Procesamiento, limpieza y manipulación de datos en R">
-<meta property="og:description" content="Estadística Descriptiva">
+<meta property="og:title" content="Estadística Descriptiva - Cápsula 01. Nociones básicas de programación en R">
 <meta property="og:image" content="https://estadistica-descriptiva-uch.netlify.app/files/logo.png">
 <meta property="og:site_name" content="Estadística Descriptiva">
 <meta property="og:locale" content="en_US">
@@ -136,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Sesiones</li><li class="breadcrumb-item"><a href="../assignment/03-practico.html">Sesión 3</a></li><li class="breadcrumb-item"><a href="../assignment/03-ejercicio-practico.html">Práctico 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Sesiones</li><li class="breadcrumb-item"><a href="../assignment/02-practico.html">Sesión 2</a></li><li class="breadcrumb-item"><a href="../assignment/02-capsula.html">Video: Nociones básicas de programación en R</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -193,13 +192,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text">Sesión 2</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignment/02-practico.html" class="sidebar-item-text sidebar-link">
@@ -214,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignment/02-capsula.html" class="sidebar-item-text sidebar-link">
+  <a href="../assignment/02-capsula.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Video: Nociones básicas de programación en R</span></a>
   </div>
 </li>
@@ -222,13 +221,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
  <span class="menu-text">Sesión 3</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Alternar sección">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Alternar sección">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignment/03-practico.html" class="sidebar-item-text sidebar-link">
@@ -237,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignment/03-ejercicio-practico.html" class="sidebar-item-text sidebar-link active">
+  <a href="../assignment/03-ejercicio-practico.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Práctico 3</span></a>
   </div>
 </li>
@@ -330,13 +329,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">En esta página</h2>
    
   <ul>
-  <li><a href="#sesión-de-hoy-conceptos-claves" id="toc-sesión-de-hoy-conceptos-claves" class="nav-link active" data-scroll-target="#sesión-de-hoy-conceptos-claves">Sesión de hoy: Conceptos claves</a></li>
-  <li><a href="#ejercicio-1" id="toc-ejercicio-1" class="nav-link" data-scroll-target="#ejercicio-1">Ejercicio 1</a></li>
-  <li><a href="#ejercicio-2" id="toc-ejercicio-2" class="nav-link" data-scroll-target="#ejercicio-2">Ejercicio 2</a></li>
-  <li><a href="#ejercicio-3" id="toc-ejercicio-3" class="nav-link" data-scroll-target="#ejercicio-3">Ejercicio 3</a></li>
-  <li><a href="#ejercicio-4" id="toc-ejercicio-4" class="nav-link" data-scroll-target="#ejercicio-4">Ejercicio 4</a></li>
-  <li><a href="#ejercicio-5" id="toc-ejercicio-5" class="nav-link" data-scroll-target="#ejercicio-5">Ejercicio 5</a></li>
-  <li><a href="#ejercicio-6" id="toc-ejercicio-6" class="nav-link" data-scroll-target="#ejercicio-6">Ejercicio 6</a></li>
+  <li><a href="#video" id="toc-video" class="nav-link active" data-scroll-target="#video">Video</a></li>
+  <li><a href="#documento-de-presentación" id="toc-documento-de-presentación" class="nav-link" data-scroll-target="#documento-de-presentación">Documento de presentación</a></li>
   </ul>
 </nav>
     </div>
@@ -344,115 +338,23 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header">
-<h1 class="title display-7">Práctico 03. Procesamiento, limpieza y manipulación de datos en R</h1>
+<h1 class="title display-7">Cápsula 01. Nociones básicas de programación en R</h1>
 
-<div class="date-block bg-content text-white p-2">
-  <p class="date">Sesión del jueves, 16 de abril de 2026</p>
-</div>
 </header>
 
 
-<section id="sesión-de-hoy-conceptos-claves" class="level3">
-<h3 class="anchored" data-anchor-id="sesión-de-hoy-conceptos-claves">Sesión de hoy: Conceptos claves</h3>
-<p>En la sesión de hoy, retomaremos nuestro flujo de trabajo IPO. Para ello, es importante recordar la estructura de nuestro trabajo, la cual debe tener la siguiente ruta:</p>
-<pre class="plaintext"><code>Rproject/
-├── input/
-│   └── data/
-│       
-├── processing/
-│   └── procesamiento.R/
-│       
-└── output/
-    └── datos-procesados.Rdata/</code></pre>
-<section id="pasos-procesamiento" class="level4">
-<h4 class="anchored" data-anchor-id="pasos-procesamiento">Pasos procesamiento</h4>
-<p><img src="../files/img/proc.png" class="img-fluid"></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
+<section id="video" class="level2">
+<h2 class="anchored" data-anchor-id="video">Video</h2>
+<div style="width: 100%; height: 600px; overflow: hidden;">
+<video style="width: 100%;" controls="">
+<source src="https://youtu.be/fYrS22EwdBQ" type="video/mp4">
+</video>
 </div>
-<div class="callout-title-container flex-fill">
-Importante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>La siguiente práctica considera la realización de los contenidos aprendidos en la sesión 1. Es decir, los ejercicios a realizar a continuación, son realizados en un <strong>script de R</strong>, alojado en un Rproject.</p>
-<p>En caso de dudas, consultar <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/01-practico#flujo-de-trabajo-en-r">Lectura 1</a></p>
-</div>
-</div>
-<p>A continuación se presentará un caso general en que se deben <strong>procesar los datos</strong> para una investigación sobre <em>“Percepciones respecto a los roles de género”</em>. Las <em>intrucciones</em> sobre dicho procesamiento serán detalladas en cada <em>ejercicio.</em></p>
-<p>Recuerde que deben seguir la <em>lógica de procesamiento</em> aprendida en la <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/03-practico">lectura de hoy</a>.</p>
-<p><strong>Datos</strong>: Se utilizan los datos del Estudio Longitudinal Social de Chile (ELSOC) realizado por <a href="https://conferencias.coes.cl/encuesta-panel/">COES</a>. Recuerden que siempre es importante trabajar con el manual/libro de códigos de las bases de datos. El manual de la ELSOC 2022 lo pueden encontrar <a href="../data/Listado-de-Variables-ELSOC.xlsx">aquí</a>.</p>
-<p><strong>Objetivo de la investigación</strong>: Se busca distinguir las percepciones sobre los roles de género según tramos etarios y personas identificadas políticamente a la izquierda.</p>
-<p>Por ende, se trabajará con las siguientes <strong>variables</strong>:</p>
-<ul>
-<li><p><strong>Percepciones de los roles de género</strong>: Se tienen 5 preguntas</p>
-<ul>
-<li>“Las mujeres tienden a ser más refinadas y a tener mejor gusto que los hombres” (g01_01)</li>
-<li>“Las mujeres deberían ser queridas y protegidas por los hombres” (g01_02)</li>
-<li>“En nombre de la igualdad, muchas mujeres intentan conseguir ciertos privilegios” (g01_03)</li>
-<li>“Generalmente, cuando una mujer es derrotada limpiamente se queja de haber sufrido discriminación”(g01_04)</li>
-<li>“Cuando no hay muchos trabajos disponibles, los hombres deberían tener más derecho a un trabajo que las mujeres”(g01_05)</li>
-</ul></li>
-<li><p><strong>Edad</strong>: m0_edad</p></li>
-<li><p><strong>Identificación política</strong>: “Usando una escala de 0 a 10 donde 0 es ser de”izquierda”, 5 es ser de “centro” y 10 es ser de “derecha”, ¿Dónde se ubicaría usted en esta escala? (c15)</p></li>
-</ul>
 </section>
-</section>
-<section id="ejercicio-1" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-1">Ejercicio 1</h3>
-<p><em>Importe</em> los datos a utilizar. Para ello descargue la base de datos ELSOC 2022 en el siguiente <a href="../data/ELSOC_W06_v1.0_SPSS.sav">link</a>.</p>
-</section>
-<section id="ejercicio-2" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-2">Ejercicio 2</h3>
-<p>Utilizando <code>select()</code> <em>seleccione</em> las variables necesarias para el análisis.</p>
-</section>
-<section id="ejercicio-3" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-3">Ejercicio 3</h3>
-<p>Siguiendo la lógica de la limpieza inicial de los datos, <em>limpie</em> las variables seleccionadas en el Ejercicio 2.</p>
-<ul>
-<li>Para ello, utilice las funciones <code>recode()</code> y <code>na.omit()</code> cuando corresponda.</li>
-</ul>
-</section>
-<section id="ejercicio-4" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-4">Ejercicio 4</h3>
-<p>Utilizando <code>mutate()</code> y <code>case_when()</code> <em>transforme</em> la variable edad a tramos etarios, considerando 3 tramos:</p>
-<ul>
-<li>Jóvenes</li>
-<li>Adultos</li>
-<li>Adultos mayores</li>
-</ul>
-<p>Utilizando <code>mutate()</code> e <code>if_else()</code> <em>transforme</em> la variable de identificación política para que pueda medir la identificación con la izquierda política en una variable de dos categorías (“Sí” y “No”)</p>
-<ul>
-<li>Al tratarse de una escala de 11 puntos, propongan un umbral dentro de aquel puntaje que distinga ser o no de izquierda. Recuerde que dentro de dicha escala <em>0 es ser de “izquierda”, 5 es ser de “centro” y 10 es ser de “derecha”</em>.</li>
-</ul>
-</section>
-<section id="ejercicio-5" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-5">Ejercicio 5</h3>
-<p>Considerando todas las modificaciones realizadas a su objeto en los ejercicios anteriores, <em>guarde</em> el objeto procesado en su carpeta “Output”.</p>
-</section>
-<section id="ejercicio-6" class="level3">
-<h3 class="anchored" data-anchor-id="ejercicio-6">Ejercicio 6</h3>
-<p>Considerando los contenidos vistos en la <a href="https://estadistica-descriptiva-uch.netlify.app/assignment/02-ejercicio-practico">clase anterior</a>, <em>responda</em>:</p>
-<ul>
-<li>¿Qué tipo(s) de objeto(s) estamos utlizando en el ejercicio?</li>
-<li>Mencione algún vector que este presente en el ejercicio</li>
-<li>Indique la naturaleza de las variables</li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Nota
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Recuerde usar la función <code>class()</code> y el operador <code>$</code>, el cual nos permite identificar un objeto de estructura de datos distinta comtenido en otro objeto (por ejemplo, un vector que se encuentra dentro de un data.frame)</p>
-</div>
-</div>
+<section id="documento-de-presentación" class="level2">
+<h2 class="anchored" data-anchor-id="documento-de-presentación">Documento de presentación</h2>
+<iframe src="https://mafenunez.github.io/materiales-docencia/presentaciones/capsula-1.html" style="width: 100%; height: 90vh; border: none;" allowfullscreen="">
+</iframe>
 
 
 </section>

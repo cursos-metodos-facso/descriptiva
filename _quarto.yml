@@ -100,6 +100,8 @@ website:
                 file: assignment/02-practico.qmd
               - text: "Práctico 2"
                 file: assignment/02-ejercicio-practico.qmd
+              - text: "Video: Nociones básicas de programación en R"
+                file: assignment/02-capsula.qmd
             - section: "Sesión 3"
               contents:
               - text: "Procesamiento, limpienza y manipulación de datos"
